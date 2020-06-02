@@ -1,0 +1,193 @@
+
+body {
+       color: #000000    !important;   /* black text */
+       background-color: #d9d9d9;
+       font-family: Palatino,serif;
+       margin: 0;
+       padding: 0;
+       border: 0;
+       }
+
+h1 {
+       font-family: Arial, Helvetica, sans-serif;
+       font-style: bold;
+       }
+ 
+h2 {
+       font-family: Arial, Helvetica, sans-serif;
+       font-style: normal;
+       font-weight: bold;
+       }
+ 
+h3 {
+       font-family: Arial, Helvetica, sans-serif;
+       font-style: normal;
+       font-weight: bold;
+       }
+
+dt { font-style: italic;
+     margin: 8px 0px 0px 0px;
+    } 
+
+li { margin: 8px 0px 0px 0px;
+    } 
+
+table#page { border-style: hidden;
+             border-spacing: 0px;
+             border-collapse: collapse;          /* Needed for IE !*/
+             padding: 0px;
+             width: 100%;}
+
+tr#header {
+       background-color: #ffffff;
+       color: #111111
+       }
+
+tr#header td#left {
+                   padding:        5px;
+                   vertical-align: middle;
+                   text-align:     center;
+                   }
+
+tr#header  td#right {
+                     padding:        5px;
+                     vertical-align: middle;
+                     text-align:     right;
+                     }
+                                                                       
+tr#header td#center {
+                     padding-left: 10px;
+                     text-align:   left;
+                    }
+
+tr.rule {                         /* horizontal separator */
+       margin:  0;
+       padding: 0;
+       background-color: #006622;
+       height:  5px;
+       }
+
+tr.space {
+         margin:  0;
+         padding: 0;
+         height: 10px; 
+        }
+
+ 
+
+/* contents border */
+div#content {
+        background-color: #f6f5d5;
+        border: 2px solid #006622;
+        padding: 10px;
+        margin: 0px 10px 0px 0px;
+        }
+
+/* footer text */
+div.footer {
+       color: #686868;
+       padding-left: 12px;
+       padding-top: 10px;
+       padding-bottom: 10px;
+       text-align: left;
+       font-family: Arial, Helvetica, sans-serif;
+       font-size: x-small;
+       }
+
+/* standard url links */
+a:link {
+       text-decoration: none
+       }
+ 
+a:visited {
+       text-decoration: none
+       }
+ 
+a:active {
+       color: #ff8c8c;
+       text-decoration: none
+       }
+
+a:hover {
+       background-color: #009933;
+       color:            #ffffff;
+       text-decoration: none
+       }
+
+/* left-side menu setup */
+div#nav-links {
+       list-style: none;
+       margin: 0px 10px;
+       padding: 0;
+       white-space: nowrap;
+       }
+
+div#nav-links ul {
+       margin: 0;
+       padding: 0;
+       list-style: none;
+       }
+div#nav-links ul li {
+       border-bottom: 1px solid #d9d9d9;
+       margin: 0px;
+       padding: 0px;
+       }
+
+div#nav-links ul li a {
+       background-color: #009933;
+       color:            #ffffff;
+       display: block;
+       margin:  0px;
+       border:  0px;
+       padding-top: 2px;
+       padding-bottom: 2px;
+       padding-left: 4px;
+       padding-right: 4px;
+       text-align: left;
+       text-decoration: none;
+       }
+div#nav-links ul li a:visited {
+       background-color: #009933;
+       color: #ffffff;
+       text-decoration: none
+       }
+div#nav-links ul li a:hover {
+       background-color: #006622;
+       color: #ffffff;
+       text-decoration: none;
+       }
+
+div#nav-links ul ul {
+       border:         0px;
+       margin:         0px;
+       padding:        0px;
+       border-bottom:  1px solid #d9d9d9;       
+       list-style:     none;
+       }
+
+div#nav-links ul ul li {
+       border-bottom: 1px solid #009933; /* Required by IE */
+       border-top:   0px none;
+       border-right:   0px none;
+       border-left: 0px none;
+       margin: 0px;
+       padding: 0px;
+       }
+div#nav-links ul ul a {
+      padding-left: 1em;
+}
+div#nav-links ul li.title {
+       color:          #ffffff;
+       background-color: #006622;
+       padding-top:    2px;
+       padding-bottom: 0px;
+       padding-left:   0px;
+       padding-right:  0px;
+       margin:         0px;
+       border:         0px;
+       }
+
+div#nav-links li.title strong {
+     padding-left:   4px;
+     font-weight: normal;
+}
