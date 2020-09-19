@@ -1,0 +1,14 @@
+\documentclass[a4paper,twocolumn]{article}
+\usepackage{amsmath,pgfplots,verbatim}
+\usepackage{fancyvrb}
+\newenvironment{matlab}%
+    {\Verbatim[numbers=left,firstnumber=\the\inputlineno]}%
+    {\endVerbatim}
+
+\title{Literate \textsc{Matlab}/Octave via \LaTeX}
+\author{A. J. Roberts\thanks{Adapted from an idea developed by Neil D. Lawrence}}
+
+\begin{document}
+\maketitle
+\input{simple.m}
+\end{document}

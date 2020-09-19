@@ -1,0 +1,478 @@
+% \iffalse
+%<*document>
+\def\myfileversion{1.0b}
+\def\myfiledate{12 July 2006}
+\def\myfiledate{6 Oct 2012}
+%</document>
+% 
+% This is file `sde.dtx':
+% LaTeX this file to generate scilab, matlab and documentation files; 
+% then pdfLaTeX ssdesm.tex twice to generate some documentation.
+%
+%<*driver>
+\def\batchfile{sde.dtx}
+\input docstrip.tex
+\preamble
+
+(c) Tony Roberts, v\myfileversion, \myfiledate,
+mailto:anthony.roberts@adelaide.edu.au 
+Permission is hereby granted, free of charge, to any person
+to copy this software and associated documentation files. 
+But under no circumstances is it to be modified.  This
+copyright and permission notice shall be included in all
+copies or substantial portions of the Software.
+
+\endpreamble
+\postamble
+\endpostamble
+\generateFile{ssdesm.tex}{f}{\from{sde.dtx}{document}}
+\generateFile{sde1.m}{f}{\from{sde.dtx}{sde1m}}
+\generateFile{sde1m.m}{f}{\from{sde.dtx}{sde1mm}}
+\def\MetaPrefix{//}
+\preamble
+
+(c) Tony Roberts, v\myfileversion, \myfiledate,
+mailto:anthony.roberts@adelaide.edu.au 
+Permission is hereby granted, free of charge, to any person
+to copy this software and associated documentation files. 
+But under no circumstances is it to be modified.  This
+copyright and permission notice shall be included in all
+copies or substantial portions of the Software.
+
+\endpreamble
+\postamble
+\endpostamble
+\generateFile{sde1.sci}{f}{\from{sde.dtx}{sde1s}}
+\generateFile{sde1m.sci}{f}{\from{sde.dtx}{sde1ms}}
+\generateFile{test1.sce}{f}{\from{sde.dtx}{test1s}}
+\generateFile{test1m.sce}{f}{\from{sde.dtx}{test1ms}}
+\end
+%</driver>
+% \fi
+% 
+% \section{Introduction}
+% 
+% This document supplies some stochastic differential equation
+% (\textsc{sde}) solvers for \matlab, octave and \scilab.  An
+% example of their use is also supplied.  For a comprehensive
+% introduction to the numerical solution of \textsc{sde}'s
+% see~\cite{Kloeden92}.
+% 
+% \section{Test the integration methods}
+% 
+% This section provides scripts to show some simple examples
+% of Ito \textsc{sde}s and test that their numerical
+% solutions do reasonably match their analytic solutions.
+% 
+% First check the numerical solution of the Ito \textsc{sde}
+% $dX=1.5X\,dt+X\,dW$ starting from $X(0)=1$\,.
+%    \begin{macrocode}
+%<*test1s>
+// First test of the method sde1
+exec('sde1.sci');
+deff('[a]=af(x,t)','a = 1.5*x;') 
+deff('[b]=bf(x,t)','b = x;') 
+deff('[x]=xf(t,w)','x = exp((1.5-1/2)*t+w);') 
+dt = 0.01;
+ts = 0:dt:5;
+[x,w] = sde1('af','bf',ts,1);
+figure(0);
+plot2d(ts',[x;xf(ts,w)]',logflag='nl',style=2:3);
+xtitle("dX=1.5X dt +X dW","t","X(t)")
+%</test1s>
+%    \end{macrocode}
+% Second check the numerical solution of the Ito \textsc{sde}
+% $dX=\big[ \frac{2X}{1+t} +(1+t)^2 \big]dt +(1+t)^2dW$ 
+% starting from $X(0)=0$\,.
+%    \begin{macrocode}
+%<*test1s>
+// Second test of the method sde1
+deff('[a]=af(x,t)','a = 2*x/(1+t)+(1+t)^2;') 
+deff('[b]=bf(x,t)','b = (1+t)^2;') 
+deff('[x]=xf(t,w)','x = (1+t).^2 .*(t+w);') 
+dt = 0.01;
+ts = 0:dt:2;
+[x,w] = sde1('af','bf',ts,0);
+figure(1);
+plot2d(ts',[x;xf(ts,w)]',style=2:3);
+xtitle("dX=[ 2X/(1+t) +(1+t)^2 ]dt +(1+t)^2dW","t","X(t)")
+%</test1s>
+%    \end{macrocode}
+% Third check the numerical solution of the Ito \textsc{sde}
+% $dX=\big[ \frac12X+\sqrt{1+X^2} \big]dt +\sqrt{1+X^2}\,dW$ 
+% starting from $X(0)=0$\,.
+%    \begin{macrocode}
+%<*test1s>
+// Third test of the method sde1
+deff('[a]=af(x,t)','a = 0.5*x+sqrt(1+x^2);') 
+deff('[b]=bf(x,t)','b = sqrt(1+x^2);') 
+deff('[x]=xf(t,w)','x = sinh(t+w);') 
+dt = 0.01;
+ts = 0:dt:2;
+[x,w] = sde1('af','bf',ts,0);
+figure(2);
+plot2d(ts',[x;xf(ts,w)]',style=2:3);
+xtitle("dX=[ X/2+sqrt(1+X^2) ]dt +sqrt(1+X^2)dW","t","X(t)")
+%</test1s>
+%    \end{macrocode}
+%    
+% \paragraph{Test many noises}
+% 
+%    \begin{macrocode}
+%<*test1ms>
+// First test the method sde1m with simple sum
+exec('sde1m.sci');
+deff('[a,b]=abf(x,t)',['a = 1.5*x;';'b = [1,1]*x;']) 
+deff('[x]=xxf(t,w)','x = exp((1.5-1)*t+[1,1]*w);') 
+dt = 0.01;
+ts = 0:dt:5;
+[x,w] = sde1m('abf',ts,1,0);
+figure(0);
+clf()
+plot2d(ts',[x;xxf(ts,w)]',logflag='nl',style=2:5);
+%</test1ms>
+%    \end{macrocode}
+% 
+% 
+%    \begin{macrocode}
+%<*test1ms>
+// Second test sde1m on the product rule
+deff('[a,b]=abf(x,t)',['a = zeros(3,1);'
+  'b = [1 0;0 1;x(2) x(1)];']) 
+deff('[x]=xf(t,w)','x = [w(1,:);w(2,:);w(1,:).*w(2,:)];') 
+dt = 0.01;
+ts = 0:dt:5;
+[x,w] = sde1m('abf',ts,zeros(3,1),0);
+figure(1);
+clf()
+xx=xf(ts,w);
+plot2d(ts',[x(3,:);xx(3,:)]',style=2:7);
+%</test1ms>
+%    \end{macrocode}
+% 
+% 
+% \section{The base integration with one noise}
+% 
+% Here I describe the two versions of the \textsc{sde} integration 
+% algorithms.  Parts of their content are common.
+% 
+% \subsection{Comments}
+% The description of each of the two versions is much the same and 
+% comes first so that \matlab's help command will print it.
+%    \begin{macrocode}
+%<*sde1m>
+%% function [x,w]=sde1(afun,bfun,ts,x0)
+%% First-order accurate scheme to integrate the Ito SDE
+%%        dx = a(x,t)dt + b(x,t)dW
+%% for a realisation of one (scalar) Wiener noise W(t).
+%%
+%% afun - user supplied function afun(x,t) computes the
+%%        coefficient column vector of the dt term
+%% bfun - user supplied function bfun(x,t) computes the
+%%        coefficient column vector of the dW term
+%</sde1m>
+%<*sde1mm>
+%% function [x,w]=sde1m(abfun,ts,x0,pind)
+%% First-order accurate scheme to integrate the Ito SDE
+%%        dx = a(x,t)dt + b(x,t)dW
+%% for a realisation of m>1 Wiener noises W(t).
+%%
+%% abfun - user supplied function [a,b]=abfun(x,t) 
+%%         computes the coefficient column vector a(x,t)
+%%         of the dt term, and the coefficient matrix b(x,t) 
+%%         of the dW term (m columns)
+%</sde1mm>
+%<*sde1m,sde1mm>
+%% ts   - row vector [t0 t1 ... tfin] of times at which
+%%        x(t) is computed using steps of size diff(ts)
+%% x0   - column vector of initial condition
+%</sde1m,sde1mm>
+%<*sde1mm>
+%% pind - controls approx of multiple stochastic integrals,
+%%        larger is better but more time consuming,
+%%        recommended minimum is max(diff(ts)), 0 is possible
+%</sde1mm>
+%<*sde1m,sde1mm>
+%% x    - columns are the solution at times given in ts
+%% w    - row of the Wiener process at times ts (w0=0)
+%%
+%% Ref: Kloeden & Platen, "Numerical solution of
+%% stochastic differential equations", Section 11.1 
+%%
+%</sde1m,sde1mm>
+%<*sde1m>
+%% Corresponding Stratonovich SDE is dx=(a-bb'/2)dt+b.dW
+%% or componentwise dx_i=(a_i-b_jb_{i,j}/2)dt+b_i.dW
+%</sde1m>
+%<*sde1mm>
+%% The corresponding Stratonovich SDE is [K&P, \S4.9]
+%% dx_i=(a_i-b_{jk}b_{ik,j}/2)dt+b_{ij}.dW_j
+%</sde1mm>
+%    \end{macrocode}
+% 
+% \subsection{Function declaration}
+% 
+% The function declaration statement for all version are the same 
+% apart from their name because they are used exactly the same way.
+%    \begin{macrocode}
+%<*sde1m,sde1s>
+function [x,w]=sde1(afun,bfun,ts,x0)
+%</sde1m,sde1s>
+%<*sde1mm,sde1ms>
+function [x,w]=sde1m(abfun,ts,x0,pind)
+%</sde1mm,sde1ms>
+%<*sde1s,sde1ms>
+// See explanations in the matlab version
+%</sde1s,sde1ms>
+%    \end{macrocode}
+% 
+% \subsection{Initialisation}
+% 
+% Find the dimensionality of the problem.
+%    \begin{macrocode}
+%<*sde1m,sde1s,sde1mm,sde1ms>
+d=length(x0);
+%</sde1m,sde1s,sde1mm,sde1ms>
+%    \end{macrocode}
+% Set the number of independent noises.
+%    \begin{macrocode}
+%<*sde1m,sde1s>
+m=1;
+%</sde1m,sde1s>
+%<*sde1mm>
+[a,b]=feval(abfun,x0,ts(1));
+m=size(b,2);
+%</sde1mm>
+%<*sde1ms>
+execstr('[a,b] = '+abfun+'(x0,ts(1))')
+m = size(b,2);
+%</sde1ms>
+%    \end{macrocode}
+% Compute the vector of time steps, possibly all different.
+%    \begin{macrocode}
+%<*sde1m,sde1mm>
+dt=diff(ts);
+%</sde1m,sde1mm>
+%<*sde1s,sde1ms>
+dt = ts(2:$)-ts(1:$-1);
+%</sde1s,sde1ms>
+%    \end{macrocode}
+% Then find the number of time steps and the square root of the time
+% steps for generating the Wiener increments.
+%    \begin{macrocode}
+%<*sde1m,sde1s,sde1mm,sde1ms>
+nt=length(dt);
+rdt=sqrt(dt);
+%</sde1m,sde1s,sde1mm,sde1ms>
+%    \end{macrocode}
+% Generate the increments of the Wiener noise process.
+%    \begin{macrocode}
+%<*sde1m,sde1mm>
+dw=randn(m,nt).*rdt(ones(m,1),:);
+%</sde1m,sde1mm>
+%<*sde1s,sde1ms>
+dw = rand(m,nt,'n').*rdt(ones(m,1),:);
+%</sde1s,sde1ms>
+%    \end{macrocode}
+% Compute auxilary factors for the integration scheme.
+%    \begin{macrocode}
+%<*sde1m,sde1s>
+dd=(dw.^2-dt)./(2*rdt);
+%</sde1m,sde1s>
+%    \end{macrocode}
+% Initialise space for the solution array and set the first column.
+% Note the vectors must be supplied as column vectors.
+%    \begin{macrocode}
+%<*sde1m,sde1s,sde1mm,sde1ms>
+x=zeros(d,nt+1);
+x(:,1)=x0;
+%</sde1m,sde1s,sde1mm,sde1ms>
+%    \end{macrocode}
+% 
+% \subsection{Integration loop}
+% 
+% Loop over all the specified time steps.
+%    \begin{macrocode}
+%<*sde1m,sde1s>
+for n=1:nt
+%</sde1m,sde1s>
+%    \end{macrocode}
+% Compute derivative information.
+%    \begin{macrocode}
+%<*sde1m>
+   a=feval(afun,x(:,n),ts(n));
+   b=feval(bfun,x(:,n),ts(n));
+   db=feval(bfun,x(:,n)+a*dt(n)+b*rdt(n),ts(n)) -b;
+%</sde1m>
+%<*sde1s>
+  a = evstr(afun+'(x(:,n),ts(n))');
+  b = evstr(bfun+'(x(:,n),ts(n))');
+  db = evstr(bfun+'(x(:,n)+a*dt(n)+b*rdt(n),ts(n))')-b;
+%</sde1s>
+%    \end{macrocode}
+% Explicit scheme predicts the vector x at the next time step.
+%    \begin{macrocode}
+%<*sde1m,sde1s>
+   x(:,n+1)=x(:,n)+a*dt(n)+b*dw(n)+db*dd(n);
+end
+%</sde1m,sde1s>
+%    \end{macrocode}
+% Also return the realisation of the noise as the cumulative sum
+% of the Wiener increments.
+%    \begin{macrocode}
+%<*sde1m,sde1s>
+w=cumsum([0 dw]);
+%</sde1m,sde1s>
+%    \end{macrocode}
+%    
+% \section{Integration loop for many noises}
+% 
+% For many noises the integration loop is different.
+% 
+% Loop over all the specified time steps.
+%    \begin{macrocode}
+%<*sde1mm,sde1ms>
+for n=1:nt
+%</sde1mm,sde1ms>
+%    \end{macrocode}
+%    
+% Compute the I matrix.
+%    \begin{macrocode}
+%<*sde1mm,sde1ms>
+  p=ceil(abs(pind)/dt(n));
+  xi=dw(:,n)/rdt(n);
+%</sde1mm,sde1ms>
+%<*sde1mm>
+  mu=randn(m,1);
+%</sde1mm>
+%<*sde1ms>
+  mu=rand(m,1,'n');
+%</sde1ms>
+%<*sde1mm,sde1ms>
+  if p>0,
+    rr=1 ./(1:p);
+    rrs=rr(ones(m,1),:);
+%</sde1mm,sde1ms>
+%<*sde1mm>
+    rhop=1/12-sum(rr.^2)/(2*pi^2);
+    eta=randn(m,p);
+    zet=randn(m,p);
+%</sde1mm>
+%<*sde1ms>
+    rhop = 1/12-sum(rr.^2)/(2*(%pi^2));
+    eta = rand(m,p,'n');
+    zet = rand(m,p,'n');
+%</sde1ms>
+%<*sde1mm,sde1ms>
+    zetxi = zet*rr'*xi';
+    zetet = zet*((rrs .* eta)');
+  else
+    rhop = 1/12;
+  end
+  muxi = mu*xi'*sqrt(rhop);
+  ip = xi*xi'/2;
+  if p>=0 
+    ip = ip+muxi-muxi';
+  end
+  if p>0
+%</sde1mm,sde1ms>
+%<*sde1mm>
+    ip=ip+((zetxi-zetxi')/sqrt(2)+(zetet-zetet')/2)/pi;
+%</sde1mm>
+%<*sde1ms>
+    ip=ip+((zetxi-zetxi')/sqrt(2)+(zetet-zetet')/2)/%pi;
+%</sde1ms>
+%<*sde1mm,sde1ms>
+  end
+  ip = dt(n)*(ip-diag(0.5*ones(m,1)));
+%</sde1mm,sde1ms>
+%    \end{macrocode}
+% Supporting values.
+%    \begin{macrocode}
+%<*sde1mm,sde1ms>
+  y=(x(:,n)+a*dt(n))*ones(1,m) +b*rdt(n);
+  bb=zeros(d,1);
+  for j1=1:m 
+%</sde1mm,sde1ms>
+%<*sde1mm>
+    [ay,by]=feval(abfun,y(:,j1),ts(n));
+%</sde1mm>
+%<*sde1ms>
+    execstr('[ay,by] = '+abfun+'(y(:,j1),ts(n))');
+%</sde1ms>
+%<*sde1mm,sde1ms>
+    bb=bb+(by-b)*ip(j1,:)';
+  end
+%</sde1mm,sde1ms>
+%    \end{macrocode}
+% 
+% Time step and end the loop.
+%    \begin{macrocode}
+%<*sde1mm,sde1ms>
+  x(:,n+1) = x(:,n)+a*dt(n)+b*dw(:,n)+bb/rdt(n);
+  if n<nt,
+%</sde1mm,sde1ms>
+%<*sde1mm>
+    [a,b]=feval(abfun,x(:,n+1),ts(n+1));
+%</sde1mm>
+%<*sde1ms>
+    execstr('[a,b] = '+abfun+'(x(:,n+1),ts(n+1))');
+%</sde1ms>
+%<*sde1mm,sde1ms>
+  end
+end
+%</sde1mm,sde1ms>
+%    \end{macrocode}
+% 
+% Lastly, accumulate the various Wiener processes.
+%    \begin{macrocode}
+%<*sde1mm>
+w=cumsum([zeros(m,1) dw]')';
+%</sde1mm>
+%<*sde1ms>
+w = cumsum([zeros(m,1),dw],2);
+%</sde1ms>
+%    \end{macrocode}
+% 
+% 
+% 
+% 
+% \begin{thebibliography}{1}
+% 
+% \bibitem{Kloeden92}
+% P.~E. Kloeden and E. Platen.
+% \newblock \emph{Numerical solution of stochastic differential
+%  equations}.
+% \newblock Springer--Verlag, 1992.
+% 
+% \end{thebibliography}
+% 
+% \appendix
+% \section{The driver file for this document}
+% 
+% The following code is placed in the file \verb|ssdesm.tex|\,.  By 
+% running \LaTeX\ on the file you will create this somewhat terse 
+% documentation.
+%    \begin{macrocode}
+%<*document>
+\documentclass[]{ltxdoc}
+\usepackage[a5paper]{geometry}
+\IfFileExists{ajr.sty}{\usepackage[colour]{ajr}}{}
+\def\matlab{\textsc{Matlab}}
+\def\scilab{\textsc{Scilab}}
+\EnableCrossrefs
+\CodelineIndex
+\setlength{\MacroIndent}{3ex}
+\begin{document}
+   \title{Solve stochastic differential equations in Scilab or Matlab}
+   \author{Tony Roberts, \texttt{mailto:aroberts@usq.edu.au}}
+   \date{v\myfileversion, \myfiledate\ (typeset \today)}
+   \maketitle
+   \tableofcontents
+   \DocInput{sde.dtx}
+\end{document}
+%</document>
+%    \end{macrocode}
+% 
+% \Finale
+\endinput

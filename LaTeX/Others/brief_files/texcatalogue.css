@@ -1,0 +1,64 @@
+	BODY {
+		background : none #ffffff }
+	H1, H2, H3, H4 {
+		font-family : Lucida, Verdana, Helvetica, Arial, sans-serif }
+	H1 {
+		color : #000000 ;
+		text-align : center }
+	H2 {
+		color : #b00040 ;
+		border-top : ridge thin ;
+		padding-top : 2% ;
+		margin-left : 2% ;
+		margin-right : 2% }
+	H3 {
+		color : #8b008b ;
+		margin-left : 4% ;
+		margin-top : 4% }
+	H4 {
+		color : #8b6508 ;
+		margin-left : 6% }
+	P, UL, OL, DL {
+		color : #000000 ;
+		text-align : justify ;
+		margin-left : 8% ;
+		margin-right : 5% }
+	LI {
+		margin-left : 2% }
+	A:link {
+		color : #0060a0 ;
+		font-weight : bold ;
+		text-decoration : none }
+	A:visited {
+		color : #6ca6cd ;
+		font-weight : bold ;
+		text-decoration : none }
+	A:hover {
+		color : #0060a0 ;
+		font-weight : bold ;
+		text-decoration : underline overline ;
+		background : #eeeeee }
+	A:active {
+		color : #ff0000 }
+	B, I, EM, TT, KBD {
+		color : #008040 }
+	.names {
+		color : #000000 ;
+		text-align : center ;
+		font-size : large ;
+		font-weight : bolder }
+	.notes {
+		color : #000000 ;
+		text-align : justify ;
+		border : solid thin ;
+		padding : 2% ;
+		margin : 5% ;
+		background : #dddddd }
+
+	.description {
+		color : #000000 ;
+		text-align : justify ;
+		border : solid thin ;
+		padding : 2% ;
+		margin : 0% ;
+		background : #dddddd }

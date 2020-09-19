@@ -1,0 +1,25 @@
+RewriteEngine on
+RewriteRule   reduce.html        /anthony.roberts/reduce.php
+RewriteRule   legofractals.html  /anthony.roberts/legofractals.php
+RewriteRule   ecfm.html          /anthony.roberts/ecfm.php
+RewriteRule   wapr.html          /anthony.roberts/wapr.php
+RewriteRule   sdesm.html         /anthony.roberts/sdesm.php
+RewriteRule   sdenf.html         /anthony.roberts/sdenf.php
+RewriteRule   gencm.html         /anthony.roberts/gencm.php
+RewriteRule   ddecm.html         /anthony.roberts/ddecm.php
+RewriteRule   multifractal.html  /anthony.roberts/multifractal.php
+RewriteRule   holistic1.html     /anthony.roberts/holistic1.php
+RewriteRule   holistic3.html     /anthony.roberts/holistic3.php
+RewriteRule   matlab.html        /anthony.roberts/matlab.php
+RewriteRule   modelling.html     /anthony.roberts/modelling.php
+RewriteRule   software.html      /anthony.roberts/software.php
+RewriteRule   LaTeX/index.html       /anthony.roberts/LaTeX/index.php
+RewriteRule   LaTeX/ltxbanned.html   /anthony.roberts/LaTeX/ltxbanned.php
+RewriteRule   LaTeX/ltxenviron.html  /anthony.roberts/LaTeX/ltxenviron.php
+RewriteRule   LaTeX/ltxfloats.html   /anthony.roberts/LaTeX/ltxfloats.php
+RewriteRule   LaTeX/ltxmaths.html    /anthony.roberts/LaTeX/ltxmaths.php
+RewriteRule   LaTeX/ltxqstart.html   /anthony.roberts/LaTeX/ltxqstart.php
+RewriteRule   LaTeX/ltxties.html     /anthony.roberts/LaTeX/ltxties.php
+RewriteRule   LaTeX/ltxusecol.html   /anthony.roberts/LaTeX/ltxusecol.php
+RewriteRule   LaTeX/ltxwrite.html    /anthony.roberts/LaTeX/ltxwrite.php
+RewriteRule   LaTeX/ltxxref.html     /anthony.roberts/LaTeX/ltxxref.php

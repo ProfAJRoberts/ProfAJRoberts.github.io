@@ -1,0 +1,80 @@
+% example file to change the style of LaTeX
+% This should be last \usepackage{} in preamble.
+% Tony Roberts, May 2004 -- May 2020
+% http://orcid.org/0000-0001-8930-1552
+% first colour for pdflatex
+\usepackage[usenames,dvipsnames]{color}
+\IfFileExists{microtype.sty}{\usepackage{microtype}}{} 
+% and fix some pdf colour problems
+\IfFileExists{pdfcolmk.sty}{\usepackage{pdfcolmk}}{} 
+% second test for a5paper
+\ifdim\paperwidth=148mm 
+  \usepackage[a5paper,margin=6mm,bmargin=14mm]{geometry}
+  \fi
+% invoke American Maths Society packages
+\usepackage{amsmath,amsthm,amssymb} 
+% penultimately load colour hyperref
+\usepackage[colorlinks,allcolors=RoyalBlue]{hyperref}
+
+% lastly invoke cleveref
+\usepackage[capitalise,nameinlink,noabbrev]{cleveref}
+\crefname{equation}{}{}
+% Default "Item" useless, use enumitem and ref=
+% Nested enumerates inherit the first level ref=
+\crefname{enumi}{}{}
+\crefname{enumii}{}{}
+\crefname{enumiii}{}{}
+\crefname{enumiv}{}{}
+% if usepackage{showkeys}, then patch in a link
+\ifcsname SK@def\endcsname%
+    \SK@def\cref#1{\SK@\SK@@ref{#1}\SK@cref{#1}}%
+    \fi
+
+%perhaps use sans-serif for title info
+\let\LaTeXmaketitle\maketitle
+\renewcommand{\maketitle}{{\sf\LaTeXmaketitle}}
+
+\pagestyle{headings}
+% crunching MakeUppercase is very naughty
+\renewcommand{\MakeUppercase}[1]{\color{OliveGreen}\textsf{#1}}
+
+% maybe colour section headers blue
+\let\LaTeX@startsection\@startsection 
+\renewcommand{\@startsection}[6]{\LaTeX@startsection%
+{#1}{#2}{#3}{#4}{#5}{\color{blue}\raggedright #6}} 
+\renewcommand{\abstractname}{\color{blue}Abstract}
+\renewcommand{\figurename}{\color{Sepia}Figure}
+\renewcommand{\tablename}{\color{Sepia}Table}
+
+ 
+% Rob J Hyndman (2011) recommends these float settings
+% http://robjhyndman.com/researchtips/latex-floats/
+\setcounter{topnumber}{2}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{4}
+\renewcommand{\topfraction}{0.85}
+\renewcommand{\bottomfraction}{0.85}
+\renewcommand{\textfraction}{0.15}
+\renewcommand{\floatpagefraction}{0.7}
+
+
+
+%% The above only change the translation from LaTeX -> pdf
+%% and so are true style commands.  However, the following
+%% (except \vec) provide new logical commands for LaTeX and
+%% so should really be in a separate "mydefns.sty" file
+% useful theorem and friends
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{assumption}[theorem]{Assumption}
+
+% useful partial derivatives and vec
+\newcommand{\D}[2]{\frac{\partial #2}{\partial #1}} 
+\newcommand{\DD}[2]{\frac{\partial^2 #2}{\partial #1^2}} 
+\renewcommand{\vec}[1]{\boldsymbol{#1}}
+% a poor-man's auto-multi-line maths
+\newcommand{\parmath}[2][0.8\linewidth]{\parbox[t]{#1}%
+    {\raggedright\linespread{1.2}\selectfont\(#2\)}}
+

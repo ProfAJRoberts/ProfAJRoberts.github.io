@@ -1,0 +1,115 @@
+\documentclass[a4paper,12pt]{article}
+%\usepackage{url}
+
+\title{Dummy file for html research publications}
+\author{Tony Roberts}
+
+% to get altimetrics??
+%<div data-badge-popover="right" data-badge-type="2" data-doi="10.1038/35085561" class="altmetric-embed"></div>
+
+\makeatletter
+
+\newcommand{\url}[1]{\texttt{#1}} % !! unnecessary??
+\catcode`\~=12 % make tilde an ordinary character
+\catcode`\_=12 % make underscore an ordinary character
+\begingroup % define ampersand character
+\catcode`\&=12 \gdef\@ampersandchar{&}
+\endgroup
+
+\newcommand{\AjRpagebegin}[1]{
+% \renewcommand{~}{ }
+\renewenvironment{itemize}{^^J<ul>}{^^J</ul>}
+\renewenvironment{enumerate}{^^J<ol>}{^^J</ol>}
+\renewcommand{\newpage}{<p>}
+\renewcommand{\item}{^^J<li>}
+\renewcommand{\url}[1]{<tt><a href="##1">##1</a></tt>}
+\renewcommand{\emph}[1]{<em>##1</em>}
+\renewcommand{\texttt}[1]{<tt>##1</tt>}
+\renewcommand{\textsc}[1]{##1}
+\renewcommand{\textsf}[1]{<b>##1</b>}
+\renewcommand{\textbf}[1]{<b>##1</b>}
+\renewcommand{\%}{\@percentchar}
+\renewcommand{\&}{\@ampersandchar}
+\renewcommand{\S}{\@ampersandchar\@hashchar167;}
+\renewcommand{\ }{ }
+\renewcommand{\,}{ }
+% \renewcommand{\LaTeX}{L<sup>A</sup>T<sub>E</sub>X}
+\renewcommand{\LaTeX}{LaTeX}
+\def\par{^^J<p/>}
+\renewenvironment{center}{^^J<center>}{^^J</center>}
+\renewenvironment{tabular}[1]%
+{^^J<table border=1><tr><td>}{</td></tr>^^J</table>}
+\renewcommand{\\}{</td></tr>^^J<tr><td>}
+\renewcommand{\hline}{}
+%\renewcommand{\AjRamp}{</td><td>}
+\immediate\write\AjRout{<?php^^J
+$title="Research and other publications";^^J
+$dates="\today";^^J
+include "header.php";^^J
+include "menuside.php";^^J
+?>^^J
+<div class="newspaper">^^J
+}
+} % end MaCpagebegin
+
+
+\newcommand{\AjRpageend}{
+\immediate\write\AjRout{</div>^^J
+<?php 
+include "footer.php";
+?>}
+\immediate\closeout\AjRout
+} % end MaCpageend
+
+\newwrite\AjRout
+
+\makeatother
+
+
+\begin{document}
+    
+\maketitle
+
+\paragraph{Procedure}  Replace the cite command below with a cite command from BibDesk for all publications sorted by year, say.  \LaTeX\ this file, ignoring all error messages.  Then BibTeX this file to get the \verb|ajr.bbl| file.  \emph{Do not} \LaTeX\ the file \verb|site.tex| to translate the bbl file into the html file of the cite.
+
+There exists an error such as url with extra brace, which I cannot track down.  But it makes no difference to the result as far as I can see.
+
+
+\paragraph{Writing publications.php file} lets see what happens.
+
+\newcommand{\doi}[1]{<a href="http://dx.doi.org/#1">doi:#1</a>
+<div data-badge-popover="right" data-badge-type="2" data-doi="#1" data-hide-no-mentions="true" class="altmetric-embed"></div>}
+
+\begingroup
+%\newwrite\AjRout
+\immediate\openout\AjRout publications.php\relax
+\AjRpagebegin{Most research publications}
+\makeatletter
+\def\j@@Input{%
+  \let\AjRtempb\AjRtempa
+  \immediate\read\AjRin to\AjRtempa
+  \ifeof\AjRin
+    \immediate\closein\AjRin
+  \else
+    \immediate\write\AjRout{\AjRtempb}
+    \expandafter\j@@Input
+  \fi}
+\typeout{**** Starting to write the bibliography.}
+\newread\AjRin
+\immediate\openin\AjRin ajr.bbl\relax
+\immediate\read\AjRin to\AjRtempa
+\immediate\read\AjRin to\AjRtempa
+\j@@Input
+\immediate\closein\AjRin
+\makeatother
+\AjRpageend 
+\endgroup
+
+
+\cite{Roberts2017a,Edson2019a,Chen2018,Bunder2018a,Roberts2018a,Alotaibi2017a,Chen2016,Jarrad2016a,Bunder2013b,Roberts2016a,Bunder2013c,Sircar2016d,Sircar2016c,Sircar2016b,Sircar2016a,Borazjani2015,Bunder2015a,Cao2014b,Cao2014a,MISG2015,MISG2014,Wake2016,Chen2015,Xiaopeng2012,Roberts2015a,Roberts2013a,Bunder2013a,Wang2012,Roberts2014a,Chen2014,YanLv2013,YanLv2012,Roberts2011a,MISG2013,Cao2014c,Cao2013,Wang2011b,Kan2010,Wang2008b,MISG2012,Cao2012,Roberts2011b,Bunder2012,YanLv2011a,Wang2010b,Wang2009b,Wang2009a,Roberts2012b,Roberts2012a,Chen2011,Wang2010a,Duan2011a,Roberts11c,Wang2011a,MacKenzie11a,Roberts2010,Roberts08l,Roberts2010b,Samaey08,Roberts10a,Roberts11a,Roberts10c,Roberts10b,Roberts09b,Roberts08a,Georgiev09,Strunin09a,Roberts08c,Roberts08g,Roberts09a,Roberts09c,TNFV9MK,MacKenzie09b,MacKenzie09a,Roberts07d,Roberts06m,Roberts06a,Wang2008,Roberts08k,Roberts08h,Roberts08z,Roberts06k,Roberts08v1,Roberts08v2,Roberts08b,Roberts08d,Roberts2008,Roberts08i,Roberts08j,Roberts08f,Roberts08e,Georgiev06,Roberts07i,Roberts07g,Roberts07f,Roberts06g,Roberts07e,Roberts07c,Roberts07a,Roberts07b,Tremblay06,Roberts06d,Zhenquan03,Zhenquan00,Melnik07,Georgiev07,Roberts07j,Roberts06j,Roberts06c,Roberts06l,Roberts06i,Roberts06h,Roberts06f,Roberts99b,Roberts06e,Roberts05c,MacKenzie05a,Ioualalen06,Roberts04b,Roberts06n,Roberts06b,Mercer05,Roberts05e,Roberts04d,Roberts96c,Roberts05a,Melnik04,Roberts05d,Roberts05b,Roberts04e,Ujevic04,Melnik2004,Roberts03d,Roberts03a,Strunin01a,Jelinek04,Roberts04c,Roberts04f,Roberts04a,Roberts03c,Cretchley03,Roberts02a,MacKenzie03,Passmore03,Roberts01b,Strunin01b,Roberts99c,Melnik03,Roberts00a,Roberts03b,Roberts02b,Jelinek01,Melnik02b,Melnik01b,Roy96,Melnik02,Strunin02,Roberts01c,Roberts99d,Jarrad01,Roberts01a,Roberts98a,Simpson01a,Strunin00,Young01,McGuinness01,Roberts01g,Roberts01f,Melnik01,Roberts01d,Roberts00d,Strunin01c,Roberts98b,Melnik00a,Melnik00d,MacKenzie00a,Melnik00c,Roberts97b,Strunin00b,Suslov00a,McGuinness00,Roberts00b,MacKenzie00b,Melnik98,Melnik00b,Roberts00c,Smith98,Ioualalen98,Roberts99a,Suslov98c,Melnik99,Melnik99b,Suslov99,Suslov98a,Roberts96b,Zhenquan98,Simpson97,Smith97,Roberts98d,Roberts98c,Suslov98b,Roberts97d,Roberts96a,Roberts97c,Tuck97,Zhang97,Roberts97a,Smith94,Chao95,Ioualalen94,Roberts94c,Roberts95b,Watt94c,Cox93b,Watt94b,Watt95,Mei94,Roberts95a,Emmerson95,Roberts94a,Mercer94a,Mercer94b,Roberts94b,Cox93a,Roberts94d,Roberts93,Oats93,Roberts92b,Roberts92c,Roberts92f,Roberts92,Cox92,Mercer92,Roberts92d,Roberts92e,Cox91,Mercer91,Marchant90,Mercer90,Pollett90,Roberts90,Roberts89,Roberts89b,Stienle89,Marchant88a,Roberts88a,Roberts88b,Marchant87b,Roberts87a,Roberts85a,Roberts85b,Roberts85c,Roberts83a,Roberts83d,Roberts83b,Roberts83c,Roberts82,Roberts81,Roberts81b,Roberts77}
+
+\bibliographystyle{html}
+\bibliography{ajr}
+
+    
+\end{document}

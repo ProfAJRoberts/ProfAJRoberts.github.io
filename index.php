@@ -1,0 +1,137 @@
+<?php
+$title="my home page";
+$thisfile=__FILE__;
+include "header.php";
+include "menuside.php";
+?>
+
+<div class="newspaper">
+
+<ul><li>
+<a href="larxxia.php">
+<b>Linear Algebra for the 21st Century</b></a>
+This textbook provides an innovative introduction and
+development of the power of linear algebra in modern
+science, engineering and computing.  Soon to be published by
+Oxford University Press.
+<!-- I make <a
+href="https://github.com/uoa1184615/LinearAlgebraGit.git">
+draft versions and source available on github</a> for others
+to collaborate in this venture.
+-->
+</li><li>
+The <a href="LaTeX/index.html"><b>best LaTeX
+introduction</b></a> shows how to transform plain text into
+a beautifully typeset document in LaTeX. It introduces what
+many consider are the most important fundamentals of
+LaTeX2e.
+<p/>
+<a href="https://www.youtube.com/playlist?list=PLAvDA9VSF6oxwGHA2ELDnaSFlJvwZPT6p">See youtube playlist.</a>
+</li><li>
+<a href="modelling.php"><b>Modelling emergence</b></a>
+Compile your own tailored version of my book to learn modern
+methods of modelling complex dynamical systems.
+<p>Maurício Kritz (2019) commented in reference to the book:
+<q>develops methods, techniques, and algorithms for studying
+the behaviour of systems ... necessity of having simple
+models, equations and mathematics as brilliantly explained
+... the huge and beautiful knowledge accumulated recently
+about dynamical systems. </q>
+</li><li>
+<a href="holistic1.php"><b>Holistic
+discretisation</b></a> of dynamical Partial Differential
+Equations obtain the spatial discretisation of one or three
+coupled dynamical PDEs using dynamical systems theory.
+</li><li>
+<a href="sdenf.php"><b>SDE normal form</b></a> provides
+you with a normal form of any supplied stochastic
+differential equation (SDE), or deterministic non-autonomous
+ODE or Delay ODEs, when the DEs have slow modes and fast
+stable/unstable modes. The normal form decouples the slow
+modes from the fast and so supplies you with a faithful
+large time model of the stochastic dynamics.
+</li><li>
+<a href="sdesm.php"><b>SDE slow manifold</b></a>
+provides you more quickly with just the slow manifold of any
+supplied stochastic differential equation (SDE), or
+deterministic non-autonomous ODE or Delay ODEs, when the DEs
+have slow modes and fast stable/unstable modes. The slow
+manifold model supplies you with a faithful large time model
+of the stochastic dynamics.
+</li><li>
+<a href="gencm.php"><b>Find a centre manifold</b></a>
+provides a centre manifold and evolution thereon of your
+specified system of ordinary differential equations.  It
+applies to pitchfork or Hopf bifurcations or higher order
+degeneracies.  It even transforms one or coupled oscillators
+into modulation equations to replace averaging and
+homogenisation.
+2014: added code to compute a basis of normal vectors to the
+isochrons in order to model initial conditions, forcing, and
+uncertainty quantification.
+</li><li>
+<a href="multifractal.php"><b>Multifractal
+analyser</b></a> estimation of fractal dimensions, let alone
+multifractal dimensions, are fraught with subtle
+difficulties. Use this state of the art service to estimate
+fractal dimensions for your 1D, 2D or 3D datasets.
+</li><li>
+Construct <a href="legofractals.php"><b>lego
+fractals</b></a> to stun your friends.
+</li><li>
+<a href="publications.php">List of research and teaching
+publications</a> with links to many electronic versions.
+</li><li>
+Two youtube playlists contain videos of some selected topics and examples:
+<ul><li>
+<a href="https://www.youtube.com/playlist?list=PLAvDA9VSF6oxJQWNp5rdIKkuU7rue7UKN">PDEs: advanced Partial Differential Equations</a>
+</li><li>
+<a href="https://www.youtube.com/playlist?list=PLAvDA9VSF6oyKREszCKs_IzketmoBFj5p">Optimization</a>
+</li></ul>
+</li></ul>
+<p/>
+
+<h3>Climate change?</h3>
+The atmosphere is like the 'tail of the dog': it is hard to
+see where the climate 'dog' is going from the 'wagging tail'
+of the atmosphere's temperature.  The ocean has a heat
+capacity a thousand times that of the atmosphere, and takes
+hundreds of years to warm and/or cool---the ocean is like
+the 'body of the dog' of climate.  So instead of looking at
+atmospheric temperatures, look to the ocean to see where the
+climate is going.  As the ocean warms, it expands, and so
+sea level rises.  As glaciers increasingly melt, the sea
+level rises.  The following graph indicates where the ocean
+is going [thanks to the CSIRO at <a
+href="https://www.cmar.csiro.au/sealevel/sl_hist_last_decades.html">
+https://www.cmar.csiro.au/sealevel/sl_hist_last_decades.html
+</a>]:
+<p/>
+<img src="https://www.cmar.csiro.au/sealevel/images/alt_gmsl_seas_rem.jpg" alt="Global Mean Sea Level increases 3.4 mm/year" width=100%>
+
+<h3>Erdos number 3</h3>
+ The Erdos Number is the distance from Paul Erdos
+ (1913--1996) on a graph whose edges denote the relationship
+ of coauthorship in scientific articles [<tt><a
+ href="http://www.oakland.edu/enp">
+ http://www.oakland.edu/enp</a></tt>]:
+<ul><li>
+Pollett, P. K.; Roberts, A. J. A description of the
+long-term behaviour of absorbing continuous-time Markov
+chains using a centre manifold. <em>Adv. in Appl.
+Probab.</em> 22 (1990), 111--128.
+</li><li>
+Brown, T. C.; Pollett, P. K. Some distributional
+approximations in Markovian queueing networks. <em>Adv. in
+Appl. Probab.</em> 14 (1982), 654--671.
+</li><li>
+Brown, T. C.; Erdos, P.; Chung, F. R. K.; Graham, R. L.
+Quantitative forms of a theorem of Hilbert. <em>J. Combin.
+Theory Ser. A</em> 38 (1985), 210--216.
+</li></ul>
+
+</div>
+
+<?php 
+include "footer.php";
+?>

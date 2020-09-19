@@ -1,0 +1,1910 @@
+\documentclass[a5paper]{report}
+\usepackage[a5paper]{geometry}
+\typeout{create the Intro to LaTeX site}
+
+
+% Each web page produced by the following structure
+% % write the xxxx page
+% \begingroup
+% \typeout{Writing the xxxx page}
+% \def\xxxxmenu{<small>\itemize
+% \item <a href="\hash yyyy">yyyy</a>
+% \enditemize</small>}
+% \newwrite\MaCout
+% \immediate\openout\MaCout xxxx.html\relax
+% \MaCpagebegin{xxxx}
+% xxxx
+% \immediate\write\MaCout{
+% \chapter{xxxx}
+% } 
+% \MaCpageend 
+% \endgroup
+
+
+
+\makeatletter
+
+\def\MaChome{www.maths.adelaide.edu.au}
+\def\MaCshare{Share}
+\def\MaCfaxno{, Fax: (08) 8303 xxxx}
+\newcounter{usqenumi}
+\newcommand{\MaCamp}{&}
+\catcode`\~=12 % make tilde an ordinary character
+\catcode`\_=12 % make underscore an ordinary character
+\begingroup % define hash character
+\catcode`\#=12 \gdef\@hashchar{#} \gdef\hash{\@hashchar}
+\endgroup
+\begingroup % define ampersand character
+\catcode`\&=12 \gdef\@ampersandchar{&}
+\endgroup
+\begingroup % define at character
+\catcode`\@=12 \gdef\atchar{@}
+\endgroup
+\begingroup % define percent character
+\catcode`\%=12 \gdef\percent{%}
+\endgroup
+\begingroup % define dollar character
+\catcode`\$=12 \gdef\dollar{$}
+\endgroup
+\begingroup % define superscript character
+\catcode`\^=12 \gdef\hatch{^}
+\endgroup
+\begingroup % define slosh char
+\catcode`|=0 \catcode`\\=12 |gdef|slosh{\} 
+|endgroup
+
+\newcommand{\MaCpagebegin}[1]{
+% \renewcommand{~}{ }
+\renewenvironment{itemize}{^^J<ul>}{^^J</ul>}
+\renewenvironment{enumerate}{^^J<ol>}{^^J</ol>}
+\renewcommand{\newpage}{<p>}
+\renewcommand{\item}{^^J<li>}
+\newcommand{\url}[1]{<tt><a href="##1">##1</a></tt>}
+\renewcommand{\emph}[1]{<em>##1</em>}
+\renewcommand{\textsc}[1]{##1}
+\renewcommand{\textsf}[1]{<b>##1</b>}
+\renewcommand{\textbf}[1]{<b>##1</b>}
+\renewcommand{\texttt}[1]{<tt>##1</tt>}
+\renewcommand{\chapter}[1]{<h1 align=center>##1</h1>^^J}
+\renewcommand{\section}[1]{^^J<h2>##1</h2>^^J}
+\renewcommand{\subsection}[1]{^^J<h3>##1</h3>^^J}
+\renewcommand{\paragraph}[1]{<p>^^J<b>##1</b>&nbsp;}
+\renewcommand{\%}{\@percentchar}
+\renewcommand{\&}{\@ampersandchar}
+\renewcommand{\S}{\@ampersandchar\@hashchar167;}
+\renewcommand{\ }{\@ampersandchar nbsp;}
+\renewcommand{\,}{ }
+% \renewcommand{\LaTeX}{L<sup>A</sup>T<sub>E</sub>X}
+\renewcommand{\LaTeX}{LaTeX}
+\def\par{^^J<p>}
+\renewenvironment{center}{^^J<center>}{^^J</center>}
+\renewenvironment{tabular}[1]%
+{^^J<table border=1><tr><td>}{</td></tr>^^J</table>}
+\renewcommand{\\}{</td></tr>^^J<tr><td>}
+\renewcommand{\hline}{}
+\renewcommand{\MaCamp}{</td><td>}
+\immediate\write\MaCout{<html>}
+\immediate\write\MaCout{<head>}
+\immediate\write\MaCout{<title>LaTeX: #1</title>}
+\immediate\write\MaCout{<META NAME="Author" CONTENT="Tony Roberts">}
+\immediate\write\MaCout{<META NAME="Description"
+CONTENT="LaTeX #1">}
+\immediate\write\MaCout{<link rel="stylesheet"
+href="\MaCshare/ajr.css" title="My web CSS" type="text/css">}
+\immediate\write\MaCout{</head>}
+\immediate\write\MaCout{<body><a name="top"></a>}
+\immediate\write\MaCout{<table id="page">}
+\immediate\write\MaCout{<tr id="header"><td id="left">
+<img src="\MaCshare/tonyroberts.jpg" alt="Tonys picture">
+</td><td id="center">
+<h1>\LaTeX: from quick and dirty to style and finesse</h1>
+<H2>by Prof Tony Roberts</H2>
+</td><td  id="right">
+<img src="\MaCshare/tt1.gif" alt="School Image">
+</td></tr>}
+\immediate\write\MaCout{
+<tr class="rule"><td colspan="3"></td></tr>
+<tr class="space"><td colspan="3" ></td></tr>}
+\immediate\write\MaCout{
+<tr> <td valign="top"> <div id="nav-links">  <ul>
+^^J<li><a href="index.html"\MaChomehelp>\LaTeX\ Intro Home</a>
+^^J<li><a href="ltxqstart.html"\MaCqstarthelp>Quick start</a>
+\qstartmenu
+^^J<li><a href="ltxenviron.html"\MaCenvironhelp>Environments</a>
+\environmenu
+^^J<li><a href="ltxxref.html"\MaCxrefhelp>Cross referencing</a>
+\xrefmenu
+^^J<li><a href="ltxmaths.html"\MaCmathshelp>More mathematics</a>
+\mathsmenu
+^^J<li><a href="ltxfloats.html"\MaCfloatshelp>Figures to seminars</a>
+\floatsmenu
+^^J<li><a href="ltxwrite.html"\MaCwritehelp>Write right</a>
+\writemenu
+^^J<li><a href="ltxties.html"\MaCtieshelp>Art of ties</a>
+^^J<li><a href="ltxusecol.html"\MaCcolhelp>Use colour</a>
+^^J<li><a href="ltxbanned.html"\MaCbanhelp>Banned LaTeX!</a>
+^^J<li class="title"><em>Home pages</em> <ul>
+^^J<li><a href="http://\MaChome/anthony.roberts"\MaCtonyhelp >Tony
+Roberts</a>
+^^J<li><a href="http://\MaChome"\MaCmachelp>Mathematical Sciences</a>
+^^J<li><a href="http://www.adelaide.edu.au"\MaCusqhelp>University of Adelaide</a>
+</ul> </ul> </div> </td>}
+\immediate\write\MaCout{<td colspan="2"><div id="content">}
+} % end MaCpagebegin
+\newcommand{\MaCpageend}{
+\immediate\write\MaCout{</div>}
+\immediate\write\MaCout{<div class="footer"><small> Copyright <a
+href="mailto:anthony.roberts@adelaide.edu.au">Tony Roberts</a>, School Mathematical
+Sciences, University of Adelaide, Australia; prepared \today, from
+<tt>\jobname.tex</tt> <br> CRICOS: ??</small></div>}
+\immediate\write\MaCout{</td> </tr> </table> </body> </html>}
+\immediate\closeout\MaCout
+} % end MaCpageend
+
+
+% start with blank submenus
+\def\qstartmenu{}
+\def\environmenu{}
+\def\xrefmenu{}
+\def\mathsmenu{}
+\def\floatsmenu{}
+\def\writemenu{}
+
+% help messages for the menu
+\def\MaChomehelp{, title="Introduction to why LaTeX, Contents, and
+other info sources"}
+\def\MaCqstarthelp{, title="Document classes, Sectioning, Titles, Font
+styles, Page headings and footings"}
+\def\MaCenvironhelp{, title="Quotation/verse, Abstract,
+Itemize/enumerate, Tabular/center, Verbatim, Simple mathematics"}
+\def\MaCxrefhelp{, title="Table of contents, Footnotes, Labels and
+references, Hypertext linking, Bibliography, BibTeX et al, Large
+documents"}
+\def\MaCmathshelp{, title="Relations, Delimiters, Spacing, Arrays,
+Equation arrays, Functions, Accents, Command definitions, AMS LaTeX"}
+\def\MaCfloatshelp{, title="Tables, Figures, Packages, Make your own
+style, Seminar style"}
+\def\MaCwritehelp{, title="Write well, Structure your writing on a
+pyramid organisation, First and last, or the rule of three,
+Conclusion"}
+\def\MaCtieshelp{, title="Use non-breaking spaces very well"}
+\def\MaCcolhelp{, title="Primary colours, X11 colours, notes"}
+\def\MaCbanhelp{, title="Avoid these LaTeX commands"}
+\def\MaCtonyhelp{, title="my home page with lots of wonderful stuff"}
+\def\MaCmachelp{, title="Department of Mathematics and Computing web
+home"}
+\def\MaCfachelp{, title="The Faculty of Sciences web home"}
+\def\MaCusqhelp{, title="The university's web home"}
+
+\newcommand{\makehomepage}{\begingroup
+\typeout{Writing an html home page}
+\newwrite\MaCout
+\immediate\openout\MaCout home.html\relax
+\MaCpagebegin{Home}
+\immediate\write\MaCout{\MaChomeinfo}
+\MaCpageend
+\endgroup} % end of makehomepage
+
+\makeatother
+
+
+\begin{document}
+    
+    \title{Just progress messages in this document}
+    \author{Tony Roberts}
+    \maketitle
+    
+    
+    
+% write the home page
+\begingroup
+\typeout{Writing an html home page}
+\newwrite\MaCout
+\immediate\openout\MaCout index.html\relax
+\MaCpagebegin{home page of this introduction}
+Author and award.
+\immediate\write\MaCout{
+<TABLE><TR><TD>
+<H3>School of Mathematical Sciences</H3>
+<H3>University of Adelaide</H3>
+<H3>South Australia</H3>
+</TD><td align=center>
+<font size=-1><a href=http://www.links2go.com/topic/LaTeX>
+<img alt="Key Resource" src=key.gif width=121 height=121 border=0><br>
+<b><i>Links<sup><small>2</small></sup>Go</i> Key Resource</b><br>
+\LaTeX\ Topic</a></font></td>
+</TR></TABLE>
+}
+Now the reasons for using LaTeX.
+\immediate\write\MaCout{<a name="whylatex"></a>
+\section{Why \LaTeX?}
+\itemize 
+
+\item It is arguably the premier typesetting package in the world.
+Knuth and Lamport have distilled for us the accumulated wisdom of
+generations of printers.
+
+\item The TeX system typesets documents with line and page breaks to
+maximise readability and appeal by avoiding as far as possible poor
+breaks and hyphenation.
+
+\item The defaults of \LaTeX\ implement best practice for readability
+of your content, see <a
+href="http://www.ascilite.org.au/ajet/ajet7/priestly.html">Instructional
+typographies using desktop publishing techniques to produce effective
+learning and training materials</a>
+
+\item It is simply the best package for documents containing
+mathematics.  <Q>TeX can print virtually any mathematical thought that
+comes into your head, and print it beautifully.</Q>  [Herbert S. Wilf,
+1986]
+
+\item It is free on virtually every computer in the world.
+
+\item It is portable---stick to the standard commands and everyone can
+read and exchange documents.
+
+\item The source file is purely alphanumeric so it can be read by eye
+or posted by e-mail with no problems associated with different versions
+or binary files.
+
+\item \LaTeX\ has the reputation of being hard, but in fact it is
+effectively the same as HTML!
+
+\item Weakness: \LaTeX\ is not usually WYSIWYG (although you can use
+LyX). 
+\enditemize
+
+Note that the 'X' in \LaTeX\ or TeX is pronounced as a hard
+sound as in the 'ck' in 'teck'.
+
+In a document of this size it is not possible to include everything
+that you might need to know, and if you intend to make extensive use of
+the \LaTeX\ you should refer to a more complete reference. Instead this is
+an idiosyncratic introduction to the basic elements and philosophy of using
+\LaTeX. 
+
+Online is a fairly complete <A HREF="Others/latex2e.html">\LaTeX2e
+reference (162k,html)</A>, suitable for browsing, searching or access
+via its index.  This reference document is the most useful thing to
+keep handy on your disk while you become more proficient with \LaTeX.
+}
+The table of contents.
+\immediate\write\MaCout{
+\section{Contents}
+Use the menu at the top-left to navigate to the following sections.
+\enumerate
+\item A quick and dirty start
+
+\item Environments
+
+\item Cross referencing
+
+\item More mathematics
+
+\item Figures, tables and seminars
+
+\item Write right for readers
+
+\item and possibly more, but not yet.
+\endenumerate}
+Other info.
+\immediate\write\MaCout{<a name="other"></a>
+\section{Other useful information sources}
+\itemize 
+\item Jon Warbrick's <em><A HREF="Others/essential.pdf">Essential \LaTeX\
+(177k,pdf)</A></em> is a useful introduction to simple documents.
+
+\item But for a quick introduction to mathematics you will also need
+<em><a href="Others/el2emath.pdf">Essential Mathematical \LaTeX</a></em>
+(267k).
+
+\item  <a href="Others/lshort2e.pdf">The Not so Short 
+Introduction to \LaTeX2e (850k,pdf)</a> by Tobias Oetiker et al, is a more 
+complete introduction but somewhat longer.
+
+\item But I prefer <em><a href="Others/maltby.pdf">An introduction to
+TeX and friends</em></a> (436k) by Gavin Maltby.
+
+\item Graham Williams compiles brief descriptions of each of the many
+support packages and options for \LaTeX. See the vast <A
+HREF="Others/full.html">full (2004 version, 2,500 kbytes)</a> or <a
+href="http://www.ctan.org/tex-archive/help/Catalogue/brief.html">brief
+(up-to-date, 500 kbytes)</a> <em>TeX Catalogue Online</em>
+
+\item The Comprehensive TeX Archives (CTAN sites), at various places
+around the world, provides just about everything you ever wanted to
+know about \LaTeX\, and all its associated software.  One site is at
+the Australian <A HREF="http://mirror.aarnet.edu.au/pub/CTAN">AARNET
+mirror in Brisbane</A>.  The CTAN sites are so comprehensive that one
+rarely can figure out where to go to find the desired information.  However,
+search the site and the catalogue via the <A
+HREF="http://tug.ctan.org/find.html">Search CTAN</A> web page.
+\enditemize 
+} 
+\MaCpageend 
+\endgroup
+
+
+% write the quick start page
+\begingroup
+\typeout{Writing the quick start page}
+\def\qstartmenu{<small>\itemize
+\item <A HREF="\hash Document">Document classes</A>
+\item <A HREF="\hash Sectioning">Sectioning</A>
+\item <A HREF="\hash Titles">Titles</A>
+\item <A HREF="\hash Font">Font styles</A>
+\item <A HREF="\hash Page">Page headings/footings</A>
+\item <A HREF="\hash End">Summary</A>
+\enditemize</small>}
+\newwrite\MaCout
+\immediate\openout\MaCout ltxqstart.html\relax
+\MaCpagebegin{Quick and dirty start}
+Quick and dirty start.
+\immediate\write\MaCout{
+\chapter{A quick and dirty start}
+I demonstrate \LaTeX\ on an example document.  Let us start with the
+plain text version of an article I wrote on fractals, \emph{The
+importance of beings fractal}.  In practise, you create a document in
+\LaTeX\ from the outset.  <P>} 
+Document.
+\immediate\write\MaCout{<A NAME="Document"></a>
+\section{Document classes}
+
+Saving part of the article as text looks like \url{Src/fractals00.tex},
+with all formatting, mathematics and figures lost.  We restore and
+improve the formatting and the mathematics to produce a superb <A
+HREF="Src/fractals.pdf">final document (pdf,120K).</A>
+
+Around the document text that you wish to typeset, you need 
+^^J<PRE>\slosh documentclass[12pt]{article}
+^^J\slosh begin{document}
+^^J...
+^^J\slosh end{document}
+^^J</PRE>
+as in \url{Src/fractals01.tex} which we
+now typeset.
+
+\paragraph{Use for processing}
+<dl>
+    <dt>Windows PCs <dd>editors <a
+    href="http://www.texniccenter.org/front_content.php?idcat=26">
+    TeXnicCenter</a> (free) or <a
+    href="http://www.winshell.de">Winshell</a> (free) or <a
+    href="http://www.winedt.org/">WinEdt</a> (shareware) and the \LaTeX\
+    processor <a href="http://www.miktex.org">mikTeX</a> (free)
+    
+    <dt>Unix <dd>editors <TT>Emacs+AuCTeX</TT> (free) and the \LaTeX\ processor tetex (free)
+    
+    <dt>Macs <dd>perhaps TeXShop or Texworks
+</dl>
+
+\paragraph{Restore the paragraph structure}
+by introducing a <I>blank line</I> to indicate to \LaTeX\ where one
+paragraph ends and another begins, as in \url{Src/fractals02.tex}.  All other line breaks
+in the source are treated as simply blank characters.
+
+\paragraph{Other document classes}
+are <TT>report</TT> (for long articles such
+as a dissertation), <TT>book</TT>, and <TT>letter</TT>.
+
+\paragraph{Other options}
+are the smaller sizes of fonts: <TT>[11pt]</TT>; or none 
+at all which gives 10pt.  Additional options may be provided, such as 
+<TT>a4paper</TT> or <TT>twocolumn</TT>, within the [] and separated by 
+commas.
+<P>For most purposes I recommend one of the following:</P>
+\itemize 
+\item <TT>\slosh documentclass[12pt,a4paper]{article}</TT> for
+many purposes;
+\item save paper with <TT>\slosh documentclass[a4paper,twocolumn]{article}</TT> for an easily readable newspaper type format;
+\item  e-book friendly typesetting, and to draft onscreen easily, and save paper by printing two pages per sheet of A4 paper, use <TT>\slosh documentclass[12pt,a5paper]{article}</TT>, followed by \texttt{\slosh usepackage[a5paper,margin=6mm]{geometry}}.  This gives the same line width as the default for a4paper.
+\enditemize 
+As you go through this, try some of these alternatives to see how \LaTeX\ 
+easily reformats the document to changing needs.<p>
+}
+Sectioning.
+\immediate\write\MaCout{<A NAME="Sectioning"></a>
+\section{Sectioning}
+<P>The sections and subsections need to be typeset clearly. These are indicated
+by the </P>
+^^J<PRE>\slosh section{section-name}</PRE>
+<P>and </P>
+^^J<PRE>\slosh subsection{subsection-name}</PRE>
+<P>commands as in \url{Src/fractals03.tex}.</P>
+
+<P> Note that \LaTeX\ automatically numbers the sections and subsections,
+so do not number them yourself.</P>
+
+<P> Observe the use of the backslash or 'slosh' to introduce
+a command in \LaTeX, followed by an argument in enclosed in braces.</P>
+
+<P> Other sectioning commands are <TT>\slosh chapter</TT>, <TT>\slosh
+subsubsection</TT>, and <TT>\slosh paragraph</TT>.</P>
+}
+Titles.
+\immediate\write\MaCout{<A NAME="Titles"></a>
+\section{Titles}
+There are also special commands for a title. The format is 
+^^J<PRE>\slosh title{title-text}
+^^J\slosh author{yours truly\slosh \slosh address}
+^^J\slosh maketitle
+^^J</PRE>
+as in \url{Src/fractals04.tex}.
+<P> Observe that \LaTeX\ uses today's date. Override with the
+<TT>\slosh date{any-date}</TT> command anywhere before the <TT>\slosh maketitle</TT>.  (Good practice is to use \texttt{\slosh date}, comment on the version, and keep the version history as comments.)</P>
+<P> Note that not only are the slosh, '\slosh ', and the braces, '{'
+and '}', special characters to \LaTeX, so is the percent sign
+'\percent'. It causes \LaTeX\ to ignore the rest of the line, so we can
+comment the document if needed. Other special characters are: </P>
+\itemize 
+\item the dollar, '$'; 
+\item the ampersand, '&amp;'; 
+\item the underscore, '_'; and 
+\item the hash, '\hash'. 
+\enditemize 
+
+<P>To actually get any of these last seven characters (but not &quot;\slosh &quot;)
+to appear in the final typeset document, just precede them by a slosh (as
+now seen in the name of the department).</P>
+
+<P> The double slosh '\slosh \slosh' is reserved to force a line break in certain 
+circumstances---use it sparingly.  </P>
+}
+Font styles.
+\immediate\write\MaCout{<A NAME="Font"></a>
+\section{Font styles}
+
+<P>\LaTeX\ typesets most of a document in (Computer Modern) roman font. Section
+and subsection titles are typeset in bold face. \LaTeX\ has other font styles
+available. These are invoked by the following commands with argument the
+text to be affected: </P>
+
+\itemize 
+\item <TT>\slosh emph{...}</TT> invokes italic for emphasis (and sometimes addresses);
+\item <TT>\slosh texttt{...}</TT> typesets its argument in a fixed width teletype-like
+font, useful for code fragments and the like; 
+\item whereas if needed, <TT>\slosh textbf{...}</TT> and <TT>\slosh textnormal{...}</TT>
+typesets bold face and the normal roman respectively. 
+\enditemize 
+
+These font styles are mainly used in the following way: 
+^^J<PRE>\slosh emph{this is in italic}, but this is not.</PRE>
+as in \url{Src/fractals05.tex}.
+
+Note: these style changes are <I>cumulative</I> so you can have italic
+bold by <TT>\slosh emph{\slosh textbf{...}}</TT> (provided the fonts
+are actually available on your system!).
+}
+Headings and footings.
+\immediate\write\MaCout{<A NAME="Page"></a>
+\section{Page headings and footings}
+
+\LaTeX's default is to number each page, centered in the footing.  A
+more descriptive running page header is obtained by including the
+command
+^^J<PRE>\slosh pagestyle{headings}</PRE>
+in the preamble (that bit before the <TT>\slosh begin{document}</TT> in
+which the title and author may also go), as in
+\url{Src/fractals06.tex}.  To see the headings we need a wider margin, at least 13mm.
+
+You may design your own running header using <TT>\slosh
+pagestyle{myheadings}</TT> in conjunction with the <TT>\slosh
+markright{some-text}</TT> command.
+}
+End.
+\immediate\write\MaCout{<A NAME="End"></a>
+\section{Summary}
+Leave the details of typesetting to \LaTeX. Just tell \LaTeX\ the
+\emph{logical structure} of your document and it will do the rest.
+Resist the temptation to meddle unless you have a very good reason.
+
+
+(The same advice holds for HTML---markup the logical structure.)
+
+For example: you are tempted to use all capitals; ask why?  For a
+section header use <tt>\slosh section</tt>, for emphasis use <tt>\slosh
+emph</tt>, for a three letter acronym (TLA) perhaps, but <tt>\slosh
+textsc{tla}</tt> is better.  For another example: you are tempted to
+underline; ask why?  For emphasis use <tt>\slosh emph</tt>, for a web
+address use the url package and <tt>\slosh url</tt>.  Avoid habits
+generated by 19th century technology of typewriters; move to the logic
+of the 21st century.
+
+<q>The only thing that never looks right is a rule.  There is not in 
+existence a page with a rule on it that cannot be instantly and obviously 
+improved by taking the rule out.</q>  [George Bernard Shaw, <EM>The 
+Dolphin</EM>, 1940]
+}
+\MaCpageend 
+\endgroup
+
+
+% write the environments page
+\begingroup
+\typeout{Writing the environments page}
+\def\environmenu{<small>\itemize
+\item <a href="\hash Quotation">Quotation/verse</a>
+\item <a href="\hash Abstract">Abstract</a>
+\item <a href="\hash Itemize">Itemize/enumerate</a>
+\item <a href="\hash Tabular">Tabular/center</a>
+\item <a href="\hash Verbatim">Verbatim</a>
+\item <a href="\hash smath">Simple maths</a>
+\item <a href="\hash summary">Summary</a>
+\item <a href="\hash SectionEnvironments">Appendix for the purists</a>
+\enditemize</small>}
+\newwrite\MaCout
+\immediate\openout\MaCout ltxenviron.html\relax
+\MaCpagebegin{Environments}
+Environments.
+\immediate\write\MaCout{
+\chapter{Environments}
+\LaTeX\ has a multitude of logical structures to work with, called
+'environments.' Use them.<P>}
+Quotation.
+\immediate\write\MaCout{
+<A NAME="Quotation"></A>
+\section{Quotation and verse}
+<P>An environment is established by a <TT>\slosh begin{}...\slosh
+end{}</TT> pair.  For example, a quotation may be typeset using the
+<B>quote</B> environment (Note: for such a displayed quote we do
+<em>not</em> use quote marks, quote marks are only used for short quotes
+typeset inline.)
+</P>
+^^J<PRE>\slosh begin{quote}
+^^J...
+^^J\slosh end{quote}</PRE>
+<P>or a passage of verse may be typeset by the <B>verse</B> environment
+</P>
+^^J<PRE>\slosh begin{verse}
+^^J...
+^^J\slosh end{verse}</PRE>
+<P>See \url{Src/fractals11.tex} and the use
+of <TT>\slosh\slosh</TT> to specify line breaks in the verse
+environment.  </P> <P>\LaTeX\ knows that it is good style to leave a
+wider space after a full-stop at the end of a sentence.  However, this
+means that sometimes you have to tell \LaTeX\ that some full-stop/space
+combinations are not at the end of a sentence, one example being
+between a person's initials.  As in L.~F. Richardson
+and A.~J. Roberts, a tilde does two things: </P>
+\itemize 
+\item it typesets a standard width space, and 
+\item it tells \LaTeX\ never to break a line at that space. 
+\enditemize 
+<P>
+The tilde is used to tie text in other circumstances such as
+<TT>Figure~2</TT>, <TT>equation~(3)</TT>, and <TT>Section~3.1</TT>.  <A
+HREF="ltxties.html">Knuth describes fully where to use such
+ties.</A></P>}
+
+Abstract.
+
+\immediate\write\MaCout{
+\section{Abstract}
+<A NAME="Abstract"></A>
+<P>The abstract environment does a little more for you in that </P>
+^^J<PRE>\slosh begin{abstract}
+^^J...
+^^J\slosh end{abstract}</PRE>
+<P>also typesets a natty little title. 
+See \url{Src/fractals12.tex}.</P>}
+Itemize and enumerate.
+\immediate\write\MaCout{
+<A NAME="Itemize"></A>
+\section{Itemize and enumerate}
+<P>Extremely useful are the list environments of which I describe two.
+Use them wherever you have a sequence of steps or a list of things. The
+format for a bulleted list is </P>
+^^J<PRE>\slosh begin{itemize}
+^^J\slosh item ...
+^^J\slosh item ...
+^^J...
+^^J\slosh end{itemize}</PRE>
+<P>The format for a numbered list is </P>
+^^J<PRE>\slosh begin{enumerate}
+^^J\slosh item ...
+^^J\slosh item ...
+^^J...
+^^J\slosh end{enumerate}</PRE>
+<P>See \url{Src/fractals13.tex}. Note that
+blank lines between items have no effect.</P>
+<P>Lists may be embedded within lists to a 
+maximum of four nested levels.</P>}
+Tabular.
+\immediate\write\MaCout{
+<A NAME="Tabular"></A>
+\section{Tabular and center}
+<P>Often we want to display information in a table; \LaTeX\ has the <B>tabular</B>
+environment for this. </P>
+<P>The tabular environment is a more sophisticated environment in that 
+it has an argument as well as material in the body of the environment.  
+The format of the environment is </P>
+^^J<PRE>\slosh begin{tabular}{argument}
+^^J\slosh hline
+^^J... &amp; ... &amp; ... \slosh\slosh
+^^J\slosh hline
+^^J... &amp; ... &amp; ... \slosh\slosh
+^^J... &amp; ... &amp; ... \slosh\slosh
+^^J... &amp; ... &amp; ... \slosh\slosh
+^^J\slosh hline
+^^J\slosh end{tabular}</PRE>
+
+<P>for a table of four rows and three columns (with horizontal lines
+around the heading line and also at the end of the table). </P>
+
+\itemize 
+\item The special &amp; character separates the different items in any one
+row. 
+
+\item The '\slosh\slosh' separates different rows. 
+
+\item The argument of the tabular environment is a string made up of a 
+letter for each column of the table, either <TT>c</TT>, <TT>l</TT> or 
+<TT>r</TT> denoting a centred, left-justified or right-justified 
+column respectively---the letters optionally separated by a 
+'|' if you desire vertical lines between columns.  
+
+\item The optional <TT>\slosh hline</TT>'s draw horizontal lines between the rows
+of the table. <em>Use <TT>\slosh hline</TT>'s and |'s sparingly---let the table structure
+work for you at the lowest level.</em>
+\enditemize 
+
+<P>The fractal document does not have a table at present, but we put one
+in at the end listing seven geometric objects and their fractal dimension,
+see \url{Src/fractals14.tex}. Note that the
+table is put inside a <B>center</B> environment: </P>
+^^J<PRE>\slosh begin{center}
+^^J...
+^^J\slosh end{center}</PRE>
+<P>which centres the enclosed material across the width of the page (note
+the American spelling of center). </P>}
+Verbatim.
+\immediate\write\MaCout{
+<A NAME="Verbatim"></A>
+\section{Verbatim}
+<P>Computer code, no matter what special characters it has, may be listed
+with the <B>verbatim</B> environment: </P>
+^^J<PRE>\slosh begin{verbatim}
+^^J...
+^^J\slosh end{verbatim}</PRE>
+<P>All characters and line breaks within the body of this environment 
+are reproduced in the fixed width font.  
+See \url{Src/fractals15.tex} where I typeset the 
+\LaTeX\ commands needed to typeset the table of dimensions!  </P>
+<P>(More powerful code listing environments are available in the 
+<TT>moreverb</TT> package.) </P>}
+Simple maths.
+\immediate\write\MaCout{
+<A NAME="smath"></A>
+\section{Simple Mathematics}
+<P>Mathematics is treated by \LaTeX\ in a fashion completely different from
+ordinary text. The mathematics mode is invoked by specific environments.
+</P>
+<DL>
+
+<DT><B>math</B>
+<DD>Mathematics to be typeset <I>inline</I> with the text must be contained
+in the environment 
+^^J<PRE>\slosh begin{math}...\slosh end{math}</PRE>
+<P>A universal bad habit is to use matching dollar signs </P>
+^^J<PRE>\dollar...\dollar</PRE>
+<P>to invoke the math environment for inline mathematics; warning: an unmatched
+\dollar-sign causes incomprehensible error messages.</P>
+<P>See \url{Src/fractals16.tex} and observe the 
+mathematics in section 2 when typeset.  Note the different font used 
+for mathematical letters (called math italic);  
+\emph{all mathematics is typeset in a math environment} (even if it is 
+just a single letter), and \emph{not} in the roman font that is the 
+default for text.</P>
+<P>Also note that in any mathematics environment, blank characters are
+totally ignored.</P>
+
+<DT><B>scripts and symbols</B>
+<DD>Subscripts and superscripts are typeset in a mathematics environment
+using the underscore and the caret character respectively. For example,
+^^J<PRE>d\hatch{-1}</PRE>
+<P>and</P>
+^^J<PRE>d\hatch2</PRE>
+<P>will typeset '-1' and '2' as superscripts to 
+<I>d</I>, see \url{Src/fractals17.tex}.  
+Similarly for subscripts indicted by "_".  Single character scripts 
+need no enclosing braces.</P>
+<P>\LaTeX\ has an enormously wide variety of symbols to help typeset 
+mathematics.  For example, in <TT>fractals17.tex</TT> I  used: 
+</P>
+\itemize 
+\item <TT>\slosh times</TT> to get a times sign; 
+\item <TT>\slosh propto</TT> to get a proportional to symbol; 
+\item <TT>\slosh pi</TT> to get the greek letter pi. 
+\enditemize 
+<P>See the menus in <I>Alpha</I>, or the <I>Essential Mathematics</I> 
+document, for an idea of the wide range of symbols available; note in 
+particular the whole of the greek alphabet.  The names of these 
+symbols have to be followed by a non-alphabetic character, often a 
+blank.</P>
+
+<DT><B>displaymath and frac</B>
+<DD>Many mathematical equations and expressions are so complicated or so
+important that they should not be typeset inline with the text, but they
+should be displayed on a line all by themselves. Achieve this with
+the environments: 
+^^J<PRE>\slosh begin{displaymath}
+^^J...
+^^J\slosh end{displaymath}</PRE>
+or 
+^^J<PRE>\slosh begin{equation}
+^^J...
+^^J\slosh end{equation}</PRE>
+<P>The difference being that the last also typesets an equation number
+to the right of the mathematics. See \url{Src/fractals18.tex}.</P>
+<P>Also observe the use of the <TT>\slosh frac</TT> command, with two
+arguments enclosed in braces, for producing fractions within
+mathematics.</P>
+</DL>
+<a name="summary"></a>
+\section{Summary}
+The environments described are among the most common ones needed for
+all sorts of documents.  Based upon hundreds of years of printers
+experience distilled by Knuth and Lamport, \LaTeX\ knows the generic
+best way to typeset the different sorts of information.  
+
+For example, the \LaTeX\ document-class <tt>refart</tt> typesets articles
+according to Wendy Priestly's <a
+href="http://www.ascilite.org.au/ajet/ajet7/priestly.html">best
+practice for instruction</a>.  After downloading
+\url{Others/refart.cls}, simply change the document-class of
+\url{Src/fractals18.tex} from <tt>article</tt> to <tt>refart</tt> to
+see the style (use \url{Others/refrep.cls} for long reports).
+
+Before looking at more environments and commands, the next step is to
+use \LaTeX\ to automatically provide us with cross-references such as
+a table of contents.}
+
+\immediate\write\MaCout{
+\section{Appendix for the purists}
+<A NAME="SectionEnvironments"></A>
+<P>For the purist who prefers environments to commands, there are sectioning environments corresponding of the sectioning commands from section to subparagraph.  For example, invoke the section environment with </P>
+^^J<PRE>\slosh begin{section}{Some section title}
+^^J...
+^^J\slosh end{section}</PRE>
+<P>which is equivalent to the section command</P>
+^^J<PRE>\slosh section{Some section title}</PRE>
+<P>but 'better' in that the environment delineates the end of the section.</P>}
+
+\MaCpageend 
+\endgroup
+
+
+
+
+
+% write the xref page
+\begingroup
+\typeout{Writing the xref page}
+\def\xrefmenu{<small>\itemize
+\item <A HREF="\hash Table">Table of contents</A>
+\item <A HREF="\hash Footnotes">Footnotes</A>
+\item <A HREF="\hash Labels">Labels and references</A>
+\item <A HREF="\hash Hypertext">Hypertext linking</A>
+\item <A HREF="\hash Bibliography">Bibliography</A>
+\item <A HREF="\hash BibTeX">BibTeX et al</A>
+\item <A HREF="\hash Large">Large documents</A>
+\item <a href="\hash summary">Summary</a>
+\enditemize</small>}
+\newwrite\MaCout
+\immediate\openout\MaCout ltxxref.html\relax
+\MaCpagebegin{Cross referencing}
+Cross referencing
+\immediate\write\MaCout{
+\chapter{Cross referencing}
+One of the strengths of \LaTeX\ is its capability to cross-reference 
+through information it places in auxiliary files.  Done properly, this 
+feature permits one to extract, insert, move and modify large and 
+small chunks of the document around <em>without</em> having to manually 
+renumber cross-references, it is all done automatically.<P>
+}\immediate\write\MaCout{<A NAME="Table"></a>
+\section{Table of contents}
+One of the easiest things to do is to insert a table of contents into
+a document simply by placing the \LaTeX\ command 
+^^J<PRE>\slosh tableofcontents</PRE>
+at the desired location in the document; see \url{Src/fractals21.tex}.<P>
+The first time this is \LaTeX'ed the table will not appear because the 
+information is being stored in the associated <TT>.toc</TT> file.  
+Subsequent \LaTeX'ing will typeset the table of contents.<P>
+The <TT>minitoc</TT> package may be used to insert a Table of Contents
+of just the current chapter or Part in a book or report. Very useful to
+help map out the parts of the dissertation for a reader.  See the 
+scheme laid out in the skeleton file \url{Src/minitoceg.tex}.<P>
+}\immediate\write\MaCout{<A NAME="Footnotes"></a>
+\section{Footnotes}
+Unlike most publishers, \LaTeX\ easily handles footnotes with 
+contemptuous ease.  Just use the 
+^^J<PRE>\slosh footnote{some-text}</PRE>
+command with one argument being the text of the footnote. As seen in
+\url{Src/fractals22.tex}, this will typeset
+a numerical flag at the location of the footnote command and will place
+the footnote text at the bottom of the page.<P>
+}\immediate\write\MaCout{<A NAME="Labels"></a>
+\section{Labels and references}
+Somewhat more sophisticated are references to equations and sections.
+First one has to label them as in 
+^^J<PRE>\slosh section{...}
+^^J\slosh label{sec-name}</PRE>
+or in 
+^^J<PRE>\slosh begin{equation}
+^^J...
+^^J\slosh label{eq-name}
+^^J\slosh end{equation}</PRE>
+which associates a string such as '<TT>sec-name</TT>' with 
+the number of the section, and a string such as 
+'<TT>eq-name</TT>' with the number of the equation.  See 
+\url{Src/fractals23.tex}.<P>
+Having created the labels, you refer to the objects using the
+<TT>\slosh ref{label-name}</TT> command as seen in <TT>fractals23.tex</TT>. Note
+the use of the command <TT>\slosh S</TT> to typeset a symbol for
+'section' and 'subsection', and the need to put
+parentheses around the equation number in its reference.
+<P>
+One also labels and refers to chapters, subsections, subsubsections,
+tables, figures, and enumerated lists.<P>
+\subsection{Drafts and electronic reading}
+When drafting a document, you often lose track of labels.  Further, you 
+want to read the document comfortably on screen rather than printing it.  
+These desires are solved by two packages.<p>
+First, <TT>\slosh usepackage{showkeys}</TT> in the preamble will cause
+names of labels to also appear in a (draft) printed document for your ready
+reference.<P>
+Second, <TT>\slosh usepackage[a5paper]{geometry}</TT> in the preamble will cause
+the document to be typeset with A5 paper size which is great for electronic
+reading.  See \url{Src/fractals23.tex} and the
+next section where we also incorporate hypertext links.<P>
+}\immediate\write\MaCout{<A NAME="Hypertext"></a>
+\section{Hypertext linking}
+A feature of \LaTeX\ is the ability to automatically insert 
+hypertext links within a document:
+\itemize 
+    \item the <TT>\slosh ref{}</TT> command puts in a clickable link to the referred 
+    object;
+    \item the <TT>\slosh label{}</TT> command automatically inserts a target;
+    \item  table of contents, footnotes, citations, etc all generate appropriate 
+    hyperlinks.
+\enditemize 
+It is wonderful, try it.  To get this feature just insert the command 
+<TT>\slosh usepackage{hyperref}</TT> at the end of the preamble.<P>
+\paragraph{Warning:}
+the <TT>.toc</TT> files generated with and without hyperref are 
+incompatible, so delete the current <TT>.toc</TT> file before using 
+hyperref (try it in the <TT>fractals23.tex</TT> document).
+<P>
+}\immediate\write\MaCout{<A NAME="Bibliography"></a>
+\section{Bibliography}
+A bibliography is handled as a sort of enumerated list with labels.<P>
+The following list like environment 
+^^J<PRE>\slosh begin{thebibliography}{99}
+^^J\slosh bibitem{bib-name1}  article-description1
+^^J
+^^J\slosh bibitem{bib-name2}  article-description2
+^^J
+^^J...
+^^J
+^^J\slosh end{thebibliography}</PRE>
+typesets the bibliography with the heading <B>References</B> and 
+associates the labels, the strings such as 
+'<TT>bib-name1</TT>', with the description of the article or 
+reference.  See the end of \url{Src/fractals24.tex}.<P>
+Hint: if you want the entry "References" to appear in the table-of-contents
+then put the line <TT>\slosh addcontentsline{toc}{section}{\slosh refname}</TT>
+at the start of thebibliography environment (use \texttt{\slosh bibname} instead 
+\texttt{\slosh refname} for reports or books).
+<P>
+Achieve citations in the text to the bibliography items by the
+command 
+^^J<PRE>\slosh cite{bib-name}</PRE>
+This typesets the number of the bibitem in square brackets as seen in
+\url{Src/fractals24.tex}.<P>
+Generally put a non-breaking space before the cite command as in <P>
+^^J<PRE>Mandelbrot~\slosh cite{Mandel}...</PRE>
+}\immediate\write\MaCout{<A NAME="BibTeX"></a>
+\subsection{The actual citation has no meaning}
+Avoid the odius perversion that is spreading through modern writing of using citations in your sentences in the form 'in [2]' or 'by [3]'.  A citation is just a pointer to more information. The bracketed number is \emph{not} to be part of the sentence.  The meaning of your sentences must be independent of whether the bracketed citation appears or not. 
+\itemize
+\item \emph{Bad} "\texttt{as expressed in the following ditty by~\slosh cite{Rich}.}"
+\item \emph{Good} "\texttt{as expressed in the following ditty by L.~F. Richardson~\slosh cite{Rich}.}"
+\item \emph{Bad} "\texttt{correlation coefficient, refer to \slosh cite{zim1986}}"
+\item \emph{Good} "\texttt{correlation coefficient~\slosh cite{zim1986}}"
+\enditemize
+}\immediate\write\MaCout{<A NAME="BibTeX"></a>
+\section{BibTeX et al.}
+The basic bibliography environment is fine for your first project report.
+However, in time you develop enough so that you want to keep one central
+database of all your references which you then access via the <TT>\slosh cite</TT>
+command in any document you prepare.<P>
+\itemize 
+\item First you prepare your database, say <TT>ajr.bib</TT>, consisting of
+records such as
+^^J<PRE>\atchar article{Roberts94a,
+^^J   author =   {A. J. Roberts},
+^^J   journal =  {Australasian Science},
+^^J   month =    apr,
+^^J   title =    {The importance of beings fractal},
+^^J   year =     1994,
+^^J   pages =    23,
+^^J}</PRE>
+or
+^^J<PRE>\atchar article{Roberts95b,
+^^J   author =  {A. J. Roberts and A. Cronin},
+^^J   journal = {Physica A},
+^^J   pages =   {867--878},
+^^J   title =   {Unbiased estimation of multi-fractal
+^^J              dimensions of finite data sets},
+^^J   volume =  233,
+^^J   year =    1996,
+^^J}</PRE>
+The program <TT>JabRef</TT> appears good for 
+preparing and maintaining such a database; although I use BibDesk on a 
+Macintosh.<P>
+\item Then whenever you prepare a document, include the commands 
+^^J<PRE>\slosh bibliographystyle{plain}
+^^J\slosh bibliography{ajr}</PRE>
+instead of thebibliography environment. Use <TT>\slosh cite{...}</TT> as normal
+within the document.
+<P>
+\item Lastly, after running \LaTeX, execute the program <B>bibtex</B> (it 
+will look in the <TT>.aux</TT> file to determine what references are 
+needed) which creates a <TT>.bbl</TT> file that later runs of \LaTeX\ 
+will read to form the bibliography.  This sounds complicated, but it 
+is all worth it.
+<P>
+\enditemize 
+There are also publicly available databases of <TT>.bib</TT> files 
+covering specialist areas of research compiled by interested people.  For 
+example there is one for dynamical systems.<P>
+\subsection{Some people use a Harvard style}
+Many people need to know how to use a Harvard style of citations.  The one big advantage of Harvard style is that \emph{the citations are mostly invariant}: "Smith (1987)" means the same (mostly) in each article that a reader reads; whereas "Smith [13]" means different things in different articles, and conversely.  In 
+\LaTeX\ obtain a Harvard style with the same format for the <TT>.bib</TT> data 
+files, and very similar commands in the document.  
+\itemize 
+    \item In the preamble put <TT>\slosh usepackage{natbib}</TT> (get it
+    from a CTAN site if your system does not have the package).
+    \item In the place you want the bibliography put 
+    \texttt{\slosh bibliographystyle{agsm}} then \texttt{\slosh
+    bibliography{ajr}} as before but now using the AGSM bibtex style
+    instead of the default plain style.
+    \item Then to get the following citations use the given command
+    \itemize
+    \item "Roberts & Cronin (1996)" use <TT>\slosh cite{Roberts95b}</TT>;
+    \item "(Roberts & Cronin, 1996)" use <TT>\slosh cite[]{Roberts95b}</TT>;
+    \item this form also typesets an afterword, for example, for "(Roberts
+    & Cronin, 1996, p.15)" use <TT>\slosh cite[p.15]{Roberts95b}</TT>;
+%    \item and a foreword example, "(see Roberts &
+%    Cronin, 1996, e.g.)" use <TT>\slosh cite[see][e.g.]{Roberts95b}</TT>;
+    \item for three or more authors <TT>\slosh cite{Roberts95b}</TT> 
+    will typeset "Roberts \emph{et al.} (1996)" which is good, but
+    the convention is that the \emph{first time} a three author work is
+    cited the three authors ought to be explicitly given so then use
+    <TT>\slosh cite*{Roberts95b}</TT> to get "Roberts, Cronin \&
+    Another (1996)" the \emph{first time} you site the work.
+    \enditemize
+\enditemize 
+The hyperref package works with natbib and agsm.\par
+As for the bracketed citation style, the parenthetical form is just a pointer to more information and must not contribute to the meaning of the sentence.  Also avoid physically impossible statements such as <q>as predicted in Rosenblat (2001)</q>; instead use <q>as predicted by Rosenblat (2001)</q>.
+}\immediate\write\MaCout{<A NAME="Large"></a>
+\section{Large documents}
+Large documents, especially dissertations and books, can be a pain 
+to deal with just because of their size.  \LaTeX\ gives a facility to 
+split the source, the <TT>.tex</TT> file, into manageable sized chunks 
+to make editing easier <em>and</em> to speed typesetting by only doing 
+that chunk of interest at any one time.<P>
+\itemize 
+\item Establish the main file, as in \url{Src/fractals25.tex}, of the form 
+^^J<PRE>\slosh documentclass{article}
+^^J\slosh begin{document}
+^^J\slosh include{frac25a}
+^^J\slosh include{frac25b}
+^^J\slosh include{frac25c}
+^^J\slosh end{document}</PRE>
+with as many divisions as there are logical chunks in your document.<P>
+\item Then put all your normal \LaTeX\ text and commands in the 
+corresponding <TT>.tex</TT> files.  Here I have broken the input file 
+into: 
+\itemize 
+\item front matter, see \url{Src/frac25a.tex}; 
+\item section 1, see \url{Src/frac25b.tex}; 
+\item section 2 and bibliography, see \url{Src/frac25c.tex}.
+
+\enditemize 
+\item Typeset the main file and all appears as normal (except pagebreaks
+are enforced between the included files).<P>
+\item To typeset only one of the chunks, say the first section, just insert
+the command 
+^^J<PRE>\slosh includeonly{frac25b}</PRE>
+in the preamble as you see commented out in <TT>fractals25.tex</TT>.<P>
+\enditemize 
+\subsection{Appendices}
+Often large documents have one or more appendices.  If so just insert 
+the command <TT>\slosh appendix</TT> immediately before the first appendix, then 
+use chapter and/or sectioning commands as before.  The first chapter or 
+section after <TT>\slosh appendix</TT> will become Appendix A, the second will be 
+Appendix B, etc.
+}
+Summary.
+\immediate\write\MaCout{<A NAME="summary"></a>
+\section{Summary}
+Cross-referencing is important in professional documents.
+Cross-referencing is absolutely vital in research as you must `plug'
+your work into the world's knowledge base, and must connect
+information across pages and sections within your own work.  \LaTeX\ 
+provides incredibly easy tools to do this.
+
+For documents with significant mathematics we will need more than the
+simple mathematics structures seen so far.} 
+\MaCpageend 
+\endgroup
+
+
+
+
+
+% write the maths page
+\begingroup
+\typeout{Writing the maths page}
+\def\mathsmenu{<small>\itemize
+\item <A HREF="\hash AMS">AMS LaTeX</A>
+\item <A HREF="\hash Relations">Relations</A>
+\item <A HREF="\hash Delimiters">Delimiters</A>
+\item <A HREF="\hash Spacing">Spacing</A>
+\item <A HREF="\hash Arrays">Arrays</A>
+\item <A HREF="\hash Equation">Equation arrays</A>
+\item <A HREF="\hash Functions">Functions</A>
+\item <A HREF="\hash Accents">Accents</A>
+\item <A HREF="\hash Command">Command definitions</A>
+\item <a href="\hash summary">Summary</a>
+\enditemize</small>}
+\newwrite\MaCout
+\immediate\openout\MaCout ltxmaths.html\relax
+\MaCpagebegin{More mathematics}
+More mathematics
+\immediate\write\MaCout{
+\chapter{More mathematics}
+<P>Typesetting mathematics is a work of art.  \LaTeX\ knows a lot of the basics, but you often have to fiddle to get the results you
+require.  Look at how to produce the mathematics shown in
+\url{Src/maths.pdf} </P>
+<P><A HREF="ltxenviron.html\hash smath">Recall how to</A> </P>
+\itemize 
+\item include mathematics inline, with the <TT>math</TT> environment, or displayed using the <TT>displaymath</TT> or <TT>equation</TT> environments;
+\item set sub- and super-scripts; 
+\item use the <TT>\slosh frac</TT> command to typeset fractions; and 
+\item that many commands type mathematical symbols such as the Greek alphabet.
+\enditemize 
+}
+AMS-LaTeX
+\immediate\write\MaCout{<A NAME="AMS"></a>
+\section{AMS-LaTeX}
+<P>The American Mathematical Society has enormously extended the mathematical environments, commands, fonts and symbols in \LaTeX. 
+Get into the habit of accessing part of their extensions by putting <TT>\slosh usepackage{amsmath}</TT> into the preamble. Investigate other extensions if you can spare the time.</P>
+}
+Relations.
+\immediate\write\MaCout{<A NAME="Relations"></a>
+\section{Relations}
+<P>\LaTeX\ knows to typeset extra space around relations such as <TT>= \slosh approx
+</TT>and </P>
+\itemize 
+\item inequalities <TT>&lt; , &gt; , \slosh leq , \slosh geq </TT>
+\item very much so <TT>\slosh ll , \slosh gg </TT>
+\item set relations <TT>\slosh in , \slosh subset </TT>
+\enditemize 
+<P>etc.</P>
+}\immediate\write\MaCout{<A NAME="Delimiters"></a>
+\section{Delimiters}
+<P>Delimiting </P>
+\itemize 
+\item parentheses <TT>(...)</TT> 
+\item brackets <TT>[...]</TT> 
+\item braces <TT>\slosh {...\slosh }</TT> 
+\item angle brackets <TT>\slosh langle...\slosh rangle</TT> (do
+<em>not</em> use the relations
+&lt; and &gt; for this purpose) 
+\item bars <TT>|...|</TT> or <TT>\slosh |...\slosh |</TT> 
+\enditemize 
+<P>etc, come in various sizes to cope with different sub-expressions
+that they surround.  Easily get the size nearly correct using the modifying commands  <TT>\slosh left(...\slosh
+right)</TT> as seen in \url{Src/maths.tex}, section 1.</P>
+<P>Note that <TT>\slosh left</TT> and <TT>\slosh right</TT> must be used in pairs so that \LaTeX\ can determine the size of the intervening mathematics. 
+If the matching delimiter is not to appear for any reason, such as splitting a sub-expression over two lines or for an
+evaluation bar,  then use <TT>\slosh left.</TT>
+or <TT>\slosh right.</TT> to mark that boundary of the delimiter for
+\LaTeX.</P>
+}\immediate\write\MaCout{
+<P>\url{Src/maths.tex} also shows the <tt>extarticle</TT> class allows you to get larger fonts, if required: 14pt, 17pt and 20pt.</P>
+}\immediate\write\MaCout{<A NAME="Spacing"></a>
+\section{Spacing}
+<P>In the previous examples I used <TT>\slosh ,,</TT> and <TT>\slosh ,.</TT> to punctuate
+at the end of the equations. Both in and out of maths, \LaTeX\ provides spacing commands, the two necessary ones are: </P>
+\itemize 
+\item <TT>\slosh ,</TT> to typeset a thin space; 
+\item <TT>\slosh quad</TT> to typeset a 'quad' space. 
+\enditemize 
+<P>Use these to space the mathematics where needed.</P>
+<P>For example, see \url{Src/maths.tex}, section 2, </P>
+\itemize 
+\item use <TT>\slosh ,</TT> to separate
+\itemize \item the infinitesimal from the integrand in
+integrals, \item punctuation from an equation, \item a number from its physical units; \enditemize 
+\item use <TT>\slosh quad</TT> to separate two or more equations
+or text on the one line. 
+\enditemize 
+<P>Remember to use amsmath <TT>\slosh iint</TT> and <TT>\slosh iiint</TT> for multiple integrals as otherwise the spacing is awful.  Use the amsmath <TT>\slosh text{...}</TT> command
+to include a few words of ordinary text within mathematics.</P>
+}\immediate\write\MaCout{<A NAME="Arrays"></a>
+\section{Arrays}
+<P>Frequently we need to set mathematics in a tabular format.</P>
+<P>The usual reason is to typeset a matrix using an amsmath matrix environment such as</P>
+^^J<PRE>\slosh begin{bmatrix}
+^^J... &amp; ... &amp; ... &amp; ... \slosh \slosh 
+^^J... &amp; ... &amp; ... &amp; ... \slosh \slosh 
+^^J... &amp; ... &amp; ... &amp; ...
+^^J\slosh end{bmatrix}</PRE>
+<P>for a matrix of 3 rows and four columns, see \url{Src/maths.tex},
+Section 3.  Use environments <TT>matrix</TT> for an array without brackets, and <TT>pmatrix</TT> environment for an array with parentheses.  The <TT>cases</TT> environment puts a brace on the left and no delimiter on the right for mathematical case statements.</P>
+<P>Note that \LaTeX\ has a variety of ellipses: </P>
+\itemize 
+\item <TT>\slosh cdots</TT> to type three dots horizontally (at the height of the
+centre of a + sign); 
+\item <TT>\slosh ldots</TT> to type three dots horizontally (at the height of a
+comma); use this outside of mathematics also, do <em>not</em> use '...'
+to typeset three dots; 
+\item <TT>\slosh vdots</TT> for three vertical dots; and 
+\item <TT>\slosh ddots</TT> for three diagonal dots. 
+\enditemize 
+<P>Arrays
+embedded within arrays give more scope for your imagination.  If a <TT>matrix</TT> environment is not quite flexible enough, then use the <TT>array</TT> environment which is the same as the tabular environment but for mathematics.</P>
+}\immediate\write\MaCout{<A NAME="Equation"></a>
+\section{Equation arrays}
+<P>Often we want to align related equations together, or to align each line of a multi-line derivation. The <TT>eqnarray</TT> mathematics environment does this.</P>
+<P>The eqnarray environment assumes three columns: the left column right justified;
+the middle column, centred; and the right column left justified: </P>
+^^J<PRE>\slosh begin{eqnarray}
+^^J... &amp; ... &amp; ... \slosh \slosh 
+^^J... &amp; ... &amp; ... \slosh \slosh 
+^^J... &amp; ... &amp; ...
+^^J\slosh end{eqnarray}</PRE>
+<P>Each line will be numbered by \LaTeX, unless you specify <TT>\slosh nonumber</TT>
+in a lines, or unless you use the * form of eqnarray. See Section 4
+in \url{Src/maths.tex}.</P>
+}\immediate\write\MaCout{<A NAME="Functions"></a>
+\section{Functions}
+<P>\LaTeX\ knows how to typeset a lot of mathematical functions. </P>
+\itemize 
+\item Trigonometric and other elementary functions are defined by the obvious
+corresponding command name. For example, <TT>\slosh sin x</TT> or <TT>\slosh exp(i\slosh theta)</TT>.
+\item Subscripts on more complicated functions, such as <TT>\slosh lim_{..}</TT>
+and <TT>\slosh max_{...}</TT> are appropriately placed under the function name.
+\item And the same goes for both sub- and super-scripts on large operators
+such as <TT>\slosh sum</TT>, <TT>\slosh prod</TT> and <TT>\slosh bigcup</TT>. 
+\enditemize 
+<P>See Section 5 in \url{Src/maths.tex}.   Typeset <EM>all</EM> multicharacter mathematical names in upright roman: when a command is not available, use amsmath <TT>\slosh operatorname{...}</TT> as in the Reynolds number <TT>\slosh operatorname{Re}</TT>.</P>
+}\immediate\write\MaCout{<A NAME="Accents"></a>
+\section{Accents}
+<P>In the example of set intersection an overline is typeset over the sets
+U (the overline denotes an operation). However, if we want an overline
+to denote a distinct quantity that has a close relation to something else,
+then a mathematical accent is used.</P>
+<P>Common mathematical accents over a single character, say a, are: </P>
+\itemize 
+\item <TT>\slosh bar a</TT> to put an overbar over a; 
+\item <TT>\slosh tilde a</TT> to put '~' over a; 
+\item <TT>\slosh hat a</TT> to put '^' over a; 
+\item <TT>\slosh dot a</TT> to put a single dot over a; 
+\item <TT>\slosh ddot a</TT> to put a double dot over a; and 
+\item <TT>\slosh vec a</TT> to put a little arrow over a. 
+\enditemize 
+<P>If necessary, accents may be stacked on top of each other. See Section
+6 in \url{Src/maths.tex}.</P>
+}\immediate\write\MaCout{<A NAME="Command"></a>
+\section{Command definitions}
+<P>\LaTeX\ provides a facility for you to define your very own commands.</P>
+<P>Since \LaTeX\ does not have a predefined Airy function
+we define our own as: </P>
+^^J<PRE>\slosh newcommand{\slosh Ai}{\slosh operatorname{Ai}}</PRE>
+<P>and then use the command <TT>\slosh Ai</TT> wherever needed.</P>
+<P>More useful commands involve arguments; I give three of my favourites.
+The first two, with two arguments, define partial derivative commands </P>
+^^J<PRE>\slosh newcommand{\slosh D}[2]{\slosh frac{\slosh partial \hash 2}{\slosh partial \hash 1}}
+^^J\slosh newcommand{\slosh DD}[2]{\slosh frac{\slosh partial^2 \hash 2}{\slosh partial \hash 1^2}}
+^^J\slosh renewcommand{\slosh vec}[1]{\slosh text{\slosh boldmath\dollar \hash 1\dollar }}</PRE>
+<P>and the last, with one argument, <I>redefines</I> the <TT>\slosh vec</TT>
+command to denote vectors by boldface characters (rather than have an arrow
+accent).</P>
+^^J<P>Note that within a definition, <TT>\hash n</TT> denotes a placeholder 
+for the <TT>n</TT>th supplied argument.  See these in use in Section 7 
+of \url{Src/maths.tex}.</P>
+^^J<P>Students, and markers, want the numbering of sections to suit the exercise numbers of assignments.  For example, when an assignment is composed of Exercises 35.1, 35.2, and 42.1, redefine section numbering by</P>
+^^J<PRE>\slosh renewcommand{\slosh thesection}{Exercise~\slosh ifcase\slosh arabic{section} 
+^^J\slosh or35.1 \slosh or35.2 \slosh or42.1 \slosh else \slosh fi}</PRE>
+<P>Then start each successive exercise with simply the logical <TT>\slosh section{}</TT>, or include explanatory text in the exercise title with <TT>\slosh section{explanatory text}</TT>.</P>
+^^J<P>You will have noticed that \LaTeX\ is very verbose. Many people define
+their own abbreviations for the common command structures so that they
+are quicker to type.  <em>Do not do this</em>; it makes your
+\LaTeX\ much less portable and harder to read. Instead, <I>setup your editor</I>
+to cater for the verbosity; use command definitions only to give you <I>new
+logical patterns</I>, such as the partial differentiation.</P>
+}
+Summary.
+\immediate\write\MaCout{<A NAME="summary"></a>
+\section{Summary}
+Typesetting with mathematics is an art.  \LaTeX\ helps with all its
+structures, but there are still many decisions you will have to make.
+Look to learn more than the basics.} 
+\MaCpageend 
+\endgroup
+
+
+
+
+
+% write the floats page
+\begingroup
+\typeout{Writing the floats page}
+\def\floatsmenu{<small>\itemize
+\item <A HREF="\hash Tables">Tables</A>
+\item <A HREF="\hash Figures">Figures</A>
+\item <A HREF="\hash Packages">Packages</A>
+\item <A HREF="\hash yourStyle">Your style</A>
+\item <A HREF="\hash Seminar">Seminar style</A>
+\item <a href="\hash summary">Summary</a>
+\enditemize</small>}
+\newwrite\MaCout
+\immediate\openout\MaCout ltxfloats.html\relax
+\MaCpagebegin{Figures, tables and seminars}
+Figures, tables and seminars.
+\immediate\write\MaCout{
+\chapter{Figures, tables and seminars}
+}\immediate\write\MaCout{<A NAME="Tables"></a>
+\section{Tables}
+<P>Tables and figures are examples of entities that 'float'.
+They generally form too large an entity to be conveniently placed just anywhere on a page. Instead \LaTeX\ waits so that it can put them in a convenient place: the top of a page, the bottom of a page, or on a page by itself.  <EM>Let LaTeX float tables and figures, do not try to insist that you know better.</EM></P>
+
+<P>From research by Colin Wheildon: <QUOTE>"Seventy-seven percent said articles in which body type jumped over an illustration ..., contrary to the natural flow of reading, annoyed them.  The natural expectation was that once a barrier such as an illustration ... was reached, the article would be continued at the head of the next leg of type."</QUOTE></P>
+
+<P>To request \LaTeX\ to include a table use the <TT>table</TT> environment:
+</P>
+^^J<PRE>\slosh begin{table}
+^^J    \slosh caption{...}
+^^J    \slosh label{...}
+^^J    ...
+^^J    instructions for typesetting the table
+^^J    (usually tabular within a center environment)
+^^J    ...
+^^J\slosh end{table}</PRE>
+<P>See the table of fractal dimensions at the end of \url{Src/fractals31.tex}.  In the first run 
+through, \LaTeX\ cannot find room on page 5 for the table, and so places 
+it on page 6 by itself.  In the second run, the Table of Contents has 
+pushed more material into the document, and now the table is placed at 
+the top of the page.</P>
+<P>My table has few lines: this is good practice.  Let the grid structure of a table work for you without the distraction of zillions of horizontal and vertical lines.  Use lines sparingly.</P>
+<P>One may include a List of Tables in the document with the command 
+<TT>\slosh listoftables</TT>.</P>
+}\immediate\write\MaCout{<A NAME="Figures"></a>
+\section{Figures}
+<P>The usual way to include a figure in \LaTeX\ is as follows.</P>
+\itemize 
+\item Create a <B>postscript</B> file of the drawing from whatever 
+application is being used to generate the figure.  For example, \url{Src/cantor.m} and \url{Src/koch.m} are Matlab programs that create postscript graphs in files \url{Src/cantor.eps} and \url{Src/koch.eps} (prefer the <tt>print -depcs2 filename</tt> command).
+\item However, pdf\LaTeX\ does not support postscript graphics!  In order to <em>seamlessly</em> be able to use pdf\LaTeX\ or ordinary \LaTeX\ (especially as collaborators sometimes use the other one), and produce a
+<em>quality</em> graphic, convert to pdf using the public domain
+<TT>ps2pdf</TT> program (so you have two copies of the graphics file, an
+<TT>.eps</TT> file and a <TT>.pdf</TT> file).  For example, the two files
+\url{Src/cantor.pdf} and \url{Src/koch.pdf}
+\item If the graphic is photograph-like, either because it is a photograph or because it is a surface plot with smooth graduations, then convert to <tt>jpeg</tt> rather than  <tt>pdf</tt>.
+\item Then place in the preamble the commands 
+^^J<PRE>\slosh usepackage{graphicx}</PRE>
+\item Somewhere near where you want the figure, include the figure environment
+^^J<PRE>\slosh begin{figure}
+^^J    \slosh centering
+^^J    \slosh includegraphics{...}
+^^J    \slosh caption{...}
+^^J    \slosh label{...}
+^^J\slosh end{figure}</PRE>
+where the argument of the <TT>\slosh includegraphics</TT> command is the  
+filename (without the extension).
+
+\item Or use this to scale the picture up/down, a little, to the width of the page
+^^J<PRE>\slosh begin{figure}
+^^J    \slosh centering
+^^J    \slosh includegraphics[width=0.9\slosh textwidth]{...}
+^^J    \slosh caption{...}
+^^J    \slosh label{...}
+^^J\slosh end{figure}</PRE>
+\enditemize 
+<P>
+See the two figures in \url{Src/fractals32.tex}
+</P>
+<P>
+The <TT>width=0.9\slosh textwidth</TT> scales the figure to
+90\percent of the width of the typeset text: change it if desired; leave it out in order to reproduce the figures unscaled.
+</P>
+<EM>I strongly urge you to generate the graphics at about the 
+same size as they are to appear.</EM>  This is so that the title, label 
+and legend information is actually readable and the line thicknesses are 
+credible.  For example, \url{Src/cantor.m} and \url{Src/koch.m} show how to use Matlab's <tt>subplot()</tt> command to generate graphics that are close to the text width, and close to half the text width, respectively. <P>
+<P>One may include a List of Figures in the document with the command 
+<TT>\slosh listoffigures</TT>.</P>
+}\immediate\write\MaCout{<A NAME="Packages"></a>
+\section{Packages}
+There are packages to extend \LaTeX\ in zillions of ways: some excellent,
+some flaky.  <em>When you want to do something, the chances are
+someone has wanted to do it before and has written a package to do
+it.</em> See the vast <A HREF="Others/full.html">full</a> or <a
+href="Others/brief.html">brief</a> <em>TeX Catalogue Online</em> for
+instance.  <P>
+Useful packages are <TT><A
+HREF="ltxmaths.html\hash AMS">amsmath</A></TT>, <TT><A HREF="usecolour.html">color</A></TT>, <TT><A
+HREF="ltxxref.html\hash Hypertext">hyperref</A></TT>, <TT><A
+HREF="ltxxref.html\hash Labels">showkeys</A></TT> and <TT>url</TT>.
+<P>Obtain the highest quality graphics using the <a href="http://sourceforge.net/projects/pgfplots/">pgfplots package</a> [Sept 2011], perhaps from Matlab/Octave in conjunction with <a href="http://www.mathworks.com/matlabcentral/fileexchange/22022-matlab2tikz">matlab2tikz</a>: the cost is an enormous slow down of \LaTeX\ as it then draws the graphs.
+</P>
+<P>
+If you use pdfLaTeX and have the package, then \emph{always} \texttt{\slosh usepackage{microtype}}.  The microtype package does some fine adjustments that turns the great typesetting of default LaTeX into near perfect typesetting.
+<P>
+}\immediate\write\MaCout{<A NAME="yourStyle"></a>
+\section{Make your own style}
+Create a file, say <tt>mystyle.sty</tt>, and include in it commands to
+change the appearance of your documents.  Then include in the preamble
+of all your documents <tt>\slosh usepackage{mystyle}</tt>.  But what do
+you put in your style file?  Here are some suggestions.
+\itemize 
+\item By default use the microtype, hyperref and color packages, so include
+^^J<pre>\slosh usepackage{microtype,color}
+^^J\slosh usepackage[colorlinks]{hyperref}</pre>
+
+<P>
+\item Also we always want page headings, but detest the "all capitals"
+style that is the default, so <em>very naughtily</em> crunch the
+<tt>\slosh MakeUppercase</tt> command
+^^J<pre>\slosh pagestyle{headings}
+^^J\slosh renewcommand{\slosh MakeUppercase}[1]{\slosh color{green}\slosh textsf{\hash 1}}</pre>
+so that the page headings now appear an attractive green and sans
+serif font (actually I prefer the X11 colour OliveGreen).
+<P>
+\item Say we would like the title information to always appear in sans serif font and
+be (shudder) magenta in colour.  We interfere with \LaTeX\
+using the <tt>\slosh let</tt> command which defines a pointer to the
+<em>current</em> definition of another command; thus
+^^J<PRE>\slosh let\slosh LaTeXmaketitle\slosh maketitle</pre>
+defines <tt>\slosh LaTeXmaketitle</tt> to point to the original \LaTeX\ definition
+of <tt>\slosh maketitle</tt>.  Follow this with
+^^J<PRE>\slosh renewcommand{\slosh maketitle}{{\slosh sf\slosh color{magenta}\slosh LaTeXmaketitle}}</pre>
+to define a new version of <tt>\slosh maketitle</tt> that colours it magenta and puts it into a sans serif font.  Neat!
+<P>
+\item Now let us make all section headings blue.  The abstract is easy we
+just redefine its name
+^^J<PRE>\slosh renewcommand{\slosh abstractname}{\slosh color{blue}Abstract}</pre>
+But to get all section headings blue we need to know (by delving into
+the file <tt>latex.ltx</tt>) that all section headings are typeset via
+the command <tt>\slosh \atchar startsection</tt>.  Thus put into your
+style file the commands
+^^J<PRE>\slosh let\slosh LaTeX\atchar startsection\slosh \atchar startsection 
+^^J\slosh renewcommand{\slosh \atchar startsection}[6]{\slosh LaTeX\atchar startsection\percent
+^^J{\hash 1}{\hash 2}{\hash 3}{\hash 4}{\hash 5}{\slosh color{blue}\slosh raggedright \hash
+6}} </pre>
+See that this makes the sixth argument to the real <tt>\slosh \atchar
+startsection</tt> blue and also raggedright; the sixth argument is the
+section title.  (Note: the "\atchar " character acts as a letter in a
+<tt>.sty</tt> file, but not in any <tt>.tex</tt> file!)
+\enditemize 
+<P>
+Download the above in \url{Src/mystyle.sty} (with a few enhancements)
+and try it yourself with \url{Src/fractals32.tex}.  (There is the
+possibility of a glitch in the colouring.)
+<P>
+The test of whether a definition should go into your style file is
+determined by the answer to this question: will your \LaTeX\ document
+still typeset without error if your style file is not used?  if the
+answer is yes, then include the definition (as for all of the above);
+if the answer is no (as for <tt>\slosh D</tt> and <tt>\slosh DD</tt>
+defined earlier, then you are extending the functionality of \LaTeX\ and
+it is <em>not</em> suitable for a <em>style</em> file in the true
+sense.  Instead such extension definitions should go into a
+<tt>mydefns.sty</tt> file.  <P>
+}\immediate\write\MaCout{<A NAME="Seminar"></a>
+\section{Seminar style}
+<P>
+<Q>Three rules of public speaking: Be forthright. Be brief. Be 
+seated.</Q> (S. Dressel & J. Chew, 1987)
+</P>
+<P>
+There is a nifty documentclass for preparing overhead transparencies or
+computer presentations, the <TT>seminar</TT> class. Within this class, you
+use all the normal typesetting facilities offered by \LaTeX. (There are many
+other packages, such as beamer, often looking much flashier but harder to learn to use.)
+</P>
+<P>An example framework is: </P>
+^^J<PRE>\slosh documentclass[a4,12pt]{seminar}
+^^J...
+^^J
+^^J\slosh begin{document}
+^^J\slosh begin{slide}
+^^J...
+^^J\slosh newslide
+^^J...
+^^J\slosh newslide
+^^J...
+^^J\slosh end{slide}
+^^J\slosh end{document}</PRE>
+<P>Note the use of slide environment within the document, and the use of
+the <TT>\slosh newslide</TT> command to strongly control page breaks as it is
+important to control the specific material on each page.</P>
+<P>Such a document is to be viewed and printed in landscape mode, see 
+\url{Src/fractals33.tex}.</P>
+<P>It is good practise to: </P>
+\itemize 
+\item have less information per page, the rule is no more than six lines of
+six words per line, the <TT>12pt</TT> option
+in the documentclass helps;
+\item typeset slides in a sans serif font, here done by including the command
+<TT>\slosh def\slosh everyslide{\slosh sf}</TT> in the preamble,
+as in 
+^^J<PRE>\slosh documentclass[a4,12pt]{seminar}
+^^J\slosh def\slosh everyslide{\slosh sf}</PRE>
+\item in the seminar style it is often the vertical height that is the 
+constraint in graphics so scale with <TT>height=0.8\slosh textheight</TT> if 
+needed.
+\enditemize 
+Use the seminar template \url{Src/semtemp.tex} (with
+\url{Src/mystyle.sty}) to produce \url{Src/semtemp.pdf}.
+}
+Summary.
+\immediate\write\MaCout{<A NAME="summary"></a>
+\section{Summary}
+Floating figures and tables is powerful to maintain good readability.
+Using packages, and making your own, is the way to employ the hard
+work of many people around the world.  Remember: if you want to do
+something out of the ordinary, then someone else probably has a
+package to do it.} 
+\MaCpageend 
+\endgroup
+
+
+
+
+
+% write the write page
+\begingroup
+\typeout{Writing the write page}
+\def\writemenu{<small>\itemize
+\item <A HREF="\hash Write">Write well</A>
+\item <A HREF="\hash Structure">Pyramind structure</A>
+\item <A HREF="\hash Three">Rule of three</A>
+\item <A HREF="\hash Fin">Conclusion</A>
+\enditemize</small>}
+\newwrite\MaCout
+\immediate\openout\MaCout ltxwrite.html\relax
+\MaCpagebegin{Write right for readers}
+Write right for readers.
+\immediate\write\MaCout{
+\chapter{Write right for readers}
+<BLOCKQUOTE><small>The only proper attitude is to look upon a successful interpretation, a 
+correct understanding, as a triumph against the odds.  We must cease to 
+regard a misinterpretation as a mere unlucky accident.  We must treat it as 
+the normal and probable event.
+\ \ \ <EM>Practical Criticism,</EM> I. A. Richards (1929)
+</small></BLOCKQUOTE>
+}\immediate\write\MaCout{<A NAME="Write"></A>
+\section{Write well}
+90\percent\ of research papers get less than 10 citations.  Over the
+period 1945--88 the most cited paper, by O.&nbsp;H. Lowry et&nbsp;al.
+<EM>Protein measurement with the Folin phenol reagent,</EM> received a
+staggering 187,652 citations.  In contrast, 55.8\percent\ of papers
+were cited just once, and 24.1\percent\ were cited 2--4 times!
+<P>
+You have to 'sell' your work and ideas. People spend time on what 
+they perceive will benefit them.  Here I describe what I consider to be the 
+two main principles for organising your writing.
+<P>
+You must structure your document so that even those who read only a little 
+can take away something of value---that way they are more likely to take 
+note of what you say and to come back for more.  Write something 
+understandable and useful early.<P>
+You must also give the reader a "map" of what you are writing about.  
+Introduce and summarise at all levels in your writing.<P>
+}\immediate\write\MaCout{<A NAME="Structure"></A>
+\section{Structure your writing on a pyramid organisation}
+Many people will read your title; some will read the abstract; a few will 
+read the introduction; and only a handful (perhaps only the referees, sigh) 
+will struggle with the body of your article.  Give each of these readers 
+something to take away after they leave your article.<P>
+<DL>
+<DT><B>Title</B>
+<DD>The title is the first chance to <em>lose</em> a reader; thus make 
+the title
+interesting.  Start with a keyword. Put in a verb and make the title a statement.  
+Be specific.
+<DT><B>Abstract</B>
+<DD>The abstract is <em>not</em> a table of contents.  Instead, say
+what is delivered, give the essential qualities of the paper.  Use less than
+50 words for each of the following questions:
+\itemize 
+\item What was done?
+\item Why do it?
+\item What were the results?
+\item What do the results mean in theory and/or practise?
+\item What is the reader's benefit?
+\item How can the readers use this information for themselves?
+\enditemize 
+The abstract is probably all most readers read, it must be a complete 
+though necessarily sketchy description in itself.<P>
+A wide range of people in your discipline <I>may</I> read your abstract if 
+you have made the title interesting.  Keep the level of jargon low, perhaps 
+to that appropriate to Honours degree students.<P>
+<DT><B>Introduction</B>
+<DD>The Introduction has to show that your story is worth telling in 
+detail.  The Introduction is likely to be all an interested reader reads, 
+again it must be complete in itself.  Use a level of jargon appropriate to say 
+post-graduate students.  Place your work in the context of other research.  
+Summarise your main results, albeit in a suitably simplified form.<P>
+Face it: only the dedicated diehards are going to want to wade through 
+the details of the rest of the paper.  Give the key results and
+connections in your 
+Introduction.<P>
+Shewchuk puts it this way <q>the introduction is the most important
+part of your paper, because few of your readers will ever read beyond
+it.  And there's not much hope that any of them will if you don't grab
+their attention from the start.  So it's a mystery why so many papers
+begin with twaddle</q>
+<DT><B>The body</B>
+<DD>Write well.  Be definite.  Be descriptive.  Be precise.  Cross 
+reference.  Use short sentences.<P>
+Keep close together nouns and their verbs: that is, say "the cat sat on the
+mat" not "the cat on the mat sat". 	For another example, ``Mostly, I read
+the books I review on trains.'' surely means ``Mostly, I read on trains the
+books that I review.'' not that the reviewer mostly chooses to actually
+read the book when he has to review one about trains.
+<P>
+<BLOCKQUOTE><small>
+`Feedback' sometimes despairs at the way scientists write their research 
+papers.  the prose often seems pompous, the meaning obscure.  For some 
+reason, many boffins don't seem to be able to resist using a long technical 
+word when the simple everyday equivalent would do.  We suspect the problem 
+may start in the schoolroom.<P>
+Recently, one of Feedback's colleagues asked her daughter how her physics 
+lessons were going at school. "I really like physics, and I have no 
+problems understanding it," the daughter replied.  "But I often get a bad 
+mark for my written work."<P>
+"Why?" the concerned mother asked. "Well, the teacher doesn't like the way 
+I write," came the reply. "For example, last week when I was writing up an 
+experiment, I put down: `The object moved to one side.' The teacher said 
+that I should have written `The object was displaced horizontally.' "
+<I>New Scientist, 10 March, 1990</I></small>
+</BLOCKQUOTE>
+<DT><B>Conclusion</B>
+<DD>Summarise your work in its entirety.  You may assume readers reaching 
+the conclusion have a knowledge of the technicalities, having survived the 
+body of the text, so you may use jargon if necessary.  Since the simple 
+version of your results will have been given in the abstract and 
+introduction, the conclusion is your chance to summarise the results in 
+detail.<P>
+</DL>
+Good examples of this style are to be found every week in the <A 
+HREF="http://www.newscientist.com"><EM>New Scientist</EM></A> 
+magazine.  Look for the short pithy title giving some essence of the 
+main point.  It is followed by a paragraph stating the main point 
+more precisely in a couple of sentences.  Then the body of the text 
+gives the details.  These are the same features of writing that we all 
+need to employ.<P>
+}\immediate\write\MaCout{<A NAME="Three"></A>
+\section{First and last, or the rule of three}
+Readers give most attention to the first and last parts of any chunk of 
+reading.  Use these first and last parts to introduce and summarise the 
+material, the body of your argument, that comes in between.  This leads to 
+the rule of three for writing:
+\enumerate 
+\item tell them what you will tell them;
+\item tell them;
+\item tell them what you have told them---but do not repeat the
+introduction, instead add value by highlighting and discussing.
+\endenumerate 
+This gloriously simple minded `rule of thumb' has the correct essence.  Strunk phrases the same idea as <q>begin each paragraph with a
+topic sentence; end it in conformity with the beginning.  Again, the
+object is to aid the reader.  The practice here recommended enables him
+to discover the purpose of each paragraph as he begins to read it, and
+to retain the purpose in mind as he ends it</q>
+<P>
+I emphasise that this principle applies <EM>at all 
+levels</EM>.  
+\itemize 
+\item The first and last sentence of a paragraph must introduce and 
+summarise the body of argument in that paragraph.
+\item The first and last paragraph in a section (or subsection) will 
+introduce and summarise the body of the section (or subsection).
+\item The first and last sections of a chapter will introduce and summarise 
+the body of the chapter.
+\item The first and last chapters introduce and summarise an entire 
+dissertation.
+\enditemize 
+<P>
+Apply the following test to help beleaguered readers.  
+Does your document make some sort of coherent sense:
+\itemize 
+\item if you just read the first sentence in every 
+paragraph in a section?  
+\item if you just read the first paragraph in every section? 
+\item if you just read the first section of every chapter?
+\enditemize 
+If the answer is no to any of the above, then rewrite 
+accordingly.<P>
+}\immediate\write\MaCout{<A NAME="Fin"></A>
+\section{Conclusion}
+A well written document is self-similar---it has much the same design
+principles at all levels.
+\itemize 
+\item Use a pyramid organisation with a definite and complete description
+for the reader at each level.
+\item The first and last parts of everything are the most important.  Use
+them to introduce and to summarise.
+\item Read about writing from more informed sources than I.  For example,
+\itemize 
+\item N. J.  Higham, <EM>Handbook of writing for the mathematical
+sciences</EM>, SIAM, 1998, \url{http://www.siam.org/books/ot63} (excellent for writing with
+mathematical content included---I use it as the text for our
+communication courses)
+\item 
+W. Strunk Jr. <em>The Elements of Style</em>, W. P. Humphrey, 1918.
+\url{http://www.bartleby.com/141} 
+\item Jonathan Shewchuk, <em>Three Sins of Authors in Computer Science and
+Math</em>, \url{http://www.cs.cmu.edu/~jrs/sins.html"}, 1997.
+\item Barrass, <EM>Scientists must write</EM>, Chapman and Hall, 1978.
+(good for science and engineering in general)
+\item Justin Zobel, <em>Writing for computer science,</em> Springer,
+2000.
+\enditemize 
+\enditemize 
+} 
+\MaCpageend 
+\endgroup
+
+
+% write the ties page
+\begingroup
+\typeout{Writing the ties page}
+\newwrite\MaCout
+\immediate\openout\MaCout ltxties.html\relax
+\MaCpagebegin{Ties avoid bad line breaks}
+Ties.
+\immediate\write\MaCout{
+\chapter{Ties avoid bad line breaks}
+Use non-breaking spaces, also called ties, to prevent the computer
+breaking lines in bad places: the concept of "badness" is subjective
+and so hard to code definite rules; apply the principles with artist
+taste.  I quote here, virtually verbatim from Donald Knuth, a list of
+examples to show the range of considerations.  These apply to all
+typesetting, not just \LaTeX.
+
+\enumerate  
+    \item Use ties in cross-reference: Theorem~A; Algorithm~B;
+    Chapter~3; Table~4; Programs E and~F. No tie appears after
+    "Programs" in the last example since it would be quite all right to
+    have "E&nbsp;and&nbsp;F" at the beginning of a line.<P>
+    
+	\item Use ties between a person's forenames and between multiple
+	surnames: Dr.~I.~J. Matrix; Luis~I. Trabb~Pardo; Peter
+	van~Emde~Boas.  Notice that it is better to hyphenate a name rather
+	than to break it between words.<P>
+    
+    \item  Use ties for symbols in apposition with nouns: base~<I>b</I>; 
+    dimension~<I>d</I>; function~<I>f(x)</I>; string~<I>s</I> of 
+    length~<I>l</I>. But compare the last example with "string~<I>s</I> of 
+    length <I>l</I>~or more".<P>
+    
+    \item Use ties for symbols in series: 1,~2, or~3; a,~b, and~c; 
+    1,~2,...,~<I>n</I><P>
+    
+    \item Use ties for symbols as tightly-bound objects of prepositions: 
+    of~<I>x</I>; from 0 to~1; increase <I>z</I> by~1; in common 
+    with~<I>m</I>.  This rule does not apply to compound objects: for 
+    example, consider "of u~and~v".<P>
+    
+	\item Use ties to avoid breaking up mathematical phrases that are
+	rendered in words: equals~<I>n</I>; less than~<I>e</I>; mod~2;
+	modulo~<I>p<sup>e</sup></I>; (given~X); when x~grows; if t~is...
+	Compare "is~15" with "is 15~times the height"; and compare "for all
+	large~<I>n</I>" with "for all <I>n</I>~greater
+	than~<I>n<sub>0</sub></I>.  <P>
+    
+    \item Use ties when enumerating cases: "(b)~Show that <I>f(x)</I> is 
+    (1)~continuous; (2)~bounded.<P>
+\endenumerate 
+<P>
+I took this list of examples  from pp.&nbsp;89--90 of <EM>Digital
+typography</EM> by D.&nbsp;E. Knuth, CSLI Publications, 1999;
+originally written with M.&nbsp;F. Plass and appearing in
+<EM>Software---Practice and Experience</EM> <B>11</B> (1981),
+1119--1184.
+</P>} 
+\MaCpageend 
+\endgroup
+
+
+
+
+% write the usecol page
+\begingroup
+\typeout{Writing the usecol page}
+% \def\usecolmenu{<small>\itemize
+% \item <a href="\hash yyyy">yyyy</a>
+% \enditemize</small>}
+\newwrite\MaCout
+\immediate\openout\MaCout ltxusecol.html\relax
+\MaCpagebegin{Use colour}
+Use colour.
+\immediate\write\MaCout{
+\chapter{Use colour with discretion}
+\section{Six primary colours}
+Enable colour by putting into the preamble.
+\itemize 
+	\item <tt>\slosh usepackage[dvips]{color}</tt> if using ordinary
+    \LaTeX;
+	\item <tt>\slosh usepackage{color}</tt> if using pdf\LaTeX.
+\enditemize 
+The following, along with black and white, are the primary colours.
+They are switched in by the command <tt>\slosh color{name}</tt> with a
+scope delimited by braces or by the current environment.
+\itemize 
+	  <font color="\hash FF0000">
+\item  <b>red</b></font>
+	  <font color="\hash 00FF00">
+\item  <b>green</b></font>
+	  <font color="\hash 0000FF">
+\item  <b>blue</b></font>
+	  <font color="\hash 00FFFF">
+\item  <b>cyan</b></font>
+	  <font color="\hash FFFF00">
+\item  <b>yellow</b></font>
+	  <font color="\hash FF00FF">
+\item  <b>magenta</b></font>
+\enditemize <p>}
+\immediate\write\MaCout{
+\section{Sixty-six colours}
+Make the following 66 colours available using options in the
+request for the color package:
+\itemize 
+	\item <tt>[usenames,dvips]</tt> for ordinary \LaTeX;
+	\item <tt>[usenames,dvipsnames]<tt> for pdf\LaTeX.
+\enditemize 
+See \url{Src/mystyle.sty} for example.
+These are X11 colours; note: the case is important in the names.
+<p>
+GreenYellow,
+Yellow,
+Goldenrod,
+Dandelion,
+Apricot,
+Peach,
+Melon,
+YellowOrange,
+Orange,
+BurntOrange,
+Bittersweet,
+RedOrange,
+Mahogany,
+Maroon,
+BrickRed,
+Red,
+OrangeRed,
+RubineRed,
+WildStrawberry,
+Salmon,
+CarnationPink,
+Magenta,
+VioletRed,
+Rhodamine,
+Mulberry,
+RedViolet,
+Fuchsia,
+Lavender,
+Thistle,
+Orchid,
+DarkOrchid,
+Purple,
+Plum,
+Violet,
+RoyalPurple,
+BlueViolet,
+Periwinkle,
+CadetBlue,
+CornflowerBlue,
+MidnightBlue,
+NavyBlue,
+RoyalBlue,
+Blue,
+Cerulean,
+Cyan,
+ProcessBlue,
+SkyBlue,
+Turquoise,
+TealBlue,
+Aquamarine,
+BlueGreen,
+Emerald,
+JungleGreen,
+SeaGreen,
+Green,
+ForestGreen,
+PineGreen,
+LimeGreen,
+YellowGreen,
+SpringGreen,
+OliveGreen,
+RawSienna,
+Sepia,
+Brown,
+Tan,
+Gray
+<p>}
+\immediate\write\MaCout{
+\section{Three final notes}
+\enumerate 
+\item At the time of writing there are some glitches that may appear when
+using colour in pdf documents; avoid these glitches by getting and
+using <tt>\slosh usepackage{pdfcolmk}</tt> (as in \url{Src/mystyle.sty})
+\item The color package is disabled by using the option 
+<tt>monochrome</tt> in its request.
+\item Lastly, see the <tt>grfguide</tt> document in the 
+\LaTeX\ Graphics 
+package for loads more information.
+\endenumerate 
+} 
+\MaCpageend 
+\endgroup
+
+
+
+
+
+
+
+
+
+
+ % write the banned page
+ \begingroup
+ \typeout{Writing the banned page}
+% \def\bannedmenu{<small>\itemize
+% \item <a href="\hash yyyy">yyyy</a>
+% \enditemize</small>}
+% \newwrite\MaCout
+ \immediate\openout\MaCout ltxbanned.html\relax
+ \MaCpagebegin{Do not use these LaTeX commands}
+ banned
+ \immediate\write\MaCout{
+ \chapter{Do not use these LaTeX commands}
+ The following commands are physical commands.  Avoid at all costs.  Every use of one of these commands within a document is a failure to use proper logical LaTeX (you know who you are).  Instead, think why you want the effect, and then code the logical reason, not the physical command.
+ \itemize
+ \item <TT>\slosh \slosh </TT> (except inside a special environment like tabular, array, or verse)
+ \item <TT>\slosh textbf </TT> or <TT>\slosh bf </TT> (usually need <TT>\slosh vec</TT> or sectioning like <TT>\slosh paragraph</TT>)
+ \item <TT>\slosh texttt </TT> or <TT>\slosh tt</TT> (usually need a verbatim environment, or <TT>\slosh url</TT> command)
+ \item <TT>\slosh textit </TT> or <TT>\slosh it </TT> (use <TT>\slosh emph</TT>)
+ \item <TT>\slosh textsf </TT>
+ or <TT>\slosh sf </TT>
+ \item <TT>\slosh mathrm </TT> or <TT>\slosh rm </TT> (usually need \slosh operatorname{} or \slosh text{})
+ \item <TT>\slosh tag </TT>
+ \item <TT>\slosh eqno </TT>
+ \item <TT>\slosh dfrac </TT>
+ \item <TT>\slosh displaystyle </TT>
+ \item <TT>\slosh hspace </TT>
+ \item <TT>\slosh vspace </TT>
+ \item <TT>\slosh limits </TT>
+ \item <TT>\slosh noindent </TT>
+ \item <TT>\slosh newpage </TT>
+ \item <TT>\slosh clearpage </TT>
+ \item <TT>\slosh linebreak </TT>
+ \item <TT>\slosh pagebreak </TT>
+\enditemize
+ If you 'know' that what you need involves one of these commands, then define a logical new command in a style file.  The new command implements the physical appearance you desire, but within your document you only invoke the logical command.
+ } 
+ \MaCpageend 
+ \endgroup
+
+
+
+
+\end{document}

@@ -1,0 +1,127 @@
+<?php
+$title="Miscellaneous software";
+$thisfile=__FILE__;
+include "header.php";
+include "menuside.php";
+?>
+<div class="newspaper">
+
+<dl><dt><b>Equation-free Toolbox for Matlab/Octave</b></dt><dd>
+<a
+href="https://github.com/uoa1184615/EquationFreeGit">
+Download the toolbox via Github</a> This 'equation-free
+toolbox' empowers the computer-assisted analysis of complex,
+multiscale systems. Its aim is to enable you to use
+microscopic simulators to perform system level tasks and
+analysis, because microscale simulations are often the best
+available description of a system. The methodology bypasses
+the derivation of macroscopic evolution equations by
+computing only short bursts of of the microscale simulator,
+and often only computing on small patches of the spatial
+domain. This suite of functions empowers users to start
+implementing such methods in their own applications.</a>
+
+<p/></dd><dt><b>LaTeX style file for Reduce computer algebra</b></dt><dd>
+From late 2011, the <a
+href="http://reduce-algebra.com/">computer algebra package
+Reduce</a> could input a LaTeX document with Reduce code
+intermingled and Reduce would only execute the code in the
+environment <tt>\begin{reduce}...\end{reduce}</tt>. Use the
+reduce command <tt>in_tex "filename"$</tt>. <a
+href="exampleReduce.tex">Download a LaTeX style file and an
+example document.</a>
+
+<p/></dd><dt><b>LaTeX style file to track references to labels
+</b></dt><dd> At every \label, prints pages at which the
+label is referenced via \ref, \eqref, \autoref,  or \cref.  One
+option "disable" which omits the package, but defines the
+commands that might still be in auxiliary files <a
+href="LaTeX/trackRefs.sty">Download the LaTeX style file:
+beta version.</a>
+
+<p/></dd><dt><b>LaTeX style file for section contents in a
+book/report</b></dt><dd> Defines \secttoc for sections in a
+book.  \secttoc then lists contents of a section, one depth
+deeper than minitoc does for chapters. <a
+href="secttocforbook.sty">Download the LaTeX style file.</a>
+
+<p/></dd><dt><b>Stochastic Differential Equation solver</b></dt><dd>
+Supplies some stochastic differential equation (SDE) solvers
+for matlab, octave and scilab.  An example of their use is
+also supplied, showing the use for single and multiple
+independent noise sources.  Kloeden and Platen (1992) 
+comprehensively introduced the numerical solution of
+SDEs. <a href="sde.dtx">Download the file sde.dtx,</a>
+then execute LaTeX on sde.dtx to unpack the files.
+
+<p/></dd><dt><b>Differential Algebraic Equation solver</b></dt><dd>
+Supplies some simple differential algebraic equation (DAE) solvers
+for matlab, octave and scilab.  An example of their use for a pendulum is
+also supplied.   <a href="dae.dtx">Download the file dae.dtx,</a>
+then execute LaTeX on dae.dtx to unpack the files.
+
+<p/></dd><dt><b>Estimate Generalised Fractal
+Dimensions</b></dt><dd> The function fdim() estimates
+generalised fractal dimensions of a set of given points. 
+This code is based upon traditional methods and is arguably
+one of the most accurate in its class, and is reasonably
+computationally efficient.  Download and unzip <a
+href="fdimV0.2.zip">fdimV0.2.zip,</a> then execute
+Matlab/Octave on eg.m for an example.
+
+<p/></dd><dt><b>Construct Deterministic/Stochastic
+Centre/Slow/Invariant Manifolds</b></dt><dd> 
+My repository <a
+href="https://github.com/uoa1184615/WebServicesGit">
+WebServicesGit</a> provides source code for using computer
+algebra Reduce to construct emergent models of complex
+dynamical systems.
+<dl><dt>
+Centre Manifold:</dt><dd> 
+obtain a centre manifold of your specified
+system of ordinary differential equations (ODE) or delay
+differential equations (DDE), when the ODE/DDE has fast and
+centre modes.  This code underlies the web service at <a
+href="gencm.php">http://www.maths.adelaide.edu.au/anthony.roberts/gencm.php</a>
+</dd><dt>
+Stochastic Normal Form:</dt><dd> 
+derive a stochastic/non-autonomous
+coordinate transformation that separates slow, stable and
+unstable modes in a system of SDEs or non-autonomous ODEs
+(or autonomous ODEs).  This coordinate transform immediately
+gives the reduced model on the stochastic/non-autonomous
+slow manifold (and also other invariant manifolds), and the
+corresponding stochastic/non-autonomous isochrons which are
+so useful for projecting initial conditions and uncertainty
+quantification. This code underlies the web service at <a
+href="sdenf.php">http://www.maths.adelaide.edu.au/anthony.roberts/sdenf.php</a>
+</dd></dl>
+
+
+
+</dd><dt><b>
+Estimate radius of convergence of a Taylor series
+</b></dt><dd> 
+This Matlab/Octave function estimates the radius of convergence
+of a Taylor series from its coefficients.  The function
+caters for both cases of when convergence is limited by
+a single singularity or by a complex conjugate pair of
+singularities.  Also estimates the location and nature of
+the singularities.  <a
+href="radiusConverge.m">Download radiusConverge.m</a>
+&nbsp; See the Appendix of <a href="https://doi.org/10.1137/0150091"> doi:10.1137/0150091</a>
+</dd><dt><b>
+Construct an infinite-D coord transform for Burgers-like
+PDE:
+</b></dt><dd> 
+This Reduce code supports an example in the article
+<em>Normal forms and invariant manifolds for nonlinear,
+non-autonomous PDEs, viewed as ODEs in infinite
+dimensions</em> <a href="pBurgers.txt">Download
+pBurgers.txt</a>
+</dd></dl>
+
+</div>
+<?php 
+include "footer.php";
+?>

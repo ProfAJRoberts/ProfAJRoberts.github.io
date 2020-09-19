@@ -1,0 +1,173 @@
+X-Account-Key: account4
+X-UIDL: 74504
+X-Mozilla-Status: 0003
+X-Mozilla-Status2: 00000000
+X-Mozilla-Keys:                                                                                 
+Received: from ME2PR01MB3859.ausprd01.prod.outlook.com (2603:10c6:0:2d::22) by
+ SYCPR01MB3869.ausprd01.prod.outlook.com with HTTPS via
+ SYXPR01CA0113.AUSPRD01.PROD.OUTLOOK.COM; Tue, 5 Mar 2019 12:01:14 +0000
+Received: from SYAPR01CA0040.ausprd01.prod.outlook.com (2603:10c6:1:1::28) by
+ ME2PR01MB3859.ausprd01.prod.outlook.com (2603:10c6:220:2e::19) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1665.19; Tue, 5 Mar 2019 12:01:13 +0000
+Received: from SY3AUS01FT014.eop-AUS01.prod.protection.outlook.com
+ (2a01:111:f400:7eb5::209) by SYAPR01CA0040.outlook.office365.com
+ (2603:10c6:1:1::28) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.20.1665.17 via Frontend
+ Transport; Tue, 5 Mar 2019 12:01:13 +0000
+Authentication-Results: spf=softfail (sender IP is 129.127.13.228)
+ smtp.mailfrom=gmail.com; uao365.mail.onmicrosoft.com; dkim=pass (signature
+ was verified) header.d=gmail.com;uao365.mail.onmicrosoft.com; dmarc=pass
+ action=none header.from=gmail.com;
+Received-SPF: SoftFail (protection.outlook.com: domain of transitioning
+ gmail.com discourages use of 129.127.13.228 as permitted sender)
+Received: from hybrid.adelaide.edu.au (129.127.13.228) by
+ SY3AUS01FT014.mail.protection.outlook.com (10.152.234.114) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id
+ 15.20.1643.11 via Frontend Transport; Tue, 5 Mar 2019 12:01:12 +0000
+Received: from hybridprd01.ad.adelaide.edu.au (10.33.44.92) by
+ hybridprd01.ad.adelaide.edu.au (10.33.44.92) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id
+ 15.1.1591.10; Tue, 5 Mar 2019 22:31:10 +1030
+Received: from mx-01-02.vesa-hv01.esa.adelaide.edu.au (129.127.149.251) by
+ hybridprd01.ad.adelaide.edu.au (10.33.44.92) with Microsoft SMTP Server id
+ 15.1.1591.10 via Frontend Transport; Tue, 5 Mar 2019 22:31:10 +1030
+IronPort-PHdr:
+ =?us-ascii?Q?9a23:cgPeGhCq61UizNwHzS4tUyQJP3N1i/DPJgcQr6AfoPdwSPv4osbcNUD?=
+ =?us-ascii?Q?Src9gkEXOFd2Cra4c26yP6/urCTBIyK3CmUhKSIZLWR4BhJdetC0bK+nBN3f?=
+ =?us-ascii?Q?GKuX3ZTcxBsVIWQwt1Xi6NU9IBJS2PAWK8TW94jEIBxrwKxd+KPjrFY7OlcS?=
+ =?us-ascii?Q?30P2594HObwlSizexfbB/IA+roQnNuMQajohvJ6kswRbVv3VEfPhby3l1Lly?=
+ =?us-ascii?Q?JhRb84cmw/J9n8ytOvv8q6tBNX6bncakmVLJUFDspPXw7683trhnDUBCA5mA?=
+ =?us-ascii?Q?AXWUMkxpHGBbK4RfnVZrsqCT6t+592C6HPc3qSL0/RDqv47t3RBLulSwKMSM?=
+ =?us-ascii?Q?y/mPKhcxqlK9UrxKvqRJ8zYDJfo+aKOFzcbnBcd4AX2dNQtpdWi5HD4ihb4U?=
+ =?us-ascii?Q?PFe0BPeNAoof6plsBsRu+ChOyC+Pr1zRFmGX23ao/0+s/CwHNwQstH9cSv3v?=
+ =?us-ascii?Q?IttX1M6ISXv6vzKXSwjXOdPxW2TLn54jJdhAtu+2DXbV1ccfIz0QkCgDLjk2?=
+ =?us-ascii?Q?IpID7Iz+Y0v4Bvmub4uZ6SO6iinIrpxtsrjWtxcohjJTCiJgPxVDe7yp5xZ4?=
+ =?us-ascii?Q?4Jd2mR05/Zt6pCJ5QuDubN4tyW88iWn1otDsjxr0IpJK2fisHxI4oxx7YbPy?=
+ =?us-ascii?Q?HfIyI7Qz5WOmNJjd4gWppeLO5hxms7Uit0vPwWtWw3VpQrSdIksPAum0M2hD?=
+ =?us-ascii?Q?P8MSLV/lw80S51TaKzQ/T6+VEIU4ularcLp4s2rswmYYPvkTZGS/2nVv5jLW?=
+ =?us-ascii?Q?MekUr4eWo5OHnba/npp+YLYN7lgb+MqE2lsylHes4KhQOX3Sc+emkzrLv4FD?=
+ =?us-ascii?Q?1TbZFg/A3j6XUsIvXKt4GqaKjGQBaz5gs6xKlADenzdsXg2MLI0xYdxKalYT?=
+ =?us-ascii?Q?mIUzOc7jECqK2hUislzF6gerBNLD7Ho7lJ3TOlL7gcbs75kJBjgMunv5F4Jc?=
+ =?us-ascii?Q?BL7AKIPv+XgfartvdAwVxZwm/yPzgDdhnkIw2=09VmeGA6vfO6TX5wzbrtkz?=
+ =?us-ascii?Q?KvWBMddG8A32LOIosqbj?=
+X-SBRS: 3.5
+X-Listener: MX_LDAP
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: A0A9BAAq4PJbh7KgVdFiDhABBgcGgWWDOTMng3iBHYJekBmLBx5uhEqDRoRLaYFmDQWIViI4EgEDAQEBAQEBAgETAQEBCA0JCBsOIwyCNiKCWzMdARseAxIIAQc3AiQBEQEFAYNWgWkBAxWYZoMePIsNgRIFAReCdwWEMQoZJw1agTcCBhKLc4IWiG4BEgFsgjeCVwKfbwcCgSuPfBiQfYQ2gWCRcQ8hgTyBBXEzGiOBAYFuAQFLghsag1OKGE4uMIwegj4BAQ
+X-IPAS-Result: A0A9BAAq4PJbh7KgVdFiDhABBgcGgWWDOTMng3iBHYJekBmLBx5uhEqDRoRLaYFmDQWIViI4EgEDAQEBAQEBAgETAQEBCA0JCBsOIwyCNiKCWzMdARseAxIIAQc3AiQBEQEFAYNWgWkBAxWYZoMePIsNgRIFAReCdwWEMQoZJw1agTcCBhKLc4IWiG4BEgFsgjeCVwKfbwcCgSuPfBiQfYQ2gWCRcQ8hgTyBBXEzGiOBAYFuAQFLghsag1OKGE4uMIwegj4BAQ
+X-IronPort-AV: E=Sophos;i="5.56,253,1539610200"; 
+   d="scan'208,217";a="85836558"
+Received: from mail-qt1-f178.google.com ([209.85.160.178])
+  by mx-01-02.vesa-hv01.esa.adelaide.edu.au with ESMTP/TLS/AES128-GCM-SHA256; 05 Mar 2019 22:31:09 +1030
+Received: by mail-qt1-f178.google.com with SMTP id j36so8644970qta.7
+        for <anthony.roberts@adelaide.edu.au>; Tue, 05 Mar 2019 04:01:09 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20161025;
+        h=mime-version:from:date:message-id:subject:to;
+        bh=iL4uksZzupQluZZUofJswq8Srnsh2pqPcKz+Sao0vAE=;
+        b=fUnoJuruAyPZ5B5gD60bQaGNXlGpobvab7H358FGbYG2A06tqr8K2Qg3idXnnO3eAT
+         b8o4I9BNLojkwigUFoYH1AaO+yhGTII7NHO6PdoBrTs8A6m6bSWn4Yk6zprzUZAtB2O/
+         I2r9B6jKOJhPXPW6HZ7JB2aaRDMINwYbQB5S7jFj88THIQSMsUlC2QJgGr0LqUYHud+l
+         zqE18iqbtDaA5jLl5y+nJVsM75oRygXuynLN6lT/L+56wSRMsVmyvskD8HdCODlgrD/p
+         cNiwEJ9wuO9xQnpBv1ENQTTiJ6YcaDudbp722mNb+IzR+w1nzot/c2W6GVZW4byYGoMu
+         jyPg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:mime-version:from:date:message-id:subject:to;
+        bh=iL4uksZzupQluZZUofJswq8Srnsh2pqPcKz+Sao0vAE=;
+        b=ItXCz0+qb3vk7pN8MW/0MzM5eQe/DPx3LU+2sYCT2NgDIva3kGdU/NwIFBYtUKQQw9
+         mz63pJtw4kL0PWDeth5WL5+XPoYPp3xoYwURn7Gwec6X1PKkfVEMAm4AU97yyiw9Wyea
+         4hpHJMY9Ndq8edoIqlMLjZxXdDyH1F7SRIzOyfgg3VfdDuvRORXpQ0efsgwuFQmwlxq3
+         jV63hlRNJT7C7VqbtZ/yGG6B6DX0Jte6v8G9bfOg7ZdTQ5Qz9MIFc6DQZwpY5ZGFXS87
+         kxWgsPaLPKlcO3pbiYgz0TBE32YCIi/YylMYeDPSxJtLlj7pQxvSEntVi3Omb74lrf/I
+         1tEQ==
+X-Gm-Message-State: APjAAAXRr9qwOKUBAnOfjgQSX14pnWejOvsxt0UxQeE7p9qc3Ol4YoOU
+	ClNuLRtka+/Jonwcokzdb4xphSQXZF0i65qdyc1nYA==
+X-Google-Smtp-Source: APXvYqzwnkSdd4jNGMR9AHU8UivGi+c0LsiNfiOeDmrx/MueveVBl9bWvK5i4y5/qM3qh6yX9VZ7qO7lVOmd2/DC9aI=
+X-Received: by 2002:aed:3f70:: with SMTP id q45mr1056241qtf.379.1551787267060;
+ Tue, 05 Mar 2019 04:01:07 -0800 (PST)
+From: Michael Cromer <mccromer.g@gmail.com>
+Date: Tue, 5 Mar 2019 23:00:56 +1100
+Message-ID: <CAODzt2VSfj0ybpPiC4+krqnEp_iUrv2pVHsS_hT8tnz4eGGkag@mail.gmail.com>
+Subject: Thanks
+To: anthony.roberts@adelaide.edu.au
+Content-Type: multipart/alternative; boundary="000000000000d1f682058357a039"
+Return-Path: mccromer.g@gmail.com
+X-OrganizationHeadersPreserved: hybridprd01.ad.adelaide.edu.au
+X-MS-Exchange-Organization-ExpirationStartTime: 05 Mar 2019 12:01:13.1013
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 2:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id:
+ 5663763d-0123-4b30-bf98-08d6a1624382
+X-EOPAttributedMessage: 0
+X-MS-Exchange-Organization-MessageDirectionality: Originating
+X-CrossPremisesHeadersPromoted:
+ SY3AUS01FT014.eop-AUS01.prod.protection.outlook.com
+X-CrossPremisesHeadersFiltered:
+ SY3AUS01FT014.eop-AUS01.prod.protection.outlook.com
+X-Forefront-Antispam-Report:
+ CIP:129.127.13.228;IPV:CAL;SCL:-1;CTRY:AU;EFV:NLI;SFV:SKN;SFS:;DIR:INB;SFP:;SCL:-1;SRVR:ME2PR01MB3859;H:hybrid.adelaide.edu.au;FPR:;SPF:None;LANG:en;
+X-MS-Exchange-Organization-SCL: -1
+X-MS-Exchange-Organization-AuthSource: hybridprd01.ad.adelaide.edu.au
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-OriginatorOrg: adelaide.edu.au
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: 5663763d-0123-4b30-bf98-08d6a1624382
+X-Microsoft-Antispam:
+ BCL:0;PCL:0;RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(8559020)(8990200)(5600127)(711020)(4605104)(4608103)(4709054)(2017052603328)(7153060);SRVR:ME2PR01MB3859;
+X-MS-TrafficTypeDiagnostic: ME2PR01MB3859:
+X-Microsoft-Exchange-Diagnostics:
+ 1;ME2PR01MB3859;20:AXmbwYSoXN0OIBCl3C47DYaDFDmmC6Wyn+c6XMT91aruOUg8SquVmy7nu+lVmeFyDXavDyi0ahlDkIrQRyM6xXR+XSrQDS2kV45uRx0QMvYoVjH05Yg9miRjayiRsZ6+OXk+emIkih+twq5sHPtwCF5Q7U72ziKJyKdMpsF3amZaUgzJ6bD2zQ6UIz66ADsaACUDWr1WKCd8pZ442rWF0/YvRwn5tdZw36i6wbZPVHqrhaE/fS86P98R1DX4zr0ZhWbuIxx3zC7XryPKUtqdN9ucHeu5jLvfdUDPS8pNHQLSngNsP4RIf9Lbqrq+3zAXchyV4yrT02yfNaN8QYw25vVlyUxNcJ4JlNjregM9FtujOiofj9XSMg1v0nvzB0sMEW2jtaEB1elG2VuwKH85KaVVo1742TJta94AFxMVdbqqS/SPuTkbf1T6Ej9AkazXvLgsrUDn2tgbYF4K7DL/J/shF5HboSzd9JWSutW7gsvGhPYFvDE2YPtThc3oBeCA;23:lPW6qD9fBsn7LUK/EnLPsVp/9gyWNqwMPcYMmSAzlma38E1iknpBi8V+F/JbbdmE5i5cqAppmM8Zy5Yb96FJ+f+SsElGr8EuvXcxepfRJ2STBAjEwRjlMReInE5XSLoHCMT7II0bVMSJ8DmmacP7hQ==
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 05 Mar 2019 12:01:12.9421
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 5663763d-0123-4b30-bf98-08d6a1624382
+X-MS-Exchange-CrossTenant-Id: b3cddf40-9654-4a26-86a1-779c51f69c48
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=b3cddf40-9654-4a26-86a1-779c51f69c48;Ip=[129.127.13.228];Helo=[hybrid.adelaide.edu.au]
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: ME2PR01MB3859
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:01.4515512
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.1665.020
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;ex:0;auth:0;dest:I;ENG:(750119)(520011016)(944506303)(944626516);
+X-Microsoft-Antispam-Message-Info:
+	T1xSPZkpEdXRGtwVpa25RoFYKVkhLoTWdAvGbKmxC9MbGl5FuCskrI6MsEMCZhjlEn46lF1njMZdpebj7x+R++xe2SX+MQN+zG/aRX7uRxiTqQ27ve4QjmV315uPBGRa5lxSAJaFZ2W25XcgtT/0SuJEzWrQUVeUpWk0C3JDfbXLVmFaucmlaFSJyHM2OheXEuqOv6Yww0l+l7fzqizRKhGcCANofovGiCVtA5NhNHQyaa/6IV283XIh8NFHKXC44tgwJkRKm8BjClvQeMi/S/gz3qjoscpAz9T5XyObO1GHWZ7Ark6f8aAKty9AATfrbqAvCBpI1l+QC6bXELDonbm/SClmTiQ2Wo7nBultEE6fH8zIXx59oIO6unsjgrOFNqfmndzTdt0R06N+bLv+PG1FZL01nvVXfY2cEYDLQtCWNYXux/H8QcfrHHyvKGTx7sVfZhphcvA+6/4hIrsWBiwAp7DJcQQW437U2ZHJLvo9Kk2Qx0v0J+AKg5tChEJEt1yzr3Bny2nj8CnplY/S0oVG8IMY0kAbQRaGNXepjuggQEQOQiJg7k0N7ViiMt+G13ZiJFfzaxOJfyCDKKStlOwracbmPbF2Xvr8kA0BKCk+SPSmRWmZc+MkYX6qhlHVwHXmMvxfwfD8qsBjko6dk6hejLClOdHRm6T31apQXmNR65Qjr1sqF+XGXDPcFvXkmJ2n+Xc6B3BDt52fPm/KM+HkCiNSx6a1gVgLhWFOOwk5LoVqebdgdxJw41WP1EWb0Ldi+UMSYDz6uEbmtwNCGdhDzeXpdtc87sDpaKj/KugrRiQ+/Th3U8NXUO7gr5pKkm5NkM3yYj4DMSuxSy4Zdt8U4JSgA5ewzFLPwgwQItYIPJbkImD2wIy9wH/JE64x
+MIME-Version: 1.0
+
+--000000000000d1f682058357a039
+Content-Type: text/plain; charset="UTF-8"
+
+Hi Anthony
+
+I'm a PhD student with Prof. Peter Bouwkengt at ANU. I'm in the process of
+finalising my thesis as I write this. As I was casting about for useful
+indexing-type packages I might not have known about, I stumbled on your
+page on LaTeX cross-referencing (and on several other style points besides).
+
+It's so conspicuously useful that I feel compelled to email you to tell you
+so. Usually one can only hope for two of {clear, concise, comprehensive},
+but somehow you managed to hit all three. Bravo.
+
+Cheers
+Michael
+
+--000000000000d1f682058357a039
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"><d=
+iv dir=3D"ltr">Hi Anthony<div><br></div><div>I'm a PhD student with Prof. P=
+eter Bouwkengt at ANU. I'm in the process of finalising my thesis as I writ=
+e this. As I was casting about for useful indexing-type packages I might no=
+t have known about, I stumbled on your page on LaTeX cross-referencing (and=
+ on several other style points besides).</div><div><br></div><div>It's so c=
+onspicuously useful that I feel compelled to email you to tell you so. Usua=
+lly one can only hope for two of {clear, concise, comprehensive}, but someh=
+ow you managed to hit all three. Bravo.</div><div><br></div><div>Cheers</di=
+v><div>Michael</div></div>
+
+--000000000000d1f682058357a039--
+.
+

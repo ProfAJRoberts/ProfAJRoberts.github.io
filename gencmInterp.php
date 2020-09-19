@@ -1,0 +1,61 @@
+<h3>In the results</h3>
+<div class="newspaper">
+<ul>
+<li>The centre manifold is parametrised by m slow variables
+<tt>s(j)</tt>.
+<li>Each such slow variable <tt>s(j)</tt> is either a 'real'
+slow variable or a complex amplitude of an oscillatory mode
+\(e^{i\omega t}\) for some frequency \(\omega\).
+<li>In a real system of <small>ODE/DDE</small>s, the complex
+amplitudes occur in complex conjugate pairs.
+<li>I use the variable <tt>small</tt>  (also appearing as
+\(\varepsilon\)) to control and order the asymptotic
+expansion: introducing <tt>small</tt> into your definition
+of the `nonlinear' function empowers finer control of the
+asymptotics.  For example, in the delay <small>ODE</small>
+example the parameter \(\delta\) is made 'small'. 
+Analogously, cubic terms may best be made `small' when added
+to quadratic terms.
+<li>The code does cater for degenerate cases involving
+generalised eigenvectors.  But the code does this by
+modifying \(L\), the matrix of the linearisation at the
+origin. The code attempts to make the smallest modification
+it can to remove the degeneracy, and flags the change with
+variable 'small' so you recover the original with
+\(\verb|small|=1\). <em>Be careful</em> that the results are
+relevant to what you want.
+<li>Similarly, the code tries to make all, except the
+nominated frequencies, of \(\vec z^*L\vec e\) to be 'small',
+and also makes \(\vec f(\vec 0)\) `small'. <em>Be very
+careful</em> that the results are relevant to what you want.
+<li>For explanations and relevant theory, see my book <a
+href="http://www.maths.adelaide.edu.au/anthony.roberts/modelling.php">
+Modelling emergent dynamics in complex systems</a>, or <a
+href="http://dx.doi.org/10.1016/S0010-4655(96)00162-2">Low-
+dimensional modelling of dynamics via computer algebra</a>,
+or the classic <a
+href="http://dx.doi.org/10.1017/S0334270000004756">Simple
+examples of the derivation of amplitude equations for
+systems of equations possessing bifurcations</a>.
+<li>In the case of a slow manifold, the code also computes a
+basis of normal vectors to the isochrons (actually normal to
+their tangent space at the slow manifold). Use these basis
+vectors: 
+<ul><li>to project initial conditions onto the slow
+manifold; 
+</li><li>to project non-autonomous forcing onto the slow
+evolution;  
+</li><li>to predict the consequences of modifying the
+original system; and  
+</li><li>in uncertainty quantification to quantify effects
+on the model of uncertainties in the original system.  
+</li></ul>For explanations and relevant theory, see 
+<a
+href="http://dx.doi.org/10.1016/S0010-4655(99)00494-4">
+Computer algebra derives correct initial conditions for
+low-dimensional dynamical models</a>, or the classic <a
+href="http://dx.doi.org/10.1017/S0334270000006470">
+Appropriate initial conditions for asymptotic descriptions
+of the long term evolution of dynamical systems</a>.
+</ul>
+</div>

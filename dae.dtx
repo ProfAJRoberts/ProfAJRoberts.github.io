@@ -1,0 +1,698 @@
+% \iffalse
+%<*document>
+\def\fileversion{1.1c}
+%\def\filedate{2 June 2005}
+\def\filedate{21 Dec 2015}
+%</document>
+% 
+% This is file `dae.dtx':
+% LaTeX this file to generate scilab, matlab and documentation files; 
+% then LaTeX doc.tex twice to generate some documentation.
+%
+%<*driver>
+\def\batchfile{dae.dtx}
+\input docstrip.tex
+\preamble
+
+(c) Tony Roberts, v\fileversion, \filedate, anthony.roberts@adelaide.edu.au 
+Permission is hereby granted, free of charge, to any person to copy 
+this software and associated documentation files.  But under no 
+circumstances is it to be modified.  This copyright and permission 
+notice shall be included in all copies or substantial portions of the 
+Software.
+
+\endpreamble
+\postamble
+\endpostamble
+\generateFile{doc.tex}{f}{\from{dae.dtx}{document}}
+\generateFile{dae2.m}{f}{\from{dae.dtx}{dae2m}}
+\generateFile{dae4.m}{f}{\from{dae.dtx}{dae4m}}
+\generateFile{dae4o.m}{f}{\from{dae.dtx}{dae4om}}
+\generateFile{pendrun.m}{f}{\from{dae.dtx}{pendrunm}}
+\generateFile{penddae.m}{f}{\from{dae.dtx}{penddaem}}
+\generateFile{pendg.m}{f}{\from{dae.dtx}{pendgm}}
+\def\MetaPrefix{//}
+\preamble
+
+(c) Tony Roberts, v\fileversion, \filedate, mailto:anthony.roberts@adelaide.edu.au 
+Permission is hereby granted, free of charge, to any person to copy 
+this software and associated documentation files.  But under no 
+circumstances is it to be modified.  This copyright and permission 
+notice shall be included in all copies or substantial portions of the 
+Software.
+
+\endpreamble
+\postamble
+\endpostamble
+\generateFile{dae2.sci}{f}{\from{dae.dtx}{dae2s}}
+\generateFile{dae4.sci}{f}{\from{dae.dtx}{dae4s}}
+\generateFile{dae4o.sci}{f}{\from{dae.dtx}{dae4os}}
+\generateFile{pendrun.sci}{f}{\from{dae.dtx}{pendruns}}
+\generateFile{penddae.sci}{f}{\from{dae.dtx}{penddaes}}
+\generateFile{pendg.sci}{f}{\from{dae.dtx}{pendgs}}
+\end
+%</driver>
+% \fi
+% 
+% \section{Introduction}
+% 
+% This document suplies some differential algebraic equation (\textsc{dae}) 
+% solvers for \matlab\ and \scilab.  
+% An example of their use is also supplied. For 
+% a brief introduction to \textsc{dae}'s see~\cite{Roberts99a}.
+% 
+% In use I suggest you explore the dynamics of your system with the low 
+% accuracy but fast \verb|dae2|, then confirm the veracity of any 
+% interesting integrations with \verb|dae4o|\,.
+% 
+% \section{An example: the pendulum}
+% 
+% As an example of the use of the \textsc{dae} solvers I provide here code 
+% for the simulation of a pendulum oscillating in a gravitational field.  
+% Usually we do this in polar coordinates.  However, coding the 
+% equations in Cartesian coordinates is easy using \textsc{dae}'s.  We just 
+% suppose that there is some unknown tension proportional to~$s$ in the 
+% arm of the pendulum, then code
+% \begin{displaymath}
+%     \dot x=u\,,\quad
+%     \dot y=v\,,\quad
+%     \dot u=-xs\,,\quad
+%     \dot v=-ys+1\,,\quad
+%     x^2+y^2-1=0\,.
+% \end{displaymath}
+% Note the horizontal component of the tension~$s$ is proportional
+% to~$x$ whereas the vertical component is proportional to~$y$ as used 
+% above.  The algebraic equation $x^2+y^2=1$  ensures the weight of 
+% the pendulum stays a distance~$1$ from the pivot at the origin.
+% 
+% \subsection{Execute pendrun}
+% 
+% Try executing this using each of the three \textsc{dae} solvers in turn.  
+% Observe:
+% \begin{description}
+%     \item[dae2]  is quick but the lower accuracy shows up in a decay 
+%     of the oscillations of the pendulum;
+% 
+%     \item[dae4] is also quick and accurate but unfortunately the 
+%     higher accuracy is useless for vibrating (or wave) systems as 
+%     physical oscillations grow numerically with this code;
+% 
+%     \item[dae4o]  is significantly slower but is accurate and physical 
+%     oscillations are stable (they actually decay very slowly).
+% \end{description}
+% 
+%    \begin{macrocode}
+%<*pendrunm>
+%% Execute to run the differential algebraic equation solvers 
+%% on the 5 equation model for the dynamics of a pendulum:
+%% dx/dt=u
+%% dy/dt=v
+%% du/dt=-x*s
+%% dv/dt=-y*s+1
+%% 0=x^2+y^2-1
+%% where (x,y) is the location of the bob, (u,v) is its velocity
+%% and s is proportional to tension in the wire of the pendulum.
+%% Uses penddae.m for the coded \textsc{dae}s, pendg.m for some graphics,
+%% dae4o.m, dae4.m or dae2.m to do the integration.
+format compact;
+w0=[1;0;0;0;0];
+ts=linspace(0,16,81);
+w=dae2('penddae',ts,w0,2,'pendg');
+%%w=dae4('penddae',ts,w0,1,'pendg');
+%%w=dae4o('penddae',ts,w0,1,'pendg');
+plot(ts,w);
+legend(' x',' y',' u',' v',' s')
+xlabel(' t')
+%</pendrunm>
+%<*pendruns>
+// See explanation in Matlab version, execute with exec('pendrun.sci');
+global hv dt
+getf('dae2.sci');
+getf('penddae.sci');
+getf('pendg.sci');
+w0=[1;0;0;0;0];
+ts=linspace(0,16,161);
+dt=ts(2)-ts(1);
+hv=[0 0;-w0(1) -w0(2);-w0(1)-w0(3)/8 -w0(2)-w0(4)/8];
+xbasc();
+xset('alufunction',6);
+plot2d(hv(:,1),hv(:,2),style=2,rect=[-1 -1 1 1],frameflag=3)
+w=dae2('penddae',ts,w0,1,'pendg');
+// w=dae4('penddae',ts,w0,1,'pendg');
+// w=dae4o('penddae',ts,w0,1,'pendg');
+xbasc()
+plot2d(ts',w',style=2:6)
+xtitle('pendulum evolution','t',' ');
+legends(['x';'y';'u';'v';'s'],2:6,2)
+%</pendruns>
+%    \end{macrocode}
+% 
+% \subsection{The \textsc{dae} is coded in penddae.m}
+% 
+%    \begin{macrocode}
+%<*penddaem>
+%% Used by pendrun.m
+%</penddaem>
+%<*penddaes>
+// Used by pendrun.sci
+%</penddaes>
+%<*penddaem,penddaes>
+function [f,k,m]=penddae(t,w,wd)
+x=w(1); y=w(2); u=w(3); v=w(4); s=w(5);
+xd=wd(1); yd=wd(2); ud=wd(3); vd=wd(4); 
+f=[-xd+u
+   -yd+v
+   -ud-x*s
+   -vd-y*s+1
+       x^2+y^2-1];
+k=[0 0 1 0 0
+   0 0 0 1 0
+   -s 0 0 0 -x
+   0 -s 0 0 -y
+   2*x 2*y 0 0 0];
+m=-diag([1,1,1,1,0]);
+%</penddaem,penddaes>
+%    \end{macrocode}
+% 
+% \subsection{Live graphics via pendg.m}
+% 
+%    \begin{macrocode}
+%<*pendgm>
+%% Used by pendrun.m
+function pendg(t,w,wd)
+x=w(1); y=w(2); u=w(3); v=w(4); s=w(5);
+plot([0 -x],[0 -y],-x,-y,'o',-x-[0 u]/8,-y-[0 v]/8)
+axis equal
+axis off
+axis([-1 1 -1 1])
+drawnow
+%</pendgm>
+%<*pendgs>
+// Used by pendrun.sci
+function pendg(t,w,wd)
+global hv dt
+hvn=[0 0;-w(1) -w(2);-w(1)-w(3)/8 -w(2)-w(4)/8];
+xpause(dt*1e6);
+plot2d([hv(:,1) hvn(:,1)],[hv(:,2) hvn(:,2)],style=[2 2],frameflag=0,axesflag=0)
+hv=hvn
+%</pendgs>
+%    \end{macrocode}
+% 
+% 
+% \section{The backward difference integration algorithms}
+% 
+% Here I describe the three versions of the \textsc{dae} integration 
+% algorithms.  Parts of their content are common.
+% 
+% \subsection{Comments}
+% The description of each of the three versions is much the same and 
+% comes first so that \matlab's help command will print it.
+%    \begin{macrocode}
+%<*dae2m>
+%% function ys=dae2(f,tspan,y0,nint,g)
+%% solves a set of differential algebraic equations (DAEs)
+%%        f(t,y,y')=0  where y'=dy/dt
+%% with a 2nd order method starting from y0 at time t0 and 
+%</dae2m>
+%<*dae4m>
+%% function ys=dae4(f,tspan,y0,nint,g)
+%% solves a set of differential algebraic equations (DAEs)
+%%        f(t,y,y')=0  where y'=dy/dt
+%% with a 4th order method starting from y0 at time t0 and 
+%</dae4m>
+%<*dae4om>
+%% function ys=dae4o(f,tspan,y0,nint,g)
+%% solves a set of differential algebraic equations (DAEs)
+%%        f(t,y,y')=0  where y'=dy/dt
+%% with a 4th order method starting from y0 at time t0 and 
+%</dae4om>
+%<*dae2m,dae4m,dae4om>
+%% finishing at time tfin where tspan=[t0 t1 ... tfin].
+%% y0 is a column vector, tspan is a row vector.
+%%
+%% The solution is returned at all the times in tspan.
+%% The time steps are diff(ts)/nint within the domain. Error
+%% management is entirely up to the user via tspan and nint.
+%% If optional nint is omitted, then it is assumed to be 1.
+%% If matlab warms of matrices with high condition number,
+%% then try increasing nint.
+%%
+%% The Jacobians of f, namely k=df/dy and m=df/dy', must be 
+%% provided by f, at each time compute: [f,k,m]=func(t,y,y').
+%% Both m and k may be given as sparse matrices.
+%% If warnings of poor convergence occur, then the coded
+%% Jacobians probably have errors.
+%%
+%% The optional argument g is the name of a user supplied
+%% function g(t,y,y') that is invoked immediately the
+%% solution is computed at the times in tspan.
+%%
+%% The initial state y0 should be consistent with the 
+%% algebraic part of the DAE, but if not consistent then 
+%% transient oscillations will appear as it works towards
+%% consistency.
+%%
+%% The method will also work well for stiff sets of ODEs.
+%</dae2m,dae4m,dae4om>
+%<*dae2m>
+%%
+%% See pendrun.m, penddae.m & pendg.m for a pendulum example.
+%% See dae4.m and dae4o.m for more accurate versions.
+%%
+%</dae2m>
+%<*dae4m>
+%% It is unsuitable for problems with an oscillatory spectrum
+%% as non-dissipative oscillations will grow for h*omega<4 ; 
+%% instead use dae4o.m
+%%
+%% See pendrun.m, penddae.m & pendg.m for a pendulum example.
+%% See dae2.m and dae4o.m for other versions.
+%%
+%</dae4m>
+%<*dae4om>
+%% This version should work well for problems with significant
+%% oscillations (waves) as all linear oscillations are stable.
+%% It is more costly than dae4 as it divides each time step
+%% into three substeps.  The three substeps are solved
+%% simultaneously which results in linear systems 3X as big.
+%% However, each time step may be five times than that for dae4.  
+%% The error in each step is approx 0.411E-3*(h*lambda)^5
+%% when applied to y'=lambda*y.
+%%
+%% See pendrun.m, penddae.m & pendg.m for a pendulum example.
+%% See dae2.m and dae4.m for other versions.
+%%
+%</dae4om>
+%    \end{macrocode}
+% 
+% \subsection{Function declaration}
+% 
+% The function declaration statement for all version are the same 
+% apart from their name because they are used exactly the same way.
+%    \begin{macrocode}
+%<*dae2m,dae2s>
+function ys=dae2(f,tspan,y0,nint,g)
+%</dae2m,dae2s>
+%<*dae4m,dae4s>
+function ys=dae4(f,tspan,y0,nint,g)
+%</dae4m,dae4s>
+%<*dae4om,dae4os>
+function ys=dae4o(f,tspan,y0,nint,g)
+%</dae4om,dae4os>
+%<*dae2s,dae4s,dae4os>
+// See explanations in the matlab version
+%</dae2s,dae4s,dae4os>
+%    \end{macrocode}
+% 
+% \subsection{Initialisation}
+% 
+% See if the optional arguments have been supplied and set some 
+% parameters.   First set \verb|nint| to the default~$1$ if omitted. 
+% Then set \verb|gcall| if an intermediate routine is supplied. 
+%    \begin{macrocode}
+%<*dae2s,dae4s,dae4os>
+[nargout,nargin] = argn(0)
+%</dae2s,dae4s,dae4os>
+%<*dae2m,dae2s,dae4m,dae4s,dae4om,dae4os>
+if nargin<4, nint=1; end
+gcall=(nargin==5);
+nout=length(tspan);
+ndim=length(y0);
+ys=zeros(ndim,nout);
+newtol=1e-6;
+newtmax=10;
+newtit=zeros(1,newtmax);
+%</dae2m,dae2s,dae4m,dae4s,dae4om,dae4os>
+%    \end{macrocode}
+% Now set the weights used for the backward difference estimates of 
+% the derivative, and to step forward in time.
+%    \begin{macrocode}
+%<*dae2m,dae2s>
+wd=[0 1 1/2]; 
+%</dae2m,dae2s>
+%<*dae4m,dae4s,dae4om,dae4os>
+wd=[0 1 1/2 1/3 1/4]; 
+%</dae4m,dae4s,dae4om,dae4os>
+%<*dae2m,dae2s,dae4m,dae4s,dae4om,dae4os>
+wds=sum(wd);
+%</dae2m,dae2s,dae4m,dae4s,dae4om,dae4os>
+%<*dae2m,dae2s>
+step=cumsum(eye(3,3),1);
+%</dae2m,dae2s>
+%<*dae4m,dae4s,dae4om,dae4os>
+step=cumsum(eye(5,5),1);
+%</dae4m,dae4s,dae4om,dae4os>
+%    \end{macrocode}
+% Then \verb|dae4o| needs the following matrix because it is a 
+% multi-step method.  We now triple \verb|nint| so it counts the 
+% actual sub-steps in \verb|dae4o|, each triple making one step.
+%    \begin{macrocode}
+%<*dae4om,dae4os>
+step3=step^3;
+nint=3*nint;
+%</dae4om,dae4os>
+%    \end{macrocode}
+%    
+% To allow for varying spaced output in time I fit a spline
+% and solve the \textsc{dae} in the independent variable $s=[1,\verb|nts|]$ 
+% rather than in time~$t$.  Then \verb|dt|is just $dt/ds$ at each 
+% psuedo-time $s$.
+%    \begin{macrocode}
+%<*dae2m,dae4m,dae4om,dae2s,dae4s,dae4os>
+nts=1+nint*(nout-1);
+%</dae2m,dae4m,dae4om,dae2s,dae4s,dae4os>
+%<*dae2m,dae4m,dae4om>
+ts=spline(1:nint:nts,tspan,(1:nts));
+dt=spline(1:nint:nts,tspan,(1:nts)+1e-7);
+dt=(dt-ts)/1e-7;
+%</dae2m,dae4m,dae4om>
+%<*dae2s,dae4s,dae4os>
+[ts,dt] = interp(1:nts,1:nint:nts,tspan,splin(1:nint:nts,tspan));
+%</dae2s,dae4s,dae4os>
+%    \end{macrocode}
+%    
+% \subsection{Start-up step}
+% First check that there are enough intervals for the start-up step;  
+% \verb|dae4o| needs no check as the minimum three sub-steps is all it 
+% needs to self-start.
+%    \begin{macrocode}
+%<*dae2m,dae2s>
+if nts<3, disp('ERROR: dae2 needs at least 2 steps'), return, end
+%</dae2m,dae2s>
+%<*dae4m,dae4s>
+if nts<5, disp('ERROR: dae4 needs at least 4 steps'), return, end
+%</dae4m,dae4s>
+%    \end{macrocode}
+% 
+% Now the variable \verb|y0| only gives the initial state of the system.  
+% To integrate forward in time we use the vectors of function values and 
+% backward differences at the current time stored in the matrix 
+% \verb|y|, so our first task is to find the backward differences to fit 
+% the initial data.  We do this by making the first step a multiple step 
+% and require that the unknown initial backward differences, in 
+% \verb|yy|, suit all information across the group of multiple steps. 
+%  
+% Note that the size of \verb|y| and \verb|yy| and the number of initial 
+% steps varies with the nature of the method.  Also note that in 
+% \verb|dae4o| I allow the first step to be lower order, this does not 
+% increase the overall order of error, so that the first step is also a 
+% triple step as are all the remaining steps.
+% 
+% The initial guess to the start-up backward differences are just zeros,
+% and put them in with the function values.
+%    \begin{macrocode}
+%<*dae2m,dae2s>
+yy=zeros(ndim,2); 
+y=[y0 yy]; 
+%</dae2m,dae2s>
+%<*dae4om,dae4os>
+yy=zeros(ndim,3); 
+y=[y0 yy zeros(ndim,1)]; 
+%</dae4om,dae4os>
+%<*dae4m,dae4s>
+yy=zeros(ndim,4); 
+y=[y0 yy]; 
+%</dae4m,dae4s>
+%    \end{macrocode}
+% Then start the Newton loop to find the initial multi-step.  The 
+% loop will execute a maximum of \verb|newtmax| times and if the 
+% residuals of the \textsc{dae}'s have not become small before this then it is 
+% just too bad.
+%    \begin{macrocode}
+%<*dae2m,dae2s,dae4om,dae4os,dae4m,dae4s>
+for newt=1:newtmax
+%</dae2m,dae2s,dae4om,dae4os,dae4m,dae4s>
+%    \end{macrocode}
+% First use the estimated backward differences at the initial time 
+% to extrapolate to each of the future time steps.
+%    \begin{macrocode}
+%<*dae2m,dae2s,dae4om,dae4os,dae4m,dae4s>
+   y2 = y*step;
+   y3 = y2*step;
+%</dae2m,dae2s,dae4om,dae4os,dae4m,dae4s>
+%<*dae4om,dae4os,dae4m,dae4s>
+   y4 = y3*step;
+%</dae4om,dae4os,dae4m,dae4s>
+%<*dae4m,dae4s>
+   y5 = y4*step;
+%</dae4m,dae4s>
+%    \end{macrocode}
+% Second, using these estimates of the function and its derivatives, 
+% evaluate the residuals of the \textsc{dae}'s at each time and also the 
+% Jacobians at each of these times.
+%    \begin{macrocode}
+%<*dae2m,dae4om,dae4m>
+   [f2,k2,m2]=feval(f,ts(2),y2(:,1),y2*wd'/dt(2));
+   [f3,k3,m3]=feval(f,ts(3),y3(:,1),y3*wd'/dt(3));
+%</dae2m,dae4om,dae4m>
+%<*dae2s,dae4os,dae4s>
+   execstr('[f2,k2,m2] ='+f+'(ts(2),y2(:,1),y2*wd''/dt(2))')
+   execstr('[f3,k3,m3] ='+f+'(ts(3),y3(:,1),y3*wd''/dt(3))')
+%</dae2s,dae4os,dae4s>
+%<*dae4om,dae4m>
+   [f4,k4,m4]=feval(f,ts(4),y4(:,1),y4*wd'/dt(4));
+%</dae4om,dae4m>
+%<*dae4os,dae4s>
+   execstr('[f4,k4,m4] ='+f+'(ts(4),y4(:,1),y4*wd''/dt(4))')
+%</dae4os,dae4s>
+%<*dae4m>
+   [f5,k5,m5]=feval(f,ts(5),y5(:,1),y5*wd'/dt(5));
+%</dae4m>
+%<*dae4s>
+   execstr('[f5,k5,m5] ='+f+'(ts(5),y5(:,1),y5*wd''/dt(5))')
+%</dae4s>
+%    \end{macrocode}
+% Third, solve the simultaneous equations to find updates of the 
+% initial backward differences that would more accurately satisfy the 
+% \textsc{dae}'s at each of the times.  Note that \matlab{} will automatically 
+% invoke a quick sparse algorithm if the Jacobian matrices are returned 
+% as sparse.
+%    \begin{macrocode}
+%<*dae2m,dae2s>
+   yy(:)=-[  k2+m2/dt(2)   k2+1.5*m2/dt(2)
+           2*k3+m3/dt(3) 3*k3+2.5*m3/dt(3) ]\[f2;f3];
+   y(:,2:3)=y(:,2:3)+yy;
+%</dae2m,dae2s>
+%<*dae4om,dae4os>
+   yy(:)=-[  k2+m2/dt(2)    k2+3/2*m2/dt(2)    k2+11/6*m2/dt(2)
+           2*k3+m3/dt(3)  3*k3+5/2*m3/dt(3)  4*k3+13/3*m3/dt(3)
+           3*k4+m4/dt(4)  6*k4+7/2*m4/dt(4) 10*k4+47/6*m4/dt(4)
+          ]\[f2;f3;f4];
+   y(:,2:4)=y(:,2:4)+yy;
+%</dae4om,dae4os>
+%<*dae4m,dae4s>
+   yy(:)=-[  k2+m2/dt(2)    k2+3/2*m2/dt(2)    k2+11/6*m2/dt(2)    k2+25/12*m2/dt(2)
+           2*k3+m3/dt(3)  3*k3+5/2*m3/dt(3)  4*k3+13/3*m3/dt(3)  5*k3+77/12*m3/dt(3)
+           3*k4+m4/dt(4)  6*k4+7/2*m4/dt(4) 10*k4+47/6*m4/dt(4) 15*k4+171/12*m4/dt(4)
+           4*k5+m5/dt(5) 10*k5+9/2*m5/dt(5) 20*k5+37/3*m5/dt(5) 35*k5+319/12*m5/dt(5)
+          ]\[f2;f3;f4;f5];
+   y(:,2:5)=y(:,2:5)+yy;
+%</dae4m,dae4s>
+%    \end{macrocode}
+% Lastly, break out of the loop if the updates, \verb|yy|, to the 
+% backward differences at the initial time are small \emph{relative} to 
+% the overall magnitude of the variables and their differences.
+%    \begin{macrocode}
+%<*dae2m,dae2s,dae4om,dae4os,dae4m,dae4s>
+   if max(abs(yy(:)))<newtol*max(abs(y(:))), break, end
+   if newt==newtmax, break, end
+end
+%</dae2m,dae2s,dae4om,dae4os,dae4m,dae4s>
+%    \end{macrocode}
+% 
+% \subsection{Store and output start-up values}
+% Need to save and output values every \verb|nint| steps, except for 
+% \verb|dae4o| when it is every \verb|3*nint| steps.  First, save and 
+% output the initial values for the variables and their derivatives.  
+% Then step through the other start-up steps.
+%    \begin{macrocode}
+%<*dae2m,dae2s,dae4om,dae4os,dae4m,dae4s>
+ys(:,1)=y(:,1);
+%</dae2m,dae2s,dae4om,dae4os,dae4m,dae4s>
+%<*dae2m,dae4om,dae4m>
+if gcall, feval(g,ts(1),y(:,1),y*wd'/dt(1)); end
+%</dae2m,dae4om,dae4m>
+%<*dae2s,dae4os,dae4s>
+if gcall, execstr(g+'(ts(1),y(:,1),y*wd''/dt(1))'); end
+%</dae2s,dae4os,dae4s>
+%<*dae2m,dae2s>
+for n=2:3
+%</dae2m,dae2s>
+%<*dae4m,dae4s>
+for n=2:5
+%</dae4m,dae4s>
+%<*dae2m,dae2s,dae4m,dae4s>
+   y=y*step;
+%</dae2m,dae2s,dae4m,dae4s>
+%<*dae2m,dae4m>
+   if rem(n-1,nint)==0, ys(:,1+(n-1)/nint)=y(:,1); 
+   if gcall, feval(g,ts(n),y(:,1),y*wd'/dt(n)); end, end
+end
+%</dae2m,dae4m>
+%<*dae2s,dae4s>
+   if modulo(n-1,nint)==0, ys(:,1+(n-1)/nint)=y(:,1); 
+   if gcall, execstr(g+'(ts(2),y(:,1),y*wd''/dt(2))'); end, end
+end
+%</dae2s,dae4s>
+%<*dae4om,dae4os>
+y=y*step3;
+if nint==3, ys(:,2)=y(:,1); 
+%</dae4om,dae4os>
+%<*dae4om>
+if gcall, feval(g,ts(4),y(:,1),y*wd'/dt(4)); end, end
+%</dae4om>
+%<*dae4os>
+if gcall, execstr(g+'(ts(4),y(:,1),y*wd''/dt(4))'); end, end
+%</dae4os>
+%    \end{macrocode}
+% 
+% \subsection{Now integrate over the rest of the time domain}
+% Loop until we reach the end of the time of integration, \verb|n| 
+% denotes the time step at which we aim to find the variables \verb|y| 
+% from their approximation at the previous time.  See that \verb|dae4o| 
+% takes triple steps.
+%    \begin{macrocode}
+%<*dae2m,dae2s>
+for n=4:nts
+%</dae2m,dae2s>
+%<*dae4m,dae4s>
+for n=6:nts
+%</dae4m,dae4s>
+%<*dae4om,dae4os>
+for n=7:3:nts
+%</dae4om,dae4os>
+%    \end{macrocode}
+% The only difference between \verb|dae2| and \verb|dae4| is that 
+% there are more variables, the higher order backward differences, and 
+% that \verb|wd| involves all of these.  Thus we extrapolate based 
+% upon the backward differences at the previous time, and seek updates 
+% to the highest order backward difference in order to satisfy the \textsc{dae} 
+% at the current time.
+%    \begin{macrocode}
+%<*dae2m,dae2s,dae4m,dae4s>
+   h=dt(n);
+   y=y*step; 
+   for newt=1:newtmax
+%</dae2m,dae2s,dae4m,dae4s>
+%<*dae2m,dae4m>
+      [f1,k1,m1]=feval(f,ts(n),y(:,1),y*wd'/h);
+%</dae2m,dae4m>
+%<*dae2s,dae4s>
+      execstr('[f1,k1,m1] ='+f+'(ts(n),y(:,1),y*wd''/h)');
+%</dae2s,dae4s>
+%<*dae2m,dae2s,dae4m,dae4s>
+      w=-(wds*m1/h+k1)\f1;
+      y=y+w*ones(1,length(wd));
+      if max(abs(w))<newtol*max(abs(y(:))), break, end
+      if newt==newtmax, break, end
+   end
+%</dae2m,dae2s,dae4m,dae4s>
+%    \end{macrocode}
+% However, \verb|dae4o| is more complicated.  Nearly as in the start-up 
+% step, we use the current variables and first difference values and 
+% seek updates to the second, third and fourth backward differences in 
+% order to zero the residuals of the \textsc{dae} over the next three substeps.
+%    \begin{macrocode}
+%<*dae4om,dae4os>
+   for newt=1:newtmax
+      y2=y*step;
+      y3=y2*step;
+      y4=y3*step;
+%</dae4om,dae4os>
+%<*dae4om>
+      [f2,k2,m2]=feval(f,ts(n-2),y2(:,1),y2*wd'/dt(n-2));
+      [f3,k3,m3]=feval(f,ts(n-1),y3(:,1),y3*wd'/dt(n-1));
+      [f4,k4,m4]=feval(f,ts(n  ),y4(:,1),y4*wd'/dt(n  ));
+%</dae4om>
+%<*dae4os>
+      execstr('[f2,k2,m2] ='+f+'(ts(n-2),y2(:,1),y2*wd''/dt(n-2))');
+      execstr('[f3,k3,m3] ='+f+'(ts(n-1),y3(:,1),y3*wd''/dt(n-1))');
+      execstr('[f4,k4,m4] ='+f+'(ts(n  ),y4(:,1),y4*wd''/dt(n  ))');
+%</dae4os>
+%<*dae4om,dae4os>
+      yy(:)=-[  k2+3/2*m2/dt(n-2)    k2+11/6*m2/dt(n-2)    k2+25/12*m2/dt(n-2)
+              3*k3+5/2*m3/dt(n-1)  4*k3+13/3*m3/dt(n-1)  5*k3+77/12*m3/dt(n-1)
+              6*k4+7/2*m4/dt(n  ) 10*k4+47/6*m4/dt(n  ) 15*k4+171/12*m4/dt(n )
+             ]\[f2;f3;f4];
+      y(:,3:5)=y(:,3:5)+yy;
+      if max(abs(yy(:)))<newtol*max(abs(y(:))), break, end
+      if newt==newtmax, break, end
+   end
+   y=y*step3;
+%</dae4om,dae4os>
+%    \end{macrocode}
+% At each time step, store statistics of the Newton iterate, then save 
+% and output the current variables if the current time is a multiple of 
+% \verb|nint| steps from the start.
+%    \begin{macrocode}
+%<*dae2m,dae2s,dae4m,dae4s,dae4om,dae4os>
+   newtit(newt)=newtit(newt)+1;
+%</dae2m,dae2s,dae4m,dae4s,dae4om,dae4os>
+%<*dae2m,dae4m,dae4om>
+   if rem(n-1,nint)==0, ys(:,1+(n-1)/nint)=y(:,1); 
+   if gcall, feval(g,ts(n),y(:,1),y*wd'/dt(n)); end, end
+end
+%</dae2m,dae4m,dae4om>
+%<*dae2s,dae4s,dae4os>
+   if modulo(n-1,nint)==0, ys(:,1+(n-1)/nint)=y(:,1); 
+   if gcall, execstr(g+'(ts(n),y(:,1),y*wd''/dt(n))'); end, end
+end
+%</dae2s,dae4s,dae4os>
+%    \end{macrocode}
+%    
+% \subsection{Poor convergence warning}
+% To investigate the performance of the Newton iterates, compute the 
+% mean and if the mean is larger than half the maximum, then print a 
+% warning along with the data on how many times a given number of 
+% iterates was needed.  This warning is only printed at the end of the 
+% numerical integration.  Often \matlab{} complains about 
+% ill-conditioned linear equations before you get to here.  In either 
+% case, usually increasing \verb|nint| will fix the problem.
+%    \begin{macrocode}
+%<*dae2m,dae2s,dae4m,dae4s,dae4om,dae4os>
+newtm=sum((1:newtmax).*newtit)/sum(newtit);
+if newtm>newtmax/2,
+   disp('WARNING: poor or no convergence in dae2,4,4o')
+   newtit=newtit
+end
+%</dae2m,dae2s,dae4m,dae4s,dae4om,dae4os>
+%    \end{macrocode}
+%    
+% \begin{thebibliography}{1}
+% 
+% \bibitem{Roberts99a}
+% A.J. Roberts.
+% \newblock Differential-algebraic equations deserve more attention.
+% \newblock {\em Aust Maths Soc Gazette}, 26:75--79, 1999.
+% 
+% \end{thebibliography}
+% 
+% \appendix
+% \section{The driver file for this document}
+% 
+% The following code is placed in the file \verb|doc.tex|\,.  By 
+% running \LaTeX\ on the file you will create this somewhat terse 
+% documentation.
+%    \begin{macrocode}
+%<*document>
+\documentclass[a4paper]{ltxdoc}
+\IfFileExists{ajr.sty}{\usepackage[colour]{ajr}}{}
+\def\matlab{\textsc{Matlab}}
+\def\scilab{\textsc{Scilab}}
+\EnableCrossrefs
+\CodelineIndex
+\setlength{\MacroIndent}{3ex}
+\begin{document}
+   \title{Solve differential-algebraic equations\\ 
+   in Matlab or Scilab}
+   \author{Tony Roberts, \texttt{anthony.roberts@adelaide.edu.au}}
+   \date{v\fileversion, \filedate\ (typeset \today)}
+   \maketitle
+   \tableofcontents
+   \DocInput{dae.dtx}
+\end{document}
+%</document>
+%    \end{macrocode}
+% 
+% \Finale
+\endinput

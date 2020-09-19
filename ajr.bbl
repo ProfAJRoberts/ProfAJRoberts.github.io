@@ -1,0 +1,1685 @@
+\itemize
+
+\item
+\emph{Linear Algebra Reformed for 21st-C Application}.
+A.~J. Roberts.
+\url{https://raw.github.com/uoa1184615/LinearAlgebraGit/master/larxxia-newest.pdf},
+  \the\year.
+
+\item
+\textbf{Lyapunov exponents of the kuramoto--sivashinsky pde}.
+Russell~A. Edson, J.~E. Bunder, Trent~W. Mattner, and A.~J. Roberts.
+Technical report, University of Adelaide, jan 2019.
+
+\item
+\textbf{Center manifolds for infinite dimensional random dynamical systems}.
+Xiaopeng Chen, A.~J. Roberts, and Jinqiao Duan.
+\emph{Dynamical Systems (CDSS)}, to appear, oct 2018.
+
+\item
+\textbf{Nonlinear emergent macroscale {PDEs}, with error bound, for nonlinear
+  microscale systems}.
+J.~E. Bunder and A.~J. Roberts.
+Technical report, [\url{https://arxiv.org/abs/1806.10297}], June 2018.
+
+\item
+\textbf{Backwards theory supports modelling via invariant manifolds for
+  non-autonomous dynamical systems}.
+A.~J. Roberts.
+Technical report, [\url{http://arxiv.org/abs/1804.06998}], April 2018.
+
+\item
+\textbf{Couple microscale periodic patches to simulate macroscale emergent
+  dynamics}.
+Hammad Alotaibi, Barry Cox, and A.~J. Roberts.
+\emph{ANZIAM~J.}, 59(3):313--334, 2018.
+
+\item
+\textbf{Boundary conditions for macroscale waves in an elastic system with
+  microscale heterogeneity}.
+Chen Chen, A.~J. Roberts, and J.~E. Bunder.
+\emph{IMA Journal of Applied Mathematics}, pages 1--33, 2018 <A
+  HREF=http://arxiv.org/abs/1603.06686>Download (draft) article</A>.
+
+\item
+\textbf{Smooth subgrid fields underpin rigorous closure in spatial
+  discretisation of reaction-advection-diffusion {PDE}s}.
+G.~A. Jarrad and A.~J. Roberts.
+\emph{Applied Numerical Mathematics}, 132:91--110, 2018.
+
+\item
+\textbf{Good coupling for the multiscale patch scheme on systems with
+  microscale heterogeneity}.
+J.~E. Bunder, A.~J. Roberts, and I.~G. Kevrekidis.
+\emph{J.~Computational Physics}, 337:154--174, may 2017.
+
+\item
+\textbf{Slowly varying, macroscale models emerge from microscale dynamics over
+  multiscale domains}.
+A.~J. Roberts and J.~E. Bunder.
+\emph{IMA Journal of Applied Mathematics}, 82:971--1012, 2017 <A
+  HREF=http://arxiv.org/abs/1612.02079>Download (draft) article</A>.
+
+\item
+\textbf{Resolution of subgrid microscale interactions enhances the
+  discretisation of nonautonomous partial differential equations}.
+J.~E. Bunder and A.~J. Roberts.
+\emph{Applied Mathematics and Computation}, 304:164--179, 2017.
+
+\item
+\textbf{Dynamics of suspended rigid aggregating particles in flowing medium:
+  theory, analysis and scientific computing}.
+Sarthok Sircar and Anthony~J. Roberts.
+Technical report, [\url{http://arxiv.org/abs/1610.02100}], October 2016.
+
+\item
+\textbf{Ligand mediated adhesive mechanics of two deformed spheres}.
+Sarthok Sircar, Andrei Kotousov, Giang Nguyen, and A.~J. Roberts.
+\emph{European Physical Journal E}, 39(95), 2016.
+
+\item
+\textbf{Surface deformation and shear flow in ligand mediated cell adhesion}.
+Sarthok Sircar and A.~J. Roberts.
+\emph{Journal of Mathematical Biology}, pages 1--18, 2016.
+
+\item
+\textbf{Ion mediated crosslink driven mucous swelling kinetics}.
+Sarthok Sircar and A.~J. Roberts.
+\emph{J. Discrete and Continuous Dynamical System~B}, 21(6):1937--1951, 2016.
+
+\item
+\textbf{Splitting in systems of {PDE}s for two-phase multicomponent flow in
+  porous media}.
+Sara Borazjani, A.~J. Roberts, and Pavel Bedrikovetsky.
+\emph{Applied Mathematics Letters}, 53:25--32, 2016 <A
+  HREF=http://dx.doi.org/10.1016/j.aml.2015.09.014>Download (draft)
+  article</A>.
+
+\item
+\textbf{Accuracy of patch dynamics with mesoscale temporal coupling for
+  efficient massively parallel simulations}.
+Judith Bunder, A.~J. Roberts, and Ioannis~G. Kevrekidis.
+\emph{SIAM Journal on Scientific Computing}, 38(4):C335--C371, 2016.
+
+\item
+\textbf{Modelling suspended sediment in environmental turbulent fluids}.
+Meng Cao and A.~J. Roberts.
+\emph{J.~Engrg.\ Maths}, 98(1):187--204, 2016.
+
+\item
+\textbf{Multiscale modelling couples patches of nonlinear wave-like
+  simulations}.
+Meng Cao and A.~J. Roberts.
+\emph{IMA J.~Applied Maths.}, 81(2):228--254, 2016.
+
+\item
+Troy Farrell and A.~J. Roberts, editors.
+\emph{Proceedings of the Mathematics and Statistics in Industry Study Group
+  2015}, volume 57(E) of \emph{ANZIAM Journal}, 2016.
+
+\item
+Troy Farrell and A.~J. Roberts, editors.
+\emph{Proceedings of the Mathematics and Statistics in Industry Study Group
+  2014}, volume 56(E) of \emph{ANZIAM Journal}, 2016.
+
+\item
+Graeme Wake and Anthony Roberts, editors.
+\emph{Proceedings of the Mathematics for Industry {NZ} Study Group 2015},
+  volume 57(E) of \emph{ANZIAM Journal}, 2016.
+
+\item
+\textbf{Macroscale boundary conditions for a non-linear heat exchanger}.
+Chen Chen, A.~J. Roberts, and J.~E. Bunder.
+In Jason Sharples and Judith Bunder, editors, \emph{Proceedings of the 17th
+  Biennial Computational Techniques and Applications Conference, CTAC-2014},
+  volume 56 of \emph{ANZIAM J.}, pages C16--C31, September 2015.
+
+\item
+\textbf{Centre manifolds for stochastic evolution equations}.
+Xiaopeng Chen, A.~J. Roberts, and Jinqiao Duan.
+\emph{Journal of Difference Equations and Applications}, June 2015.
+
+\item
+A.~J. Roberts.
+\textbf{Effective multiscale computational modeling of spatio-temporal
+  systems}, May 2015.
+Video of talk at SIAM conference on Dynamical Systems <A
+  HREF=https://www.pathlms.com/siam/courses/1288/sections/1423/video_presentations/11669>Download
+  (draft) article</A>.
+
+\item
+\textbf{Macroscale, slowly varying, models emerge from the microscale dynamics
+  in long thin domains}.
+A.~J. Roberts.
+\emph{IMA Journal of Applied Mathematics}, 80(5):1492--1518, 2015.
+
+\item
+\textbf{Numerical integration of ordinary differential equations with rapidly
+  oscillatory factors}.
+J.~E. Bunder and A.~J. Roberts.
+\emph{Journal of Computational and Applied Mathematics}, 282:54--70, 2015 <A
+  HREF=http://dx.doi.org/10.1016/j.cam.2014.12.033>Download (draft)
+  article</A>.
+
+\item
+\textbf{Diffusion approximation for self-similarity of stochastic advection in
+  {B}urgers' equation}.
+Wei Wang and A.~J. Roberts.
+\emph{Communications in Mathematical Physics}, 333(3):1287--1316, 2015.
+
+\item
+\emph{Model emergent dynamics in complex systems}.
+A.~J. Roberts.
+SIAM, Philadelphia, jan 2015 <A HREF=http://bookstore.siam.org/mm20/>Download
+  (draft) article</A>.
+
+\item
+\textbf{The macroscale boundary conditions for diffusion in a material with
+  microscale varying diffusivities}.
+Chen Chen, A.~J. Roberts, and J.~E. Bunder.
+In Mark Nelson, Tara Hamilton, Michael Jennings, and Judith Bunder, editors,
+  \emph{Proceedings of the 11th Biennial Engineering Mathematics and
+  Applications Conference, EMAC-2013}, volume 55 of \emph{ANZIAM J.}, pages
+  C218--C234, July 2014.
+
+\item
+\textbf{Large deviation principle for singularly perturbed stochastic damped
+  wave equations}.
+Yan Lv and A.~J. Roberts.
+\emph{Stochastic Analysis and Applications}, 32(1):50--60, 2014.
+\doi{10.1080/07362994.2013.838681}.
+
+\item
+\textbf{Approximation of the random inertial manifold of singularly perturbed
+  stochastic wave equations}.
+Yan Lv, Wei Wang, and A.~J. Roberts.
+\emph{Stochastics and Dynamics}, 14(2):1350018, 2014 <A
+  HREF=http://arxiv.org/abs/1209.0090v1>Download (draft) article</A>.
+
+\item
+\textbf{A dynamical systems approach to simulating macroscale spatial dynamics
+  in multiple dimensions}.
+A.~J. Roberts, Tony MacKenzie, and Judith Bunder.
+\emph{J.~Engineering Mathematics}, 86(1):175--207, 2014 <A
+  HREF=http://arxiv.org/abs/1103.1187>Download (draft) article</A>.
+
+\item
+Troy Farrell and A.~J. Roberts, editors.
+\emph{Proceedings of the Mathematics in Industry Study Group 2013}, volume
+  55(E) of \emph{ANZIAM Journal}, 2014.
+
+\item
+\textbf{Multiscale modelling couples patches of two-layer thin fluid flow}.
+Meng Cao and A.~J. Roberts.
+Technical report, [\url{http://arxiv.org/abs/1405.7093}], 2014.
+
+\item
+\textbf{Multiscale modelling couples patches of wave-like simulations}.
+Meng Cao and A.~J. Roberts.
+In Scott McCue, Tim Moroney, Dann Mallet, and Judith Bunder, editors,
+  \emph{Proceedings of the 16th Biennial Computational Techniques and
+  Applications Conference, CTAC-2012}, volume 54 of \emph{ANZIAM J.}, pages
+  C153--C170, May 2013.
+
+\item
+\textbf{Self similarity and attraction in stochastic nonlinear
+  reaction-diffusion systems}.
+Wei Wang and A.~J. Roberts.
+\emph{SIAM J.~Applied Dynamical Systems}, 12(1):450--486, 2013.
+
+\item
+\textbf{Simulating stochastic inertial manifolds by a backward-forward
+  approach}.
+Xingye Kan, Jinqiao Duan, Ioannis~G. Kevrekidis, and A.~J. Roberts.
+\emph{SIAM J.~Appl. Dyn. Systems}, 12(1):487--514, 2013.
+\url{http://arxiv.org/abs/1206.4954} <A
+  HREF=http://epubs.siam.org/doi/abs/10.1137/120881968>Download (draft)
+  article</A>.
+
+\item
+\textbf{Macroscopic reduction for stochastic reaction-diffusion equations}.
+Wei Wang and A.~J. Roberts.
+\emph{IMA Journal of Applied Mathematics}, 78(6):1237--1264, 2013.
+
+\item
+John Shephard, Andrew Stacey, and A.~J. Roberts, editors.
+\emph{Proceedings of the Mathematics in Industry Study Group 2012}, volume
+  54(E) of \emph{ANZIAM Journal}, 2013.
+
+\item
+\textbf{Modelling 3d turbulent floods based upon the smagorinski large eddy
+  closure}.
+Meng Cao and A.~J. Roberts.
+In P.~A. Brandner and B.~W. Pearce, editors, \emph{18th Australasian Fluid
+  Mechanics Conference}, Dec 2012 <A
+  HREF=http://people.eng.unimelb.edu.au/imarusic/proceedings/18/70%20-%20Cao.pdf>Download
+  (draft) article</A>.
+
+\item
+\textbf{Modify the improved euler scheme to integrate stochastic differential
+  equations}.
+A.~J. Roberts.
+Technical report, [\url{http://arxiv.org/abs/1210.0933}], Oct 2012.
+
+\item
+\textbf{Patch dynamics for macroscale modelling in one dimension}.
+J.~E. Bunder and A.~J. Roberts.
+In Mark Nelson, Mary Coupland, Harvinder Sidhu, Tara Hamilton, and A.~J.
+  Roberts, editors, \emph{Proceedings of the 10th Biennial Engineering
+  Mathematics and Applications Conference, EMAC-2011}, volume 53 of
+  \emph{ANZIAM J.}, pages C280--C295, June 2012.
+
+\item
+\textbf{Averaging approximation to singularly perturbed nonlinear stochastic
+  wave equations}.
+{Yan Lv} and A.~J. Roberts.
+\emph{J.~Math. Phys.}, 53(6):062702, 2012 <A
+  HREF=http://arxiv.org/abs/1107.4184v1>Download (draft) article</A>.
+
+\item
+\textbf{Large deviations and approximations for slow-fast stochastic
+  reaction-diffusion equations}.
+Wei Wang, A.~J. Roberts, and Jinqiao Duan.
+\emph{J.~Differential Equations}, 253(12):3501--3522, 2012.
+
+\item
+\textbf{Average and deviation for slow-fast stochastic partial differential
+  equations}.
+Wei Wang and A.~J. Roberts.
+\emph{J. Differential Equations}, 253:1265--1286, 2012.
+
+\item
+\textbf{Slow manifold and averaging for slow-fast stochastic differential
+  system}.
+Wei Wang and A.~J. Roberts.
+\emph{Journal of Mathematical Analysis and Applications}, 398:822--839, 2012.
+\doi{10.1016/j.jmaa.2012.09.029} <A
+  HREF=http://arxiv.org/abs/0903.1375>Download (draft) article</A>.
+
+\item
+Mark Nelson, Anthony~J. Roberts, Mary Coupland, Tara Hamilton, and Harvinder
+  Sidhu, editors.
+\emph{Proceedings of the Engineering Mathematics and Applications Conference},
+  volume 53 of \emph{ANZIAM Journal}, 2012.
+
+\item
+\textbf{Construct centre manifolds of ordinary or delay differential equations
+  (autonomous)}.
+A.~J. Roberts.
+Technical report,
+  \url{http://www.maths.adelaide.edu.au/anthony.roberts/gencm.php},
+  2012--\the\year.
+
+\item
+\textbf{Projective integration of expensive multiscale stochastic simulation}.
+Xiaopeng Chen, A.~J. Roberts, and Ioannis~G. Kevrekidis.
+In W. McLean and A.~J. Roberts, editors, \emph{Proceedings of the 15th Biennial
+  Computational Techniques and Applications Conference, CTAC-2010}, volume 52
+  of \emph{ANZIAM J.}, pages C661--C677, August 2011.
+
+\item
+\textbf{Macroscopic discrete modelling of stochastic reaction-diffusion
+  equations on a periodic domain}.
+Wei Wang and A.~J. Roberts.
+\emph{Discrete and Continuous Dynamical System~A}, 31(1):253--273, 2011.
+
+\item
+\textbf{Averaging, homogenization and slow manifolds for stochastic partial
+  differential equations}.
+Jinqiao~Q. Duan, A.~J. Roberts, and Wei Wang.
+In Huaizhong Zhao and Aubrey Truman, editors, \emph{New Trends in Stochastic
+  Analysis and Related Topics}, volume 12 of \emph{Interdisciplinary
+  Mathematical Sciences}, chapter 3, pages 95--131. World Scientific, 2011.
+
+\item
+John~J. Shepherd, Andrew Stacey, and Anthony~J. Roberts, editors.
+\emph{Proceedings of the Mathematics in Industry Study Group 2011}, volume
+  53(E) of \emph{ANZIAM~J.}, 2011.
+
+\item
+\textbf{On the approximation for singularly perturbed stochastic wave
+  equations}.
+Wei Wang, Yan Lv, and A.~J. Roberts.
+Technical report, \url{http://arxiv.org/abs/1109.3000}, 2011 <A
+  HREF=http://arxiv.org/abs/1109.3000>Download (draft) article</A>.
+
+\item
+\textbf{Computer algebra derives the slow manifold of patch or element dynamics
+  on lattices in two dimensions}.
+Tony MacKenzie and A.~J. Roberts.
+Technical report, The University of Adelaide, 2011.
+\url{http://arxiv.org/abs/1102.2037} <A
+  HREF=http://arxiv.org/abs/1102.2037>Download (draft) article</A>.
+
+\item
+\textbf{The harmonic mean renormalises random diffusion across a spatial
+  multigrid}.
+A.~J. Roberts.
+In P. Howlett, M. Nelson, and A.~J. Roberts, editors, \emph{Proceedings of the
+  9th Biennial Engineering Mathematics and Applications Conference, EMAC-2009},
+  volume 51 of \emph{ANZIAM J.}, pages C83--C96, April 2010.
+
+\item
+\textbf{Choose interelement coupling to preserve self-adjoint dynamics in
+  multiscale modelling and computation}.
+A.~J. Roberts.
+\emph{Applied Numerical Modelling}, 60:949--973, 2010.
+
+\item
+A.~J. Roberts.
+\textbf{Stochastically forced, cubic reaction-diffusion equation,
+  \url{http://math.iit.edu/~spde2010/TonyRobertsMovieSPDE2010.mpg}}, 2010 <A
+  HREF=http://math.iit.edu/~spde2010/TonyRobertsMovieSPDE2010.mpg>Download
+  (draft) article</A>.
+
+\item
+\textbf{Equation-free computation: an overview of patch dynamics}.
+G. Samaey, A.~J. Roberts, and I.~G. Kevrekidis.
+In Jacob Fish, editor, \emph{Multiscale methods: bridging the scales in science
+  and engineering}, chapter 8, pages 216--246. Oxford University Press, 2010.
+
+\item
+\textbf{Effectively model dynamics, deterministic and stochastic, across
+  multiple space and time scales}.
+A.~J. Roberts.
+In J.~G. Hartnett and P.~C. Abbott, editors, \emph{Frontiers of Fundamental and
+  Computational Physics: 10th International Symposium}, volume 1246, pages
+  75--87. AIP, 2010.
+
+\item
+William McLean and A.~J. Roberts, editors.
+\emph{Proceedings of 15th Computational Techniques and Applications Conference
+  CTAC-2010}, volume 52(E) of \emph{ANZIAM~J.}, 2010.
+
+\item
+John~J. Shepherd, Andrew Stacey, and Anthony~J. Roberts, editors.
+\emph{Proceedings of the Mathematics in Industry Study Group 2010}, volume
+  52(E) of \emph{ANZIAM~J.}, 2010.
+
+\item
+Andrew Metcalfe, Phil Howlett, Mark Nelson, and A.~J. Roberts, editors.
+\emph{Proceedings of the 9th Biennial Engineering Mathematics and Applications
+  Conference, EMAC-2009}, volume 51(E) of \emph{ANZIAM~J.}, 2010.
+
+\item
+\textbf{Computer algebra compares the stochastic superslow manifold of an
+  averaged spde with that of the original slow-fast spde}.
+A.~J. Roberts.
+Technical report, University of Adelaide, 2010.
+
+\item
+\textbf{Resolve subgrid microscale interactions to discretise stochastic
+  partial differential equations}.
+A.~J. Roberts.
+preprint, January 2010.
+
+\item
+\textbf{Modelling turbulent flow from dam break using slow manifolds}.
+D.~J. Georgiev, A.~J. Roberts, and D.~V. Strunin.
+In Geoffry~N. Mercer and A.~J. Roberts, editors, \emph{Proceedings of the 14th
+  Biennial Computational Techniques and Applications Conference, CTAC-2008},
+  volume 50 of \emph{ANZIAM J.}, pages C1033--C1051, September 2009.
+
+\item
+\textbf{Low-dimensional boundary-layer model of turbulent dispersion in a
+  channel}.
+D.~V. Strunin and A.~J. Roberts.
+In S.~I. Ao, Len Gelman, David W.~L. Hukins, Andrew Hunter, and A.~M.
+  Korsunsky, editors, \emph{Proc. of the World Congress on Engineering,
+  International Conference of Applied and Engineering Mathematics ICAEM-2009},
+  volume II of \emph{Lecture Notes in Engineering and Computer Science}, pages
+  1230--1234, Imperial College London, UK, July 2009. Newswood Limited,
+  International Association of Engineers.
+
+\item
+\textbf{Model dynamics across multiple length and time scales on a spatial
+  multigrid}.
+A.~J. Roberts.
+\emph{Multiscale Modeling and Simulation}, 7(4):1525--1548, 2009 <A
+  HREF=http://link.aip.org/link/?MMS/7/1525>Download (draft) article</A>.
+
+\item
+\emph{Elementary calculus of financial mathematics}.
+A.~J. Roberts, volume 15 of \emph{Mathematical Modeling and Computation}.
+SIAM, Philadelphia, 2009.
+Appeared twice (two printings) in SIAM's top-25 best sellers for the year
+  ending April, 2010. <A HREF=http://bookstore.siam.org/mm15/>Download (draft)
+  article</A>.
+
+\item
+Geoffry~N. Mercer and A.~J. Roberts, editors.
+\emph{Proceedings of 14th Computational Techniques and Applications Conference
+  CTAC-2008}, volume 50(E) of \emph{ANZIAM~J.}, 2009.
+\url {http://journal.austms.org.au/ojs/index.php/ANZIAMJ/issue/view/37} <A
+  HREF=http://journal.austms.org.au/ojs/index.php/ANZIAMJ/issue/view/37>Download
+  (draft) article</A>.
+
+\item
+\textbf{Slow manifold of stochastic or deterministic multiscale differential
+  equations}.
+A.~J. Roberts.
+Technical report,
+  \url{http://www.maths.adelaide.edu.au/anthony.roberts/sdesm.php},
+  2009--\the\year.
+
+\item
+\textbf{A mathematical model for the iterative effects of tnf-alpha positive
+  feedback mechanisms on inflammatory cascades in tlr-4 mediated signalling
+  pathways}.
+Bryan Essien, Michael Kotiw, Harry Butler, Dmitry Strunin, and A.J. Roberts.
+Technical report, University of Southern Queensland, 2009.
+
+\item
+\textbf{Holistic discretisation ensures fidelity to dynamics in two spatial
+  dimensions}.
+Tony MacKenzie and A.~J. Roberts.
+Technical report, \url{http://arxiv.org/abs/0904.0855v1}, 2009.
+
+\item
+\textbf{Computer algebra derives the slow manifold of macroscale holistic
+  discretisations in two dimensions}.
+Tony MacKenzie and A.~J. Roberts.
+Technical report, The University of Adelaide, 2009.
+\url{http://hdl.handle.net/2440/49292} <A
+  HREF=http://hdl.handle.net/2440/49292>Download (draft) article</A>.
+
+\item
+\textbf{Normal form of stochastic or deterministic multiscale differential
+  equations}.
+A.~J. Roberts.
+Technical report,
+  \url{http://www.maths.adelaide.edu.au/anthony.roberts/sdenf.php},
+  2009--\the\year.
+
+\item
+\textbf{Maximum likelihood multifractal analyser of point data}.
+A.~J. Roberts.
+Technical report,
+  \url{http://www.maths.adelaide.edu.au/anthony.roberts/multifractal.html},
+  January 2009 <A
+  HREF=http://www.maths.adelaide.edu.au/anthony.roberts/multifractal.html>Download
+  (draft) article</A>.
+
+\item
+\textbf{Model emergent dynamics in complex systems}.
+A.~J. Roberts.
+Technical Report 2nd edition,
+  \url{http://www.maths.adelaide.edu.au/anthony.roberts/modelling.php},
+  2009--\the\year.
+
+\item
+\textbf{Average and deviation for the stochastic fitzhugh--nagumo system}.
+W. Wang and A.~J. Roberts.
+In Geoffry~N. Mercer and A.~J. Roberts, editors, \emph{Proceedings of the 14th
+  Biennial Computational Techniques and Applications Conference, CTAC-2008},
+  volume 50 of \emph{ANZIAM J.}, pages C292--C307, November 2008.
+
+\item
+\textbf{The style files: Teach explicit skills with feedback}.
+A.~J. Roberts.
+\emph{The Australian Mathematical Society Gazette}, 35(3):156--157, July 2008.
+Unrefereed <A
+  HREF=http://www.austms.org.au/Publ/Gazette/2008/Jul08/StyleFiles.pdf>Download
+  (draft) article</A>.
+
+\item
+\textbf{The style files: Write to read breadth first, not depth first}.
+A.~J. Roberts.
+\emph{The Australian Mathematical Society Gazette}, 35(1):17--19, March 2008.
+Unrefereed <A
+  HREF=http://www.austms.org.au/Publ/Gazette/2008/Mar08/StyleFiles.pdf>Download
+  (draft) article</A>.
+
+\item
+\textbf{Combined instructions and template for articles submitted to the anziam
+  journal}.
+A.~J. Roberts.
+\emph{ANZIAM~J. (Electronic supplement)}, 50, 2008.
+
+\item
+\textbf{Normal form transforms separate slow and fast modes in stochastic
+  dynamical systems}.
+A.~J. Roberts.
+\emph{Physica~A}, 387:12--38, 2008.
+
+\item
+A.~J. Roberts.
+\textbf{Nash equilibria: strategies in the prisoner's dilemma}, 2008.
+\url{http://www.youtube.com/watch?v=5Ug2EVjdS4E} <A
+  HREF=http://www.youtube.com/watch?v=5Ug2EVjdS4E>Download (draft) article</A>.
+
+\item
+A.~J. Roberts.
+\textbf{Nash equilibria: Nash's solution of the prisoner's dilemma}, 2008.
+\url{http://www.youtube.com/watch?v=J4n-Eg6UAw8} <A
+  HREF=http://www.youtube.com/watch?v=J4n-Eg6UAw8>Download (draft) article</A>.
+
+\item
+\textbf{Co-ordinate transforms underpin multiscale modelling and reduction in
+  deterministic and stochastic systems}.
+A.~J. Roberts.
+In Derek Abbott, Tomaso Aste, Murray Batchelor, Robert Dewar, Tiziana~Di
+  Matteo, and Tony Guttmann, editors, \emph{Complex Systems II: SPIE Symposium
+  on Microelectronics, MEMS, and Nanotechnology, 5--7 December 2007 at The
+  Australian National Univ}, volume 6802, page 68021F, 2008.
+
+\item
+Geoff Mercer and A.~J. Roberts, editors.
+\emph{Proceedings of the 8th Biennial Engineering Mathematics and Applications
+  Conference, EMAC-2007}, volume 49(E) of \emph{ANZIAM~J.}, 2008.
+\url {http://journal.austms.org.au/ojs/index.php/ANZIAMJ/issue/view/13}.
+
+\item
+\textbf{Combined instructions and template for articles submitted to the
+  {ANZIAM} {Journal}}.
+Anthony~John Roberts.
+Technical report, ANZIAM Journal, 2008--2016.
+
+\item
+\textbf{Conserving self-adjoint rules for coupling in multiscale modelling}.
+A.~J. Roberts.
+Technical report, University of Southern Queensland, 2008.
+
+\item
+\textbf{Computer algebra derives discretisations via self-adjoint multiscale
+  modelling}.
+A.~J. Roberts.
+Technical report, \url{http://eprints.usq.edu.au/4275/}, 2008 <A
+  HREF=http://eprints.usq.edu.au/4275/>Download (draft) article</A>.
+
+\item
+\textbf{Model turbulent floods with the {Smagorinski} large eddy closure}.
+A.~J. Roberts, D.~J. Georgiev, and D.~V. Strunin.
+Technical report, \url{http://arxiv.org/abs/0805.3192}, 2008.
+
+\item
+\textbf{Computer algebra describes flow of turbulent floods via the
+  {Smagorinski} large eddy closure}.
+A.~J. Roberts.
+Technical report, \url{http://eprints.usq.edu.au/4008/}, 2008.
+
+\item
+\textbf{The dynamics of the vertical structure of turbulence in flood flows}.
+D.~J. Georgiev, A.~J. Roberts, and D.~V. Strunin.
+In Wayne Read, Jay~W. Larson, and A.~J. Roberts, editors, \emph{Proceedings of
+  the 13th Biennial Computational Techniques and Applications Conference,
+  CTAC-2006}, volume 48, pages C573--C590, December 2007.
+
+\item
+\textbf{Computer algebra models dynamics on a multigrid across multiple length
+  and time scales}.
+A.~J. Roberts.
+Technical report, University of Southern Queensland,
+  \url{http://eprints.usq.edu.au/3373/}, November 2007.
+
+\item
+\textbf{The style files: Use the most informative synonym}.
+A.~J. Roberts.
+\emph{The Australian Mathematical Society Gazette}, 34(4):208--209, September
+  2007.
+Unrefereed. <A
+  HREF=http://www.austms.org.au/Publ/Gazette/2007/Sep07/208StyleFiles.pdf>Download
+  (draft) article</A>.
+
+\item
+\textbf{The style files: Write what you mean}.
+A.~J. Roberts.
+\emph{The Australian Mathematical Society Gazette}, 34(3):156--157, July 2007.
+Unrefereed. <A
+  HREF=http://www.austms.org.au/Gazette/2007/Jul07/156StyleFiles.pdf>Download
+  (draft) article</A>.
+
+\item
+\textbf{Subgrid and interelement interactions affect discretisations of
+  stochastically forced diffusion}.
+A.~J. Roberts.
+In Wayne Read, Jay~W. Larson, and A.~J. Roberts, editors, \emph{Proceedings of
+  the 13th Biennial Computational Techniques and Applications Conference,
+  CTAC-2006}, volume 48 of \emph{ANZIAM~J.}, pages C168--C187, June 2007.
+
+\item
+\textbf{The style files: Appearance affects communication; but not necessarily
+  as you like}.
+A.~J. Roberts.
+\emph{The Australian Mathematical Society Gazette}, 34(2):78--80, May 2007.
+Unrefereed. <A
+  HREF=http://www.austms.org.au/Publ/Gazette/2007/May07/078StyleFiles.pdf>Download
+  (draft) article</A>.
+
+\item
+\textbf{The style files: Omit redundant words}.
+A.~J. Roberts.
+\emph{The Australian Mathematical Society Gazette}, 34(1):20--21, March 2007.
+Unrefereed. <A
+  HREF=http://www.austms.org.au/Gazette/2007/Mar07/20StyleFiles.pdf>Download
+  (draft) article</A>.
+
+\item
+\textbf{Computer algebra models the inertial dynamics of a thin film flow of
+  power law fluids and other generalised newtonian fluids}.
+A.~J. Roberts.
+Technical report, University of Southern Queensland, February 2007.
+\url{http://eprints.usq.edu.au/archive/00002010/}.
+
+\item
+\textbf{The inertial dynamics of thin film flow of non-newtonian fluids}.
+A.~J. Roberts.
+\emph{Physics Letters~A}, 372:1607--1611, 2007.
+
+\item
+\textbf{Fractal landscape method: an alternative approach to measuring
+  area-restricted searching behavior}.
+Yann Tremblay, A.~J. Roberts, and Daniel~P. Costa.
+\emph{Journal of Experimental Biology}, 210:935--945, 2007 <A
+  HREF=http://jeb.biologists.org/cgi/content/abstract/210/6/935>Download
+  (draft) article</A>.
+
+\item
+\textbf{General tooth boundary conditions for equation free modelling}.
+A.~J. Roberts and I.~G. Kevrekidis.
+\emph{SIAM J.~Scientific Computing}, 29(4):1495--1510, 2007.
+
+\item
+\textbf{Low-dimensional modelling of a generalized {Burgers'} equation}.
+Zhenquan Li and A.~J. Roberts.
+\emph{Global Journal of Pure and Applied Mathematics}, 3(3):203--218, 2007.
+\url{http://arXiv.org/abs/math-ph/0307064} <A
+  HREF=http://www.ripublication.com/gjpamv3/gjpamv3n3_1.pdf>Download (draft)
+  article</A>.
+
+\item
+\textbf{A flexible error estimate for the application of centre manifold
+  theory}.
+Zhenquan Li and A.~J. Roberts.
+\emph{Global Journal of Pure and Applied Mathematics}, 3(3):241--249, 2007 <A
+  HREF=http://www.ripublication.com/gjpamv3/gjpamv3n3_5.pdf>Download (draft)
+  article</A>.
+
+\item
+\textbf{Numerical methods for coupled nonlinear problems of dynamic
+  thermoelasticity and shape memory alloys modeling}.
+R. Melnik, D.~Roy Mahapatra, L. Wang, and A.~J. Roberts.
+In E. Onate, M. Papadrakis, and B. Schefler, editors, \emph{Computational
+  Methods for Coupled Problems in Science and Engineering (Coupled Problems
+  2007)}, pages 461--464. CIMNE, Barcelona, 2007.
+
+\item
+\textbf{Nonlinear dynamics on centre manifolds describing turbulent floods:
+  k-omega model}.
+D.~J. Georgiev, A.~J. Roberts, and D.~V. Strunin.
+In Boris Belinskiy, Kunquan Lan, Xin Lu, Alain Miranville, and R. Shivaji,
+  editors, \emph{Proceedings of the 6th AIMS International Conference (
+  Poitiers, France)}, pages 419--428, 2007 <A
+  HREF=http://www.aimsciences.org/journals/doIpChk.jsp?paperID=2848>Download
+  (draft) article</A>.
+
+\item
+Wayne Read, Jay~W. Larson, and A.~J. Roberts, editors.
+\emph{Proceedings of 13th Computational Techniques and Applications Conference
+  CTAC-2006}, volume 48(E) of \emph{ANZIAM~J.}, 2007.
+\url {http://journal.austms.org.au/ojs/index.php/ANZIAMJ/issue/view/9} <A
+  HREF=http://journal.austms.org.au/ojs/index.php/ANZIAMJ/issue/view/9>Download
+  (draft) article</A>.
+
+\item
+\textbf{Computer algebra derives normal forms of stochastic differential
+  equations}.
+A.~J. Roberts.
+Technical report, \url{http://eprints.usq.edu.au/archive/00001873}, 2007.
+
+\item
+\textbf{Resolve subgrid microscale interactions to discretise stochastic
+  partial differential equations}.
+A.~J. Roberts.
+Technical report, \url{http://arxiv.org/abs/math.DS/0601702}, January 2007.
+
+\item
+\textbf{The style files: Favour the present tense}.
+A.~J. Roberts.
+\emph{The Australian Mathematical Society Gazette}, 33(5):313--314, November
+  2006.
+Unrefereed. <A
+  HREF=http://www.austms.org.au/Publ/Gazette/2006/Nov06/stylefiles.pdf>Download
+  (draft) article</A>.
+
+\item
+\textbf{The style files: Explicitly avoid false conditionals}.
+A.~J. Roberts.
+\emph{The Australian Mathematical Society Gazette}, 33(4):241--242, September
+  2006.
+Unrefereed. <A
+  HREF=http://www.austms.org.au/Publ/Gazette/2006/Sep06/stylefiles.pdf>Download
+  (draft) article</A>.
+
+\item
+\textbf{The style files: Inform with titles, abstracts and introductions}.
+A.~J. Roberts.
+\emph{The Australian Mathematical Society Gazette}, 33(3):169--170, July 2006.
+Unrefereed. <A
+  HREF=http://www.austms.org.au/Publ/Gazette/2006/Jul06/stylefiles.pdf>Download
+  (draft) article</A>.
+
+\item
+\textbf{The style files: Clarify this}.
+A.~J. Roberts.
+\emph{The Australian Mathematical Society Gazette}, 33(2):104--105, May 2006.
+Unrefereed. <A
+  HREF=http://www.austms.org.au/Publ/Gazette/2006/May06/stylefiles.pdf>Download
+  (draft) article</A>.
+
+\item
+\textbf{An accurate and comprehensive model of thin fluid flows with inertia on
+  curved substrates}.
+A.~J. Roberts and Zhenquan Li.
+\emph{J.~Fluid Mech.}, 553:33--73, April 2006.
+
+\item
+\textbf{The style files: Prefer active writing to passive}.
+A.~J. Roberts.
+\emph{The Australian Mathematical Society Gazette}, 33(1):22--23, March 2006.
+Unrefereed. <A
+  HREF=http://www.austms.org.au/Publ/Gazette/2006/Mar06/stylefiles.pdf>Download
+  (draft) article</A>.
+
+\item
+\textbf{Resolving the multitude of microscale interactions accurately models
+  stochastic partial differential equations}.
+A.~J. Roberts.
+\emph{LMS J.~Computation and Maths}, 9:193--221, 2006.
+
+\item
+\textbf{Accurately model the {Kuramoto--Sivashinsky} dynamics with holistic
+  discretisation}.
+T. MacKenzie and A.~J. Roberts.
+\emph{SIAM J.~Applied Dynamical Systems}, 5(3):365--402, 2006 <A
+  HREF=http://epubs.siam.org/SIADS/volume-05/art_62773.html>Download (draft)
+  article</A>.
+
+\item
+\textbf{Computation of short-crested deep-water waves}.
+M. Ioualalen, M. Okamura, S. Cornier, C. Kharif, and A.~J. Roberts.
+\emph{J.~Waterway, Port, Coast and Ocean Engrg}, 132(3):157--165, 2006.
+
+\item
+\textbf{A normal form of thin fluid film equations solves the transient
+  paradox}.
+A.~J. Roberts.
+\emph{Physica~D}, 223(1):69--81, 2006.
+
+\item
+Andrew Stacey, Bill Blyth, John Shepherd, and A.~J. Roberts, editors.
+\emph{Proceedings of the 7th Biennial Engineering Mathematics and Applications
+  Conference, EMAC-2005}, volume 47(E) of \emph{ANZIAM~J.}, 2006.
+
+\item
+\textbf{Computer algebra derives discretisations of the stochastically forced
+  {Burgers'} partial differential equation}.
+A.~J. Roberts.
+Technical report, [\url{http://eprints.usq.edu.au/1322/}], January 2006 <A
+  HREF=http://eprints.usq.edu.au/archive/00001322/>Download (draft)
+  article</A>.
+
+\item
+\textbf{Predicting the off-site deposition of spray drift from horticultural
+  spraying through porous barriers on soil and plant surfaces}.
+G.~N. Mercer and A.~J. Roberts.
+In Graeme Wake, editor, \emph{Proceedings of the 2005 Mathematics in Industry
+  Study Group}, pages 27--52. MISG, Centre for Mathematics in Industry, Massey
+  University, December 2005.
+
+\item
+\textbf{Computer algebra resolves a multitude of microscale interactions to
+  model stochastic partial differential equations}.
+A.~J. Roberts.
+Technical report, [\url{http://eprints.usq.edu.au/archive/00001242/}], December
+  2005.
+
+\item
+\textbf{Higher order accuracy in the gap-tooth scheme for large-scale dynamics
+  using microscopic simulators}.
+A.~J. Roberts and I.~G. Kevrekidis.
+In Rob May and A.~J. Roberts, editors, \emph{Proc. of 12th Computational
+  Techniques and Applications Conference CTAC-2004}, volume 46 of
+  \emph{ANZIAM~J.}, pages C637--C657, July 2005.
+
+\item
+\textbf{Use the information dimension, not the hausdorff}.
+A.~J. Roberts.
+Technical report, \url{http://arxiv.org/abs/nlin.PS/0512014}, July 2005 <A
+  HREF=http://arxiv.org/abs/nlin.PS/0512014>Download (draft) article</A>.
+
+\item
+\textbf{Linear algebra: a draft proposal}.
+A.~J. Roberts.
+Technical report, University of Southern Queensland, April 2005.
+
+\item
+\textbf{Nonlinear analysis of rubber-based polymeric materials with thermal
+  relaxation models}.
+R.~V.~N. Melnik, D.~V. Strunin, and A.~J. Roberts.
+\emph{Numerical Heat Transfer: Part~A: Applications}, 47:549--569, 2005.
+\url{http://taylorandfrancis.metapress.com/link.asp?id=y7hnhm6m0yv76taa}.
+
+\item
+Rob May and A.~J. Roberts, editors.
+\emph{Proceedings of 12th Computational Techniques and Applications Conference
+  CTAC-2004}, volume 46(E) of \emph{ANZIAM~J.}, 2005.
+
+\item
+\textbf{Teach fundamental abstract linear algebra starting from singular value
+  decomposition}.
+A.~J. Roberts.
+Technical report, University of Southern Queensland, 2005.
+
+\item
+\textbf{Analyse gap-tooth patch boundary conditions with {Reduce}}.
+A.~J. Roberts.
+Technical report, \url{http://www.sci.usq.edu.au/staff/aroberts/linpbc.red},
+  September 2004.
+
+\item
+\textbf{A corrected quadrature formula and applications}.
+Nenad Ujevic and A.~J. Roberts.
+\emph{ANZIAM~J.}, 45(E):E41--E56, February 2004.
+
+\item
+\textbf{Computational models for multi-scale coupled dynamic problems}.
+R.~V.~N. Melnik and A.~J. Roberts.
+\emph{Futture Generation Computer Systems}, 20(3):453--464, 2004 <A
+  HREF=http://www.sciencedirect.com/science/article/pii/S0167739X03001869>Download
+  (draft) article</A>.
+
+\item
+\textbf{Shear dispersion along circular pipes is affected by bends, but the
+  torsion of the pipe is negligible}.
+A.~J. Roberts.
+\emph{SIAM J.~Applied Dynamical Systems}, 3:433--462, 2004.
+
+\item
+\textbf{The prisoners may be in two minds}.
+A.~J. Roberts.
+\emph{Austral. Math. Soc. Gazette}, 31:30--33, 2004 <A
+  HREF=http://arXiv.org/abs/math.GM/0303284>Download (draft) article</A>.
+
+\item
+\textbf{Two-zone model of shear dispersion in a channel using centre
+  manifolds}.
+A.~J. Roberts and D.~V. Strunin.
+\emph{Quart. J.~Mech. Appl. Math.}, 57:363--378, 2004.
+
+\item
+\textbf{Image processing of finite size rat retinal ganglion cells using
+  multifractal and local connected fractal analysis}.
+H.~F. Jelinek, D.~J. Cornforth, A.~J. Roberts, G. Landini, P. Bourke, and A.
+  Iorio.
+In \emph{17th Australian Joint Conference on Artificial Intelligence}, volume
+  3339 of \emph{Lecture Notes in Computer Science}, pages 961--966.
+  Springer--Verlag Heidelberg, 2004 <A
+  HREF=http://www.springerlink.com/index/6UGGTAGMUFKR5EWX>Download (draft)
+  article</A>.
+
+\item
+Jagoda Crawford and A.~J. Roberts, editors.
+\emph{Proceedings of 11th Computational Techniques and Applications Conference
+  CTAC-2003}, volume 45(E) of \emph{ANZIAM~J.}, 2004.
+
+\item
+\textbf{Zero-sum games theory}.
+A.~J. Roberts.
+Technical report, University of Southern Queensland, 2004.
+
+\item
+\textbf{Check the slowly-varying normal form of thin film fluids}.
+A.~J. Roberts.
+Technical report, \url{http://www.sci.usq.edu.au/staff/aroberts/CA/nff.red},
+  2004.
+
+\item
+\textbf{A step towards holistic discretisation of stochastic partial
+  differential equations}.
+A.~J. Roberts.
+In Jagoda Crawford and A.~J. Roberts, editors, \emph{Proc. of 11th
+  Computational Techniques and Applications Conference CTAC-2003}, volume 45,
+  pages C1--C15, December 2003.
+
+\item
+\textbf{Engineering mathematics: time for a core curriculum?}
+Particia Cretchley, A.~J. Roberts, and Chris Harman.
+In R.~L. May and W.~F. Blyth, editors, \emph{Proceedings of the Sixth
+  Engineering Mathematics and Applications Conference}, pages 25--30, July
+  2003.
+
+\item
+\textbf{Holistic discretisation of dynamical partial differential equations}.
+A.~J. Roberts.
+Technical report,
+  \url{http://www.maths.adelaide.edu.au/anthony.roberts/holistic1.php}, apr
+  2003--\the\year.
+
+\item
+\textbf{Holistic discretisation of shear dispersion in a two-dimensional
+  channel}.
+T. MacKenzie and A.~J. Roberts.
+In K. Burrage and Roger~B. Sidje, editors, \emph{Proc. of 10th Computational
+  Techniques and Applications Conference CTAC-2001}, volume 44, pages
+  C512--C530, March 2003.
+
+\item
+\textbf{Low {P}randtl number fluid convection modelled using symbolic algebra
+  ({REDUCE}) and {M}atlab}.
+Tim Passmore and A.~J. Roberts.
+In K. Burrage and Roger~B. Sidje, editors, \emph{Proc. of 10th Computational
+  Techniques and Applications Conference CTAC-2001}, volume 44, pages
+  C590--C626, March 2003.
+
+\item
+\textbf{Derive boundary conditions for holistic discretisations of {Burgers'}
+  equation}.
+A.~J. Roberts.
+In K. Burrage and Roger~B. Sidje, editors, \emph{Proc. of 10th Computational
+  Techniques and Applications Conference CTAC-2001}, volume 44, pages
+  C664--C686, March 2003.
+
+\item
+\textbf{Dynamics of a turbulent layer generated by velocity jump}.
+D.~V. Strunin and A.~J. Roberts.
+In K. Burrage and Roger~B. Sidje, editors, \emph{Proc. of 10th Computational
+  Techniques and Applications Conference CTAC-2001}, volume 44, pages
+  C723--C738, March 2003.
+
+\item
+\textbf{Modelling the dynamics of turbulent floods}.
+Z. Mei, A.~J. Roberts, and Zhenquan Li.
+\emph{SIAM J.~Appl. Math.}, 63(2):423--458, 2003.
+
+\item
+\textbf{Modelling nonlinear dynamics of shape-memory-alloys with approximate
+  models of coupled thermoelasticity}.
+R.~V.~N. Melnik and A.~J. Roberts.
+\emph{Z.~Angew. Math. Mech.}, 83:93--104, 2003.
+
+\item
+\textbf{A holistic finite difference approach models linear dynamics
+  consistently}.
+A.~J. Roberts.
+\emph{Mathematics of Computation}, 72:247--262, 2003 <A
+  HREF=http://www.ams.org/mcom/2003-72-241/S0025-5718-02-01448-5>Download
+  (draft) article</A>.
+
+\item
+\textbf{Low-dimensional modelling of dynamical systems applied to some
+  dissipative fluid mechanics}.
+A.~J. Roberts.
+In Rowena Ball and Nail Akhmediev, editors, \emph{Nonlinear dynamics from
+  lasers to butterflies}, volume 1 of \emph{Lecture Notes in Complex Systems},
+  chapter 7, pages 257--313. World Scientific, 2003.
+
+\item
+\textbf{Holistic discretise three coupled dynamical partial differential
+  equations}.
+A.~J. Roberts.
+Technical report,
+  \url{http://www.maths.adelaide.edu.au/anthony.roberts/holistic3.php},
+  2003--\the\year.
+
+\item
+\textbf{Multifractal analysis: a pilot study using rat ganglion cells}.
+H.~F. Jelinek, A.~J. Roberts, and L. Peichl.
+\emph{Proc. Austr. Neurosci. Soc.}, 13:152, 2002.
+
+\item
+\textbf{Phase transitions in shape memory alloys with hyperbolic heat
+  conduction and differential-algebraic models}.
+R.~V.~N. Melnik, A.~J. Roberts, and K.~A. Thomas.
+\emph{Computational Mechanics}, 29:16--26, 2002 <A
+  HREF=http://link.springer.de/link/service/journals/00466/bibs/2029001/20290016.htm>Download
+  (draft) article</A>.
+
+\item
+\textbf{Coupled thermomechanical dynamics of phase transitions in shape memory
+  alloys and related hysteresis phenomena}.
+R.~V.~N. Melnik, A.~J. Roberts, and K.~A. Thomas.
+\emph{Mechanics Research Communications}, 28:637--651, 2002.
+
+\item
+\textbf{A lubrication model of coating flows over a curved substrate in space}.
+R.~Valery Roy, A.~J. Roberts, and M.~E. Simpson.
+\emph{J.~Fluid Mech.}, 454:235--261, 2002.
+
+\item
+\textbf{Computational models for materials with shape memory: towards a
+  systematic description of coupled phenomena}.
+R.~V.~N. Melnik and A.~J. Roberts.
+In P.~M.~A. Sloot, C.~J.~K. Tan, J.~J. Dongarra, and A.~G. Hoekstra, editors,
+  \emph{Computational Science-ICCS2002}, Lecture Notes in Computer Science,
+  pages 490--499. Springer, 2002.
+
+\item
+\textbf{Self-similarity of decaying turbulent jet}.
+D.~V. Strunin and A.~J. Roberts.
+In \emph{Proceedings of the fifth biennial engineering mathematics and
+  applications conference, EMAC 2002}, pages 205--210, 2002.
+
+\item
+\textbf{Holistic discretisation illuminates and enhances the numerical
+  modelling of differential equations}.
+A.~J. Roberts.
+Technical report,
+  \url{http://www.sci.usq.edu.au/research/workingpapers/sc-mc-0111.ps}, 2002 <A
+  HREF=http://www.sci.usq.edu.au/research/workingpapers/sc-mc-0111.ps>Download
+  (draft) article</A>.
+
+\item
+\textbf{Simple and fast multigrid solution of {Poisson's} equation using
+  diagonally oriented grids}.
+A.~J. Roberts.
+\emph{ANZIAM~J.}, 43(E):E1--E36, July 2001.
+
+\item
+\textbf{A model of weakly vortical interfacial flow}.
+G.~A. Jarrad and A.~J. Roberts.
+\emph{ANZIAM~J.}, 42(E):E69--E101, March 2001.
+
+\item
+\textbf{Holistic projection of initial conditions onto a finite difference
+  approximation}.
+A.~J. Roberts.
+\emph{Computer Phys. Comm.}, 142:316--321, 2001 <A
+  HREF=http://arXiv.org/abs/math.NA/0101205>Download (draft) article</A>.
+
+\item
+\textbf{Holistic discretisation ensures fidelity to {Burgers'} equation}.
+A.~J. Roberts.
+\emph{Applied Numerical Modelling}, 37:371--396, 2001 <A
+  HREF=http://arXiv.org/abs/chao-dyn/9901011>Download (draft) article</A>.
+
+\item
+\textbf{An accurate lubrication model of contaminated coating flows}.
+M.~E. Simpson and A.~J. Roberts.
+\emph{Computer Phys. Comm.}, 142:330--332, 2001.
+
+\item
+\textbf{Coupled thermomechanical waves in hyperbolic thermoelasticity}.
+D.~V. Strunin, R.~V.~N. Melnik, and A.~J. Roberts.
+\emph{J.~Thermal Stresses}, 24(2):121--140, 2001.
+
+\item
+\textbf{Reproductive pair correlations and the clustering of organisms}.
+W.~R. Young, A.~J. Roberts, and G. Stuhne.
+\emph{Nature}, 412:328--331, 2001.
+19th July.
+
+\item
+\textbf{Efficient design of tall tapered feeders}.
+M.~J. McGuinness and A.~J. Roberts.
+In J. Hewitt, editor, \emph{Proceedings of the 2001 Mathematics in Industry
+  Study Group}, pages 60--77. 2001.
+
+\item
+\textbf{Holistic discretisation illuminates and enhances the numerical
+  modelling of differential equations}.
+A.~J. Roberts.
+In V.~V. Kluev and N.~E. Mastorakis, editors, \emph{Topics in Applied and
+  Theoretical Mathematics and Computer Science}, pages 81--89. WSES Press,
+  2001.
+
+\item
+\textbf{Models encompassing hydraulic jumps in radial flows over a horizontal
+  plate}.
+A.~J. Roberts and D.~V. Strunin.
+In V.~V. Kluev and N.~E. Mastorakis, editors, \emph{Topics in Applied and
+  Theoretical Mathematics and Computer Science}, pages 31--36. WSES Press,
+  2001.
+
+\item
+\textbf{Modeling dynamics of multilayered {SMA} actuators}.
+R.~V. Melnik and A.~J. Roberts.
+In Ronald A.~Lawes Dinesh K.~Sood and Vasundara~V. Varadan, editors,
+  \emph{Smart Structures and Devices}, volume 4235 of \emph{{SPIE}
+  proceedings}, pages 117--125, 2001.
+
+\item
+\textbf{Holistically discretise the {Swift-Hohenberg} equation on a scale
+  larger than its spatial pattern}.
+A.~J. Roberts.
+Technical report, \url{http://arXiv.org/abs/math.NA/0110153}, 2001 <A
+  HREF=http://arXiv.org/abs/math.NA/0110153>Download (draft) article</A>.
+
+\item
+\textbf{An accurate lubrication model of contaminated coating flows}.
+A.~J. Roberts and M.~E. Simpson.
+Technical report, \url{http://arXiv.org/abs/math.DS/0102207}, 2001 <A
+  HREF=http://arXiv.org/abs/math.DS/0102207>Download (draft) article</A>.
+
+\item
+\textbf{Complete self-similarity in $k$-$l$ models of turbulence induced by
+  step-wise profiles of velocity or buoyancy}.
+D.~V. Strunin and A.~J. Roberts.
+Technical report, University of Southern Queensland, 2001.
+
+\item
+\textbf{Solve differential-algebraic equations in matlab}.
+A.~J. Roberts.
+Technical report, \url{http://www.sci.usq.edu.au/staff/robertsa/dae.dtx}, May
+  2000 <A HREF=http://www.sci.usq.edu.au/staff/robertsa/dae.dtx>Download
+  (draft) article</A>.
+
+\item
+\textbf{Dynamics of rubber-like polymers with hyperbolic models of coupled
+  thermoelasticity}.
+R.~V.~N. Melnik, D.~V. Strunin, and A.~J. Roberts.
+Technical report, University of Southern Queensland, March 2000.
+
+\item
+\textbf{Computing dynamics of copper-based {SMA} via centre manifold reduction
+  of {3D} models}.
+R.~V.~N. Melnik, A.~J. Roberts, and K.~A. Thomas.
+\emph{Computational Materials Science}, 18:255--268, 2000.
+
+\item
+\textbf{Holistic finite differences accurately model the dynamics of the
+  {Kuramoto--Sivashinsky} equation}.
+T. Mackenzie and A.~J. Roberts.
+\emph{ANZIAM~J.}, 42(E):C918--C935, 2000.
+
+\item
+\textbf{Mathematical and numerical analysis of {Falk-Konopka-type} models for
+  shape-memory alloys}.
+R.~V.~N. Melnik, A.~J. Roberts, and K.~A. Thomas.
+\emph{International J.~Differential Equations and Applications}, 1A:291--300,
+  2000.
+
+\item
+\textbf{Computer algebra derives correct initial conditions for low-dimensional
+  dynamical models}.
+A.~J. Roberts.
+\emph{Computer Phys. Comm.}, 126(3):187--206, 2000.
+
+\item
+\textbf{Numerical modelling of thermoelastic processes using nonlinear theories
+  with thermal relaxation times}.
+D.~V. Strunin, R.~V.~N. Melnik, and A.~J. Roberts.
+\emph{ANZIAM~J.}, 42(E):C1356--C1378, 2000.
+
+\item
+\textbf{Modelling of sample dynamics in rectangular asymmetrical flow
+  field-flow fractionation channels}.
+S.~A. Suslov and A.~J. Roberts.
+\emph{Analytical Chemistry}, 72(18):4331--4345, 2000.
+
+\item
+\textbf{Dip coating process for hot metal castings}.
+M.~J. McGuinness and A.~J. Roberts.
+In J. Hewitt, editor, \emph{Proceedings of the 1999 Mathematics in Industry
+  Study Group}, pages 20--48. 2000.
+
+\item
+\textbf{Rigorous zonal modelling of contaminant dispersion in shear flows}.
+A.~J. Roberts and D.~V. Strunin.
+In N. Mastorakis, editor, \emph{Recent Advances in Applied and Theoretical
+  Mechanics}, pages 64--70. WSES Press, 2000.
+
+\item
+\textbf{The dynamics of reaction diffusion equations lead to a holistic
+  discretisation}.
+T. MacKenzie and A.~J. Roberts.
+In R.~L. May, G.~F. Fitz-Gerald, and I.~H. Grundy, editors, \emph{EMAC 2000
+  Proceedings. Proceedings of the fourth biennial Engineering Mathematics and
+  Applications Conference}, pages 199--202, 2000.
+
+\item
+\textbf{Approximate models of dynamic thermoviscoelasticity describing shape
+  memory alloy phase transitions}.
+R.~V.~N. Melnik and A.~J. Roberts.
+In D. Stewart and S. Oliviera, editors, \emph{New methods in Applied and
+  computational mathematics (NEMACOM 98)}, volume 38 of \emph{Proceedings of
+  the Centre for Mathematics and its Applications, ANU}, pages 17--32, 2000.
+
+\item
+\textbf{Numerical analysis of the behaviour of rubber-like polymers with
+  hyperbolic models of nonlinear thermoelasticity}.
+R.~V.~N. Melnik, D.~V. Strunin, and A.~J. Roberts.
+In M. Deville and R. Owens, editors, \emph{Proc. of the 16th IMACS World
+  Congress on Scientific Computation, Applied Mathematics and Simulation},
+  pages 1--6, 2000.
+
+\item
+\textbf{Rigorous zonal modelling of contaminant dispersion in shear flows}.
+A.~J. Roberts and D.~V. Strunin.
+In N. Mastorakis, editor, \emph{Proc. of the WSES Int. Conf. on Applied and
+  Theoretical Mechanics}, pages 2011--2017, 2000.
+CD-ROM.
+
+\item
+\textbf{Branching behaviour of standing waves---the signatures of resonance}.
+D. Smith and A.~J. Roberts.
+\emph{Phys. Fluids}, 11(5):1051--1064, May 1999.
+
+\item
+\textbf{Stability regimes of finite depth short-crested waves}.
+M. Ioualalen, C. Kharif, and A.~J. Roberts.
+\emph{J.~Phys. Oceanogr.}, 29(9):2318--2331, 1999.
+
+\item
+\textbf{Differential-algebraic equations deserve more attention}.
+A.~J. Roberts.
+\emph{Austral. Math. Soc. Gazette}, 26:75--79, 1999.
+
+\item
+\textbf{Advection-dispersion in symmetric field-flow fractionation channels}.
+S.~A. Suslov and A.~J. Roberts.
+\emph{J.~Math. Chem.}, 26:27--46, 1999.
+\doi{10.1023/A:1019169408365}.
+
+\item
+\textbf{Modelling dynamics of shape-memory-alloys via computer algebra}.
+R.~V.~N. Melnik, A.~J. Roberts, and K. A.Thomas.
+In V.~V. Varadan, editor, \emph{Mathematics and Control in Smart Structures,
+  Proc. of SPIE}, volume 3667, pages 290--301, 1999.
+
+\item
+\textbf{Dynamics of shape-memory-alloys: A reduction procedure for 3d models}.
+R.~V.~N. Melnik, A.~J. Roberts, and K.~A. Thomas.
+In W. Wunderlich, editor, \emph{Proceedings of the European Conference on
+  Computational Mechanics: Solids, Structures and Coupled Problems in
+  Engineering}, page 328, 1999.
+
+\item
+\textbf{Projection of initial conditions for thin film flow models}.
+S.~A. Suslov and A.~J. Roberts.
+In \emph{IUTAM Symposium on Nonlinear Wave Behavior in Multi-Phase Flow}, 1999.
+
+\item
+\textbf{Similarity, attraction and initial conditions in an example of
+  nonlinear diffusion}.
+S.~A. Suslov and A.~J. Roberts.
+\emph{J.~Austral. Math. Soc.~B}, 40(E):E1--E26, October 1998.
+
+\item
+\textbf{An accurate model of thin 2d fluid flows with inertia on curved
+  surfaces}.
+A.~J. Roberts.
+In P.~A. Tyvand, editor, \emph{Free-surface flows with viscosity}, volume 16 of
+  \emph{Advances in Fluid Mechanics Series}, chapter 3, pages 69--88. Comput
+  Mech Pub, 1998.
+
+\item
+\textbf{The accurate modelling of thin {3D} fluid flows with inertia on curved
+  substrates}.
+Zhenquan Li and A.~J. Roberts.
+In \emph{{Proceedings of Engineering Mathematics Applications Conference:
+  EMAC98}}, pages 315--318, 1998.
+
+\item
+\textbf{Numerical thin film dynamics}.
+M. Simpson and A.~J. Roberts.
+In B.~J. Noye, M.~D. Teubner, and A.~W. Gill, editors, \emph{{Computational
+  Techniques and Applications: CTAC-97}}, pages 623--630. World Sci. Pub. Co.,
+  1998.
+
+\item
+\textbf{Level set methods in free-surface hydrodynamics}.
+D. Smith and A.~J. Roberts.
+In B.~J. Noye, M.~D. Teubner, and A.~W. Gill, editors, \emph{{Computational
+  Techniques and Applications: CTAC-97}}, pages 639--646. World Sci. Pub. Co.,
+  1998.
+
+\item
+\textbf{First-order accurate scheme to integrate the ito sde}.
+A.~J. Roberts.
+Technical report, \url{http://www.sci.usq.edu.au/staff/aroberts/sde1.m}, 1998
+  <A HREF=http://www.sci.usq.edu.au/staff/aroberts/sde1.m>Download (draft)
+  article</A>.
+
+\item
+\textbf{{LaTeX}: from quick and dirty to style and finesse}.
+A.~J. Roberts.
+Technical report,
+  \url{http://www.maths.adelaide.edu.au/anthony.roberts/LaTeX/index.php}, 1998
+  <A
+  HREF=http://www.maths.adelaide.edu.au/anthony.roberts/LaTeX/index.php>Download
+  (draft) article</A>.
+
+\item
+\textbf{Proper initial conditions for the lubrication model of thin film fluid
+  flow}.
+S.~A. Suslov and A.~J. Roberts.
+Technical report, \url{http://arXiv.org/abs/chao-dyn/9804018}, 1998 <A
+  HREF=http://arXiv.org/abs/chao-dyn/9804018>Download (draft) article</A>.
+
+\item
+\textbf{Modelling and simulation}.
+A.~J. Roberts.
+\emph{Australasian Science}, 18(3):5--6, sept 1997.
+
+\item
+\textbf{Low-dimensional modelling of dynamics via computer algebra}.
+A.~J. Roberts.
+\emph{Computer Phys. Comm.}, 100:215--230, 1997.
+
+\item
+\textbf{Solution to problem 96-14: An integral}.
+A.~J. Roberts.
+\emph{SIAM Review}, 39:pp526--7, 1997.
+
+\item
+\textbf{Bow-like free surfaces under gravity}.
+E.~O. Tuck and A.~J. Roberts.
+\emph{Phil. Trans. R.~Soc. Lond.~A}, 355:665--677, 1997.
+
+\item
+\textbf{Parallel algorithms for spatial data partition and join processing}.
+Yanchun Zhang, Jitian Xiao, and A.~J. Roberts.
+In A. Goscinski, M. Hobbs, and Wanlei Zhou, editors, \emph{Algorithms and
+  architectures for parallel processing}, pages 703--716, 1997.
+
+\item
+\textbf{Low-dimensional modelling of dynamical systems}.
+A.~J. Roberts.
+Technical report, \url{http://arXiv.org/abs/chao-dyn/9705010}, 1997 <A
+  HREF=http://arXiv.org/abs/chao-dyn/9705010>Download (draft) article</A>.
+
+\item
+\textbf{Internal structure of extreme standing waves in deep water}.
+D. Smith and A.~J. Roberts.
+\emph{Phys. Fluids}, 8(3):697--703, March 1996.
+
+\item
+\textbf{On the low-dimensional modelling of {Stratonovich} stochastic
+  differential equations}.
+Xu Chao and A.~J. Roberts.
+\emph{Physica~A}, 225:62--80, 1996.
+
+\item
+\textbf{On the observability of finite depth short-crested water waves}.
+M. Ioualalen, C. Kharif, and A.~J. Roberts.
+\emph{J.~Fluid Mech.}, 322:1--19, 1996.
+
+\item
+\textbf{Low-dimensional models of thin film fluid dynamics}.
+A.~J. Roberts.
+\emph{Phys. Letts.~A}, 212:63--72, 1996.
+
+\item
+\textbf{Unbiased estimation of multi-fractal dimensions of finite data sets}.
+A.~J. Roberts and A. Cronin.
+\emph{Physica~A}, 233:867--878, 1996.
+\doi{10.1016/S0378-4371(96)00165-3}.
+
+\item
+\textbf{The construction of zonal models of dispersion in channels via matching
+  centre manifolds}.
+S.~D. Watt and A.~J. Roberts.
+\emph{J.~Austral. Math. Soc.~B}, 38:101--125, 1996.
+
+\item
+\textbf{Initial conditions for models of dynamical systems}.
+S.~M. Cox and A.~J. Roberts.
+\emph{Physica~D}, 85:126--141, 1995.
+
+\item
+\textbf{The accurate dynamic modelling of contaminant dispersion in channels}.
+S.~D. Watt and A.~J. Roberts.
+\emph{SIAM J.~Appl. Math.}, 55(4):1016--1038, 1995.
+\url{http://epubs.siam.org/sam-bin/dbq/article/25797}.
+
+\item
+\textbf{Dimensional reduction of a bushfire model}.
+S.~D. Watt, A.~J. Roberts, and R.~O. Weber.
+\emph{Mathl. Computer Modelling}, 21(9):79--83, 1995.
+
+\item
+\textbf{Equations for turbulent flood waves}.
+Z. Mei and A.~J. Roberts.
+In A. Mielke and K. Kirchgassner, editors, \emph{Structure and dynamics of
+  nonlinear waves in fluids}, pages 342--352. World Sci, 1995.
+
+\item
+\textbf{The {Swift--Hohenberg} equation requires non-local modifications to
+  model spatial pattern evolution of physical problems}.
+A.~J. Roberts.
+Technical report, \url{http://arXiv.org/abs/patt-sol/9412002}, 1995 <A
+  HREF=http://arXiv.org/abs/patt-sol/9412002>Download (draft) article</A>.
+
+\item
+\textbf{Fractal and multi-fractal patterns of seaweed settlement}.
+L.~M. Emmerson and A.~J. Roberts.
+preprint, 1995.
+
+\item
+\textbf{The importance of beings fractal}.
+A.~J. Roberts.
+\emph{Australasian Science}, page 23, April 1994.
+
+\item
+\textbf{A complete model of shear dispersion in pipes}.
+G.~N. Mercer and A.~J. Roberts.
+\emph{Jap. J.~Indust. Appl. Math.}, 11:499--521, 1994.
+
+\item
+\textbf{The form of standing waves on finite depth water}.
+G.~N. Mercer and A.~J. Roberts.
+\emph{Wave Motion}, 19:233--244, 1994.
+
+\item
+\emph{A one-dimensional introduction to continuum mechanics}.
+A.~J. Roberts.
+World Sci, 1994.
+
+\item
+\textbf{Initialisation and the quasi-geostrophic slow manifold}.
+S.~M. Cox and A.~J. Roberts.
+Technical report, \url{http://arXiv.org/abs/nlin.CD/0303011}, 1994.
+
+\item
+\textbf{Estimate generalised fractal dimensions of a set of points}.
+A.~J. Roberts.
+Technical report, \url{http://www.sci.usq.edu.au/staff/aroberts/fdim.sh}, 1994
+  <A HREF=http://www.sci.usq.edu.au/staff/aroberts/fdim.sh>Download (draft)
+  article</A>.
+
+\item
+\textbf{The invariant manifold of beam deformations. part 1: the simple
+  circular rod}.
+A.~J. Roberts.
+\emph{J.~Elas.}, 30:1--54, 1993.
+
+\item
+\textbf{An invariant manifold approach to modelling the dynamics of the
+  kuramoto-sivashinsky equation}.
+D.~I. Oats and A.~J. Roberts.
+Preprint, 1993.
+
+\item
+\textbf{Planform evolution in convection---an embedded centre manifold}.
+A.~J. Roberts.
+\emph{J.~Austral. Math. Soc.~B}, 34:174--198, 1992.
+
+\item
+\textbf{Boundary conditions for approximate differential equations}.
+A.~J. Roberts.
+\emph{J.~Austral. Math. Soc.~B}, 34:54--80, 1992.
+
+\item
+\textbf{A virtual supercomputer from a network of workstations}.
+A.~J. Roberts.
+\emph{Austral. Adv. Comp. Newslet.}, 2(2), 1992.
+
+\item
+\textbf{A sub-centre manifold description of the evolution and interaction of
+  nonlinear dispersive waves}.
+A.~J. Roberts.
+In L. Debnath, editor, \emph{Nonlinear waves}, chapter 9, pages 127--156. World
+  Sci, 1992.
+
+\item
+\textbf{The quasi-geostrophic slow manifold}.
+S.~M. Cox and A.~J. Roberts.
+In \emph{Proc 11th Austral. Fluid Mech Conf}, 1992 <A
+  HREF=http://people.eng.unimelb.edu.au/imarusic/proceedings/11/Roberts.pdf>Download
+  (draft) article</A>.
+
+\item
+\textbf{Extreme standing waves and their stability}.
+G.~N. Mercer and A.~J. Roberts.
+In M.~L. Banner and R.~H.~J. Grimshaw, editors, \emph{Proc IUTAM Sym on
+  breaking waves}, pages 383--387. Springer-Verlag, 1992.
+
+\item
+\textbf{Slow methods for simple people}.
+A.~J. Roberts.
+Technical Report WHOI-92-16, Woods Hole Oceanog. Inst., 1992.
+pp149--154.
+
+\item
+\textbf{Rational mathematical modelling---shear dispersion and planform
+  selection}.
+A.~J. Roberts.
+Technical Report WHOI-92-16, Woods Hole Oceanog. Inst., 1992.
+pp155--166.
+
+\item
+\textbf{Centre manifolds of forced dynamical systems}.
+S.~M. Cox and A.~J. Roberts.
+\emph{J.~Austral. Math. Soc.~B}, 32:401--436, 1991.
+
+\item
+\textbf{Standing waves in deep water: their stability and extreme form}.
+G.~N. Mercer and A.~J. Roberts.
+\emph{Phys. Fluids~A}, 4:259--269, 1991.
+
+\item
+\textbf{Reflection of nonlinear deep-water waves incident onto a wedge of
+  arbitrary angle}.
+T.~R. Marchant and A.~J. Roberts.
+\emph{J.~Austral. Math. Soc.~B}, 32:61--96, 1990.
+
+\item
+\textbf{A centre manifold description of contaminant dispersion in channels
+  with varying flow properties}.
+G.~N. Mercer and A.~J. Roberts.
+\emph{SIAM J.~Appl. Math.}, 50:1547--1565, 1990 <A
+  HREF=http://link.aip.org/link/?SMM/50/1547/1>Download (draft) article</A>.
+
+\item
+\textbf{A description of the long-term behaviour of absorbing continuous time
+  {Markov} chains using a centre manifold}.
+P.~K. Pollett and A.~J. Roberts.
+\emph{Advances Applied Probability}, 22:111--128, 1990.
+
+\item
+\textbf{Low-dimensionality---approximations in mechanics}.
+A.~J. Roberts.
+In J. Noye and W. Hogarth, editors, \emph{{Computational Techniques and
+  Applications: CTAC--89}}, pages 715--722. Hemisphere, 1990.
+
+\item
+\textbf{The utility of an invariant manifold description of the evolution of a
+  dynamical system}.
+A.~J. Roberts.
+\emph{SIAM J.~Math. Anal.}, 20:1447--1458, 1989.
+
+\item
+\textbf{Appropriate initial conditions for asymptotic descriptions of the long
+  term evolution of dynamical systems}.
+A.~J. Roberts.
+\emph{J.~Austral. Math. Soc.~B}, 31:48--75, 1989.
+
+\item
+\textbf{Use of implicit and explicit flux-corrected transport algorithms in gas
+  discharge problems involving a non-uniform velocity fields}.
+P. Stienle, R. Morrow, and A.~J. Roberts.
+\emph{J.~Comput Phys.}, 85, 1989.
+
+\item
+\textbf{A variational approach to the problem of deep water waves forming a
+  circular caustic}.
+T.~R. Marchant and A.~J. Roberts.
+\emph{J.~Fluid Mech.}, 194:581--597, 1988.
+
+\item
+\textbf{The application of centre manifold theory to the evolution of systems
+  which vary slowly in space}.
+A.~J. Roberts.
+\emph{J.~Austral. Math. Soc.~B}, 29:480--500, 1988.
+
+\item
+\textbf{The initial flow of liquid in an accelerating tank}.
+A.~J. Roberts.
+\emph{J.~Eng. Mech.}, 114:175--180, 1988.
+
+\item
+\textbf{Properties of short-crested waves in water of finite depth}.
+T.~R. Marchant and A.~J. Roberts.
+\emph{J.~Austral. Math. Soc.~B}, 29:103--125, 1987.
+
+\item
+\textbf{Transient free-surface flows generated by a moving vertical plate}.
+A.~J. Roberts.
+\emph{Quart. J.~Mech. Appl. Math.}, 30:129--158, 1987.
+
+\item
+\textbf{An introduction to the technique of reconstitution}.
+A.~J. Roberts.
+\emph{SIAM J.~Math. Anal.}, 16:1243--1257, 1985.
+\url{http://dx.doi.org/10.1137/0516089}.
+
+\item
+\textbf{Simple examples of the derivation of amplitude equations for systems of
+  equations possessing bifurcations}.
+A.~J. Roberts.
+\emph{J.~Austral. Math. Soc.~B}, 27:48--65, 1985.
+
+\item
+\textbf{An analysis of near marginal, mildly penetrative convection with heat
+  flux prescribed on the boundaries}.
+A.~J. Roberts.
+\emph{J.~Fluid Mech.}, 158:71--93, 1985.
+
+\item
+\textbf{Highly nonlinear short-crested water waves}.
+A.~J. Roberts.
+\emph{J.~Fluid Mech.}, 135:301--321, 1983.
+
+\item
+\textbf{A stable and accurate numerical method to calculate the motion of a
+  sharp interface between fluids}.
+A.~J. Roberts.
+\emph{IMA J.~Appl. Math.}, 31:13--35, 1983.
+
+\item
+\textbf{Notes on long-crested water wave}.
+A.~J. Roberts and D.~H. Peregrine.
+\emph{J.~Fluid Mech.}, 135:323--335, 1983.
+
+\item
+\textbf{The calculation of nonlinear short-crested wave}.
+A.~J. Roberts and L.~W. Schwartz.
+\emph{Phys. Fluids}, 26:2388, 1983.
+
+\item
+\emph{Nonlinear buoyancy effects in fluids}.
+A.~J. Roberts.
+PhD thesis, University of Cambridge, July 1982.
+
+\item
+\textbf{The behaviour of harmonic resonant steady solutions to a model
+  differential equation}.
+A.~J. Roberts.
+\emph{Quart. J.~Mech. Appl. Math.}, 34:287--310, 1981.
+
+\item
+\textbf{Fixed flux penetrative convection}.
+A.~J. Roberts.
+Technical Report WHOI-81-102, Woods Hole Oceanog. Inst., 1981.
+pp177--188.
+
+\item
+\textbf{Inverse solutions in free-surface hydrodynamics via solution of a
+  complex differential equation}.
+A.~J. Roberts.
+Honours project, University of Adelaide, 1977 <A
+  HREF=http://www.maths.adelaide.edu.au/anthony.roberts/ojs/index.php/project/article/view/60>Download
+  (draft) article</A>.
+
+\enditemize

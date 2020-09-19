@@ -1,0 +1,335 @@
+<?php
+$title="Construct centre manifolds of ordinary or delay differential equations (autonomous)";
+$thisfile=__FILE__;
+$thanks="<br/>Part of the research<br/>
+underlying this web service<br/>
+was funded by the<br/> <a href='http://www.arc.gov.au'>
+Australian Research Council</a><br/>";
+include "header.php";
+include "menuside.php";
+include "mathjax.html";
+?>
+
+
+<h2>Overview</h2>
+
+<div class="newspaper">
+Via this page you obtain a centre manifold of your specified
+system of ordinary differential equations
+(<small>ODE</small>) or delay differential equations
+(<small>DDE</small>), when the <small>ODE/DDE</small> has
+fast and centre modes.   The centre modes may be slow, as in
+a pitchfork bifurcation, or oscillatory, as in a Hopf
+bifurcation, or some more complicated superposition. In the
+case when the fast modes all decay, the centre manifold
+supplies you with a faithful large time model of the
+dynamics. <p/>For example, this web page could help you
+analyse the long time dynamics of the system \[
+\frac{d\vec u}{dt} =\left[\begin{array}{ccc}
+2&1&2\\ 1&-1&1\\ -3&-1&-3 \end{array}\right] \vec u
++\varepsilon \left[\begin{array}{c}u_2u_3\\ -u_1u_3\\
+-u_1u_2\end{array}\right]. \] As this system is already
+entered for you, just enter the magic word, then click on
+the Submit button to see.
+
+<p/>
+The bottom of this web page lists further examples.
+
+<p/>
+For example, you can obtain the equivalent modulation
+equations corresponding to a given set of
+<small>ODE/DDE</small>s that have one or more oscillatory
+modes (a Hopf bifurcation for example). The analysis
+provides you with equations for the evolution of the complex
+amplitudes of the oscillators.  This approach is better than
+averaging/homogenisation.
+
+<p/>
+For example, you can construct sub-centre manifolds, such as
+slow manifolds among fast oscillations, construct nonlinear
+normal modes, unstable manifold, stable manifold, or in
+general any spectral sub-manifold.
+
+<p/>
+FYI: the source code is now available for collaborative
+development via the folder <tt>CentreManifold</tt> of a
+<a href="https://github.com/uoa1184615/WebServicesGit">Github repository</a>
+
+<p/>
+<b>Non-autonomous ODEs?</b>  These are significantly more
+difficult, but are analysed via the web page <a
+href="http://www.maths.adelaide.edu.au/anthony.roberts/sdenf.php">
+Normal form of stochastic or deterministic multiscale
+differential equations</a>.
+
+</div>
+ 
+<h2>Submit your system of ODE/DDEs for analysis</h2>
+
+<div class="newspaper">
+Fill in the fields below for your <small>ODE/DDE</small> system: 
+<ul>
+<li>the n variables of the system must be denoted u1,u2,...,un; 
+<li>any time tau delayed variables must be denoted
+u1(tau),...,un(tau) for any delay tau;
+<li>specify the <small>ODE/DDE</small>s of the dynamical
+system \(\frac{d\vec u}{dt}=\vec f(\vec u)\) by specifying
+the `nonlinear' function \(\vec f(\vec u)\) which should
+have an equilibrium at the origin;
+<li>the centre manifold is constructed to be tangential to
+the centre subspace of the origin which is defined by you
+specifying the m eigenvalues and m eigenvectors, \(\vec
+e_j\), of the m zero and/or pure imaginary eigenvalues of
+the matrix \(L\) of the linearisation about the origin;
+<li>the centre manifold is parametrised by you also
+specifying m vectors, \(\vec z_j\), which are to be
+orthogonal to updates to the centre manifold---these vectors
+are to be the eigenvectors of the m zero and/or pure
+imaginary eigenvalues of the adjoint of the matrix \(L\);
+<li>for the moment, the <small>ODE/DDE</small>s must be
+multinomial in form;
+<li>Use the syntax of <a href="http://www.reduce-algebra.com">Reduce for the algebraic expressions</a>
+</ul>
+
+</div>
+
+<FORM ACTION="gencmx.php" METHOD="POST"> <h4> Enter the
+magic word "a&nbsp;z&nbsp;a&nbsp;l&nbsp;e&nbsp;a" into
+<input type="text" size=6 name="magic"></h4>
+<TABLE><TR> <TH>Description</TH> <TH>Specify your
+<small>ODE</small>s</TH>
+</TR><TR> <TD><STRONG>RHS function</STRONG> the
+nonlinear vector function: parentheses around a comma
+separated list of multinomial expressions.</TD>
+<TD> <TEXTAREA ROWS="5" COLS="36"
+NAME="ff_">(2*u1+u2+2*u3+u2*u3,
+u1-u2+u3-u1*u3,
+-3*u1-u2-3*u3-u1*u2)</TEXTAREA> </TD>
+</TR><TR> <TD><STRONG>centre frequencies</STRONG> a comma
+separated list of m (real) frequencies (the imaginary part of centre eigenvalues); zero for a slow mode.</TD>
+<TD> <TEXTAREA ROWS="1" COLS="36"
+NAME="freqm_">0</TEXTAREA> </TD>
+</TR><TR> <TD><STRONG>centre subspace</STRONG> m basis
+vectors: must be eigenvectors of \(L\) corresponding to
+the m centre eigenvalues: comma separated list of eigenvectors; each
+eigenvector is parentheses around comma separated
+numbers.</TD>
+<TD> <TEXTAREA ROWS="4" COLS="36"
+NAME="ee_">(1,0,-1)</TEXTAREA> </TD>
+</TR><TR> <TD><STRONG>adjoint subspace</STRONG> m basis
+vectors: comma separated list of vectors; each vector is
+parentheses around comma separated numbers; for each of the
+m centre eigenvalues, in order, must be complex conjugate
+of a corresponding eigenvector of the adjoint matrix.</TD>
+<TD> <TEXTAREA ROWS="4" COLS="36"
+NAME="zz_">(4,1,3)</TEXTAREA> </TD>
+</TR><TR> <TD><STRONG>Order of error</STRONG> of the
+analysis in the `nonlinear' terms on the
+<small>RHS</small>.</TD> <TD> <select name="epsilo">
+<option>2 <option selected>3 <option>4 <option>5 </select> </TD>
+</TR><TR> <TD><STRONG>Print</STRONG> expressions with the
+following variables factored---this does not affect the
+analysis, but must not be empty.</TD> <TD><input
+type="text" name="factor" size=36 maxlength=36
+value="small"> </TD> 
+</TR><TR> <TD></TD> <TD><input type="submit" value="Submit"
+name="%submit"> </TD> </TR></TABLE> 
+</FORM>
+ 
+
+<h2>Wait a minute or two</h2>
+<div class="newspaper">
+ The analysis may take minutes after submitting. Be patient.
+ Read the following. Please inform me of any problems.
+
+
+<?php 
+include "gencmInterp.php";
+?>
+</div>
+
+
+
+
+
+
+
+<h2>Other example systems of ODEs/DDEs</h2>
+<div class="newspaper">
+
+<h3>Double Hopf bifurcation in a delay DE</h3> 
+This example models the double Hopf
+bifurcation that occurs in the coupled delay differential
+equations \(\frac{dx}{dt}=-4(1+\delta)^2 \left[\frac38y(t)
++\frac58 y(t-\pi) \right]\), and \(\frac{dy}{dt}
+=\left[1+y(t)\right] x(t)\) as parameter \(\delta\) crosses
+zero.  Define \(u_1(t)=x(t)\) and \(u_2(t)=y(t)\); 
+denoted as <tt>u1</tt> and <tt>u2</tt>. The time
+delayed variable \(y(t-\pi)\) is denoted <tt>u2(pi)</tt>.
+Copy and paste the following entries.
+<CENTER><TABLE><TR> <TH>Description</TH> <TH>Delay <small>ODE</small> example</TH>
+</TR><TR> <TD>RHS function</TD>
+<TD><TT>(-4*(1+small*delta)^2*(5/8*u2 +3/8*u2(pi)),
+    +u1*(1+u2))</TT></TD>
+</TR><TR> <TD>Centre frequencies</TD>
+<TD><TT>1,2,-1,-2</TT></TD>
+</TR><TR> <TD>Centre subspace</TD>
+<TD><TT>(1,-i), (1,-i/2), (1,+i), (1,+i/2)</TT></TD>
+</TR><TR> <TD>Adjoint subspace</TD>
+<TD><TT>(1,-i), (1,-2*i), (1,+i), (1,+2*i)</TT></TD>
+</TR><TR> <TD>Order of error</TD>
+<TD><TT>3</TT></TD>
+</TR><TR> <TD>Print</TD> <TD><TT>small,delta</TT></TD>
+</TR></TABLE> </CENTER>
+
+The web service
+finds that in terms of complex amplitudes \(s_1(t)\),
+\(s_2(t)\) and their complex conjugates \(\bar s_1(t)\) and
+\(\bar s_2(t)\), the centre manifold \[ \vec
+u=\left[\begin{array}{c} e^{it}s_1 +e^{i2t}s_2 +e^{-it}\bar
+s_1 +e^{-i2t}\bar s_2\\ \textstyle -ie^{it}s_1
+-\frac12ie^{i2t}s_2 +ie^{-it}\bar s_1 +\frac12ie^{-i2t}\bar
+s_2 \end{array}\right] \] to error \({\cal
+O}(\varepsilon)\).   The corresponding evolution on the
+centre manifold is \[\begin{array}{l}  ds_1/dt=
+\varepsilon(-0.04-0.09i)s_2\bar s_1 +{\cal
+O}(\varepsilon^2)\\  ds_2/dt= \varepsilon(0.42-0.49i)s_1^2
++{\cal O}(\varepsilon^2). \end{array}\]
+
+
+
+<h3>Metastability in a four state Markov chain</h3>
+Variable \(\varepsilon\) characterises the rate of exchange between metastable states.
+\[\begin{array}{l}
+&\dot u_{1}=-\varepsilon  u_{1}+u_{2}
+\\&\dot u_{2}=\varepsilon  \big(u_{3}-u_{2}+u_{1}\big)-u_{2}
+\\&\dot u_{3}=\varepsilon  \big(u_{4}-u_{3}+u_{2}\big)-u_{3}
+\\&\dot u_{4}=-\varepsilon  u_{4}+u_{3}
+\end{array}
+\]
+The linear perturbation terms gets multiplied by <tt>small</tt> again. 
+Copy and paste the following.
+<CENTER><TABLE><TR> <TH>Description</TH> <TH><small>ODE</small> example</TH>
+</TR><TR> <TD>RHS function</TD>
+<TD><TT>(u2,-u2,-u3,u3))
++small*(-u1, +u1-u2+u3, +u2-u3+u4, -u4)</TT></TD>
+</TR><TR> <TD>Centre frequencies</TD>
+<TD><TT>0,0</TT></TD>
+</TR><TR> <TD>Centre subspace</TD>
+<TD><TT>(0,0,0,1), (1,0,0,0)</TT></TD>
+</TR><TR> <TD>Adjoint subspace</TD>
+<TD><TT>(0,0,1,1), (1,1,0,0)</TT></TD>
+</TR><TR> <TD>Order of error</TD>
+<TD><TT>5</TT></TD>
+</TR><TR> <TD>Print</TD> <TD><TT>small</TT></TD>
+</TR></TABLE> </CENTER>
+Then \(s_1\) and \(s_2\) represent the probabilities of
+being in states one and two, and in three and four,
+respectively.
+
+
+
+
+<h3>Nonlinear normal modes</h3>
+
+Renson (2012) explored finite element construction of the nonlinear normal modes of a pair of coupled oscillators. 
+Defining two new variables one of their example systems is
+\[\begin{array}{rcl}
+&&\dot x_1=x_3\,,
+\\&&\dot x_2=x_4\,,
+\\&&\dot x_3=-2x_1+x_2-\frac12x_1^3+\frac3{10}(-x_3+x_4)\,,
+\\&&\dot x_4=x_1-2x_2+\frac3{10}(x_3-2x_4)\,.
+\end{array}\]
+Copy and paste the following code which makes the linear damping to be effectively small (which then makes it small squared); consequently scale the smallness of the cubic nonlinearity.
+
+<CENTER><TABLE><TR> <TH>Description</TH> <TH><small>ODE</small> example</TH>
+</TR><TR> <TD>RHS function</TD>
+<TD><TT>(
+    u3,
+    u4,
+    -2*u1 +u2 -small*u1^3/2 +small*3/10*(-u3+u4),
+    u1 -2*u2 +small*3/10*(u3 -2*u4)
+    )</TT></TD>
+</TR><TR> <TD>Centre frequencies</TD>
+<TD><TT>1, -1, sqrt(3), -sqrt(3)</TT></TD>
+</TR><TR> <TD>Centre subspace</TD>
+<TD><TT>(1,1,+i,+i), (1,1,-i,-i),
+          (1,-1,i*sqrt(3),-i*sqrt(3)), 
+          (1,-1,-i*sqrt(3),i*sqrt(3))</TT></TD>
+</TR><TR> <TD>Adjoint subspace</TD>
+<TD><TT>(1,1,+i,+i), (1,1,-i,-i),
+          (-i*sqrt(3),+i*sqrt(3),1,-1), 
+          (+i*sqrt(3),-i*sqrt(3),1,-1)</TT></TD>
+</TR><TR> <TD>Order of error</TD>
+<TD><TT>3</TT></TD>
+</TR><TR> <TD>Print</TD> <TD><TT>small</TT></TD>
+</TR></TABLE> </CENTER>
+
+The square root frequencies do not cause any trouble (although one may need to reformat the LaTeX of the cis operator).
+In the model, observe that \(s_1=s_2=0\) is invariant, as is \(s_3=s_4=0\).  
+These are the nonlinear normal modes.
+
+
+
+
+<h3>Slow manifold among fast oscillations</h3>
+
+Lorenz (1986) explored a five equation toy model to illustrate the quasi-geostrophic approximation and its slow manifold.
+\[\begin{array}{rcl}
+&&\dot u=-vw+bvz\,,
+\\&&\dot v=uw-buz\,,
+\\&&\dot w=-uv\,,
+\\&&\dot x=-z
+\\&&\dot z=x+buv\,.
+\end{array}\]
+Copy and paste the following code to find the 3D slow manifold among the rapid oscillations of \(x,z\).
+
+<CENTER><TABLE><TR> <TH>Description</TH> <TH><small>ODE</small> example</TH>
+</TR><TR> <TD>RHS function</TD>
+<TD><TT>(-u2*u3+b*u2*u5,
++u1*u3 -b*u1*u5,
+-u1*u2,
+-u5,
+u4 +b*u1*u2)</TT></TD>
+</TR><TR> <TD>Centre frequencies</TD>
+<TD><TT>0,0,0</TT></TD>
+</TR><TR> <TD>Centre subspace</TD>
+<TD><TT>(1,0,0,0,0), (0,1,0,0,0), (0,0,1,0,0)</TT></TD>
+</TR><TR> <TD>Adjoint subspace</TD>
+<TD><TT>(1,0,0,0,0), (0,1,0,0,0), (0,0,1,0,0)</TT></TD>
+</TR><TR> <TD>Order of error</TD>
+<TD><TT>5</TT></TD>
+</TR><TR> <TD>Print</TD> <TD><TT>small,b</TT></TD>
+</TR></TABLE> </CENTER>
+
+Alternatively, find that there is not a coordinate transform that separates the system into a normal form of separated fast and slow modes (Cox and Roberts. Initialisation and the quasi-geostrophic slow manifold. <a href="http://arXiv.org/abs/nlin.CD/0303011">http://arXiv.org/abs/nlin.CD/0303011</a>, 1994.)
+Copy and paste the following to find that, as well as the slow modes modulating the fast oscillations, the fast oscillations drive a slow response in\(~w\).
+
+<CENTER><TABLE><TR> <TH>Description</TH> <TH><small>ODE</small> example</TH>
+</TR><TR> <TD>RHS function</TD>
+<TD><TT>(-u2*u3 +b*u2*u5,
++u1*u3 -b*u1*u5,
+-u1*u2,
+-u5,
+u4 +b*u1*u2)</TT></TD>
+</TR><TR> <TD>Centre frequencies</TD>
+<TD><TT>0, 0, 0, 1, -1</TT></TD>
+</TR><TR> <TD>Centre subspace</TD>
+<TD><TT>(1,0,0,0,0), (0,1,0,0,0), (0,0,1,0,0),
+(0,0,0,1,-i), (0,0,0,1,+i)</TT></TD>
+</TR><TR> <TD>Adjoint subspace</TD>
+<TD><TT>(1,0,0,0,0), (0,1,0,0,0), (0,0,1,0,0),
+(0,0,0,1,-i), (0,0,0,1,+i)</TT></TD>
+</TR><TR> <TD>Order of error</TD>
+<TD><TT>4</TT></TD>
+</TR><TR> <TD>Print</TD> <TD><TT>small,b</TT></TD>
+</TR></TABLE> </CENTER>
+
+
+
+</div>
+
+
+<?php
+include "footer.php";
+?>

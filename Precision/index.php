@@ -1,0 +1,103 @@
+<?php
+$title="Our precision bridge bidding";
+include "header.php";
+?>
+
+<h2><a href="index.php">Start</a>
+</h2>
+
+<dl><dt>
+<a href="1c.php">1 club</a> 
+</dt><dd>
+16+ pts (except 22-23 balanced, or two suits)
+</dd><dt>
+<a href="1d.php">1 diamond</a> 
+</dt><dd>
+11-15 pts, 4+ diamonds
+</dd><dt>
+<a href="1hs.php">1 heart/spade</a> 
+</dt><dd>
+11-15 pts, 5+ suit
+</dd><dt>
+<a href="1nt.php">1 NT</a> 
+</dt><dd>
+13-15 pts, balanced
+</dd><dt>
+<a href="2c.php">2 clubs</a> 
+</dt><dd>
+11-15 pts, 5+ suit
+</dd><dt>
+<a href="2d.php">2 diamonds</a> 
+</dt><dd>
+4414, 4405, short diamonds, 11-15 pts
+</dd><dt>
+<a href="2hs.php">2 hearts/spades</a> 
+</dt><dd>
+weak (8-10 pts), 6 suit
+</dd><dt>
+<a href="2nt.php">2NT</a> 
+</dt><dd>
+22-23 pts, balanced
+</dd><dt>
+<a href="34cdhs.php">3/4 c,d,h,s</a> 
+</dt><dd>
+Preemptive.
+</dd></dl>
+
+<h3>If others bid suit</h3>
+<dl><dt>
+<a href="os-ss.php">simple suit</a> 
+</dt><dd>
+11-15 pts, 5+ suit [respond as for usual precision]
+</dd><dt>
+<a href="os-js.php">jump suit</a> 
+</dt><dd>
+corresponding preemptive opening
+</dd><dt>
+<a href="os-1nt.php">1NT</a> 
+</dt><dd>
+16-18 pts, balanced, 1+ stoppers
+</dd><dt>
+<a href="os-dbl.php">double</a> 
+</dt><dd>
+13+ pts and support for unbid suits [may later bid 5+ suit].
+</dd></dl>
+
+<h3>If others opened 1NT</h3>
+
+<dl><dt>
+<a href="on-dbl.php">double</a> 
+</dt><dd>
+balanced, same points as others NT
+</dd><dt>
+<a href="on-2c.php">2 clubs</a> 
+</dt><dd>
+two minors, 11+ pts
+</dd><dt>
+<a href="on-2d.php">2 diamonds</a> 
+</dt><dd>
+two majors, 11+ pts
+</dd><dt>
+<a href="os-2hs.php">2 hearts/spades</a> 
+</dt><dd>
+natural, 6+ suit
+</dd></dl>
+
+<h3>If others preempt</h3>
+
+<dl><dt>
+<a href="op-dbl.php">double</a> 
+</dt><dd>
+16+ pts, [let partner decide]
+</dd><dt>
+<a href="op-s.php">suit overcall</a> 
+</dt><dd>
+5+ cards, strong
+</dd></dl>
+
+
+
+
+<?php 
+include "footer.php";
+?>

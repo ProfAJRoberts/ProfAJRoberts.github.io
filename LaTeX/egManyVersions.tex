@@ -1,0 +1,233 @@
+\documentclass[11pt,a4paper]{article}
+
+\title{Example of a question with various versions generated randomly via the package~fp}
+\author{Tony Roberts}
+\date{\Hour:\Minutes, 8 September 2018}
+
+\usepackage{amsmath}
+\usepackage[nomessages]{fp}
+% prints variable or expression to some digits, four by default, clipping zeros.
+\newcommand{\FP}[2][4]{\FPeval\TempRes{clip(round(#2:#1))}\FPprint\TempRes}
+% prints variable with parentheses if negative, to some digits, clipping
+\newcommand{\FPP}[2][4]{\FPifneg#2(\FP[#1]#2)\else\FP[#1]#2\fi}
+
+% in order to iterate with foreach, use this or pgfplots
+\usepackage{pgffor}
+
+\FPeval\Hour{trunc(\the\time/60+0.001:0)}
+\FPeval\Minutes{round(\the\time-60*\Hour:0)}
+\newenvironment{solution}{\paragraph{Solution}\small}{}
+\def\xv{\ensuremath{\vec x}} \def\yv{\ensuremath{\vec y}}
+\def\uv{\ensuremath{\vec u}} \def\vv{\ensuremath{\vec v}}
+
+
+\begin{document}
+\maketitle
+
+
+\section{Example question}
+
+The following question changes every minute because I set a random seed from the number of minutes so far in this day.  In practice, instead set a random seed which includes ``\verb|\the\year|'' so the question changes from year to year.
+\FPseed=123\the\time % set the random seed
+\FPrandom\tmp % generate a first random value to get away from small
+
+\begin{enumerate}
+\item Consider the orthogonal matrix 
+\begin{equation*}
+Q=\frac12\begin{bmatrix}    
+   1&1&1&1\\
+   1&1&-1&-1\\
+   1&-1&1&-1\\
+   1&-1&-1&1
+ \end{bmatrix}.
+\end{equation*}
+
+\begin{enumerate}
+% generate random integer four-vector x and u=Qx
+\FPrandom\tmp \FPeval\xa{round(5*\tmp:0)}
+\FPrandom\tmp \FPeval\xb{round(5*\tmp:0)}
+\FPrandom\tmp \FPeval\xc{round(5*\tmp:0)}
+\FPrandom\tmp \FPeval\xd{round(5*\tmp:0)}
+\FPeval\ua{(\xa+\xb+\xc+\xd)/2}
+\FPeval\ub{(\xa+\xb-\xc-\xd)/2}
+\FPeval\uc{(\xa-\xb+\xc-\xd)/2}
+\FPeval\ud{(\xa-\xb-\xc+\xd)/2}
+\item Let $\xv =(\xa,\xb,\xc,\xd)$, 
+compute $\uv =Q\xv $ and verify that $\| \xv \|=\| \uv \|$.  
+\begin{solution} 
+$\| \xv \|^2 = \xa^2 + \xb^2 + \xc^2 + \xd^2 
+= \FP{\xa^2+\xb^2+\xc^2+\xd^2}$.
+\begin{align*}
+& \uv =Q\xv
+= \frac12\begin{bmatrix}    
+   1&1&1&1\\
+   1&1&-1&-1\\
+   1&-1&1&-1\\
+   1&-1&-1&1
+ \end{bmatrix}
+ \begin{bmatrix} \xa\\\xb\\\xc\\\xd \end{bmatrix}
+= \begin{bmatrix} \FP\ua\\ \FP\ub\\ \FP\uc\\ \FP\ud \end{bmatrix}
+\\&
+\implies \| \uv \|^2 
+= \FPP\ua^2 +\FPP\ub^2 +\FPP\uc^2 +\FPP\ud^2 
+= \FP{\ua*\ua+\ub*\ub+\uc*\uc+\ud*\ud} 
+= \| \xv \|^2.
+\end{align*}
+\end{solution}
+
+% generate random integer four-vector y and v=Qy
+\FPrandom\tmp \FPeval\ya{round(9*\tmp-4:0)}
+\FPrandom\tmp \FPeval\yb{round(9*\tmp-4:0)}
+\FPrandom\tmp \FPeval\yc{round(9*\tmp-4:0)}
+\FPrandom\tmp \FPeval\yd{round(9*\tmp-4:0)}
+\FPeval\va{(\ya+\yb+\yc+\yd)/2}
+\FPeval\vb{(\ya+\yb-\yc-\yd)/2}
+\FPeval\vc{(\ya-\yb+\yc-\yd)/2}
+\FPeval\vd{(\ya-\yb-\yc+\yd)/2}
+\item Let $\yv =(\ya,\yb,\yc,\yd)$, compute $\vv =Q\yv $ and verify that $\| \yv \|=\| \vv \|$.
+\begin{solution} 
+$\| \yv \|^2 
+= \FPP\ya^2 +\FPP\yb^2 +\FPP\yc^2 +\FPP\yd^2
+% Occasionally get cryptic failure that is fixed by such extra parentheses!
+= \FP{(\ya*\ya+\yb*\yb+\yc*\yc+\yd*\yd)}$.
+\begin{align*}
+& \vv =Q\yv
+= \frac12\begin{bmatrix}    
+   1&1&1&1\\
+   1&1&-1&-1\\
+   1&-1&1&-1\\
+   1&-1&-1&1
+ \end{bmatrix}
+ \begin{bmatrix} \ya\\\yb\\\yc\\\yd \end{bmatrix}
+= \begin{bmatrix} \FP\va\\\FP\vb\\\FP\vc\\\FP\vd \end{bmatrix}
+\\&
+\implies \|\vv \|^2
+= \FPP\va^2 +\FPP\vb^2 +\FPP\vc^2 +\FPP\vd^2 
+= \FP{\va*\va+\vb*\vb+\vc*\vc+\vd*\vd}
+= \|\yv \|^2. 
+\end{align*}
+\end{solution}
+
+\item Use the dot product to confirm that the angle between~\xv\ and~\yv\ is the same as that between~\uv\ and~\vv.
+\begin{solution} 
+$\xv \cdot \yv 
+= \xv ^T \yv 
+= \begin{bmatrix} \xa&\xb&\xc&\xd \end{bmatrix}
+  \begin{bmatrix} \ya\\\yb\\\yc\\\yd \end{bmatrix}
+= \FP{\xa*\ya+\xb*\yb+\xc*\yc+\xd*\yd}.$ 
+
+$ \uv \cdot \vv 
+= \uv ^T \vv 
+= \begin{bmatrix} \FP\ua&\FP\ub&\FP\uc&\FP\ud \end{bmatrix}
+  \begin{bmatrix} \FP\va\\\FP\vb\\\FP\vc\\\FP\vd \end{bmatrix}
+= \FP{\ua*\va+\ub*\vb+\uc*\vc+\ud*\vd} 
+= \xv \cdot \yv $.
+
+Since these dot products are the same, and \(\|\uv \|=\|\xv \|\) and \(\|\vv \|=\|\yv \|\), the angle between~\xv\ and~\yv\ is the same as that between~\uv\ and~\vv. 
+\end{solution}
+\end{enumerate}
+\end{enumerate}
+
+
+
+
+\section{Useful fp information}
+\begin{itemize}
+\item \verb|\usepackage[nomessages]{fp}| in the preamble.
+This package was last revised in 1999.
+
+\item Also define a useful command to print any number that internally may not be an integer:
+\begin{verbatim}
+\newcommand{\FP}[2][4]{%
+    \FPeval\TempRes{clip(round(#2:#1))}%
+    \FPprint\TempRes}
+\end{verbatim}
+\verb|\FP\x| or \verb|\FP{expression}| prints the variable\slash expression rounded to four decimal places, and clipped to remove trailing zeros;  \verb|\FP[n]...| rounds to \verb|n|~decimal places.
+Even if the result of a computation should be an integer, the fixed point arithmetic used by~\verb|fp| often causes error.
+Do most printing via this command, and thereby keep full accuracy for internal variables.
+
+\item And also useful to define this command that uses~\verb|\FP| to print a variable (not an expression) with parentheses when negative, and without parentheses when positive or zero.
+\begin{verbatim}
+\newcommand{\FPP}[2][4]{%
+    \FPifneg#2(\FP[#1]#2)\else\FP[#1]#2\fi}
+\end{verbatim}
+
+
+\item The package~\verb|fp| does fixed point arithmetic on signed decimal numbers up to~\(10^{18}\), with a fixed resolution of 18~decimal places.
+
+
+
+\item \verb|\FPeval#1{#2}| assigns to \verb|#1| the value computed by the expression~\verb|#2|.  
+Occasionally I get a cryptic error message that is fixed by inserting an extra pair of parentheses: \verb|\FPeval#1{(#2)}|.
+
+\item Defined infix operations for evaluation are: \verb|+|, \verb|-|, \verb|*|, \verb|/|, \verb|^| for add, sub, mul, div, pow.
+The unary minus is not defined: use \verb|neg()|.
+
+\item Defined functions include abs, neg, min, max, 
+	   round, trunc, clip, exp, ln, pow, root, sin, cos, 
+	   tan, cot, arcsin, arccos, arctan, arccot 
+	   
+Note: trig functions use radians; \quad
+\(\verb|root(a,b)|=\sqrt[a]b\) so a square-root is \verb|root(2,b)|;  \quad
+\(\verb|pow(a,b)|=b^a=\verb|exp(a*ln(b))|\) so fails for negative~\verb|b| (even if \(\verb|a|=2\)); \quad
+\verb|round(a:n)| has the value of~\verb|a| rounded to \verb|n|~decimal places; \quad
+\verb|clip(a)| has the value of~\verb|a| but with trailing zeros clipped.
+
+\item Defined constants are~\verb|pi| and~\verb|e|.
+
+\item \verb|\FPrandom#1| assigns to \verb|#1| a random number between~0 and~1.
+
+When scaling and rounding to include random negative integers, sometimes get~\verb|-0| which appears poorly: however, \verb|\FP...| prints the value~\verb|-0| properly as~\verb|0|.
+
+\item \verb|\FPseed=#1| where \verb|#1| is some string of digits sets the seed for the random number generator.
+For example, \verb|\FPseed=67\the\year| is this year the same as \verb|\FPseed=672018| and so sets the seed unique to the problem via~67, and unique to the year via \verb|\the\year|.
+
+\item These are some of the conditional statements:
+\begin{itemize}
+\item \verb|\FPifneg#1 ...\else...\fi| \quad tests \(\verb|#1| < 0\)\,?
+\item \verb|\FPiflt#1#2...\else...\fi| \quad tests \(\verb|#1| < \verb|#2|\)\,?
+\item \verb|\FPifeq#1#2...\else...\fi| \quad tests \(\verb|#1| = \verb|#2|\)\,?
+\item \verb|\FPifgt#1#2...\else...\fi| \quad tests \(\verb|#1| > \verb|#2|\)\,?
+\end{itemize}
+
+\end{itemize}
+
+
+
+
+
+\section{More examples}
+
+\paragraph{To iterate} 
+One may use \verb|\foreach| from \verb|\usepackage{pgffor}| (or \verb|pgfplots|).  For example, the following iterates the map \(x_{k}=\cos x_{k-1}\) ten times via the mysterious magic of \verb|\xdef|.
+\FPeval\xk{0}%
+\foreach \k in {1,2,...,10}%
+    {\FPeval\xNext{cos(\xk)}\xdef\xk{\xNext}}%
+The following code gives ``From \(x_0=0\), iteration gives \(x_{10}=\FP\xk\).''
+\begin{verbatim}
+\FPeval\xk{0}
+\foreach \k in {1,2,...,10} 
+    {\FPeval\xNext{cos(\xk)}\xdef\xk{\xNext}}
+From \(x_0=0\), iteration gives \(x_{10}=\FP\xk\).
+\end{verbatim}
+
+One could just typeset some of the iterates from within the loop:
+``\FPeval\xk{0}the iterations are \(x_0=\FP\xk\)%
+\foreach \k in {1,2,...,20}%
+    {\FPeval\xNext{cos(\xk)}\xdef\xk{\xNext}%
+     \ifnum\k<4, \(x_{\k}=\FP\xk\)\fi}%end-for
+    , and so on to  \(x_{20}=\FP\xk\).''
+Typeset this with the code
+\begin{verbatim}
+\FPeval\xk{0}the iterations are \(x_0=\FP\xk\)%
+\foreach \k in {1,2,...,20}%
+    {\FPeval\xNext{cos(\xk)}\xdef\xk{\xNext}%
+     \ifnum\k<4, \(x_{\k}=\FP\xk\)\fi}%end-for
+    , and so on to  \(x_{20}=\FP\xk\).
+\end{verbatim}
+
+
+
+
+
+\end{document}
