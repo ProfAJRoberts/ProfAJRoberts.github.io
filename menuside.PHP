@@ -5,23 +5,28 @@
 <div id="nav-links"> 
 
 <ul>
-<li><a href="https://www.youtube.com/playlist?list=PLAvDA9VSF6oxwGHA2ELDnaSFlJvwZPT6p", title="accompanying youtube playlist discussing these topics">youtube playlist</a> 
-<li><a href="index.html", title="Introduction to why LaTeX, Contents, and other info sources">LaTeX&nbsp;Intro Home</a> 
-<li><a href="ltxqstart.html", title="Document classes, Sectioning, Titles, Font styles, Page headings and footings">Quick start</a> 
-<li><a href="ltxenviron.html", title="Quotation/verse, Abstract, Itemize/enumerate, Tabular/center, Verbatim, Simple mathematics">Environments</a> 
-<li><a href="ltxxref.html", title="Table of contents, Footnotes, Labels and references, Hypertext linking, Bibliography, BibTeX et al, Large documents">Cross referencing</a> 
-<li><a href="ltxfloats.html", title="Tables and Figures float">Tables and Figures</a> 
-<li><a href="ltxstyle.html", title="Packages, Make your own style, Seminar style">Style and seminars</a> 
-<li><a href="ltxmaths.html", title="Relations, Delimiters, Spacing, Arrays, Equation arrays, Functions, Accents, Command definitions, AMS LaTeX">More mathematics</a> 
-<li><a href="ltxwrite.html", title="Write well, Structure your writing on a pyramid organisation, First and last, or the rule of three, Conclusion">Write right</a> 
-<li><a href="ltxties.html", title="Use non-breaking spaces very well">Art of ties</a> 
-<li><a href="ltxusecol.html", title="Primary colours, X11 colours, notes">Use colour</a> 
-<li><a href="ltxbanned.html", title="Avoid these LaTeX commands">Banned LaTeX!</a> 
+<li><a href="index.php", title="Tony's web home">Home page</a></li>
+<li><a href="larxxia.php" title="textbook developing Linear Algebra for the 21st century">Linear Algebra for 21st C</a></li>
+<li><a href="eqnfreetool.php" title="equation-free function toolbox for Matlab and Octave">Equation-Free Toolbox</a></li>
+<li><a href="modelling.php" title="create your own book on the rational modelling of emergent dynamics in complex systems">Modelling emergence</a></li>
+<li><a href="ecfm.php", title="Elementary calculus of financial mathematics">Financial math book</a></li>
+<li><a href="LaTeX/index.html", title="Introduction to why LaTeX, Contents, and other info sources">best LaTeX introduction</a></li>
+<li><a href="holistic1.php" title="submit your one PDE to find its holistic discretisation">Holistic discretisation 1</a></li>
+<li><a href="holistic3.php" title="submit your three coupled PDEs to find their holistic discretisation">Holistic discretisation 3</a></li>
+<li><a href="sdenf.php" title="submit your slow/fast deterministic or stochastic DE to find its normal form">SDE normal form</a></li>
+<li><a href="sdesm.php" title="submit your slow/fast deterministic or stochastic DE to find its slow manifold and evolution thereon">SDE slow manifold</a></li>
+<li><a href="gencm.php" title="submit your autonomous system of ODEs to find its centre manifold and evolution thereon">Construct centre manifold</a></li>
+<!--<li><a href="multifractal.php" title="submit 2D data to explore fractality">Multifractal analyser</a></li>
+-->
+<li><a href="legofractals.php" title="lego fractals for you to construct">Lego Fractals</a></li>
+<li><a href="software.php" title="Some miscellaneous software contributions">Some software</a></li>
+<li><a href="publications.php" title="list of most of my research publications">Research publications</a></li>
+<li><a href="http://www.amazon.co.uk/-/e/B08DQJZMWW" title="Amazon's A. J. Roberts page">Amazon's Author Page</a></li>
 <li class="title"><em>Other homes</em> <ul>
-<li><a href="http://www.maths.adelaide.edu.au/anthony.roberts", title="my home page with lots of wonderful stuff">Tony Roberts</a> 
 <li><a href="http://www.maths.adelaide.edu.au", title="School of Mathematical Sciences web home">Mathematical Sciences</a></li>
 <li><a href="http://ecms.adelaide.edu.au/", title="Faculty of Engineering, Computing and Mathematical Sciences web home">Faculty ECMS</a></li>
 <li><a href="http://www.adelaide.edu.au", title="The university's web home">University of Adelaide</a></li> </ul>
+<?php // Add more links in the space below here?>
 
 </ul>
 <div id="google_translate_element"></div><script type="text/javascript">
@@ -42,12 +47,10 @@ function googleTranslateElementInit() {
 <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4e6929665596e5d6"></script>
 <!-- AddThis Button END -->
 
+<?php if(isset ($thanks)) echo $thanks;?>
 
-<p><small>If you like this web page, 
-<br/>please link to it so others 
-<br/>can find it more easily.</small></p>
 
-<form name="afm_form_791186e1" id="afm_form_791186e1" action="http://free.allforms.mailjol.net/u/791186e1.html" method="POST" style="margin: 0px">
+<form name="afm_form_791186e1" id="afm_form_791186e1" action="http://free.allforms.mailjol.net/u/791186e1.php" method="POST" style="margin: 0px">
 <table border="0" cellpadding="1" cellspacing="0" style="text-align: left; border: 2px solid #006622; border-collapse: collapse" width="1%" bgcolor="#F0F0F0"><tr>
 <td  bgcolor="#006622" style="color: #FFFFFF; font-weight: bold; padding: 2px">Contact me</td>
 </tr><tr>
@@ -62,7 +65,6 @@ function googleTranslateElementInit() {
 <td align="center" style="padding: 4px"><input type="submit" name="submit" value="Submit" style="font-size: 11px; font-family: Verdana"> &nbsp;<input type="reset" name="reset" value="Reset" style="font-size: 11px; font-family: Verdana"></td>
 </tr>
 </table></form>
-
 
 
 </div> </td>
