@@ -1,45 +1,143 @@
-\itemize
+\enumerate
 
 \item
-\emph{Linear Algebra Reformed for 21st-C Application}.
+\textbf{A toolbox of equation-free functions in matlab/octave for efficient
+  system level simulation}.
+John Maclean, J.~E. Bunder, and A.~J. Roberts.
+\emph{Numerical Algorithms}, 87:1729--1748, oct 2021.
+
+\item
+\textbf{Adaptively detect and accurately resolve macro-scale shocks in an
+  efficient {Equation}-{Free} multiscale simulation}.
+John Maclean, J.~E. Bunder, I.~G. Kevrekidis, and A.~J. Roberts.
+Technical report, \url{http://arxiv.org/abs/2108.11568}, August 2021.
+
+\item
+\textbf{Equation-free patch scheme for efficient computational homogenisation
+  via self-adjoint coupling}.
+J.~E. Bunder, I.~G. Kevrekidis, and A.~J. Roberts.
+\emph{Numerische Mathematik}, 149(2):229--272, July 2021.
+
+\item
+\textbf{Large-scale simulation of shallow water waves with computation only on
+  small staggered patches}.
+J.E. Bunder, J. Divahar, Ioannis~G. Kevrekidis, Trent~W. Mattner, and A.J.
+  Roberts.
+\emph{International Journal for Numerical Methods in Fluids}, 93(4):953--977,
+  apr 2021.
+
+\item
+\textbf{An equation free algorithm accurately simulates macroscale shocks
+  arising from heterogeneous microscale systems}.
+John Maclean, J.~E. Bunder, A.~J. Roberts, and I.~G. Kevrekidis.
+\emph{IEEE Journal on Multiscale and Multiphysics Computational Techniques},
+  6:8--15, February 2021.
+
+\item
+\textbf{Rigorous modelling of nonlocal interactions determines a macroscale
+  advection-diffusion {PDE}}.
 A.~J. Roberts.
-\url{https://raw.github.com/uoa1184615/LinearAlgebraGit/master/larxxia-newest.pdf},
+In David~R. Wood, Jan~de Gier, Cheryl~E. Praeger, and Terence Tao, editors,
+  \emph{2019-20 MATRIX Annals}, MATRIX Book Series, pages 423--437. Springer
+  International Publishing, February 2021.
+
+\item
+\textbf{Equation-free function toolbox for matlab/octave}.
+A.~J. Roberts, John Maclean, and J.~E. Bunder.
+Technical report, [\url{https://github.com/uoa1184615/EquationFreeGit}],
   \the\year.
-
-\item
-\textbf{Lyapunov exponents of the kuramoto--sivashinsky pde}.
-Russell~A. Edson, J.~E. Bunder, Trent~W. Mattner, and A.~J. Roberts.
-Technical report, University of Adelaide, jan 2019.
-
-\item
-\textbf{Center manifolds for infinite dimensional random dynamical systems}.
-Xiaopeng Chen, A.~J. Roberts, and Jinqiao Duan.
-\emph{Dynamical Systems (CDSS)}, to appear, oct 2018.
 
 \item
 \textbf{Nonlinear emergent macroscale {PDEs}, with error bound, for nonlinear
   microscale systems}.
 J.~E. Bunder and A.~J. Roberts.
-Technical report, [\url{https://arxiv.org/abs/1806.10297}], June 2018.
+\emph{Springer Nature Applied Sciences}, 3(703):1--28, 2021.
+
+\item
+\emph{Linear Algebra for the 21st Century}.
+A.~J. Roberts.
+Oxford University Press, oct 2020 <A
+  HREF=https://global.oup.com/academic/product/linear-algebra-for-the-21st-century-9780198856399>Download
+  (draft) article</A>.
+
+\item
+\textbf{High-order homogenisation via holistic discretisation that preserves
+  self-adjointness of pdes, learning??}
+A.J. Roberts and J.E. Bunder.
+Technical report, University of Adelaide, may 2020.
+
+\item
+\textbf{Linking machine learning with multiscale numerics: Data-driven
+  discovery of homogenized equations}.
+Hassan Arbabi, Judith~E. Bunder, Giovanni Samaey, Anthony~J. Roberts, and
+  Ioannis~G. Kevrekidis.
+\emph{Journal of The Minerals, Metals \& Materials Society}, accepted 21 Sept
+  2020, 2020.
+
+\item
+Snezhana~I. Abarzhi, Alexander Nepomnyashchy, Anthony~J. Roberts, and Joseph
+  Klewicki, editors.
+\emph{2019-20 MATRIX Annals: Conservation Laws, Interfaces and Mixing}, 2020 <A
+  HREF=https://www.matrix-inst.org.au/2019-matrix-annals/>Download (draft)
+  article</A>.
+
+\item
+\textbf{Lyapunov exponents of the kuramoto--sivashinsky pde}.
+Russell~A. Edson, J.~E. Bunder, Trent~W. Mattner, and A.~J. Roberts.
+\emph{ANZIAM Journal}, 61(3):270--285, jul 2019.
+
+\item
+\textbf{Multiscale modelling of microscale heterogeneous systems: analysis
+  supports systematic and efficient macroscale modelling and simulation}.
+A.J. Roberts.
+Technical report, AMSI Winter School on Computational Modeling of Heterogeneous
+  Media [\url{https://arxiv.org/abs/1907.09685}], jul 2019.
+
+\item
+\textbf{Normal forms and invariant manifolds for nonlinear, non-autonomous
+  {PDEs}, viewed as {ODEs} in infinite dimensions}.
+Peter Hochs and A.~J. Roberts.
+\emph{J. Differential Equations}, 267(12):7263--7312, 2019.
+
+\item
+\textbf{Multiscale modelling couples patches of two-layer thin fluid flow}.
+Meng Cao and A.~J. Roberts.
+In Xiaopeng Chen, Yan Lv, and Wei Wang, editors, \emph{Stochastic PDEs and
+  Modelling of Multiscale Complex System}, volume 20 of \emph{Interdisciplinary
+  Mathematical Sciences}, chapter 7, pages 111--137. World Sci, jan 2019.
 
 \item
 \textbf{Backwards theory supports modelling via invariant manifolds for
   non-autonomous dynamical systems}.
 A.~J. Roberts.
-Technical report, [\url{http://arxiv.org/abs/1804.06998}], April 2018.
+Technical report, [\url{http://arxiv.org/abs/1804.06998}], January 2019.
+
+\item
+\textbf{Error {Estimation} on {Projective} {Integration} of {Expensive}
+  {Multiscale} {Stochastic} {Simulation}}.
+Xiaopeng Chen and A.~J. Roberts.
+In Xiaopeng Chen, Yan Lv, and Wei Wang, editors, \emph{Stochastic {PDEs} and
+  {Modelling} of {Multiscale} {Complex} {System}}, volume 20 of
+  \emph{Interdisciplinary {Mathematical} {Sciences}}, chapter 11, pages
+  177--193. World Sci., December 2018.
+
+\item
+\textbf{Boundary conditions for macroscale waves in an elastic system with
+  microscale heterogeneity}.
+Chen Chen, A.~J. Roberts, and J.~E. Bunder.
+\emph{IMA Journal of Applied Mathematics}, 83(3):1--33, jun 2018 <A
+  HREF=http://arxiv.org/abs/1603.06686>Download (draft) article</A>.
+
+\item
+\textbf{Center manifolds for infinite dimensional random dynamical systems}.
+Xiaopeng Chen, A.~J. Roberts, and Jinqiao Duan.
+\emph{Dynamical Systems (CDSS)}, 34(2):334--355, 2018.
 
 \item
 \textbf{Couple microscale periodic patches to simulate macroscale emergent
   dynamics}.
 Hammad Alotaibi, Barry Cox, and A.~J. Roberts.
 \emph{ANZIAM~J.}, 59(3):313--334, 2018.
-
-\item
-\textbf{Boundary conditions for macroscale waves in an elastic system with
-  microscale heterogeneity}.
-Chen Chen, A.~J. Roberts, and J.~E. Bunder.
-\emph{IMA Journal of Applied Mathematics}, pages 1--33, 2018 <A
-  HREF=http://arxiv.org/abs/1603.06686>Download (draft) article</A>.
 
 \item
 \textbf{Smooth subgrid fields underpin rigorous closure in spatial
@@ -209,11 +307,6 @@ Troy Farrell and A.~J. Roberts, editors.
   55(E) of \emph{ANZIAM Journal}, 2014.
 
 \item
-\textbf{Multiscale modelling couples patches of two-layer thin fluid flow}.
-Meng Cao and A.~J. Roberts.
-Technical report, [\url{http://arxiv.org/abs/1405.7093}], 2014.
-
-\item
 \textbf{Multiscale modelling couples patches of wave-like simulations}.
 Meng Cao and A.~J. Roberts.
 In Scott McCue, Tim Moroney, Dann Mallet, and Judith Bunder, editors,
@@ -245,6 +338,11 @@ Wei Wang and A.~J. Roberts.
 John Shephard, Andrew Stacey, and A.~J. Roberts, editors.
 \emph{Proceedings of the Mathematics in Industry Study Group 2012}, volume
   54(E) of \emph{ANZIAM Journal}, 2013.
+
+\item
+\textbf{A survey of centre manifold and related theorems}.
+A.J. Roberts.
+Technical report, University of Adelaide, 2013--9.
 
 \item
 \textbf{Modelling 3d turbulent floods based upon the smagorinski large eddy
@@ -303,11 +401,10 @@ Mark Nelson, Anthony~J. Roberts, Mary Coupland, Tara Hamilton, and Harvinder
   volume 53 of \emph{ANZIAM Journal}, 2012.
 
 \item
-\textbf{Construct centre manifolds of ordinary or delay differential equations
-  (autonomous)}.
+\textbf{Construct invariant manifolds of ordinary or delay differential
+  equations (autonomous)}.
 A.~J. Roberts.
-Technical report,
-  \url{http://www.maths.adelaide.edu.au/anthony.roberts/gencm.php},
+Technical report, \url{https://tuck.adelaide.edu.au/gencm.html},
   2012--\the\year.
 
 \item
@@ -347,9 +444,8 @@ Technical report, \url{http://arxiv.org/abs/1109.3000}, 2011 <A
 \textbf{Computer algebra derives the slow manifold of patch or element dynamics
   on lattices in two dimensions}.
 Tony MacKenzie and A.~J. Roberts.
-Technical report, The University of Adelaide, 2011.
-\url{http://arxiv.org/abs/1102.2037} <A
-  HREF=http://arxiv.org/abs/1102.2037>Download (draft) article</A>.
+Technical report, The University of Adelaide,
+  \url{http://arxiv.org/abs/1102.2037}, 2011.
 
 \item
 \textbf{The harmonic mean renormalises random diffusion across a spatial
@@ -458,9 +554,7 @@ Geoffry~N. Mercer and A.~J. Roberts, editors.
 \textbf{Slow manifold of stochastic or deterministic multiscale differential
   equations}.
 A.~J. Roberts.
-Technical report,
-  \url{http://www.maths.adelaide.edu.au/anthony.roberts/sdesm.php},
-  2009--\the\year.
+Technical report, \url{http://tuck.adelaide.edu.au/sdenf.php}, 2009--\the\year.
 
 \item
 \textbf{A mathematical model for the iterative effects of tnf-alpha positive
@@ -479,17 +573,14 @@ Technical report, \url{http://arxiv.org/abs/0904.0855v1}, 2009.
 \textbf{Computer algebra derives the slow manifold of macroscale holistic
   discretisations in two dimensions}.
 Tony MacKenzie and A.~J. Roberts.
-Technical report, The University of Adelaide, 2009.
-\url{http://hdl.handle.net/2440/49292} <A
-  HREF=http://hdl.handle.net/2440/49292>Download (draft) article</A>.
+Technical report, The University of Adelaide,
+  \url{http://hdl.handle.net/2440/49292}, 2009.
 
 \item
 \textbf{Normal form of stochastic or deterministic multiscale differential
   equations}.
 A.~J. Roberts.
-Technical report,
-  \url{http://www.maths.adelaide.edu.au/anthony.roberts/sdenf.php},
-  2009--\the\year.
+Technical report, \url{http://tuck.adelaide.edu.au/sdenf.php}, 2009--\the\year.
 
 \item
 \textbf{Maximum likelihood multifractal analyser of point data}.
@@ -503,8 +594,7 @@ Technical report,
 \item
 \textbf{Model emergent dynamics in complex systems}.
 A.~J. Roberts.
-Technical Report 2nd edition,
-  \url{http://www.maths.adelaide.edu.au/anthony.roberts/modelling.php},
+Technical Report 2nd edition, \url{http://tuck.adelaide.edu.au/modelling.php},
   2009--\the\year.
 
 \item
@@ -885,7 +975,7 @@ Nenad Ujevic and A.~J. Roberts.
 \item
 \textbf{Computational models for multi-scale coupled dynamic problems}.
 R.~V.~N. Melnik and A.~J. Roberts.
-\emph{Futture Generation Computer Systems}, 20(3):453--464, 2004 <A
+\emph{Future Generation Computer Systems}, 20(3):453--464, 2004 <A
   HREF=http://www.sciencedirect.com/science/article/pii/S0167739X03001869>Download
   (draft) article</A>.
 
@@ -950,13 +1040,6 @@ In R.~L. May and W.~F. Blyth, editors, \emph{Proceedings of the Sixth
   2003.
 
 \item
-\textbf{Holistic discretisation of dynamical partial differential equations}.
-A.~J. Roberts.
-Technical report,
-  \url{http://www.maths.adelaide.edu.au/anthony.roberts/holistic1.php}, apr
-  2003--\the\year.
-
-\item
 \textbf{Holistic discretisation of shear dispersion in a two-dimensional
   channel}.
 T. MacKenzie and A.~J. Roberts.
@@ -1015,11 +1098,16 @@ In Rowena Ball and Nail Akhmediev, editors, \emph{Nonlinear dynamics from
   chapter 7, pages 257--313. World Scientific, 2003.
 
 \item
+\textbf{Holistic discretisation of dynamical partial differential equations}.
+A.~J. Roberts.
+Technical report, \url{https://tuck.adelaide.edu.au/holistic1.html},
+  2003--\the\year.
+
+\item
 \textbf{Holistic discretise three coupled dynamical partial differential
   equations}.
 A.~J. Roberts.
-Technical report,
-  \url{http://www.maths.adelaide.edu.au/anthony.roberts/holistic3.php},
+Technical report, \url{http://tuck.adelaide.edu.au/holistic3.php},
   2003--\the\year.
 
 \item
@@ -1529,7 +1617,7 @@ In M.~L. Banner and R.~H.~J. Grimshaw, editors, \emph{Proc IUTAM Sym on
 \textbf{Slow methods for simple people}.
 A.~J. Roberts.
 Technical Report WHOI-92-16, Woods Hole Oceanog. Inst., 1992.
-pp149--154.
+pp.149--154.
 
 \item
 \textbf{Rational mathematical modelling---shear dispersion and planform
@@ -1558,8 +1646,7 @@ T.~R. Marchant and A.~J. Roberts.
 \textbf{A centre manifold description of contaminant dispersion in channels
   with varying flow properties}.
 G.~N. Mercer and A.~J. Roberts.
-\emph{SIAM J.~Appl. Math.}, 50:1547--1565, 1990 <A
-  HREF=http://link.aip.org/link/?SMM/50/1547/1>Download (draft) article</A>.
+\emph{SIAM J.~Appl. Math.}, 50:1547--1565, 1990.
 
 \item
 \textbf{A description of the long-term behaviour of absorbing continuous time
@@ -1612,6 +1699,8 @@ A.~J. Roberts.
 \textbf{Properties of short-crested waves in water of finite depth}.
 T.~R. Marchant and A.~J. Roberts.
 \emph{J.~Austral. Math. Soc.~B}, 29:103--125, 1987.
+(Downloaded 467 times in the period 2018--2020, the 16th highest for the
+  journal.).
 
 \item
 \textbf{Transient free-surface flows generated by a moving vertical plate}.
@@ -1622,7 +1711,6 @@ A.~J. Roberts.
 \textbf{An introduction to the technique of reconstitution}.
 A.~J. Roberts.
 \emph{SIAM J.~Math. Anal.}, 16:1243--1257, 1985.
-\url{http://dx.doi.org/10.1137/0516089}.
 
 \item
 \textbf{Simple examples of the derivation of amplitude equations for systems of
@@ -1672,7 +1760,8 @@ A.~J. Roberts.
 \textbf{Fixed flux penetrative convection}.
 A.~J. Roberts.
 Technical Report WHOI-81-102, Woods Hole Oceanog. Inst., 1981.
-pp177--188.
+pp177--188 <A HREF=https://hdl.handle.net/1912/2914>Download (draft)
+  article</A>.
 
 \item
 \textbf{Inverse solutions in free-surface hydrodynamics via solution of a
@@ -1682,4 +1771,4 @@ Honours project, University of Adelaide, 1977 <A
   HREF=http://www.maths.adelaide.edu.au/anthony.roberts/ojs/index.php/project/article/view/60>Download
   (draft) article</A>.
 
-\enditemize
+\endenumerate

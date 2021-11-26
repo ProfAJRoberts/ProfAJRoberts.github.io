@@ -1,5 +1,5 @@
 % BibTeX standard bibliography style `html' basd upon 'plain'
-	% version 0.99a for BibTeX versions 0.99a or later, LaTeX version 2.09.
+% version 0.99a for BibTeX versions 0.99a or later, LaTeX version 2.09.
 
 ENTRY
   { address
@@ -1100,7 +1100,7 @@ FUNCTION {begin.bib}
     'skip$
     { preamble$ write$ newline$ }
   if$
-  "\itemize" write$ newline$
+  "\enumerate" write$ newline$
 }
 
 EXECUTE {begin.bib}
@@ -1111,7 +1111,7 @@ ITERATE {call.type$}
 
 FUNCTION {end.bib}
 { newline$
-  "\enditemize" write$ newline$
+  "\endenumerate" write$ newline$
 }
 
 EXECUTE {end.bib}

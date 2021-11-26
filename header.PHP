@@ -1,5 +1,8 @@
 <?php
 $dates=date("d-F-Y H:i",filemtime($thisfile));
+$addr=$_SERVER['HTTP_HOST'];
+$serv='tuck.adelaide.edu.au';
+$servaddr='http://tuck.adelaide.edu.au/';
 ?>
 
 <html>
