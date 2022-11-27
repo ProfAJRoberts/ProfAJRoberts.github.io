@@ -1,4 +1,6 @@
 
+Warning: Undefined array key "HTTP_HOST" in /Users/a1184615/Documents/Github.io/ProfAJRoberts/header.PHP on line 3
+
 <html>
 <head>
     <title> Modelling emergent dynamics in complex systems</title>
@@ -45,9 +47,10 @@ C</a></li>
 <li><a href="eqnfreetool.html" title="equation-free function
 toolbox for Matlab and Octave">Equation-Free
 Toolbox</a></li>
-<li><a href="modelling.html" title="create your own book on
-the rational modelling of emergent dynamics in complex
-systems">Modelling emergence book</a></li>
+<li><a href="http://tuck.adelaide.edu.au/modelling.html"
+title="create your own book on the rational modelling of
+emergent dynamics in complex systems">Modelling emergence
+book</a></li>
 <li><a href="ecfm.html", title="Elementary calculus of
 financial mathematics">Financial math book</a></li>
 <li><a href="LaTeX/index.html", title="Introduction to why
@@ -146,10 +149,14 @@ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-
 In January 2015, <small>SIAM</small> published my book
 titled <a href="http://bookstore.siam.org/mm20/"><em>Model
 Emergent Dynamics in Complex Systems</em></a> on rational
-mathematical modelling of dynamics. Via this web page you
-may create a <small>PDF</small> book of supplementary
-material tailored to the interests you specify.
-<em>Currently this is a draft version.</em> 
+mathematical modelling of dynamics.  
+<p>
+Via the web page 
+<a href="https://tuck.adelaide.edu.au/modelling.html">
+https://tuck.adelaide.edu.au/modelling.html</a>
+you may create a <small>PDF</small> book of <em>draft</em>
+supplementary material tailored to the interests you
+specify.
 <p>
 Maurício Kritz (2019) commented in reference to the book:
 <q>develops methods, techniques, and algorithms for studying
@@ -196,6 +203,9 @@ second iteration answer should be "\(\partial s/\partial t
 p.253: last line of the first displayed maths should read
 \(=(uU-U^2)w\frac{\partial^2C}{\partial x^2}\).
 </li><li>
+p.299, just before section 9.1.4: "\([-2\gamma +\frac23
+gamma^2+\)" should be "\([-2\gamma -\frac23gamma^2+\)".
+</li><li>
 p.300: "decay rate \(\pi/4\)" should be "decay rate
 \(\pi^2/4\)".
 </li><li>
@@ -225,91 +235,7 @@ large noise in the slow variables.  It does appear to be OK
 when the slow variable noise is small or zero.
 </li></ul>
 
-<h1>The following does not work---it is under repair</h1>
- 
-<h2>Among the chapters that follow, choose the interesting ones</h2>
-The chapters labelled <small>BOOK</small> are in the published book.
-At the end click Submit to process, typeset and produce a
-<small>PDF</small> supplement tailored just for you. The
-processing automatically detects all prerequisite chapters
-and includes them as well. Only select what interests
-you.<p/> 
- <FORM ACTION="modellingx.html" METHOD="POST"> But first, what computer algebra package do you prefer? <dl>
-<dt><INPUT TYPE="RADIO" name="capack" value="reduce" checked> <a href="http://www.reduce-algebra.com/">Reduce</a> (recommended)</dt>
-<dt><INPUT TYPE="RADIO" name="capack" value="maple"> <a href="http://www.maplesoft.com/">Maple</a> (as yet only available in Part I)</dt>
-<dt><INPUT TYPE="RADIO" name="capack" value="mathematica"> <a href="http://www.wolfram.com/products/mathematica">Mathematica</a> (as yet only available in Part I, thanks to Rick Eller)</dt> </dl> <p/> 
- <dl><dd><dl> </dl></dd><p/>
-<dt><b>Asymptotic methods solve algebraic and differential equations</b></dt><dd><dl>
-<dt>BOOK<!--INPUT TYPE="CHECKBOX" name="sec1p2" value="t"--> Perturbed algebraic equations solved iteratively</dt>
-<dt>BOOK<!--INPUT TYPE="CHECKBOX" name="sec1p3" value="t"--> Power series solve ordinary differential equations</dt>
-<dt>BOOK<!--INPUT TYPE="CHECKBOX" name="sec1p5" value="t"--> The normal form of oscillations give their amplitude and frequency</dt> 
- </dl></dd><p/>
-<dt><b>Basic fluid dynamics</b></dt><dd><dl>
-<dt><INPUT TYPE="CHECKBOX" name="sec2p1" value="t"> Flow description</dt>
-<dt><INPUT TYPE="CHECKBOX" name="sec2p2" value="t"> Conservation of mass</dt>
-<dt><INPUT TYPE="CHECKBOX" name="sec2p3" value="t"> Conservation of momentum</dt>
-<dt><INPUT TYPE="CHECKBOX" name="sec2p4" value="t"> The state space</dt> 
- </dl></dd><p/>
-<dt><b>Centre manifolds emerge</b></dt><dd><dl>
-<dt><INPUT TYPE="CHECKBOX" name="sec3p1" value="t"> Couette flow</dt>
-<dt><INPUT TYPE="CHECKBOX" name="sec3p2" value="t"> The metastability of quasi-stationary probability distributions</dt>
-<dt>BOOK<!--INPUT TYPE="CHECKBOX" name="sec3p3" value="t"--> The centre manifold emerges</dt>
-<dt>BOOK<!--INPUT TYPE="CHECKBOX" name="sec3p4" value="t"--> Construct centre manifolds iteratively</dt>
-<dt><INPUT TYPE="CHECKBOX" name="sec3p5" value="t"> Taylor vortices form in a pitchfork bifurcation</dt>
-<!--
-<dt><INPUT TYPE="CHECKBOX" name="sec3p6" value="t"> Achieve even more flexibility</dt>
--->
-<dt><INPUT TYPE="CHECKBOX" name="sec3p7" value="t"> Irregular centre manifolds encompass novel applications</dt> 
- </dl></dd><p/>
-<dt><b>High fidelity numerical models use centre manifolds</b></dt><dd><dl>
-<dt><INPUT TYPE="CHECKBOX" name="sec4p1" value="t"> Introduction to some numerical methods</dt>
-<dt>BOOK<!--INPUT TYPE="CHECKBOX" name="sec4p2" value="t"--> Introduce holistic discretisation on just two elements</dt>
-<dt>BOOK<!--INPUT TYPE="CHECKBOX" name="sec4p3" value="t"--> Holistic discretisation in one-D</dt>
-<dt><INPUT TYPE="CHECKBOX" name="sec4p5" value="t"> Model physical boundary conditions</dt>
-<dt><INPUT TYPE="CHECKBOX" name="sec4p4" value="t"> Dispersion along pipes invokes cylindrical elements</dt> 
- </dl></dd><p/>
-<dt><b>Normal forms usefully illustrate</b></dt><dd><dl>
-<dt>BOOK<!--INPUT TYPE="CHECKBOX" name="sec1p4" value="t"--> Normal forms simplify evolution</dt>
-<dt>BOOK<!--INPUT TYPE="CHECKBOX" name="sec5p1" value="t"--> Separate the fast and slow dynamics</dt>
-<dt>BOOK<!--INPUT TYPE="CHECKBOX" name="sec5p3" value="t"--> Appropriate initial conditions empower accurate forecasts</dt>
-<dt>BOOK<!--INPUT TYPE="CHECKBOX" name="sec5p2" value="t"--> Subcentre slow manifolds are useful but do not emerge</dt>
-<dt>N/A Normal forms for homogenisation</dt> 
- </dl></dd><p/>
-<dt><b>Hopf bifurcation has oscillation within the centre manifold</b></dt><dd><dl>
-<dt><INPUT TYPE="CHECKBOX" name="sec6p1" value="t"> Linear stability of double diffusion</dt>
-<dt>BOOK<!--INPUT TYPE="CHECKBOX" name="sec6p2" value="t"--> Directly model oscillations in Cartesian-like variables</dt>
-<dt>BOOK<!--INPUT TYPE="CHECKBOX" name="sec6p3" value="t"--> Model the modulation of oscillations</dt>
-<dt><INPUT TYPE="CHECKBOX" name="sec6p4" value="t"> Nonlinear evolution of double diffusion</dt>
-<dt>N/A Chaos appears in triple convection</dt> 
- </dl></dd><p/>
-<dt><b>Avoid memory in modelling non-autonomous or stochastic systems</b></dt><dd><dl>
-<dt>BOOK<!--INPUT TYPE="CHECKBOX" name="sec7p2" value="t"--> Averaging is often a good first modelling approximation</dt>
-<dt>BOOK<!--INPUT TYPE="CHECKBOX" name="sec7p3" value="t"--> Coordinate transforms separate slow from fast in non-autonomous dynamics</dt>
-<dt>BOOK<!--INPUT TYPE="CHECKBOX" name="sec7p1" value="t"--> Introducing basic stochastic calculus</dt> 
-<dt>BOOK<!--INPUT TYPE="CHECKBOX" name="sec7p4" value="t"--> Strong and weak models of stochastic dynamics</dt> 
- </dl></dd><p/>
-<dt><b>Large-scale spatial variations</b></dt><dd><dl>
-<dt><INPUT TYPE="CHECKBOX" name="sec8p1" value="t"> Poiseuille pipe flow</dt>
-<dt>BOOK<!--INPUT TYPE="CHECKBOX" name="sec8p2" value="t"--> Cross-stream mixing causes longitudinal dispersion in pipes</dt>
-<dt>BOOK<!--INPUT TYPE="CHECKBOX" name="sec8p3" value="t"--> Thin fluid films evolve slowly over space and time</dt> 
-<dt>BOOK<!--INPUT TYPE="CHECKBOX" name="sec8p4" value="t"--> Resolve inertia in thicker faster fluid films</dt> 
-</dl></dd><p/>
-<dt><b>Patterns form and evolve</b></dt><dd><dl>
-<dt><INPUT TYPE="CHECKBOX" name="sec10p1" value="t"> One-dimensional introduction</dt>
-<dt>N/A Two-dimensional spatio-temporal patterns</dt>
-<dt>N/A Embedding slow dynamics</dt> </dl></dd></dl> 
-<p/>Enter the magic word "p&nbsp;o&nbsp;s&nbsp;s&nbsp;u&nbsp;m" into
-<input type="text" size=6 name="magic"> then 
-<input type="submit" value="Submit" name="%submit"> 
-for processing and typesetting.<br/> 
- <p/><em>Wait for perhaps five minutes or so for the results page to load</em>---the results page will load only after the book has been typeset (or failed as the case may be). 
- </FORM> 
- 
-<h2>Print the book 2up</h2>
-The book is typeset onto A5 pages (in colour) so please save
-forests and print two pages per sheet of paper. Also, A5 is
-by far the best standard size for reading electronically on
-your computer screen.
+
 
 </div>
 
@@ -321,6 +247,6 @@ so others can find it more easily.</small></p>
 Copyright Tony Roberts, 
 School of Mathematical Sciences, University of Adelaide, South Australia. 
 <a href="http://orcid.org/0000-0001-8930-1552">ORCID=0000-0001-8930-1552</a>
-03-May-2021 20:56</small></div>
+16-December-2021 00:30</small></div>
 </td> </tr> </table> 
 </body> </html>

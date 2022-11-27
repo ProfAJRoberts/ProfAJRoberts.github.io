@@ -12,9 +12,10 @@ C</a></li>
 <li><a href="eqnfreetool.php" title="equation-free function
 toolbox for Matlab and Octave">Equation-Free
 Toolbox</a></li>
-<li><a href="modelling.php" title="create your own book on
-the rational modelling of emergent dynamics in complex
-systems">Modelling emergence book</a></li>
+<li><a href="<?php echo $servaddr;?>modelling.php"
+title="create your own book on the rational modelling of
+emergent dynamics in complex systems">Modelling emergence
+book</a></li>
 <li><a href="ecfm.php", title="Elementary calculus of
 financial mathematics">Financial math book</a></li>
 <li><a href="LaTeX/index.html", title="Introduction to why
