@@ -11,4 +11,5 @@ for n=[1 2 4 5],
    axis('off'),axis('image')
 end
 hold off
-print -depsc2 koch
+exportgraphics(gcf,'koch.pdf') % post-2020
+%print('-depsc','koch') % pre-2020

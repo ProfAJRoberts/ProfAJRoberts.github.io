@@ -2,8 +2,7 @@
 mid=[2 1;1 2]/3;
 x=[0;1];
 y=zeros(2,1);
-%subplot(1.5,1.5,1) %ignore messages
-clf(), subplot('position',[.2 .2 .55 .55])
+clf()
 plot(x,y),hold on;
 for n=1:5, 
     z=mid*x;
@@ -15,5 +14,7 @@ end
 axis('off')
 axis('image')
 hold off
-print -depsc2 cantor
+set(gca,'position',[.2 .2 .6 .6])
+exportgraphics(gcf,'cantor.pdf') % post-2020
+%print('-depsc','cantor') % pre-2020
 matlab2tikz('cantor.tex')

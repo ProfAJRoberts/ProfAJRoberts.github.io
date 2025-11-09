@@ -1,4 +1,6 @@
 
+Warning: Undefined array key "HTTP_HOST" in /Users/a1184615/Documents/Github.io/ProfAJRoberts/Sites/header.PHP on line 3
+
 <html>
 <head>
     <title> Derive invariant manifolds and/or normal forms of
@@ -51,9 +53,10 @@ C</a></li>
 <li><a href="eqnfreetool.html" title="equation-free function
 toolbox for Matlab and Octave">Equation-Free
 Toolbox</a></li>
-<li><a href="modelling.html" title="create your own book on
-the rational modelling of emergent dynamics in complex
-systems">Modelling emergence book</a></li>
+<li><a href="http://tuck.adelaide.edu.au/modelling.html"
+title="create your own book on the rational modelling of
+emergent dynamics in complex systems">Modelling emergence
+book</a></li>
 <li><a href="ecfm.html", title="Elementary calculus of
 financial mathematics">Financial math book</a></li>
 <li><a href="LaTeX/index.html", title="Introduction to why
@@ -152,42 +155,25 @@ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-
 <h2>Overview</h2>
 <div class="newspaper">
 
-I provide a procedure, <a href="StoNormForm.zip">download
-StoNormForm.zip</a>, to construct a normal form system for a
-specified system of slow/fast/hyperbolic non-autonomous
-ordinary differential equations or stochastic differential
-equations. Thus the procedure may be used to construct and
+I provide both a web service or underlying code, <a
+href="StoNormForm.zip">download StoNormForm.zip</a>, to
+construct a normal form system for a specified system of
+slow/fast/hyperbolic non-autonomous ordinary differential
+equations or stochastic differential equations. Thus either
+the web service or the code may be used to construct and
 prove stochastic invariant manifolds, and their foliation,
 and thus analyse bifurcations or complex behaviour in the
 stochastic/non-autonomous system. 
 
+
+
 <p/>
-The procedure uses computer algebra, <a
-href="http://www.reduce-algebra.com">the package Reduce</a>,
-to construct approximations to the invariant manifolds.  
-<ol><li>So download and install Reduce, and then <a
-href="StoNormForm.zip">download StoNormForm.zip</a>.
-</li><li>Start-up Reduce in the unzipped
-<tt>&nbsp;StoNormForm&nbsp;</tt> folder.
-</li><li>Execute <tt>&nbsp;in_tex
-"StoNormForm.tex"$&nbsp;</tt> to load the procedure.
-</li><li>Test by executing
-<tt>&nbsp;examplenormalform();&nbsp;</tt> and confirm the
-output is as in <tt>&nbsp;stoNormForm.pdf&nbsp;</tt>
-</li><li>See examples in
-<tt>&nbsp;manyExamples.pdf&nbsp;</tt> and then try for
-systems of your interest.
-</li></ol>
-
-
-
- 
 <a href="http://tuck.adelaide.edu.au/sdenf.html" 
 title="submit your slow/fast deterministic or stochastic DE
 to find its slow, stable, unstable, or combination
 manifolds, and a normal form evolution thereon">
-<b>Maybe use the web service</b>&nbsp;
-Alternatively, click this link to expand this page.</a>
+<b>To use the web service</b>&nbsp;
+Click this link to expand this page.</a>
 Then via the web form below you obtain a normal form of any
 supplied stochastic differential equation
 (<small>SDE</small>), or deterministic, autonomous or
@@ -204,16 +190,36 @@ stochastic bifurcation in the Stratonovich stochastic system
 \frac{dx}{dt}=a x-xy, \\
 \frac{dy}{dt}=-y+x^2-2y^2+w(t)
 \end{array}\]
-where near the origin \(x(t)\) evolves slowly, \(y(t)\) decays
-quickly to some quasi-equilibrium, but the white noise\(~w(t)\)
-`kicks' the system around. As parameter\(~a\) crosses
-zero, a stochastic bifurcation occurs. A stochastic, near
-identity, coordinate transform, \(x=X(t)+\cdots\) and \(y=Y(t)+\cdots\),
-decouples the fast/slow dynamics in the new variables\(~X(t)\)
-and\(~Y(t)\) so you are empowered to deduce the true slow/fast
-dynamics in the bifurcation. Just click on the Submit button
-to see.
+where near the origin \(x(t)\) evolves slowly, \(y(t)\)
+decays quickly to some quasi-equilibrium, but the white
+noise\(~w(t)\) `kicks' the system around. As parameter\(~a\)
+crosses zero, a stochastic bifurcation occurs. A stochastic,
+near identity, coordinate transform, \(x=X(t)+\cdots\) and
+\(y=Y(t)+\cdots\), decouples the fast/slow dynamics in the
+new variables\(~X(t)\) and\(~Y(t)\) so you are empowered to
+deduce the true slow/fast dynamics in the bifurcation. Just
+click on the Submit button to see.
+
+
 <p/>
+<b>To use the underlying code</b>&nbsp; The code uses
+computer algebra, <a
+href="http://www.reduce-algebra.com">the package Reduce</a>,
+to construct approximations to the invariant manifolds.  
+<ol><li>So download and install Reduce, and then <a
+href="StoNormForm.zip">download StoNormForm.zip</a>.
+</li><li>Start-up Reduce in the unzipped
+<tt>&nbsp;StoNormForm&nbsp;</tt> folder.
+</li><li>Execute <tt>&nbsp;in_tex
+"StoNormForm.tex"$&nbsp;</tt> to load the procedure.
+</li><li>Test by executing
+<tt>&nbsp;examplenormalform();&nbsp;</tt> and confirm the
+output is as in <tt>&nbsp;stoNormForm.pdf&nbsp;</tt>
+</li><li>See examples in
+<tt>&nbsp;manyExamples.pdf&nbsp;</tt> and then try for
+systems of your interest.
+</li></ol>
+
 The source code is now available for collaborative
 development via the folder <tt>StochasticNormalForm</tt> of
 a <a href="https://github.com/uoa1184615/WebServicesGit">
@@ -230,6 +236,6 @@ so others can find it more easily.</small></p>
 Copyright Tony Roberts, 
 School of Mathematical Sciences, University of Adelaide, South Australia. 
 <a href="http://orcid.org/0000-0001-8930-1552">ORCID=0000-0001-8930-1552</a>
-04-November-2021 01:25</small></div>
+28-April-2025 03:53</small></div>
 </td> </tr> </table> 
 </body> </html>

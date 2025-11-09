@@ -105,11 +105,11 @@ page, the bottom of a page, or on a page by itself.
 <P><EM>Let LaTeX float tables and figures, do not try to
 insist that you know better.</EM></P>
 <p><P>From research by Colin Wheildon: <QUOTE>"Seventy-seven
-percent said articles in which body type jumped over an
-illustration ..., contrary to the natural flow of reading,
-annoyed them. The natural expectation was that once a
-barrier such as an illustration ... was reached, the article
-would be continued at the head of the next leg of
+percent [of readers] said articles in which body type jumped
+over an illustration ..., contrary to the natural flow of
+reading, annoyed them. The natural expectation was that once
+a barrier such as an illustration ... was reached, the
+article would be continued at the head of the next leg of
 type."</QUOTE></P>
 
 <a href="https://www.youtube.com/watch?v=W-mxzy1uELc&list=PLAvDA9VSF6oxwGHA2ELDnaSFlJvwZPT6p&index=7&t=0s">See video discussion 41</a><p>
@@ -181,8 +181,7 @@ a List of Tables in the document with the command
 <P>Just as for tables, somewhere near where you need the
 figure, usually at the start of the first paragraph that
 discusses the figure, include the figure environment 
-<PRE>\begin{figure} 
- \centering 
+<PRE>\begin{figure}\centering 
  ... graphic LaTeX code ... 
  \caption{...} 
  \label{...} 
@@ -197,20 +196,23 @@ href="Share/sflower.jpg"> Share/sflower.jpg</a></tt>.
 placed within one column, but the <tt>figure*</tt>
 environment instead spreads a figure over both columns.
 
-<p>Of course, mostly scientific or engineering graphics
-are not pictures, but plots.  There are several good
+<p>Of course, mostly scientific or engineering graphics are
+not pictures, but plots.  There are several good
 possibilities for the LaTeX code that includes a plotted
-graph, and analogous possibilities with other computing languages:
+graph, and analogous possibilities with other computing
+languages:
 <ul><li>
-draw graph in Matlab, Octave, R, etc, export to postscript,
-convert to pdf, include in the LaTeX;
+draw graph in Matlab, Octave, R, etc, export to pdf, include
+in the LaTeX;
 </li><li>
 draw graph in Matlab or Octave, export to LaTeX code, input
 the code into your source;
 </li><li>
-or code 'pgfplots' commands yourself directly into your LaTeX source.
+or code 'pgfplots' commands yourself directly into your
+LaTeX source.
 </li></ul>
-Let's look at these alternatives in reverse order---after four other comments.
+Let's look at these alternatives in reverse order---after
+four other comments.
 </p>
 
 <P>One may include a List of Figures in the document with
@@ -273,8 +275,9 @@ journal supports their inclusion. So&nbsp;avoid&nbsp;:(
  package</a> by invoking in the preamble 
  <pre>\usepackage{pgfplots}
 \pgfplotsset{compat=newest}</pre>
-To get started, <a href="pgfplotBasics.pdf">see this introduction,</a>
-then see a host of examples at <a href="http://pgfplots.net">PGFPlots.net</a>
+To get started, <a href="pgfplotBasics.pdf">see this
+introduction,</a> then see a host of examples at <a
+href="http://pgfplots.net">PGFPlots.net</a>
  </p><p>
 The cost of these beautiful pgfplots is a major
 slow down of LaTeX&nbsp;as it draws the graphs 
@@ -283,11 +286,13 @@ slow down of LaTeX&nbsp;as it draws the graphs
 Alternatively, draw the graph in Matlab or Octave, then
 export to pgfplots-LaTeX code with 
 <a href="https://au.mathworks.com/matlabcentral/fileexchange/22022-matlab2tikz-matlab2tikz">
- matlab2tikz()</a> function.   I recommend invoking with something like  <pre>
+matlab2tikz()</a> function.   I recommend invoking with
+something like  <pre>
 cleanfigure;
-matlab2tikz('filename.tex','showInfo',false ...
-,'noSize',true,'parseStrings',false,'showWarnings',false ...
-,'extraCode','\tikzsetnextfilename{filename}' ...
+matlab2tikz('filename.tex'...
+,'showInfo',false,'noSize',true...
+,'parseStrings',false,'showWarnings',false ...
+,'extraCode','\tikzsetnextfilename{xxxx}' ...
 ,'extraAxisOptions',string ...
 )
 </pre>
@@ -309,47 +314,46 @@ replacement should omit the unwanted legends for you.
 
 
 <A NAME="epspdf"></a> 
-<h3>Graphs via postscript and pdf</h3>
+<h3>Graphs via postscript within pdf</h3>
 <a href="https://www.youtube.com/watch?v=7O_2Qo5_xPQ&list=PLAvDA9VSF6oxwGHA2ELDnaSFlJvwZPT6p&index=7&t=0s">See video discussion 44</a>
 
 <P>The usual way to include a figure in LaTeX is, as
 follows, to draw the graph in Matlab, Octave, R, etc, export
-to postscript, convert to pdf, include in the LaTeX.</P> 
+to postscript, convert to pdf, include in the LaTeX.  But by
+now in the 2020s most software and journals have caught up
+to pdf being the preferred format, so nowadays one rarely
+needs the postscript.</P> 
 
 <P><EM>Do not export to bit-image formats such as .png,
-.gif, .tiff, or .jpg</EM></P>
+.gif, .tiff, or .jpg</EM>   Remember that pdf-format is just
+a wrapper around almost any sort of information.  It is all
+too easy, and fatal, to end up with a pdf-file containing a
+bit-image graphic.   Avoid doing so.</P>
 
-<ul>
-<li>Create a <B>postscript</B> file of the drawing from
-whatever application is being used to generate the
-figure---most publishers still require postscript figures so
-do not bother trying to avoid this step.
-For example, <tt><a
-href="Src/cantor.m">Src/cantor.m</a></tt> and <tt><a
-href="Src/koch.m">Src/koch.m</a></tt> are Matlab programs
-that create postscript graphs in files <tt><a
-href="Src/cantor.eps">Src/cantor.eps</a></tt> and <tt><a
-href="Src/koch.eps">Src/koch.eps</a></tt> (prefer the
-command <tt>print -depsc2 filename</tt> ).
-<li>However, pdfLaTeX&nbsp;does not support postscript
-graphics! In order to <em>seamlessly</em> be able to use
-pdfLaTeX&nbsp;or ordinary LaTeX&nbsp;(especially as
-collaborators sometimes use the other one), and produce a
-<em>quality</em> graphic, convert to pdf using the public
-domain <TT>ps2pdf</TT> program (so you have two copies of
-the graphics file, an <TT>.eps</TT> file and a <TT>.pdf</TT>
-file). For example, the two files <tt><a
-href="Src/cantor.pdf">Src/cantor.pdf</a></tt> and <tt><a
-href="Src/koch.pdf">Src/koch.pdf</a></tt>
-<li>If the graphic is photograph-like, either because it is
-a photograph or because it is a surface plot with smooth
-graduations, then convert to <tt>jpeg</tt> rather than
-<tt>pdf</tt>.
+<p><ol>
+<li>Create a vector-graphic <B>pdf</B> file of the drawing
+from whatever application is being used to generate the
+figure.  For example, <tt><a href="Src/cantor.m">
+Src/cantor.m</a></tt> and <tt><a href="Src/koch.m">
+Src/koch.m</a></tt> are Matlab programs that create
+postscript graphs in files <tt><a href="Src/cantor.pdf">
+Src/cantor.pdf</a></tt> and <tt><a href="Src/koch.pdf">
+Src/koch.pdf</a></tt>.  Obtain these in Matlab post-2020 via
+the command
+<pre>exportgraphics(gcf,'filename.pdf' ...
+    ,'ContentType','vector')</pre> 
+or pre-2020 prefer the following command and convert to pdf
+afterwards
+<pre>print('-depsc','filename')</pre>
+<p>If the graphic is photograph-like, either because it is a
+photograph or because it is a surface plot with smooth
+graduations, then create as the non-vector bit-image format
+of <tt>jpeg</tt> rather than <tt>pdf</tt>.
 <li>Then place in the preamble the commands 
 <PRE>\usepackage{graphicx}</PRE> 
-<li>Somewhere near where you want the figure, include the figure environment 
-<PRE>\begin{figure} 
- \centering 
+<li>Somewhere near where you want the figure, include the
+figure environment 
+<PRE>\begin{figure}\centering 
  \includegraphics{...} 
  \caption{...} 
  \label{...} 
@@ -359,14 +363,13 @@ is the filename (without the extension).
 <p>
 <li>Or use this to scale the picture up/down, <EM>but only a
 little</EM>, 
-<PRE>\begin{figure} 
- \centering 
+<PRE>\begin{figure}\centering 
  \includegraphics[scale=0.9]
      {...} 
  \caption{...} 
  \label{...} 
 \end{figure}</PRE> 
-</ul>
+</ol>
 <P> See the two figures in <tt><a
 href="Src/fractals32.tex">Src/fractals32.tex</a></tt> </P>
 <P> The <TT>scale=0.9</TT> scales the figure to 90% of the
@@ -375,45 +378,65 @@ scaling between 0.8--1.2 is probably OK; but avoid any more
 drastic scalings.
 </P> 
 <P><EM>I strongly urge you to generate the graphics at about
-the same size as they are to appear.</EM> 
+the same size as they are to appear.</EM>   
+
 <p>This sizing is so that
 the title, label and legend information is readable
 and the line thicknesses are credible (<a
 href="ScreenShot.png">avoid grotesque scaling such as
 this</a>), or this <a href="egAppallingFigure.pdf">even
 worse example</a>. 
+
 <UL><LI>Most journals, and good dissertation styles, typeset
-to a text-width of about 14cm, so:
-<UL><LI> a single graph must be no more than 14cm wide;
-</LI><LI> two side-by-side graphs no more than 7cm wide each;
+to a text-width of about 14cm.  Consequently,
+<UL><LI> a single graph must be no more than 140mm wide;
+</LI><LI> two side-by-side graphs no more than 70mm wide each;
 </LI><LI> and so on.
 </LI></UL>
 </LI><LI>For two column journals or proceedings, a single
 graph, to fit into a single column, must be no more than
-about 9cm wide.
+about 90mm wide.
 </LI></UL>
 
-<p>For two examples: 
-<ul><li> <tt><a href="Src/cantor.m"> Src/cantor.m</a></tt>
-and <tt><a href="Src/koch.m"> Src/koch.m</a></tt> show how
-to use Matlab's <tt>clf(), subplot('position',[.2 .2 .55
-.55])</tt> commands to generate graphics that are close to
-the text width, and <tt>subplot(3,3,1)</tt> for close to
-half the text width, respectively;
+<p>Unfortunately, much software, such as Matlab, by default
+generate graphics that are far too big!  You <em>must</em>
+override.  For three examples: 
+<ul><li> <tt><a href="Src/koch.m">Src/koch.m</a></tt> uses
+Matlab's  <tt>subplot(3,3,n)</tt> for n=1,2,4,5 in order to
+generate a four-part graphic close to the correct size of the
+width of body text;
+<li><tt><a href="Src/cantor.m"> Src/cantor.m</a></tt> uses
+Matlab's <tt>set(gcf,'position',[300 100 480 480])</tt> before
+the export-graphics in order to set the size close to the
+width of body text;
 </li><li>for Maple, an internet search suggests that before
 you issue a plot command, invoke 
 <pre>plotsetup(postscript, 
 plotoutput=`image.ps`,plotoptions=
 `color,portrait,height=300,width=300`);
-</pre></li></ul></P> 
+</pre></li></ul>
+<b>In summary, in Matlab,</b> because of its obscure
+screen->paper translation, for the common graph widths of
+70mm, 90mm, 140mm, set the ratio r=4,5,8 respectively, and
+then usually export graphics via the two commands (change
+the screen location '<tt>300 100</tt>' as you please) 
+<pre>set(gcf,'position',[300 100 60*r 45*r])
+exportgraphics(gcf,'filename.pdf' ...
+    ,'ContentType','vector')</pre>
+This ensures you get great quality vector graphics at close
+to the size needed for including into your LaTeX. Do
+similarly for other software.
+</P> 
+
+
 <P><EM>Always code into a script the commands that generate
 a graphic.</EM> 
 <ul><li>
 Even though in exploring how to generate a graphic you may
 use a graphical user interface, ultimately <em>reproducible
 research</em> requires that you must codify the process,
-including codifying the `print' command that actually
-outputs the tex/eps/pdf/jpeg file.
+including codifying the `export' command that actually
+outputs the tex/pdf/jpeg file.
 </li><li>
 Ensure your graphics are traceable back to the source file
 that generated them. I recommend prefixing the name of the
@@ -422,7 +445,9 @@ script named <tt>abc.*</tt> generates a graph on topic
 <tt>xyz</tt>, then name the graphic file <tt>abcxyz.*</tt> 
 For example, if using Matlab/Octave, then invoke the function
 <tt>mfilename</tt> as in 
-<pre>print('-deps',[mfilename 'xyz'])</pre>
+<pre>exportgraphics(gcf,[mfilename 'xyz.pdf'])</pre>
+or
+<pre>matlab2tikz([mfilename 'xyz.tex'], ...</pre>
 </li></ul>
 
 </div>
@@ -434,13 +459,13 @@ For example, if using Matlab/Octave, then invoke the function
 Copyright Tony Roberts, 
 School of Mathematical Sciences, University of Adelaide, South Australia. 
 <a href="http://orcid.org/0000-0001-8930-1552">ORCID=0000-0001-8930-1552</a>
-20-September-2020 22:06</small></div>
+03-March-2025 18:59</small></div>
 
 <div id="disqus_thread"></div>
 <script>
 var disqus_config = function () {
 this.page.url = 'http://www.maths.adelaide.edu.au/anthony.roberts/LaTeX';  // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = '/Users/a1184615/Documents/Github.io/ProfAJRoberts/LaTeX/ltxfloats.html'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+this.page.identifier = '/Users/a1184615/Documents/Github.io/ProfAJRoberts/Sites/LaTeX/ltxfloats.html'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 this.page.title = 'LaTeX: Figures and tables';
 };
 

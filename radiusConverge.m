@@ -1,17 +1,25 @@
 function [radius,costheta,nature]=radiusConverge(a)
 % Estimate radius of convergence of a real-valued Taylor
-% series from its coefficients when convergence is limited
-% by either a real singularity or a complex conjugate pair
-% of singularities.  Also estimate the location and nature
-% of the singularities given they are of form [z-r]^nature
-% or [z-r*exp(i*theta)]^nature.  See Appendix of the article
-% by Mercer & Roberts (1990) "A centre manifold description
-% of contaminant dispersion in channels with varying flow
+% series from its coefficients when convergence is limited by
+% either a real singularity or a complex conjugate pair of
+% singularities.  Execute with no argument to see an example.
+% Input: row/column matrix (or cell-array) of coefficients.
+% Also estimate the location and nature of the
+% singularities---assuming they are of form [z-r]^nature or
+% [z-r*exp(i*theta)]^nature.  See Appendix of the article by
+% Mercer & Roberts (1990) "A centre manifold description of
+% contaminant dispersion in channels with varying flow
 % properties"; SIAM J. Appl. Math. 50, pp. 1547--1565; doi:
-% 10.1137/0150091.  With more coding could generalise to a
-% set of Taylor series stored in a 2D array.  The nature is
-% usually OKish to one decimal place, but sometimes worse!
-% AJR, 4 Jul 2019
+% 10.1137/0150091.  (Lyle Ramshaw, 2021, reports (A.8) needs
+% denominator "2*cos" inplace of just "cos").  With more
+% coding could generalise to a set of Taylor series stored
+% in a 2D array.  The nature is usually OKish to one decimal
+% place, but sometimes worse!
+% Maybe change the axes labels by following the function with
+% subplot(2,1,1),xlabel('$1/n$'),  ylabel('...')
+% subplot(2,1,2),xlabel('$1/n^2$'),ylabel('...')
+% AJ Roberts, http://orcid.org/0000-0001-8930-1552
+% Jul 2019 -- 12 Nov 2023
 if nargin==0, 
 	% example from homogenisation of 1-3, period two, diffusion
     a=[0
@@ -35,7 +43,15 @@ if nargin==0,
 	-0.000000000295281424719
 	0.0000000000643029608275
 	-8.5057969996e-13];
+	% random singularity Taylor series
+	nu=randn, theta=pi*(randi(7)-1)/6; costh=cos(theta), rad=exp(randn)
+	n=0:30;
+	a=(-1).^n.*gamma(nu+1)./gamma(n+1)./gamma(nu-n+1) ...
+	  ./rad.^n.*cos(n*theta+rand)
 end; % of example data
+
+% if input is cell(s) then convert to matrix
+if iscell(a), a=cell2mat(a); end
 
 % force coefficients to column(s)
 if size(a,1)==1, a=a(:); end 
@@ -52,13 +68,15 @@ near0=1e-8*max(abs(a));
 if max(abs(a(1:2:n)))<near0,
    fprintf('radiusConverge: odd coeffs effectively zero\n')
    [radius,costheta,nature]=radiusConverge(a(2:2:end));
-   radius=rat*sqrt(radius)
+   fprintf('radiusConverge: in original variables\n')
+   radius=rat*sqrt(radius), costheta=cos(0.5*acos(costheta))
    return
 end
 if max(abs(a(2:2:n)))<near0,
    fprintf('radiusConverge: even coeffs effectively zero\n')
    [radius,costheta,nature]=radiusConverge(a(1:2:end));
-   radius=rat*sqrt(radius)
+   fprintf('radiusConverge: in original variables\n')
+   radius=rat*sqrt(radius), costheta=cos(0.5*acos(costheta))
    return
 end
 
@@ -76,12 +94,12 @@ for kMin=1:n/4 %min(find(abs(a)>near0));
 	   radius = rat/b(1);
 	   nature = -1-b(2)/b(1) % unreliable?
 	   costheta = sign(radius)
-	   radius = abs(radius);
+	   radius = abs(radius)
 	   % plot in current figure window
 	   clf()
 	   x=[1./k;0];
-	   plot(1./k,real(Bk),'o:',x,b(1)+b(2)*x)
-	   xlabel('1/k'),ylabel('rat/radius')
+	   plot(1./k,real(Bk)/rat,'o:',x,(b(1)+b(2)*x)/rat)
+	   xlabel('$1/k$'),ylabel('1/radius')
 	   return
 	end
 end%for-loop
@@ -117,8 +135,8 @@ radius = rat/b(1)
 clf()
 x=[1./k(j);0];
 subplot(2,1,1)
-plot(1./k,real(Bk),'o:',x,b(1)+b(2)*x)
-xlabel('1/k'),ylabel('rat/radius')
+plot(1./k,real(Bk)/rat,'o:',x,(b(1)+b(2)*x)/rat)
+xlabel('$1/k$'),ylabel('1/radius')
 subplot(2,1,2)
 plot(1./k.^2,real(cosk),'o:',x.^2,c(1)+c(2)*x.^2)
-xlabel('1/k^2'),ylabel('cos\theta')
+xlabel('$1/k^2$'),ylabel('$\cos\theta$')

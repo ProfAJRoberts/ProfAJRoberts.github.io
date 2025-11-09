@@ -2,12 +2,12 @@
 <h2>Submit your system of ODE/DDEs for analysis</h2>
 
 <div class="newspaper">
-Fill in the fields below for your <small>ODE/DDE</small> system: 
+Fill in the fields below for your <small>ODE/DDE/PDE</small> system: 
 <ul>
 <li>the n variables of the system must be denoted u1,u2,...,un; 
 <li>any time tau delayed variables must be denoted
 u1(tau),...,un(tau) for any delay tau;
-<li>specify the <small>ODE/DDE</small>s of the dynamical
+<li>specify the <small>ODE/DDE/PDE</small>s of the dynamical
 system \(\frac{d\vec u}{dt}=\vec f(\vec u)\) by specifying
 the `nonlinear' function\(~\vec f(\vec u)\) which should
 have an equilibrium at the origin;
@@ -21,11 +21,14 @@ specifying m vectors,\(~\vec z_j\), which are to be
 orthogonal to updates to the invariant manifold---these vectors
 MAY be the eigenvectors of the m zero and/or pure
 imaginary eigenvalues of the adjoint of the matrix\(~L\);
-<li>for the moment, the <small>ODE/DDE</small>s must be
+<li>for the moment, the <small>ODE/DDE/PDE</small>s must be
 multinomial in form;
 <li>Use the syntax of <a
 href="http://www.reduce-algebra.com">Reduce for the
 algebraic expressions</a>
+<li>Except that for <small>PDE</small>s use <tt>pdf()</tt>
+to input the partial `space' derivatives.  For example,
+<tt>pdf(u2,x)</tt>\(=\partial u2/\partial x\), etc.
 </ul>
 
 </div>
@@ -35,41 +38,57 @@ algebraic expressions</a>
 "a&nbsp;z&nbsp;a&nbsp;l&nbsp;e&nbsp;a" into <input
 type="text" size=6 name="magic"></h4>
 <TABLE><TR> <TH>Description</TH> <TH>Specify your
-<small>ODE</small>s</TH>
-</TR><TR> <TD><STRONG>RHS function</STRONG> the
-nonlinear vector function: parentheses around a comma
-separated list of multinomial expressions.</TD>
-<TD> <TEXTAREA ROWS="5" COLS="36"
+<small>ODE</small>s or <small>PDE</small>s</TH>
+</TR><TR> <TD><STRONG>Spatial variables</STRONG>  For
+<small>PDE</small>s put a comma separated list of the
+(independent) 'spatial' variables.  Leave empty for
+<small>ODE</small>s </TD> <TD> <TEXTAREA ROWS="1" COLS="54"
+NAME="xyz_"></TEXTAREA> </TD>  
+</TR><TR> <TD><STRONG>RHS function</STRONG> the nonlinear
+vector function: parentheses around a comma separated list
+of multinomial expressions. For <small>PDE</small>s, use
+<tt>pdf()</tt> for `space' derivatives. <small>(However,
+due to a glitch in the current web-site's system do not use
+"0" for the RHS component of a 'variable' that is to be
+constant in time, instead use "<tt>small^9</tt>" as this is
+effectively zero).</small> </TD>
+<TD> <TEXTAREA ROWS="5" COLS="54"
 NAME="ff_">(2*u1+u2+2*u3+u2*u3,
 u1-u2+u3-u1*u3,
 -3*u1-u2-3*u3-u1*u2)</TEXTAREA> </TD>
 </TR><TR> <TD><STRONG>Invariant eigenvalues</STRONG> a comma
 separated list of m eigenvalues, real or complex, zero for a
 slow mode.</TD>
-<TD> <TEXTAREA ROWS="1" COLS="36"
+<TD> <TEXTAREA ROWS="1" COLS="54"
 NAME="freqm_">0</TEXTAREA> </TD>
 </TR><TR> <TD><STRONG>Invariant subspace</STRONG> m basis
 vectors: must be eigenvectors of\(~L\) corresponding to
 the m eigenvalues: comma separated list of eigenvectors; each
 eigenvector is parentheses around comma separated
 numbers.</TD>
-<TD> <TEXTAREA ROWS="4" COLS="36"
+<TD> <TEXTAREA ROWS="4" COLS="54"
 NAME="ee_">(1,0,-1)</TEXTAREA> </TD>
 </TR><TR> <TD><STRONG>Adjoint basis</STRONG> m basis
 vectors: comma separated list of vectors; each vector is
 parentheses around comma separated numbers; for each of the
 m invariant eigenvalues, in order, <em>may be</em> complex conjugate
 of a corresponding eigenvector of the adjoint matrix.</TD>
-<TD> <TEXTAREA ROWS="4" COLS="36"
+<TD> <TEXTAREA ROWS="4" COLS="54"
 NAME="zz_">(4,1,3)</TEXTAREA> </TD>
 </TR><TR> <TD><STRONG>Order of error</STRONG> of the
 analysis in the `nonlinear' terms on the
-<small>RHS</small>.</TD> <TD> <select name="epsilo">
-<option>2 <option selected>3 <option>4 <option>5 </select> </TD>
+<small>RHS</small>.   <small>For finer control over asymptotic
+error, download your own copy of the procedure and
+documentation, then before executing the procedure specify
+<tt>let p^n=>0;</tt> where <tt>p</tt> is your 'small'
+paramater(s) and <tt>n</tt> is the integer exponent of the
+order of errors.</small> </TD> <TD> <select name="epsilo"> <option>2
+<option selected>3 <option>4 <option>5 <option>6 <option>7
+</select> </TD>
 </TR><TR> <TD><STRONG>Print</STRONG> expressions with the
 following variables factored---this does not affect the
 analysis, but must not be empty.</TD> <TD><input
-type="text" name="factor" size=36 maxlength=36
+type="text" name="factor" size=54 maxlength=54
 value="small"> </TD> 
 </TR><TR> <TD></TD> <TD><input type="submit" value="Submit"
 name="%submit"> </TD> </TR></TABLE> 
@@ -129,8 +148,10 @@ systems of equations possessing bifurcations</a>.
 <li>In the case of a slow manifold (all specified
 eigenvalues are zero), the code also computes a basis of
 normal vectors to the isochrons (actually normal to their
-tangent space at the slow manifold). Use these basis
-vectors: 
+tangent space at the slow manifold). For
+<small>PDE</small>s, the bare operators such as
+<tt>diff(x)</tt> represent the partial derivative
+\(\partial/\partial x\).  Use these basis vectors: 
 <ul><li>to project initial conditions onto the slow
 manifold; 
 </li><li>to project non-autonomous forcing onto the slow
@@ -393,3 +414,91 @@ u4 +b*u1*u2)</TT></TD>
 
 </div>
 
+<h2>Example systems of PDEs</h2>
+<div class="newspaper">
+
+<h3>Gradual space variation in a three component system</h3>
+This is an example from "Slowly varying, macroscale models
+emerge from microscale dynamics over multiscale domains"
+(2005). The <small>PDE</small>s model a random walker who
+walks in any one of three directions in the \(xy\)-plane,
+and randomly in time swaps between the three directions.  
+What is a long-term advection-diffusion model for the
+walkers probability distribution?
+</p>
+
+<CENTER><TABLE><TR> <TH>Description</TH>
+<TH><small>ODE</small> example</TH>
+</TR><TR> <TD>Space variables</TD>
+<TD><TT>x,y</TT></TD>
+</TR><TR> <TD>RHS function</TD>
+<TD><TT>(-pdf(u1,x)-pdf(u1,y)+(u2-u1)
+        ,+pdf(u2,x)          +(u1-2*u2+u3)
+        ,-pdf(u3,x)+pdf(u3,y)+(u2-u3) )</TT></TD>
+</TR><TR> <TD>Slow eigenvalue</TD>
+<TD><TT>0</TT></TD>
+</TR><TR> <TD>Slow subspace</TD>
+<TD><TT>(1/3,1/3,1/3)</TT></TD>
+</TR><TR> <TD>Adjoint subspace</TD>
+<TD><TT>(1,1,1)</TT></TD>
+</TR><TR> <TD>Order of error</TD>
+<TD><TT>5</TT></TD>
+</TR><TR> <TD>Print</TD> <TD><TT>small</TT></TD>
+</TR></TABLE> </CENTER>
+ 
+
+<h3>Long waves in three component Grad's Moment system</h3>
+This is Example B from "Dynamically Optimal Projection onto
+Slow Spectral Manifolds for Linear Systems" by Kogelbauer
+and Karlin (2025). The <small>PDE</small>s is apparently a
+classical system in kinetic theory.   Variables are the
+pressure&nbsp;\(u_1\), velocity&nbsp;\(u_2\), and
+stress&nbsp;\(u_3\). What are <small>PDE</small>s for the
+long-wave pressure-velocity waves? </p>
+
+<CENTER><TABLE><TR> <TH>Description</TH>
+<TH><small>ODE</small> example</TH>
+</TR><TR> <TD>Space variables</TD>
+<TD><TT>x</TT></TD>
+</TR><TR> <TD>RHS function</TD>
+<TD><TT>(-5/3*pdf(u2,x)
+,-pdf(u1,x)-pdf(u3,x)
+,-4/3*pdf(u2,x)-u3/epsilon )</TT></TD>
+</TR><TR> <TD>Slow eigenvalues</TD>
+<TD><TT>0,0</TT></TD>
+</TR><TR> <TD>Slow subspace</TD>
+<TD><TT>(1,0,0),(0,1,0)</TT></TD>
+</TR><TR> <TD>Adjoint subspace</TD>
+<TD><TT>(1,0,0),(0,1,0)</TT></TD>
+</TR><TR> <TD>Order of error</TD>
+<TD><TT>5</TT></TD>
+</TR><TR> <TD>Print</TD> <TD><TT>small</TT></TD>
+</TR></TABLE> </CENTER>
+ 
+
+<h3>Nonlinear simple heat exchanger</h3>
+This is Exercise 8.2 from "Modelling Emergent Dynamics in
+Complex Systems" (2015).  What modification of Burgers'
+<small>PDE</small> governs the long-wave dynamics? </p>
+
+<CENTER><TABLE><TR> <TH>Description</TH>
+<TH><small>ODE</small> example</TH>
+</TR><TR> <TD>Space variable</TD>
+<TD><TT>x</TT></TD>
+</TR><TR> <TD>RHS function</TD>
+<TD><TT>(+pdf(u1,x)+(u2-u1)/2-u1^2/2
+,-pdf(u2,x)+(u1-u2)/2+u2^2/2 )</TT></TD>
+</TR><TR> <TD>Slow eigenvalues</TD>
+<TD><TT>0</TT></TD>
+</TR><TR> <TD>Slow subspace</TD>
+<TD><TT>(1/2,1/2)</TT></TD>
+</TR><TR> <TD>Adjoint subspace</TD>
+<TD><TT>(1,1)</TT></TD>
+</TR><TR> <TD>Order of error</TD>
+<TD><TT>3</TT></TD>
+</TR><TR> <TD>Print</TD> <TD><TT>small</TT></TD>
+</TR></TABLE> </CENTER>
+ 
+
+
+</div>

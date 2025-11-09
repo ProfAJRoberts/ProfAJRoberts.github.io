@@ -1,15 +1,17 @@
 
-Warning: Undefined array key "HTTP_HOST" in /Users/a1184615/Documents/Github.io/ProfAJRoberts/header.PHP on line 3
+Warning: Undefined array key "HTTP_HOST" in /Users/a1184615/Documents/Github.io/ProfAJRoberts/Sites/header.PHP on line 3
 
 <html>
 <head>
     <title> Construct invariant manifolds such as centre
 manifolds, spectral submanifolds, nonlinear normal modes, of
-ordinary or delay differential equations (autonomous)</title>
+ordinary, partial, or delay differential equations
+(autonomous or periodically forced)</title>
 <META NAME="Author" CONTENT="Prof Tony Roberts">
 <META NAME="Description" CONTENT=Construct invariant manifolds such as centre
 manifolds, spectral submanifolds, nonlinear normal modes, of
-ordinary or delay differential equations (autonomous)>
+ordinary, partial, or delay differential equations
+(autonomous or periodically forced)>
 <link rel="stylesheet" href="Share/ajr.css" title="MaCPage CSS" type="text/css">
 <style>
 .newspaper { column-width:20em;
@@ -30,7 +32,8 @@ https://www.thesitewizard.com/css/mobile-friendly-responsive-design.shtml
 </td><td id="center"> 
 <h1>Construct invariant manifolds such as centre
 manifolds, spectral submanifolds, nonlinear normal modes, of
-ordinary or delay differential equations (autonomous)</h1> 
+ordinary, partial, or delay differential equations
+(autonomous or periodically forced)</h1> 
 <H2>by Emeritus Prof. A. J. Roberts</H2> 
 </td><td id="right"> 
 <!-- <img src="Share/tt1s.gif" alt="School Image"> -->
@@ -156,30 +159,38 @@ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-
 
 <div class="newspaper">
 <p/>
-I provide a procedure to construct a specified
-invariant manifold for a specified system of ordinary
-differential equations or delay differential equations. The
-invariant manifold may be any of a centre manifold, a slow
-manifold, an un/stable manifold, a sub-centre manifold, a
-nonlinear normal form, or any spectral submanifold. Thus the
-procedure may be used to analyse pitchfork bifurcations, or
-oscillatory Hopf bifurcations, or any more complicated
-superposition. In the cases when the neglected spectral
-modes all decay, the constructed invariant manifold supplies
-a faithful, large time, emergent, model of the dynamics of
-the differential equations. Further, in the case of a slow
-manifold, this procedure now derives vectors defining the
-projection onto the invariant manifold along the isochrons:
-this projection is needed for initial conditions, forcing,
-system modifications, and uncertainty quantification.
+I provide a procedure to construct a specified invariant
+manifold for a specified system of ordinary differential
+equations or delay differential equations or partial
+differential equations. The invariant manifold may be any of
+a centre manifold, a slow manifold, an un/stable manifold, a
+sub-centre manifold, a nonlinear normal form, or any
+spectral submanifold. Thus the procedure may be used to
+analyse pitchfork bifurcations, or oscillatory Hopf
+bifurcations, or any more complicated superposition, or
+multiscale patterns in <small>PDE</small>s. In the cases
+when the neglected spectral modes all decay, the constructed
+invariant manifold supplies a faithful, large time,
+emergent, model of the dynamics of the differential
+equations. Further, in the case of a slow manifold, this
+procedure now derives vectors defining the projection onto
+the invariant manifold along the isochrons: this projection
+is needed for initial conditions, forcing, system
+modifications, and uncertainty quantification.
 
 <p/>The procedure now also empowers one to account for
-sinusoidal time dependence in the ODEs, such as to derive
-spectral sub-manifold models of forced nonlinear normal
-modes.
+sinusoidal time dependence in the <small>ODE</small>s or
+<small>PDE</small>s, such as to derive spectral sub-manifold
+models of forced nonlinear normal modes.
+
+<p/><h4>In the case of <small>PDE</small>s</h4> The analysis assumes
+that the 'spatial' gradients are small, that is, the spatial
+variations are gradual in space.  The manifold is then
+multiscale.   Currently caters for up to three `spatial'
+variables.
 
 <p/>
-<b>Execute on your computer?</b> The procedure uses computer
+<h4>Execute on your computer?</h4> The procedure uses computer
 algebra, <a href="http://www.reduce-algebra.com">the package
 Reduce</a>, to construct approximations to the invariant
 manifolds.  
@@ -194,7 +205,7 @@ InvariantManifold.zip</a>.
 <tt>&nbsp;exampleslowman();&nbsp;</tt> and confirm the
 output is as in <tt>&nbsp;invariantManifold.pdf&nbsp;</tt>
 </li><li>See examples in
-<tt>&nbsp;allExamples.pdf&nbsp;</tt> and then try for
+<tt>&nbsp;diverseExamples.pdf&nbsp;</tt> and then try for
 systems of your interest.
 </li></ol>
 
@@ -238,9 +249,11 @@ amplitudes of the oscillators.  This approach is better than
 averaging/homogenisation.
 
 <p/>
-FYI: the source code is now available for collaborative
-development via the folder <tt>CentreManifold</tt> of a
-<a href="https://github.com/uoa1184615/WebServicesGit">Github repository</a>
+FYI: the latest source code is now available for use and
+collaborative development via the folder
+<tt>InvariantManifold</tt> of a <a
+href="https://github.com/uoa1184615/WebServicesGit"> Github
+repository</a>
 
 <p/>
 <h4>Non-autonomous ODEs?</h4>  Systems with slowly-varying
@@ -262,6 +275,6 @@ so others can find it more easily.</small></p>
 Copyright Tony Roberts, 
 School of Mathematical Sciences, University of Adelaide, South Australia. 
 <a href="http://orcid.org/0000-0001-8930-1552">ORCID=0000-0001-8930-1552</a>
-25-November-2022 00:43</small></div>
+14-October-2025 23:15</small></div>
 </td> </tr> </table> 
 </body> </html>

@@ -1,267 +1,345 @@
-% This file was created by matlab2tikz v0.1.2.
-% Copyright (c) 2008--2011, Nico Schlömer <nico.schloemer@gmail.com>
-% All rights reserved.
-% 
-% The latest updates can be retrieved from
-%   http://www.mathworks.com/matlabcentral/fileexchange/22022-matlab2tikz
-% where you can also make suggestions and rate matlab2tikz.
-% 
+% This file was created by matlab2tikz.
+%
+%The latest updates can be retrieved from
+%  http://www.mathworks.com/matlabcentral/fileexchange/22022-matlab2tikz-matlab2tikz
+%where you can also make suggestions and rate matlab2tikz.
+%
+\definecolor{mycolor1}{rgb}{0.00000,0.44700,0.74100}%
+\definecolor{mycolor2}{rgb}{0.85000,0.32500,0.09800}%
+\definecolor{mycolor3}{rgb}{0.92900,0.69400,0.12500}%
+\definecolor{mycolor4}{rgb}{0.49400,0.18400,0.55600}%
+\definecolor{mycolor5}{rgb}{0.46600,0.67400,0.18800}%
+\definecolor{mycolor6}{rgb}{0.30100,0.74500,0.93300}%
+\definecolor{mycolor7}{rgb}{0.63500,0.07800,0.18400}%
+%
 \begin{tikzpicture}
 
-% defining custom colors
-\definecolor{mycolor1}{rgb}{0.133594,0.488672,0.738281}
-\definecolor{mycolor2}{rgb}{0.773438,0.175781,0.165234}
-\definecolor{mycolor3}{rgb}{0.741797,0.189844,0.457031}
-\definecolor{mycolor4}{rgb}{0.636328,0.481641,0}
-\definecolor{mycolor5}{rgb}{0.379688,0.397266,0.689063}
-\definecolor{mycolor6}{rgb}{0.467578,0.537891,0}
-\definecolor{mycolor7}{rgb}{0.147656,0.566016,0.534375}
-
-
-% Axis at [0.2 0.20 0.55 0.55]
 \begin{axis}[%
-hide x axis, hide y axis,
-width=3.2766in, height=0.819149in,
-scale only axis]
-\addplot [
-color=mycolor1,
-solid
+width=4.667in,
+height=1.167in,
+at={(0.778in,1.75in)},
+scale only axis,
+xmin=0,
+xmax=1,
+ymin=-0.25,
+ymax=0,
+axis line style={draw=none},
+ticks=none
 ]
-coordinates{
- (0,-0.05)(0.333333,-0.05) 
+\addplot [color=mycolor1, forget plot]
+  table[row sep=crcr]{%
+0	0\\
+1	0\\
 };
-
-\addplot [
-color=mycolor2,
-solid
-]
-coordinates{
- (0.666667,-0.05)(1,-0.05) 
+\addplot [color=mycolor2, forget plot]
+  table[row sep=crcr]{%
+0	-0.05\\
+0.333333333333333	-0.05\\
 };
-
-\addplot [
-color=mycolor1,
-solid
-]
-coordinates{
- (0,-0.1)(0.111111,-0.1) 
+\addplot [color=mycolor3, forget plot]
+  table[row sep=crcr]{%
+0.666666666666667	-0.05\\
+1	-0.05\\
 };
-
-\addplot [
-color=mycolor3,
-solid
-]
-coordinates{
- (0.666667,-0.1)(0.777778,-0.1) 
+\addplot [color=mycolor4, forget plot]
+  table[row sep=crcr]{%
+0	-0.1\\
+0.111111111111111	-0.1\\
 };
-
-\addplot [
-color=mycolor4,
-solid
-]
-coordinates{
- (0.222222,-0.1)(0.333333,-0.1) 
+\addplot [color=mycolor5, forget plot]
+  table[row sep=crcr]{%
+0.666666666666667	-0.1\\
+0.777777777777778	-0.1\\
 };
-
-\addplot [
-color=mycolor5,
-solid
-]
-coordinates{
- (0.888889,-0.1)(1,-0.1) 
+\addplot [color=mycolor6, forget plot]
+  table[row sep=crcr]{%
+0.222222222222222	-0.1\\
+0.333333333333333	-0.1\\
 };
-
-\addplot [
-color=mycolor1,
-solid
-]
-coordinates{
- (0,-0.15)(0.037037,-0.15) 
+\addplot [color=mycolor7, forget plot]
+  table[row sep=crcr]{%
+0.888888888888889	-0.1\\
+1	-0.1\\
 };
-
-\addplot [
-color=mycolor6,
-solid
-]
-coordinates{
- (0.666667,-0.15)(0.703704,-0.15) 
+\addplot [color=mycolor1, forget plot]
+  table[row sep=crcr]{%
+0	-0.15\\
+0.037037037037037	-0.15\\
 };
-
-\addplot [
-color=mycolor2,
-solid
-]
-coordinates{
- (0.222222,-0.15)(0.259259,-0.15) 
+\addplot [color=mycolor2, forget plot]
+  table[row sep=crcr]{%
+0.666666666666667	-0.15\\
+0.703703703703704	-0.15\\
 };
-
-\addplot [
-color=mycolor7,
-solid
-]
-coordinates{
- (0.888889,-0.15)(0.925926,-0.15) 
+\addplot [color=mycolor3, forget plot]
+  table[row sep=crcr]{%
+0.222222222222222	-0.15\\
+0.259259259259259	-0.15\\
 };
-
-\addplot [
-color=mycolor3,
-solid
-]
-coordinates{
- (0.0740741,-0.15)(0.111111,-0.15) 
+\addplot [color=mycolor4, forget plot]
+  table[row sep=crcr]{%
+0.888888888888889	-0.15\\
+0.925925925925926	-0.15\\
 };
-
-\addplot [
-color=mycolor4,
-solid
-]
-coordinates{
- (0.740741,-0.15)(0.777778,-0.15) 
+\addplot [color=mycolor5, forget plot]
+  table[row sep=crcr]{%
+0.0740740740740741	-0.15\\
+0.111111111111111	-0.15\\
 };
-
-\addplot [
-color=mycolor5,
-solid
-]
-coordinates{
- (0.296296,-0.15)(0.333333,-0.15) 
+\addplot [color=mycolor6, forget plot]
+  table[row sep=crcr]{%
+0.740740740740741	-0.15\\
+0.777777777777778	-0.15\\
 };
-
-\addplot [
-color=mycolor1,
-solid
-]
-coordinates{
- (0.962963,-0.15)(1,-0.15) 
+\addplot [color=mycolor7, forget plot]
+  table[row sep=crcr]{%
+0.296296296296296	-0.15\\
+0.333333333333333	-0.15\\
 };
-
-\addplot [
-color=mycolor1,
-solid
-]
-coordinates{
- (0,-0.2)(0.0123457,-0.2) 
+\addplot [color=mycolor1, forget plot]
+  table[row sep=crcr]{%
+0.962962962962963	-0.15\\
+1	-0.15\\
 };
-
-\addplot [
-color=mycolor2,
-solid
-]
-coordinates{
- (0.666667,-0.2)(0.679012,-0.2) 
+\addplot [color=mycolor2, forget plot]
+  table[row sep=crcr]{%
+0	-0.2\\
+0.0123456790123457	-0.2\\
 };
-
-\addplot [
-color=mycolor7,
-solid
-]
-coordinates{
- (0.222222,-0.2)(0.234568,-0.2) 
+\addplot [color=mycolor3, forget plot]
+  table[row sep=crcr]{%
+0.666666666666667	-0.2\\
+0.679012345679012	-0.2\\
 };
-
-\addplot [
-color=mycolor3,
-solid
-]
-coordinates{
- (0.888889,-0.2)(0.901235,-0.2) 
+\addplot [color=mycolor4, forget plot]
+  table[row sep=crcr]{%
+0.222222222222222	-0.2\\
+0.234567901234568	-0.2\\
 };
-
-\addplot [
-color=mycolor4,
-solid
-]
-coordinates{
- (0.0740741,-0.2)(0.0864198,-0.2) 
+\addplot [color=mycolor5, forget plot]
+  table[row sep=crcr]{%
+0.888888888888889	-0.2\\
+0.901234567901234	-0.2\\
 };
-
-\addplot [
-color=mycolor5,
-solid
-]
-coordinates{
- (0.740741,-0.2)(0.753086,-0.2) 
+\addplot [color=mycolor6, forget plot]
+  table[row sep=crcr]{%
+0.0740740740740741	-0.2\\
+0.0864197530864197	-0.2\\
 };
-
-\addplot [
-color=mycolor1,
-solid
-]
-coordinates{
- (0.296296,-0.2)(0.308642,-0.2) 
+\addplot [color=mycolor7, forget plot]
+  table[row sep=crcr]{%
+0.740740740740741	-0.2\\
+0.753086419753086	-0.2\\
 };
-
-\addplot [
-color=mycolor6,
-solid
-]
-coordinates{
- (0.962963,-0.2)(0.975309,-0.2) 
+\addplot [color=mycolor1, forget plot]
+  table[row sep=crcr]{%
+0.296296296296296	-0.2\\
+0.308641975308642	-0.2\\
 };
-
-\addplot [
-color=mycolor2,
-solid
-]
-coordinates{
- (0.0246914,-0.2)(0.037037,-0.2) 
+\addplot [color=mycolor2, forget plot]
+  table[row sep=crcr]{%
+0.962962962962963	-0.2\\
+0.975308641975309	-0.2\\
 };
-
-\addplot [
-color=mycolor7,
-solid
-]
-coordinates{
- (0.691358,-0.2)(0.703704,-0.2) 
+\addplot [color=mycolor3, forget plot]
+  table[row sep=crcr]{%
+0.0246913580246914	-0.2\\
+0.037037037037037	-0.2\\
 };
-
-\addplot [
-color=mycolor3,
-solid
-]
-coordinates{
- (0.246914,-0.2)(0.259259,-0.2) 
+\addplot [color=mycolor4, forget plot]
+  table[row sep=crcr]{%
+0.691358024691358	-0.2\\
+0.703703703703704	-0.2\\
 };
-
-\addplot [
-color=mycolor4,
-solid
-]
-coordinates{
- (0.91358,-0.2)(0.925926,-0.2) 
+\addplot [color=mycolor5, forget plot]
+  table[row sep=crcr]{%
+0.246913580246914	-0.2\\
+0.259259259259259	-0.2\\
 };
-
-\addplot [
-color=mycolor5,
-solid
-]
-coordinates{
- (0.0987654,-0.2)(0.111111,-0.2) 
+\addplot [color=mycolor6, forget plot]
+  table[row sep=crcr]{%
+0.91358024691358	-0.2\\
+0.925925925925926	-0.2\\
 };
-
-\addplot [
-color=mycolor1,
-solid
-]
-coordinates{
- (0.765432,-0.2)(0.777778,-0.2) 
+\addplot [color=mycolor7, forget plot]
+  table[row sep=crcr]{%
+0.0987654320987654	-0.2\\
+0.111111111111111	-0.2\\
 };
-
-\addplot [
-color=mycolor6,
-solid
-]
-coordinates{
- (0.320988,-0.2)(0.333333,-0.2) 
+\addplot [color=mycolor1, forget plot]
+  table[row sep=crcr]{%
+0.765432098765432	-0.2\\
+0.777777777777778	-0.2\\
 };
-
-\addplot [
-color=mycolor2,
-solid
-]
-coordinates{
- (0.987654,-0.2)(1,-0.2) 
+\addplot [color=mycolor2, forget plot]
+  table[row sep=crcr]{%
+0.320987654320988	-0.2\\
+0.333333333333333	-0.2\\
 };
-
+\addplot [color=mycolor3, forget plot]
+  table[row sep=crcr]{%
+0.987654320987654	-0.2\\
+1	-0.2\\
+};
+\addplot [color=mycolor4, forget plot]
+  table[row sep=crcr]{%
+0	-0.25\\
+0.00411522633744856	-0.25\\
+};
+\addplot [color=mycolor5, forget plot]
+  table[row sep=crcr]{%
+0.666666666666667	-0.25\\
+0.670781893004115	-0.25\\
+};
+\addplot [color=mycolor6, forget plot]
+  table[row sep=crcr]{%
+0.222222222222222	-0.25\\
+0.226337448559671	-0.25\\
+};
+\addplot [color=mycolor7, forget plot]
+  table[row sep=crcr]{%
+0.888888888888889	-0.25\\
+0.893004115226337	-0.25\\
+};
+\addplot [color=mycolor1, forget plot]
+  table[row sep=crcr]{%
+0.0740740740740741	-0.25\\
+0.0781893004115226	-0.25\\
+};
+\addplot [color=mycolor2, forget plot]
+  table[row sep=crcr]{%
+0.740740740740741	-0.25\\
+0.744855967078189	-0.25\\
+};
+\addplot [color=mycolor3, forget plot]
+  table[row sep=crcr]{%
+0.296296296296296	-0.25\\
+0.300411522633745	-0.25\\
+};
+\addplot [color=mycolor4, forget plot]
+  table[row sep=crcr]{%
+0.962962962962963	-0.25\\
+0.967078189300411	-0.25\\
+};
+\addplot [color=mycolor5, forget plot]
+  table[row sep=crcr]{%
+0.0246913580246914	-0.25\\
+0.0288065843621399	-0.25\\
+};
+\addplot [color=mycolor6, forget plot]
+  table[row sep=crcr]{%
+0.691358024691358	-0.25\\
+0.695473251028807	-0.25\\
+};
+\addplot [color=mycolor7, forget plot]
+  table[row sep=crcr]{%
+0.246913580246914	-0.25\\
+0.251028806584362	-0.25\\
+};
+\addplot [color=mycolor1, forget plot]
+  table[row sep=crcr]{%
+0.91358024691358	-0.25\\
+0.917695473251029	-0.25\\
+};
+\addplot [color=mycolor2, forget plot]
+  table[row sep=crcr]{%
+0.0987654320987654	-0.25\\
+0.102880658436214	-0.25\\
+};
+\addplot [color=mycolor3, forget plot]
+  table[row sep=crcr]{%
+0.765432098765432	-0.25\\
+0.76954732510288	-0.25\\
+};
+\addplot [color=mycolor4, forget plot]
+  table[row sep=crcr]{%
+0.320987654320988	-0.25\\
+0.325102880658436	-0.25\\
+};
+\addplot [color=mycolor5, forget plot]
+  table[row sep=crcr]{%
+0.987654320987654	-0.25\\
+0.991769547325103	-0.25\\
+};
+\addplot [color=mycolor6, forget plot]
+  table[row sep=crcr]{%
+0.00823045267489712	-0.25\\
+0.0123456790123457	-0.25\\
+};
+\addplot [color=mycolor7, forget plot]
+  table[row sep=crcr]{%
+0.674897119341564	-0.25\\
+0.679012345679012	-0.25\\
+};
+\addplot [color=mycolor1, forget plot]
+  table[row sep=crcr]{%
+0.230452674897119	-0.25\\
+0.234567901234568	-0.25\\
+};
+\addplot [color=mycolor2, forget plot]
+  table[row sep=crcr]{%
+0.897119341563786	-0.25\\
+0.901234567901234	-0.25\\
+};
+\addplot [color=mycolor3, forget plot]
+  table[row sep=crcr]{%
+0.0823045267489712	-0.25\\
+0.0864197530864197	-0.25\\
+};
+\addplot [color=mycolor4, forget plot]
+  table[row sep=crcr]{%
+0.748971193415638	-0.25\\
+0.753086419753086	-0.25\\
+};
+\addplot [color=mycolor5, forget plot]
+  table[row sep=crcr]{%
+0.304526748971193	-0.25\\
+0.308641975308642	-0.25\\
+};
+\addplot [color=mycolor6, forget plot]
+  table[row sep=crcr]{%
+0.97119341563786	-0.25\\
+0.975308641975309	-0.25\\
+};
+\addplot [color=mycolor7, forget plot]
+  table[row sep=crcr]{%
+0.0329218106995885	-0.25\\
+0.037037037037037	-0.25\\
+};
+\addplot [color=mycolor1, forget plot]
+  table[row sep=crcr]{%
+0.699588477366255	-0.25\\
+0.703703703703704	-0.25\\
+};
+\addplot [color=mycolor2, forget plot]
+  table[row sep=crcr]{%
+0.255144032921811	-0.25\\
+0.259259259259259	-0.25\\
+};
+\addplot [color=mycolor3, forget plot]
+  table[row sep=crcr]{%
+0.921810699588477	-0.25\\
+0.925925925925926	-0.25\\
+};
+\addplot [color=mycolor4, forget plot]
+  table[row sep=crcr]{%
+0.106995884773663	-0.25\\
+0.111111111111111	-0.25\\
+};
+\addplot [color=mycolor5, forget plot]
+  table[row sep=crcr]{%
+0.773662551440329	-0.25\\
+0.777777777777778	-0.25\\
+};
+\addplot [color=mycolor6, forget plot]
+  table[row sep=crcr]{%
+0.329218106995885	-0.25\\
+0.333333333333333	-0.25\\
+};
+\addplot [color=mycolor7, forget plot]
+  table[row sep=crcr]{%
+0.995884773662551	-0.25\\
+1	-0.25\\
+};
 \end{axis}
-\end{tikzpicture}
+\end{tikzpicture}%
