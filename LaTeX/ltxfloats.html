@@ -43,10 +43,14 @@
 <li><a href="ltxusecol.html", title="Primary colours, X11 colours, notes">Use colour</a> 
 <li><a href="ltxbanned.html", title="Avoid these LaTeX commands">Banned LaTeX!</a> 
 <li class="title"><em>Other homes</em> <ul>
-<li><a href="http://www.maths.adelaide.edu.au/anthony.roberts", title="my home page with lots of wonderful stuff">Tony Roberts</a> 
-<li><a href="http://www.maths.adelaide.edu.au", title="School of Mathematical Sciences web home">Mathematical Sciences</a></li>
-<li><a href="http://ecms.adelaide.edu.au/", title="Faculty of Engineering, Computing and Mathematical Sciences web home">Faculty ECMS</a></li>
-<li><a href="http://www.adelaide.edu.au", title="The university's web home">University of Adelaide</a></li> </ul>
+<li><a href="https://tuck.adelaide.edu.au/", title="my home page with lots of wonderful stuff">Em. Prof. Tony Roberts</a> 
+<li><a href="https://adelaide.edu.au/about/school/mathematical-sciences/",
+title="School of Mathematical Sciences web
+home">Mathematical Sciences</a></li>
+<li><a href="https://adelaide.edu.au/about/college/science/", 
+title="College of Science web home">College of Science</a></li>
+<li><a href="http://www.adelaide.edu.au", 
+title="Adelaide University web home">Adelaide University</a></li> </ul>
 
 </ul>
 <div id="google_translate_element"></div><script type="text/javascript">
@@ -333,26 +337,33 @@ bit-image graphic.   Avoid doing so.</P>
 <p><ol>
 <li>Create a vector-graphic <B>pdf</B> file of the drawing
 from whatever application is being used to generate the
-figure.  For example, <tt><a href="Src/cantor.m">
+figure.&nbsp;  For example, <tt><a href="Src/cantor.m">
 Src/cantor.m</a></tt> and <tt><a href="Src/koch.m">
 Src/koch.m</a></tt> are Matlab programs that create
 postscript graphs in files <tt><a href="Src/cantor.pdf">
 Src/cantor.pdf</a></tt> and <tt><a href="Src/koch.pdf">
-Src/koch.pdf</a></tt>.  Obtain these in Matlab post-2020 via
-the command
+Src/koch.pdf</a></tt>.&nbsp;  Obtain these in Matlab
+post-2020 via the command
 <pre>exportgraphics(gcf,'filename.pdf' ...
     ,'ContentType','vector')</pre> 
-or pre-2020 prefer the following command and convert to pdf
-afterwards
+This <tt>'vector'</tt> option not only creates <em>much
+better</em> quality graphics than any other option, it also
+results in a file that is typically <em>10x smaller</em>
+than any other option.
+<p>However, if the graphic is photograph-like, either
+because it is a photograph or because it is a surface plot
+with smooth graduations, then <em>maybe</em> create as the
+non-vector bit-image format of <tt>jpeg</tt> rather than
+<tt>pdf</tt>.
+<p>If using pre-2020 Matlab, then prefer the following command
+and convert to pdf afterwards
 <pre>print('-depsc','filename')</pre>
-<p>If the graphic is photograph-like, either because it is a
-photograph or because it is a surface plot with smooth
-graduations, then create as the non-vector bit-image format
-of <tt>jpeg</tt> rather than <tt>pdf</tt>.
+
 <li>Then place in the preamble the commands 
 <PRE>\usepackage{graphicx}</PRE> 
-<li>Somewhere near where you want the figure, include the
-figure environment 
+
+<li>Near where you want the figure, include the figure
+environment 
 <PRE>\begin{figure}\centering 
  \includegraphics{...} 
  \caption{...} 
@@ -360,6 +371,9 @@ figure environment
 \end{figure}</PRE> 
 where the argument of the <TT>\includegraphics</TT> command
 is the filename (without the extension).
+<em>Do not force LaTeX to place the figure in the middle of
+body text---let LaTeX do its marvellous default of floating
+the figure to top or bottom of a page.</em>
 <p>
 <li>Or use this to scale the picture up/down, <EM>but only a
 little</EM>, 
@@ -439,12 +453,13 @@ including codifying the `export' command that actually
 outputs the tex/pdf/jpeg file.
 </li><li>
 Ensure your graphics are traceable back to the source file
-that generated them. I recommend prefixing the name of the
-script file to the name of the graphic file.  That is, if a
-script named <tt>abc.*</tt> generates a graph on topic
-<tt>xyz</tt>, then name the graphic file <tt>abcxyz.*</tt> 
-For example, if using Matlab/Octave, then invoke the function
-<tt>mfilename</tt> as in 
+that generated them.&nbsp; I recommend prefixing the name of
+the script file to the name of the graphic file.&nbsp;  That
+is, if a script named <tt>abc.*</tt> generates a graph on
+topic <tt>xyz</tt>, then name the graphic file
+<tt>abcxyz.*</tt> &nbsp; For example, if using
+Matlab/Octave, then invoke the function <tt>mfilename</tt>
+as in 
 <pre>exportgraphics(gcf,[mfilename 'xyz.pdf'])</pre>
 or
 <pre>matlab2tikz([mfilename 'xyz.tex'], ...</pre>
@@ -459,13 +474,13 @@ or
 Copyright Tony Roberts, 
 School of Mathematical Sciences, University of Adelaide, South Australia. 
 <a href="http://orcid.org/0000-0001-8930-1552">ORCID=0000-0001-8930-1552</a>
-03-March-2025 18:59</small></div>
+28-May-2026 21:11</small></div>
 
 <div id="disqus_thread"></div>
 <script>
 var disqus_config = function () {
 this.page.url = 'http://www.maths.adelaide.edu.au/anthony.roberts/LaTeX';  // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = '/Users/a1184615/Documents/Github.io/ProfAJRoberts/Sites/LaTeX/ltxfloats.html'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+this.page.identifier = '/Users/a1184615/Documents/Github.io/ProfAJRoberts/LaTeX/ltxfloats.html'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 this.page.title = 'LaTeX: Figures and tables';
 };
 

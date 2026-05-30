@@ -1,11 +1,14 @@
 
 <h2>Submit your SDE/ODE for analysis</h2>
 <div class="newspaper">
- Fill in the fields below for your <small>SDE</small> system: 
+Fill in the fields below for your <small>SDE</small> system: 
 <ul>
-<li>your m slow variables must be denoted <tt>x(1),...,x(m)</tt>; 
-<li>your ny fast stable variables must be denoted <tt>y(1),...,y(ny)</tt>; 
-<li>your nz fast unstable variables must be denoted <tt>z(1),...,z(nz)</tt>; 
+<li>your m slow variables must be denoted <tt>x(1),...,x(m)</tt> 
+or the aliases <tt>x1, x2, ...</tt>; 
+<li>your ny fast stable variables must be denoted <tt>y(1),...,y(ny)</tt> 
+or the aliases <tt>y1, y2, ...</tt>; 
+<li>your nz fast unstable variables must be denoted <tt>z(1),...,z(nz)</tt> 
+or the aliases <tt>z1, z2, ...</tt>; 
 <li>the fast variables must be linearly decoupled, that is,
 the linear dynamics have been diagonalised; each of the
 linear decay/growth rates of the fast variables must be a positive
@@ -14,7 +17,7 @@ number;
 Wiener processes) or non-autonomous time dependent factors
 may be present, they must be denoted <tt>w(any)</tt> where
 `any' denotes almost any label of your choice---numeric
-labels are usual;
+labels are usual (or use the aliases <tt>w0, w1, ..., w9</tt>);
 <li>the noises <tt>w()</tt> must occur linearly in the
 <small>RHS</small>s of the <small>SDE</small>s, but may be
 multiplied by fast or slow variables;
@@ -24,9 +27,10 @@ system of <small>ODE</small>s;
 multinomial in form or a rational multinomial---if the
 latter, then multiply through by a common denominator
 transfer to the <small>RHS</small> the nonlinear terms
-involving time derivatives, to end up with a multinomial
-<small>RHS</small> that includes nonlinear terms with a time
-derivative factor; 
+involving time derivatives (which must be written in terms
+of parenthesis variables, not the aliases), to end up with a
+multinomial <small>RHS</small> that includes nonlinear terms
+with a time derivative factor; 
 <li>Use the syntax of <a
 href="http://www.reduce-algebra.com">Reduce for the
 algebraic expressions</a>
@@ -47,12 +51,12 @@ Enter the magic word "g&nbsp;a&nbsp;l&nbsp;a&nbsp;h" into
 <TR> <TD><STRONG>Slow modes:</STRONG> the <small>RHS</small>
 of each of the m <small>S/ODE</small>s dx(1)/dt,...,dx(m)/dt separated by commas. Use
 <tt>w(any)</tt> to denote noise/non-autonomous terms.
-</TD> <TD> <TEXTAREA ROWS="4" COLS="36" NAME="xrhs">a*x(1)-x(1)*y(1) </TEXTAREA> 
+</TD> <TD> <TEXTAREA ROWS="4" COLS="36" NAME="xrhs">a*x1-x1*y1 </TEXTAREA> 
 </TD> </TR>
 <TR> <TD><STRONG>Fast stable modes</STRONG> the <small>RHS</small>
 of the ny <small>S/ODE</small>s dy(1)/dt,...,dy(ny)/dt each
 separated by commas. Use <tt>w(any)</tt> to denote noise/non-autonomous terms.
-</TD><TD> <TEXTAREA ROWS="4" COLS="36" NAME="yrhs">-y(1)+x(1)^2-2*y(1)^2+w(1) </TEXTAREA> 
+</TD><TD> <TEXTAREA ROWS="4" COLS="36" NAME="yrhs">-y1+x1^2-2*y1^2+w0 </TEXTAREA> 
 </TD> </TR>
 <TR> <TD><STRONG>Fast unstable modes</STRONG> the <small>RHS</small>
 of the nz <small>S/ODE</small>s dz(1)/dt,...,dz(nz)/dt each
@@ -95,16 +99,16 @@ variable <tt>sigma</tt>.
 <div class="newspaper">
   
 <ul>
-<li>Each <tt>xx(i)</tt> denotes the new true slow variable
+<li>Each <tt>X(i)</tt> denotes the new true slow variable
 \(X_i\) where the original
-\(x_i=X_i+(\text{modifications})\), each <tt>yy(i)</tt>
+\(x_i=X_i+(\text{modifications})\), each <tt>Y(i)</tt>
 denotes the new fast stable variable \(Y_i\) where the
 original \(y_i=Y_i+(\text{modifications})\), and each
-<tt>zz(i)</tt> denotes the new fast unstable variable
+<tt>Z(i)</tt> denotes the new fast unstable variable
 \(Z_i\) where the original
 \(z_i=Z_i+(\text{modifications})\), 
 <li><tt>ou(w,tt,r)</tt> denotes Ornstein--Uhlenbeck
-convolution over the non-autonomous forcing/Stratonovich
+convolution over the non-autonomous forcing/Stratonovich/Marcus
 process \(w(t)\) (not Ito):
 <tt>ou(w,tt,r)</tt>\({}=\exp(rt)\star w(t)\) where the star
 <tt>*</tt> denotes convolution which is done over the past

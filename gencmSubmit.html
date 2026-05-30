@@ -104,26 +104,34 @@ name="%submit"> </TD> </TR></TABLE>
 <h3>In the results</h3>
 <div class="newspaper">
 <ul>
+
 <li>The centre manifold is parametrised by m slow variables
 <tt>s(j)</tt>.
+
 <li>Each such slow variable <tt>s(j)</tt> is either
-<ul><li>a 'real' slow variable (specified eigenvalue zero),
-or </li><li>a complex amplitude of an oscillatory
+<ul>
+<li>a 'real' slow variable (specified eigenvalue zero),
+or </li>
+<li>a complex amplitude of an oscillatory
 mode\(~e^{i\omega t}\) for some frequency\(~\omega\)
 corresponding to specified eigenvalue \(\lambda=i\omega\),
-or </li><li>most generally, a (complex) amplitude of the
+or </li>
+<li>most generally, a (complex) amplitude of the
 exponential mode\(~e^{\lambda t}\) for each specified
-eigenvalue\(~\lambda\). </li></ul>
+(complex) eigenvalue\(~\lambda\). </li></ul>
+
 <li>In a real system of <small>ODE/DDE</small>s, the complex
 amplitudes occur in complex conjugate pairs.
-<li>I use the variable <tt>small</tt>  (also appearing
-as\(~\varepsilon\)) to control and order the asymptotic
-expansion: introducing <tt>small</tt> into your definition
-of the `nonlinear' function empowers finer control of the
-asymptotics.  For example, in the delay <small>ODE</small>
-example the parameter\(~\delta\) is made 'small'.
-Analogously, cubic terms may best be made `small' when added
-to quadratic terms.
+
+<li>I use the variable <tt>small</tt>  (appearing
+as\(~\varepsilon\) in the .pdf) to control and order the
+asymptotic expansion: introducing <tt>small</tt> into your
+definition of the `nonlinear' function empowers finer
+control of the asymptotics.  For example, in the delay
+<small>ODE</small> example the parameter\(~\delta\) is made
+'small'.  Analogously, cubic terms may best be made `small'
+when added to quadratic terms.
+
 <li>The code does cater for degenerate cases involving
 generalised eigenvectors.  But the code does this by
 modifying\(~L\), the matrix of the linearisation at the
@@ -132,19 +140,24 @@ it can to remove the degeneracy, and flags the change with
 variable 'small' so you recover the original with
 \(\verb|small|=1\). <em>Be careful</em> that the results are
 relevant to what you want.
+
 <li>Similarly, the code tries to make all, except the
 nominated eigenvalues, of\(~\vec z^*L\vec e\) to be 'small',
 and also makes\(~\vec f(\vec 0)\) `small'. <em>Be very
 careful</em> that the results are relevant to what you want.
-<li>For explanations and relevant theory, see my book <a
-href="http://www.maths.adelaide.edu.au/anthony.roberts/modelling.html">
-Modelling emergent dynamics in complex systems</a>, or <a
-href="http://dx.doi.org/10.1016/S0010-4655(96)00162-2"> Low-
-dimensional modelling of dynamics via computer algebra</a>,
-or the classic <a
+
+<li>For explanations and relevant theory, see my book (2015)
+<a
+href="http://www.maths.adelaide.edu.au/anthony.roberts/
+modelling.html"> Modelling emergent dynamics in complex
+systems</a>, or (1997) <a
+href="http://dx.doi.org/10.1016/S0010-4655(96)00162-2">
+Low-dimensional modelling of dynamics via computer
+algebra</a>, or the classic (1985) <a
 href="http://dx.doi.org/10.1017/S0334270000004756"> Simple
 examples of the derivation of amplitude equations for
 systems of equations possessing bifurcations</a>.
+
 <li>In the case of a slow manifold (all specified
 eigenvalues are zero), the code also computes a basis of
 normal vectors to the isochrons (actually normal to their
@@ -152,20 +165,24 @@ tangent space at the slow manifold). For
 <small>PDE</small>s, the bare operators such as
 <tt>diff(x)</tt> represent the partial derivative
 \(\partial/\partial x\).  Use these basis vectors: 
-<ul><li>to project initial conditions onto the slow
+<ul>
+<li>to project initial conditions onto the slow
 manifold; 
-</li><li>to project non-autonomous forcing onto the slow
+</li>
+<li>to project non-autonomous forcing onto the slow
 evolution;  
-</li><li>to predict the consequences of modifying the
+</li>
+<li>to predict the consequences of modifying the
 original system; and  
-</li><li>in uncertainty quantification to quantify effects
+</li>
+<li>in uncertainty quantification to quantify effects
 on the model of uncertainties in the original system.  
-</li></ul>For explanations and relevant theory, see 
-<a
+</li></ul>
+<p/>For explanations and relevant theory, see (2000) <a
 href="http://dx.doi.org/10.1016/S0010-4655(99)00494-4">
 Computer algebra derives correct initial conditions for
-low-dimensional dynamical models</a>, or the classic <a
-href="http://dx.doi.org/10.1017/S0334270000006470">
+low-dimensional dynamical models</a>, or the classic (1989)
+<a href="http://dx.doi.org/10.1017/S0334270000006470">
 Appropriate initial conditions for asymptotic descriptions
 of the long term evolution of dynamical systems</a>.
 </ul>
@@ -192,7 +209,7 @@ denoted <tt>u2(pi)</tt>. Copy and paste the following
 entries.
 <CENTER><TABLE><TR> <TH>Description</TH> <TH>Delay <small>ODE</small> example</TH>
 </TR><TR> <TD>RHS function</TD>
-<TD><TT>(-4*(1+small*delta)^2*(5/8*u2 +3/8*u2(pi)),
+<TD><TT>(-4*(1+small^2*delta)^2*(5/8*u2 +3/8*u2(pi)),
     +u1*(1+u2))</TT></TD>
 </TR><TR> <TD>Centre eigenvalues</TD>
 <TD><TT>i,2*i,-i,-2*i</TT></TD>
@@ -243,7 +260,7 @@ Copy and paste the following.
 </TR><TR> <TD>Adjoint subspace</TD>
 <TD><TT>(0,0,1,1), (1,1,0,0)</TT></TD>
 </TR><TR> <TD>Order of error</TD>
-<TD><TT>5</TT></TD>
+<TD><TT>3</TT></TD>
 </TR><TR> <TD>Print</TD> <TD><TT>small</TT></TD>
 </TR></TABLE> </CENTER>
 Then\(~s_1\) and\(~s_2\) represent the probabilities of
@@ -288,7 +305,7 @@ nonlinearity.
           (-i*sqrt(3),+i*sqrt(3),1,-1), 
           (+i*sqrt(3),-i*sqrt(3),1,-1)</TT></TD>
 </TR><TR> <TD>Order of error</TD>
-<TD><TT>3</TT></TD>
+<TD><TT>2</TT></TD>
 </TR><TR> <TD>Print</TD> <TD><TT>small</TT></TD>
 </TR></TABLE> </CENTER>
 
@@ -334,7 +351,7 @@ consequently scale the smallness of the cubic nonlinearity.
 </TR><TR> <TD>Adjoint subspace</TD>
 <TD><TT>(1,1,+i,+i), (1,1,-i,-i)</TT></TD>
 </TR><TR> <TD>Order of error</TD>
-<TD><TT>5</TT></TD>
+<TD><TT>3</TT></TD>
 </TR><TR> <TD>Print</TD> <TD><TT>f_1,f_2,small</TT></TD>
 </TR></TABLE> </CENTER>
 
