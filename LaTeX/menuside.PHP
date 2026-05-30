@@ -18,10 +18,14 @@
 <li><a href="ltxusecol.php", title="Primary colours, X11 colours, notes">Use colour</a> 
 <li><a href="ltxbanned.php", title="Avoid these LaTeX commands">Banned LaTeX!</a> 
 <li class="title"><em>Other homes</em> <ul>
-<li><a href="http://www.maths.adelaide.edu.au/anthony.roberts", title="my home page with lots of wonderful stuff">Tony Roberts</a> 
-<li><a href="http://www.maths.adelaide.edu.au", title="School of Mathematical Sciences web home">Mathematical Sciences</a></li>
-<li><a href="http://ecms.adelaide.edu.au/", title="Faculty of Engineering, Computing and Mathematical Sciences web home">Faculty ECMS</a></li>
-<li><a href="http://www.adelaide.edu.au", title="The university's web home">University of Adelaide</a></li> </ul>
+<li><a href="https://tuck.adelaide.edu.au/", title="my home page with lots of wonderful stuff">Em. Prof. Tony Roberts</a> 
+<li><a href="https://adelaide.edu.au/about/school/mathematical-sciences/",
+title="School of Mathematical Sciences web
+home">Mathematical Sciences</a></li>
+<li><a href="https://adelaide.edu.au/about/college/science/", 
+title="College of Science web home">College of Science</a></li>
+<li><a href="http://www.adelaide.edu.au", 
+title="Adelaide University web home">Adelaide University</a></li> </ul>
 <?php // Add more links in the space below here?>
 
 </ul>

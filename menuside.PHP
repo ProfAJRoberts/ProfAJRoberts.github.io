@@ -53,14 +53,13 @@ research publications">Research publications</a></li>
 title="Amazon's A. J. Roberts page">Amazon's Author
 Page</a></li>
 <li class="title"><em>Other homes</em> <ul>
-<li><a href="http://www.maths.adelaide.edu.au",
+<li><a href="https://adelaide.edu.au/about/school/mathematical-sciences/",
 title="School of Mathematical Sciences web
 home">Mathematical Sciences</a></li>
-<li><a href="http://ecms.adelaide.edu.au/", title="Faculty
-of Engineering, Computing and Mathematical Sciences web
-home">Faculty ECMS</a></li>
-<li><a href="http://www.adelaide.edu.au", title="The
-university's web home">University of Adelaide</a></li> </ul>
+<li><a href="https://adelaide.edu.au/about/college/science/", 
+title="College of Science web home">College of Science</a></li>
+<li><a href="http://www.adelaide.edu.au", 
+title="Adelaide University web home">Adelaide University</a></li> </ul>
 <?php // Add more links in the space below here?>
 
 </ul>
